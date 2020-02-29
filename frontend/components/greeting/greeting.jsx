@@ -11,7 +11,7 @@ const Greeting = ({currentUser, logout})=>{
         </div>
     ) : (
         <div>
-            <h2 className="welcome"> Welcome</h2>
+            <h2 className="welcome"> Whaat it do</h2>
             <br/>
             <NavLink className='btn' to='/login'>Login</NavLink>
             &nbsp;or&nbsp;
