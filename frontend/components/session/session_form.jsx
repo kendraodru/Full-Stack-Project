@@ -42,7 +42,7 @@ export default class sessionForm extends React.Component {
 
     render(){
         const nameInput = (
-            <div className="session-form-div">
+            <div>
                 <label>First Name:
                     <input type="text" 
                     onChange={this.handleInput("first_name")} 
@@ -57,6 +57,7 @@ export default class sessionForm extends React.Component {
             </div>
         );
         return(
+            <div className='form-wrapper'>
             <div className="session-form-div">
                 <h1> {this.props.formType === 'login' ? "Login" : "Sign up"}</h1> 
                  <form className="session-form-box" onSubmit={this.handleSubmit}>
@@ -76,6 +77,7 @@ export default class sessionForm extends React.Component {
                     {this.renderErrors()}
                     {this.props.navLink}
                  </form>
+            </div>
             </div>
         )
     }
