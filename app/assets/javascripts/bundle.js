@@ -196,7 +196,7 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/",
     component: _splash_splash__WEBPACK_IMPORTED_MODULE_3__["default"]
-  })));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "eflfke"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "efewfe")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -369,10 +369,11 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     errors: state.errors.session,
-    formType: 'login',
-    navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    formType: 'Login',
+    navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      className: "session-link",
       to: "/signup"
-    }, "Sign up Page")
+    }, "New customer? Sign up")
   };
 };
 
@@ -475,11 +476,15 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var nameInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "First Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      var nameInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "form-label"
+      }, "First Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput("first_name"),
         value: this.props.first_name
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "form-label"
+      }, "Last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput("last_name"),
         value: this.props.first_name
@@ -487,22 +492,31 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " ", this.props.formType === 'login' ? "Login" : "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "session-form-box",
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "form-title"
+      }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "session-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "form-label"
+      }, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput("email"),
         value: this.props.email
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "form-label"
+      }, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         onChange: this.handleInput("password"),
         value: this.props.password
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.formType === 'signup' ? nameInput : '', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: this.props.formType === 'signup' ? 'Sign Up' : 'Log in'
-      }), this.renderErrors(), this.props.navLink)));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.formType === 'Create Account' ? nameInput : '', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bottom-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "submit-session",
+        onClick: this.handleSubmit
+      }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login'), this.props.navLink), this.renderErrors()))));
     }
   }]);
 
@@ -538,10 +552,11 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     errors: state.errors.session,
-    formType: 'signup',
-    navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    formType: 'Create Account',
+    navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      className: "session-link",
       to: "/login"
-    }, "Login Page")
+    }, "Already a customer? Login")
   };
 };
 

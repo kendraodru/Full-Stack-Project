@@ -20,6 +20,14 @@ const App = () =>(
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route path='/' component={Splash}/>
     </Switch>
+    <footer>
+        <div>
+            eflfke
+        </div>
+        <div>
+            efewfe
+        </div>
+    </footer>
     </div>
 );
 

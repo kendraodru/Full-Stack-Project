@@ -1,24 +1,80 @@
+
+
 .session-form-div{
-    margin-top: -300px;
-    border: 1px solid green;
-    padding: 50px;
+    margin-top: 150px;
+    opacity: 100%;
+    padding: 40px;
+    width: 505px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 3px;
 }
 .form-wrapper{
-    border: solid 3px purple;
+    // border: solid 3px purple;
+    // z-index: -1;
     box-sizing: border-box;
-    padding:500px
+    // padding:500px;
+    width: 100%;
+    height: 1000px;
+    // height: 250px;
+    display:flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    // opacity: 0.3;
+    // opacity: 0.9;
+    // KEEP THIS BACKGROUND FOR REF
+    // background: url('yttpcleaner.jpg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // -o-background-size: cover;
+  
+    
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    // background-image: url('../images/sunflowers.jpg');
 }
 
-// .form-wrapper{
-//     border: solid 1px purple;
-//     // display: block;
-//     height: auto;
-//     margin-top: 0;
-//     // height: 566px;
-//     // width: 522px;
-//     // margin-top: 500px;
-//     // padding: 30px 20px;
-//     padding: 500px;
-//     // align-items: center;
-//     box-sizing: border-box;
-// }
+.form-label{
+    color:black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: "Unica77 LL bold",sans-serif;
+}
+
+input{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 0;
+    // margin: 0,0,12px;
+    height: 32px;
+    padding-left: 10px;
+    width: 100%;
+    background-color:#F7F7F7;
+    // background-color: hsla(0, 0%, 100%, 0.5);
+    border: none;
+    border-radius: 1px;
+}
+.form-title{
+    font-size:55px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-family: "Unica77 LL",sans-serif;
+}
+
+.session-link{
+    text-decoration: none;
+    font-size: 13px
+}
+.session-link:hover{
+    transition: all 1s ease;
+    text-decoration: underline;
+}
+
+
+.bottom-form{
+    display:flex;
+    justify-content: space-between;
+}
