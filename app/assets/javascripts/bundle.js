@@ -196,7 +196,45 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/",
     component: _splash_splash__WEBPACK_IMPORTED_MODULE_3__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "eflfke"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "efewfe")));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-set"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Shop")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-title-items"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "All Skin Care"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Face Cleansers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Eye Cream"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-set"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-title-items"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Our Ethos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Our Mission"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Our Story"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-set"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-title-items"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Facebook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Pinterest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "Instagram"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -223,18 +261,15 @@ var NavBar = function NavBar(_ref) {
       logout = _ref.logout;
   var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "btn",
     onClick: logout
-  }, "Logout")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, "LOGOUT")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
     className: "btn",
     to: "/login"
-  }, "Login"), "\xA0or\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-    className: "btn",
-    to: "/signup"
-  }, "Sign up"));
+  }, "ACCOUNT"));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-nav"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -586,7 +621,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Splash = function Splash() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "splash page");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hamburger"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "root-pic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "front-image",
+    src: window.images.oil
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-pic-text"
+  }, "HYDRATE. SOOTHE.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "ACTIVATE. GLOW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-pic-para"
+  }, "Intelligent multitasking hydration powered by antioxidant-rich adaptogens, hyaluronic acid, and activated neuropeptides. It's ultra-fine and ready for your top shelf."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "shop-now"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, "SHOP NOW"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);

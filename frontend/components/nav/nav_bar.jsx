@@ -5,13 +5,13 @@ const NavBar = ({currentUser, logout})=>{
 
     const display = (currentUser) ? (
         <span className='root-title'>
-            <button className='btn' onClick={logout}>Logout</button>
+            <span className='btn' onClick={logout}>LOGOUT</span>
         </span>
     ) : (
             <span className='root-title'>
-            <NavLink className='btn' to='/login'>Login</NavLink>
-                &nbsp;or&nbsp;
-            <NavLink className='btn' to='/signup'>Sign up</NavLink>
+            <NavLink className='btn' to='/login'>ACCOUNT</NavLink>
+                {/* &nbsp;or&nbsp; */}
+            {/* <NavLink className='btn' to='/signup'>SIGN UP</NavLink> */}
             </span>
         )
 
@@ -29,7 +29,6 @@ const NavBar = ({currentUser, logout})=>{
                 </div>
             </div>
             <div className='root-middle'>
-                {/* <span className='root-title'>LOGO PIC</span> */}
                 <a href='/' >
                     <img src="/assets/yttplogo.png" className='nav-image' alt="Youth to the People"/>
                 </a>

@@ -21,11 +21,37 @@ const App = () =>(
         <Route path='/' component={Splash}/>
     </Switch>
     <footer>
-        <div>
-            eflfke
-        </div>
-        <div>
-            efewfe
+        <div className='footer-links'>
+            <div className='footer-set'>
+                <div className='footer-title'>
+                    <span>Shop</span>
+                </div>
+                <div className='footer-title-items'>
+                    <a href="/">All Skin Care</a>
+                    <a href="/">Face Cleansers</a>
+                    <a href="/">Eye Cream</a>
+                </div>
+            </div>
+            <div className='footer-set'>
+                <div className='footer-title'>
+                    <span>About</span>
+                </div>
+                <div className='footer-title-items'>
+                    <a href="/">Our Ethos</a>
+                    <a href="/">Our Mission</a>
+                    <a href="/">Our Story</a>
+                </div>
+            </div>
+            <div className='footer-set'>
+                <div className='footer-title'>
+                    <span>Social</span>
+                </div>
+                <div className='footer-title-items'>
+                    <a href="/">Facebook</a>
+                    <a href="/">Pinterest</a>
+                    <a href="/">Instagram</a>
+                </div>
+            </div>
         </div>
     </footer>
     </div>
