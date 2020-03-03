@@ -27,9 +27,9 @@ const App = () =>(
                     <span>Shop</span>
                 </div>
                 <div className='footer-title-items'>
-                    <a href="/">All Skin Care</a>
-                    <a href="/">Face Cleansers</a>
-                    <a href="/">Eye Cream</a>
+                    <a id="a" href="/">All Skin Care</a>
+                    <a id="a" href="/">Face Cleansers</a>
+                    <a id="a" href="/">Eye Cream</a>
                 </div>
             </div>
             <div className='footer-set'>
@@ -37,9 +37,9 @@ const App = () =>(
                     <span>About</span>
                 </div>
                 <div className='footer-title-items'>
-                    <a href="/">Our Ethos</a>
-                    <a href="/">Our Mission</a>
-                    <a href="/">Our Story</a>
+                    <a id="a" href="/">Our Ethos</a>
+                    <a id="a" href="/">Our Mission</a>
+                    <a id="a" href="/">Our Story</a>
                 </div>
             </div>
             <div className='footer-set'>
@@ -47,9 +47,9 @@ const App = () =>(
                     <span>Social</span>
                 </div>
                 <div className='footer-title-items'>
-                    <a href="/">Facebook</a>
-                    <a href="/">Pinterest</a>
-                    <a href="/">Instagram</a>
+                    <a id="a" href="/">Facebook</a>
+                    <a id="a" href="/">Pinterest</a>
+                    <a id="a" href="/">Instagram</a>
                 </div>
             </div>
         </div>

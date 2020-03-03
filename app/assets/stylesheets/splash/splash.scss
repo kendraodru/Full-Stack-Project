@@ -1,52 +1,75 @@
 .splash-wrapper{
     height: 100%;
-    border: 1px solid blue;
 }
 
 .root-pic{
-    background-image: url('oil.jpg');
-    // display:flex;
-    // align-items: flex-start;
-    // box-sizing: border-box;
-    // width: 100%;
-    // background-image: url('oil.jpg') no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // -o-background-size: cover;
+    background: url('oil.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -o-background-size: cover;
 }
 
-.front-image{
-    height: 500px;
-    width: 500px;
-}
+
 .main-content{
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: 1000px;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
-    // align-items: center;
-    border: 1px green;
-    // background-image: url('yttpcleaner.jpg') no-repeat center center fixed;
+    padding: 50px
+    // margin: 200px;
+    // justify-content: space-between;
+    // background: url('oil.jpg') no-repeat center center fixed;
     // -webkit-background-size: cover;
     // -moz-background-size: cover;
     // -o-background-size: cover;
     // -o-background-size: cover;
 }
 
+// margin-top: 150px;
+//     opacity: 100%;
+//     padding: 40px;
+//     width: 505px;
+//     display: flex;
+//     flex-direction: column;
+//     box-sizing: border-box;
+//     border-radius: 3px;  
+
 .main-pic-text{
-    background-color: purple;
-    display:block;
-    font: 50px
+    margin-top: 50px;
+    // padding-left: 100px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    // background-color: purple;
+    // text-align: center;
+    // display: flex;
+    // justify-content: center;
+    // text-align: center;
+    font-size:70px;
+    // font-weight: bold;
+    color:white;
+    font-family: Dancing Script;
 }
 
 .main-pic-para{
-    display: block;
-    border: 1px solid yellow
+    // display: block;
+    display: none;
+    max-width: 450px;
+    padding-bottom: 50px;
+    font-size: 60;
+    color:white;
+    font-family: Dancing Script;
+    
 }
 
 .shop-now{
-    border: 1px solid black
+    display: none;
+}
+
+.shop-now-href{
+    font-family: Dancing Script;
+    color:black;
+    font-weight: bold
 }
