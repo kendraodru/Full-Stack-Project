@@ -234,16 +234,16 @@ var App = function App() {
     className: "footer-title"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-title-items"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     id: "a",
     href: "/"
-  }, "Facebook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     id: "a",
     href: "/"
-  }, "Pinterest"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     id: "a",
     href: "/"
-  }, "Instagram"))))));
+  }, "Instagram")))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);

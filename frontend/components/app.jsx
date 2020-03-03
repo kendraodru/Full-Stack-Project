@@ -47,9 +47,9 @@ const App = () =>(
                     <span>Social</span>
                 </div>
                 <div className='footer-title-items'>
-                    <a id="a" href="/">Facebook</a>
-                    <a id="a" href="/">Pinterest</a>
-                    <a id="a" href="/">Instagram</a>
+                    <span><a id="a" href="/">Facebook</a></span>
+                    <span><a id="a" href="/">Pinterest</a></span>
+                    <span> <a id="a" href="/">Instagram</a></span>
                 </div>
             </div>
         </div>
