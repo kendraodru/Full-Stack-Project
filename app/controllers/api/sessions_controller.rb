@@ -18,7 +18,6 @@ class Api::SessionsController < ApplicationController
         if @user
             logout
             render json: ["user is logged out"]
-            # think about rendering the splash page??
         else
            render json: ["login required"], status: 404
         end

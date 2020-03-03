@@ -79,7 +79,6 @@ export default class sessionForm extends React.Component {
                         <br/>
                         {(this.props.formType === 'Create Account') ? nameInput : ''}
                             <div className="bottom-form">
-                                {/* <button className='btn'>{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</button> */}
                                 <p className="submit-session" onClick={this.handleSubmit}>{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p>
                                 {this.props.navLink}
                             </div>
