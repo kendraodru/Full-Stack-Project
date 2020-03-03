@@ -7,11 +7,17 @@ export default class sessionForm extends React.Component {
             first_name: "",
             last_name: "",
             email: "",
-            password: ""
+            password: "",
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.renderErrors = this.renderErrors.bind(this)
+    }
+
+    componentWillReceiveProps(nextProps){
+        // debugger
+        this.setState({errors: nextProps.errors})
     }
 
     handleSubmit(e){
@@ -30,14 +36,15 @@ export default class sessionForm extends React.Component {
         return (
             <div className='errors-div'>
                 <ul>
-                    {this.props.errors.map((error, i) => (
+                    {Object.keys(this.state.errors).map((error, i) => (
                         <li key={`error-${i}`}>
-                            {error}
+                            {this.state.errors[error]}
                         </li>
                     ))}
                 </ul>
             </div>
         );
+        // return errors;
     }
 
     render(){

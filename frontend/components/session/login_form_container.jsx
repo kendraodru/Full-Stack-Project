@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import sessionForm from './session_form';
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions'
+import { login, clearSessionErrors } from '../../actions/session_actions'
 import { openModal, closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) =>({
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) =>({
 
 const mapDispatchToProps = (dispatch) =>({
     processForm: (formUser)=> dispatch((login(formUser))),
+    clearErrors: () => dispatch(clearSessionErrors()),
     otherForm: (
         <button onClick={() => dispatch(openModal('signup'))}>
             Signup
