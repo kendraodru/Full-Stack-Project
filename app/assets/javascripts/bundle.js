@@ -1034,6 +1034,63 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/splash/photoset.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/splash/photoset.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var PicSet = function PicSet() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pic-set-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pic-1nd-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-1"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1568762297330-66bfa0586400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-2"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1505976311692-e64b8bbd6cfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1506003094589-53954a26283f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pic-2nd-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1533093818119-ac1fa47a6d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-5"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1514163061636-02db31852e84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1573575155376-b5010099301b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PicSet);
+
+/***/ }),
+
 /***/ "./frontend/components/splash/splash.jsx":
 /*!***********************************************!*\
   !*** ./frontend/components/splash/splash.jsx ***!
@@ -1045,6 +1102,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tile */ "./frontend/components/splash/tile.jsx");
+/* harmony import */ var _photoset__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photoset */ "./frontend/components/splash/photoset.jsx");
+
+
 
 
 var Splash = function Splash() {
@@ -1067,10 +1128,62 @@ var Splash = function Splash() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "shop-now-href ",
     href: "/"
-  }, "SHOP NOW"))))));
+  }, "SHOP NOW"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lower-splash-content-outter-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lower-splash-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/tile.jsx":
+/*!*********************************************!*\
+  !*** ./frontend/components/splash/tile.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Tile = function Tile() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "spalsh-tile"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP_SITE_ICONS-Vegan_300x300_8144ca39-7621-4e02-8b21-61fba84c9a19_300x300.png?v=1568164109",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tile-title"
+  }, "100% Vegan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tile-text"
+  }, "Cruelty-free = no animal products + no animal testing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "spalsh-tile"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP-SITE-ICONS-MadeinCA_300x300_2a761f7f-cce9-4b52-9be9-b2f7442c347f_300x300.png?v=1568164132",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tile-title"
+  }, "Made in California"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tile-text"
+  }, "Three generations of skincare expertise rooting in California")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "spalsh-tile"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP-SITE-ICONS-Everyone_300x300_803246d6-79e0-44dd-bb32-9d89b546f446_300x300.png?v=1568164143",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tile-title"
+  }, "Skincare for All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "tile-text"
+  }, "We create for all - all genders, all skin types, all skin tones. all people")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Tile);
 
 /***/ }),
 

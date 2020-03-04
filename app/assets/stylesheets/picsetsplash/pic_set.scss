@@ -1,0 +1,31 @@
+.pic-set-wrap{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.pic-1nd-row{
+    width: 100%;
+    display: flex;
+    padding-bottom: 1%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pic-2nd-row{
+    width: 100%;
+    display: flex;
+    padding-bottom: 1%;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+[class *= bottom-pic-] {
+
+}
+
+[class *= bottom-pic-] img{
+    border-radius: 2px;
+}

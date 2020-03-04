@@ -1,4 +1,6 @@
 import React from 'react'
+import Tile from './tile';
+import PicSet from './photoset'
 
 const Splash = ()=>{
     return(
@@ -22,6 +24,12 @@ const Splash = ()=>{
                             <a className='shop-now-href 'href="/">SHOP NOW</a>
                         </button>
                     </div>
+                </div>
+            </div>
+            <div className="lower-splash-content-outter-div">
+                <div className='lower-splash-content'>
+                    <Tile />
+                    <PicSet />
                 </div>
             </div>
         </div>
