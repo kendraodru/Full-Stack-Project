@@ -752,11 +752,9 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     errors: state.errors.session,
-    formType: 'Login',
-    navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-      className: "session-link",
-      to: "/signup"
-    }, "New customer? Sign up")
+    formType: 'Login' // navLink: <NavLink className='session-link'
+    // to="/signup">New customer? Sign up</NavLink>
+
   };
 };
 
@@ -768,11 +766,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["clearSessionErrors"])());
     },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "submit-session",
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('signup'));
       }
-    }, "New customer? Sign up"),
+    }, "New Customer? Sign up"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     }
@@ -882,19 +881,23 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var nameInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "form-label"
-      }, "First Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        onChange: this.handleInput("first_name"),
-        value: this.props.first_name
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "form-label"
-      }, "Last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        onChange: this.handleInput("last_name"),
-        value: this.props.first_name
-      })));
+      // const nameInput = (
+      //     <div>
+      //         <label className='form-label'>First Name:
+      //             <br/>
+      //             <input type="text" 
+      //             onChange={this.handleInput("first_name")} 
+      //             value={this.props.first_name} />
+      //         </label>
+      //         <br/>
+      //         <label className='form-label'>Last Name:
+      //             <br/>
+      //             <input type="text" 
+      //             onChange={this.handleInput("last_name")} 
+      //             value={this.props.first_name} />
+      //         </label>
+      //     </div>
+      // );
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "outter-form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -924,7 +927,21 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         type: "password",
         onChange: this.handleInput("password"),
         value: this.props.password
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.formType === 'Create Account' ? nameInput : '', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        id: this.props.formType === 'Create Account' ? "show" : "hide",
+        className: "form-label"
+      }, "First Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        onChange: this.handleInput("first_name"),
+        value: this.props.first_name
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        id: this.props.formType === 'Create Account' ? "show" : "hide",
+        className: "form-label"
+      }, "Last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        onChange: this.handleInput("last_name"),
+        value: this.props.first_name
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "submit-session",
@@ -982,11 +999,16 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(formUser) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(formUser));
     },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "submit-session",
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('login'));
       }
-    }, "Login"),
+    }, "Existing Account? Login"),
+    //     <button onClick={() => dispatch(openModal('login'))}>
+    //         Login
+    //   </button>
+    // ),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     }

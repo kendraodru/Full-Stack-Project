@@ -1,3 +1,7 @@
+#hide{
+    display: none;
+}
+
 .close-x{
     font-size: 20px;
     color:black;
@@ -12,6 +16,10 @@
     // opacity: 50%;
     border-radius: 3px;
     background-color:white;
+}
+.session-form-box{
+    display:flex;
+    flex-direction: column;
 }
 
 .session-form-div{
@@ -37,7 +45,9 @@
     color:black;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: "Unica77 LL bold",sans-serif;
+    font-size: 20px;
+    font-family: Dancing Script
+    // font-family: "Unica77 LL bold",sans-serif;
 }
 
 input{
@@ -54,7 +64,7 @@ input{
 }
 .form-title{
     color:black;
-    font-size:55px;
+    font-size:60px;
     // margin-bottom: 80px;
     text-align: center;
     font-family: Dancing Script;
@@ -91,6 +101,7 @@ input{
 
 .bottom-form{
     display:flex;
+    flex-direction: row;
     justify-content: space-between;
     padding-top: 5px;
 }

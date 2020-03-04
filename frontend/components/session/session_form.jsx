@@ -48,23 +48,23 @@ export default class sessionForm extends React.Component {
     }
 
     render(){
-        const nameInput = (
-            <div>
-                <label className='form-label'>First Name:
-                    <br/>
-                    <input type="text" 
-                    onChange={this.handleInput("first_name")} 
-                    value={this.props.first_name} />
-                </label>
-                <br/>
-                <label className='form-label'>Last Name:
-                    <br/>
-                    <input type="text" 
-                    onChange={this.handleInput("last_name")} 
-                    value={this.props.first_name} />
-                </label>
-            </div>
-        );
+        // const nameInput = (
+        //     <div>
+        //         <label className='form-label'>First Name:
+        //             <br/>
+        //             <input type="text" 
+        //             onChange={this.handleInput("first_name")} 
+        //             value={this.props.first_name} />
+        //         </label>
+        //         <br/>
+        //         <label className='form-label'>Last Name:
+        //             <br/>
+        //             <input type="text" 
+        //             onChange={this.handleInput("last_name")} 
+        //             value={this.props.first_name} />
+        //         </label>
+        //     </div>
+        // );
         return(
             <div className='outter-form-wrapper'>
                 <div className="hamburger"></div>
@@ -84,14 +84,29 @@ export default class sessionForm extends React.Component {
                                 <br/>
                                 <label className='form-label'>Password:
                                 <br/>
-                                <input type="password" onChange={this.handleInput("password")} value={this.props.password}/>
+                                    <input type="password" 
+                                        onChange={this.handleInput("password")} 
+                                        value={this.props.password}/>
                                 </label>
                                 <br/>
-                                {(this.props.formType === 'Create Account') ? nameInput : ''}
-                                    <div className="bottom-form">
-                                        <span className="submit-session" onClick={this.handleSubmit}><p className="submit-session">{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p></span>
-                                        {this.props.otherForm}
-                                    </div>
+                                <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='form-label'>First Name:
+                                <br />
+                                    <input type="text"
+                                        onChange={this.handleInput("first_name")}
+                                        value={this.props.first_name} />
+                                </label>
+                                <br />
+                                <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='form-label'>Last Name:
+                                <br />
+                                    <input type="text"
+                                        onChange={this.handleInput("last_name")}
+                                        value={this.props.first_name} />
+                                </label>
+                                {/* {(this.props.formType === 'Create Account') ? nameInput : ''} */}
+                                <div className="bottom-form">
+                                    <span className="submit-session" onClick={this.handleSubmit}><p className="submit-session">{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p></span>
+                                    {this.props.otherForm}
+                                </div>
                                 {this.renderErrors()}
                             </form>
                         </div>
