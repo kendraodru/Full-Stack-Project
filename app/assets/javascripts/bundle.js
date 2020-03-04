@@ -768,9 +768,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     errors: state.errors.session,
-    formType: 'Login' // navLink: <NavLink className='session-link'
-    // to="/signup">New customer? Sign up</NavLink>
-
+    formType: 'Login'
   };
 };
 
@@ -787,7 +785,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('signup'));
       }
-    }, "New Customer? Sign up"),
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "New Customer? Sign up")),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     }
@@ -955,15 +953,11 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "submit-session",
         onClick: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "submit-session"
-      }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.formType === 'Create Account' ? 'Sign up' : 'Login')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         id: this.props.formType === 'Create Account' ? "hide" : "show",
         className: "submit-session",
         onClick: this.handleDemoUser
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "submit-session"
-      }, "Demo User")), this.props.otherForm), this.renderErrors())))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Demo User")), this.props.otherForm, this.renderErrors()))))));
     }
   }]);
 
@@ -1019,11 +1013,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('login'));
       }
-    }, "Existing Account? Login"),
-    //     <button onClick={() => dispatch(openModal('login'))}>
-    //         Login
-    //   </button>
-    // ),
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Existing Account? Login")),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     }
@@ -1129,6 +1119,8 @@ var Splash = function Splash() {
     className: "shop-now-href ",
     href: "/"
   }, "SHOP NOW"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "TESTER"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lower-splash-content-outter-div"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lower-splash-content"
@@ -1153,34 +1145,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Tile = function Tile() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "splash-tiles"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spalsh-tile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP_SITE_ICONS-Vegan_300x300_8144ca39-7621-4e02-8b21-61fba84c9a19_300x300.png?v=1568164109",
-    alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-title"
   }, "100% Vegan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-text"
   }, "Cruelty-free = no animal products + no animal testing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spalsh-tile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP-SITE-ICONS-MadeinCA_300x300_2a761f7f-cce9-4b52-9be9-b2f7442c347f_300x300.png?v=1568164132",
-    alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-title"
   }, "Made in California"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-text"
   }, "Three generations of skincare expertise rooting in California")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spalsh-tile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP-SITE-ICONS-Everyone_300x300_803246d6-79e0-44dd-bb32-9d89b546f446_300x300.png?v=1568164143",
-    alt: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-title"
   }, "Skincare for All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-text"
-  }, "We create for all - all genders, all skin types, all skin tones. all people")));
+  }, "We create for all genders, all skin types, all skin tones. all people")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tile);

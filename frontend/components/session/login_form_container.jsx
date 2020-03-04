@@ -8,8 +8,6 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 const mapStateToProps = (state, ownProps) =>({
     errors: state.errors.session,
     formType: 'Login',
-    // navLink: <NavLink className='session-link'
-    // to="/signup">New customer? Sign up</NavLink>
 });
 
 const mapDispatchToProps = (dispatch) =>({
@@ -17,7 +15,7 @@ const mapDispatchToProps = (dispatch) =>({
     clearErrors: () => dispatch(clearSessionErrors()),
     otherForm: (
         <span className="submit-session" onClick={() => dispatch(openModal('signup'))}>
-            New Customer? Sign up
+           <p>New Customer? Sign up</p>
         </span>),
     closeModal: () => dispatch(closeModal())
 

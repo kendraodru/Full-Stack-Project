@@ -92,13 +92,13 @@ export default class sessionForm extends React.Component {
                                 </label>
                                 <div className="bottom-form">
                                     
-                                        <span className="submit-session" onClick={this.handleSubmit}><p className="submit-session">{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p></span>
+                                    <span className="submit-session" onClick={this.handleSubmit}><p>{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p></span>
                                         <span id={this.props.formType === 'Create Account' ? "hide" : "show"}
-                                        className="submit-session" onClick={this.handleDemoUser}><p className="submit-session">Demo User</p></span>
+                                        className="submit-session" onClick={this.handleDemoUser}><p>Demo User</p></span>
                                         {this.props.otherForm}
                                 
+                                    {this.renderErrors()}
                                 </div>
-                                {this.renderErrors()}
                             </form>
                         </div>
                     </div>
