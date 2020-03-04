@@ -12,7 +12,8 @@ export default class sessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
-        this.renderErrors = this.renderErrors.bind(this)
+        this.renderErrors = this.renderErrors.bind(this);
+        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
     componentWillReceiveProps(nextProps){
@@ -24,6 +25,11 @@ export default class sessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal)
+    }
+
+    handleDemoUser(e){
+        const demoUser = {email:'demo_user@gmail.com', password:'password'};
+        this.props.processForm(demoUser).then(this.props.closeModal)
     }
     
     handleInput(type){
@@ -106,6 +112,7 @@ export default class sessionForm extends React.Component {
                                 <div className="bottom-form">
                                     
                                         <span className="submit-session" onClick={this.handleSubmit}><p className="submit-session">{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p></span>
+                                        <span className="submit-session" onClick={this.handleDemoUser}><p className="submit-session">Demo User</p></span>
                                         {this.props.otherForm}
                                 
                                 </div>

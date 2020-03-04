@@ -838,6 +838,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -855,6 +856,15 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(this.props.closeModal);
+    }
+  }, {
+    key: "handleDemoUser",
+    value: function handleDemoUser(e) {
+      var demoUser = {
+        email: 'demo_user@gmail.com',
+        password: 'password'
+      };
+      this.props.processForm(demoUser).then(this.props.closeModal);
     }
   }, {
     key: "handleInput",
@@ -949,7 +959,12 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "submit-session"
-      }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login')), this.props.otherForm), this.renderErrors())))));
+      }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "submit-session",
+        onClick: this.handleDemoUser
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "submit-session"
+      }, "Demo User")), this.props.otherForm), this.renderErrors())))));
     }
   }]);
 
