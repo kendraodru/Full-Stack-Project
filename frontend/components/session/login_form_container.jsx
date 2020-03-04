@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) =>({
     clearErrors: () => dispatch(clearSessionErrors()),
     otherForm: (
         <button onClick={() => dispatch(openModal('signup'))}>
-            Signup
+            New customer? Sign up
       </button>),
     closeModal: () => dispatch(closeModal())
 

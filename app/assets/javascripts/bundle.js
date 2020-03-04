@@ -133,7 +133,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_products_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/products_api_util */ "./frontend/util/products_api_util.js");
 
 var RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
-var RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
+var RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'; // actions
+
 var receive_products = function receive_products(products) {
   return {
     type: RECEIVE_PRODUCTS,
@@ -145,7 +146,8 @@ var receive_product = function receive_product(product) {
     type: RECEIVE_PRODUCT,
     product: product
   };
-};
+}; // these below are action creators
+
 var fetchProducts = function fetchProducts() {
   return function (dispatch) {
     return _util_products_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProducts"]().then(function (products) {
@@ -274,17 +276,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "welcome-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_nav_bar_container__WEBPACK_IMPORTED_MODULE_7__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
-    exact: true,
-    path: "/login",
-    component: _session_login_form_container__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_6__["AuthRoute"], {
-    exact: true,
-    path: "/signup",
-    component: _session_signup_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_nav_bar_container__WEBPACK_IMPORTED_MODULE_7__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
     path: "/products",
     component: _product_product_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Route"], {
@@ -455,7 +449,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var NavBar = function NavBar(_ref) {
   var currentUser = _ref.currentUser,
-      logout = _ref.logout;
+      logout = _ref.logout,
+      otherForm = _ref.otherForm;
   var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -463,10 +458,7 @@ var NavBar = function NavBar(_ref) {
     onClick: logout
   }, "LOGOUT")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-    className: "btn",
-    to: "/login"
-  }, "ACCOUNT"));
+  }, otherForm);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-nav"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -524,6 +516,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _nav_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav_bar */ "./frontend/components/nav/nav_bar.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -539,6 +533,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
+    },
+    otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: function onClick() {
+        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
+      }
+    }, "Login"),
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     }
   };
 };
@@ -599,14 +601,19 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var products = this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "product-wrapper",
           key: product.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product
         }));
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "products-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
-      }), products);
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-products-wrapper"
+      }, products));
     }
   }]);
 
@@ -765,7 +772,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('signup'));
       }
-    }, "Signup"),
+    }, "New customer? Sign up"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     }
@@ -847,7 +854,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      this.props.processForm(user).then(this.props.closeModal);
     }
   }, {
     key: "handleInput",
@@ -867,7 +874,8 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         className: "errors-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, Object.keys(this.state.errors).map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
+          key: "error-".concat(i),
+          className: "error-text"
         }, _this3.state.errors[error]);
       }))); // return errors;
     }
@@ -888,10 +896,17 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         value: this.props.first_name
       })));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "outter-form-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hamburger"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "background-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.props.closeModal,
+        className: "close-x"
+      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "form-title"
@@ -911,10 +926,12 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         value: this.props.password
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.formType === 'Create Account' ? nameInput : '', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "submit-session",
         onClick: this.handleSubmit
-      }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login'), this.props.navLink), this.renderErrors()))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "submit-session"
+      }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login')), this.props.otherForm), this.renderErrors())))));
     }
   }]);
 

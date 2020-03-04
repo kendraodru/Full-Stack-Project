@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 
-const NavBar = ({currentUser, logout})=>{
+const NavBar = ({ currentUser, logout, otherForm})=>{
 
     const display = (currentUser) ? (
         <span className='root-title'>
@@ -9,7 +9,8 @@ const NavBar = ({currentUser, logout})=>{
         </span>
     ) : (
             <span className='root-title'>
-            <NavLink className='btn' to='/login'>ACCOUNT</NavLink>
+                {otherForm}
+            {/* <NavLink  className='btn' to='/login'>ACCOUNT</NavLink> */}
                 {/* &nbsp;or&nbsp; */}
             {/* <NavLink className='btn' to='/signup'>SIGN UP</NavLink> */}
             </span>

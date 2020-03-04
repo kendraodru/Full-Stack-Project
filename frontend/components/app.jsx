@@ -12,13 +12,13 @@ import Footer from './footer/footer'
 
 const App = () =>(
     <div>
-        {/* <Modal /> */}
+        <Modal />
         <header className="welcome-header">
             {<NavBarContainer/>}
         </header>
         <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
             <Route path='/products' component={ProductIndexContainer}/>
             <Route path='/' component={Splash}/>
         </Switch>
