@@ -5,7 +5,7 @@ const NavBar = ({ currentUser, logout, otherForm})=>{
 
     const display = (currentUser) ? (
         <span className='root-title'>
-            <span className='btn' onClick={logout}>LOGOUT</span>
+            <span className='nav-btn' onClick={logout}>LOGOUT</span>
         </span>
     ) : (
             <span className='root-title'>
@@ -18,14 +18,18 @@ const NavBar = ({ currentUser, logout, otherForm})=>{
             <div className='root-left'>
                 <div className='root-nav-item'>
                     <span className='root-title'>
-                        <Link className="basic-link" to='/products'>SKIN CARE</Link>
+                        <Link className='nav-btn' to='/products'>SKIN CARE</Link>
                     </span>
                 </div>
                 <div className='root-nav-item'>
-                    <span className='root-title'>TO THE PEOPLE</span>
+                    <span className='root-title'>
+                        <span className='nav-btn'>TO THE PEOPLE</span>
+                    </span>
                 </div>
                 <div className='root-nav-item'>
-                    <span className='root-title'>ABOUT</span>
+                    <span className='root-title'>
+                        <span className='nav-btn'>ABOUT</span>
+                    </span>
                 </div>
             </div>
             <div className='root-middle'>
@@ -38,10 +42,14 @@ const NavBar = ({ currentUser, logout, otherForm})=>{
                     {display}
                 </div>
                 <div className='root-nav-item'>
-                    <span className='root-title'>SEARCH</span>
+                    <span className='root-title'>
+                        <span className='nav-btn'>SEARCH</span>
+                    </span>
                 </div>
                 <div className='root-nav-item'>
-                    <span className='root-title'>CART</span>
+                    <span className='root-title'>
+                        <span className='nav-btn'>CART</span>
+                    </span>
                 </div>
             </div>
         </div>

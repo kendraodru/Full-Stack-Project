@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     logout: () => (dispatch(logout())),
     otherForm: (
-        <span className='btn' onClick={() => dispatch(openModal('login'))}>
+        <span className='nav-btn' onClick={() => dispatch(openModal('login'))}>
             ACCOUNT
       </span>
     ),

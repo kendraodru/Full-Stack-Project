@@ -454,7 +454,7 @@ var NavBar = function NavBar(_ref) {
   var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "btn",
+    className: "nav-btn",
     onClick: logout
   }, "LOGOUT")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
@@ -468,17 +468,21 @@ var NavBar = function NavBar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "basic-link",
+    className: "nav-btn",
     to: "/products"
   }, "SKIN CARE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, "TO THE PEOPLE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-btn"
+  }, "TO THE PEOPLE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, "ABOUT"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-btn"
+  }, "ABOUT")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-middle"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/"
@@ -494,11 +498,15 @@ var NavBar = function NavBar(_ref) {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, "SEARCH")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-btn"
+  }, "SEARCH"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, "CART"))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-btn"
+  }, "CART")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -538,7 +546,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
     },
     otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "btn",
+      className: "nav-btn",
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
       }
