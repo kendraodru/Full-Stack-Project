@@ -902,7 +902,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
           key: "error-".concat(i),
           className: "error-text"
         }, _this3.state.errors[error]);
-      }))); // return errors;
+      })));
     }
   }, {
     key: "render",

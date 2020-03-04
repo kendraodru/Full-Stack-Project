@@ -50,7 +50,6 @@ export default class sessionForm extends React.Component {
                 </ul>
             </div>
         );
-        // return errors;
     }
 
     render(){
