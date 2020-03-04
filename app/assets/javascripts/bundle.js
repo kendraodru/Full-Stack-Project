@@ -685,10 +685,12 @@ var ProductIndexItem = function ProductIndexItem(_ref) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "basic-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-name"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-nums"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-btn-div"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "product-show-btn"

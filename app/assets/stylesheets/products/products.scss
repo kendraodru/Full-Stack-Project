@@ -3,24 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .products-wrapper{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .inner-products-wrapper{
     display: flex;
     flex-wrap: wrap;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .product-root{
-    width: 30%;
-    padding: 2%;
+    max-width: 30%;
+    padding: 1%;
     flex-grow: 1;
     flex:16%;
     display: flex;
     flex-direction: column;
     border: 1px solid red;
 }
+// ^^^ increase the padding percent if you want more space between the items
 
 .product-pic img{
     max-width: 100%;
@@ -40,16 +43,29 @@
 }
 
 .product-info{
+    height: 40%;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
     border: 1px solid blue
 }
 
+.basic-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .product-name{
-    border: 1px solid black
+    border: 1px solid black;
+    padding: 1%;
 }
 .product-nums{
     border: 1px solid red;
+    padding: 1%
 }
 
 .product-btn-div{
     border: 1px solid green;
+    padding: 1%
 }
