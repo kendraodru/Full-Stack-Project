@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavBar = ({ currentUser, logout, otherForm})=>{
 
@@ -17,7 +17,9 @@ const NavBar = ({ currentUser, logout, otherForm})=>{
         <div className='root-nav'>
             <div className='root-left'>
                 <div className='root-nav-item'>
-                    <span className='root-title'>SKIN CARE</span>
+                    <span className='root-title'>
+                        <Link className="basic-link" to='/products'>SKIN CARE</Link>
+                    </span>
                 </div>
                 <div className='root-nav-item'>
                     <span className='root-title'>TO THE PEOPLE</span>

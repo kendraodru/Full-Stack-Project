@@ -34,8 +34,33 @@ instructions: "Wet face first. Put 1-2 pumps on wet hands, rub together into a l
 ingredients: "Proprietary Super Tea Blend: Kombucha Black Tea Ferment, Tree Bark Ferment, Ginger, Lactic Acid + Glycolic Acid, Citrus Bioflavonoids, and Lemon Water Extract",
 price: 35, size: "4.0oz")
 
-product2 = Product.create(name:"Superberry Hydrate + Glow Dream Mask",
+product3 = Product.create(name:"Superberry Hydrate + Glow Dream Mask",
 description:"The ultimate hydrating radiance boost. This overnight mask deeply hydrates, plumps and brightens with powerful, antioxidant-rich superberries and THD ascorbate, the latest clinically-proven form of stable Vitamin C. This formula helps to target dullness and uneven skin tone for brighter, more radiant skin.",
 ingredients: "Proprietary Superberry Blend: Maqui, acai, prickly pear, goji berry, sunflower, moringa, squalane.",
 instructions: "At night, apply an even layer to freshly cleansed skin before heading to bed. Follow your regular cleansing routine in the morning. Use nightly for best results.",
 price: 48, size: "2.0oz")
+
+product4 = Product.create(name:"Superfood Air-Whip Moisture Cream",
+description:"Get ready for some leafy green moisture with this lightweight, air-whipped moisture cream. All the antioxidant-packed superfoods you love combine forces with Hyaluronic Acid, creating a moisturizer that instantly restores, balances and conditions. Friendly for all skin types, best for combo/oily.",
+ingredients: "Proprietary Superfoods Blend: Kale, spinach, green tea, alfalfa, vitamins C, E, K.",
+instructions: "Smooth a dime-sized amount of cream into the skin until it is fully absorbed. Use morning and night.",
+price: 48, size: "2.0oz")
+
+product5 = Product.create(name:"Adaptogen Deep Moisture Cream",
+description:"A deeply hydrating moisturizer with superior plant extracts and a pro-grade peptide complex formulated for dry, reactive, and sensitive skin. ",
+ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
+instructions: "Apply to cleansed skin morning and evening after Superberry Hydrate Oil and Superfood Serum.",
+price: 58, size: "2.0oz")
+
+product6 = Product.create(name:"Adaptogen Soothe + Hydrate Activated Mist",
+description:"An ultra-fine mist that hydrates, calms visible redness, and evens the look of skin tone with antioxidant-rich adaptogens, hyaluronic acid, and soothing peptides—like a serum in a mist.",
+ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
+instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
+price: 42, size: "4.0oz")
+
+
+product6 = Product.create(name:"Adaptogen Soothe Mist",
+description:"An ultra-fine mist that hydrates, calms visible redness, and evens the look of skin tone with antioxidant-rich adaptogens, hyaluronic acid, and soothing peptides—like a serum in a mist.",
+ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
+instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
+price: 42, size: "4.0oz")

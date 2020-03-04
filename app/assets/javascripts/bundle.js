@@ -467,7 +467,10 @@ var NavBar = function NavBar(_ref) {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
-  }, "SKIN CARE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "basic-link",
+    to: "/products"
+  }, "SKIN CARE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
@@ -896,23 +899,6 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // const nameInput = (
-      //     <div>
-      //         <label className='form-label'>First Name:
-      //             <br/>
-      //             <input type="text" 
-      //             onChange={this.handleInput("first_name")} 
-      //             value={this.props.first_name} />
-      //         </label>
-      //         <br/>
-      //         <label className='form-label'>Last Name:
-      //             <br/>
-      //             <input type="text" 
-      //             onChange={this.handleInput("last_name")} 
-      //             value={this.props.first_name} />
-      //         </label>
-      //     </div>
-      // );
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "outter-form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -964,6 +950,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "submit-session"
       }, this.props.formType === 'Create Account' ? 'Sign up' : 'Login')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        id: this.props.formType === 'Create Account' ? "hide" : "show",
         className: "submit-session",
         onClick: this.handleDemoUser
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
