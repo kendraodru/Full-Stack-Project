@@ -10,9 +10,6 @@ const NavBar = ({ currentUser, logout, otherForm})=>{
     ) : (
             <span className='root-title'>
                 {otherForm}
-            {/* <NavLink  className='btn' to='/login'>ACCOUNT</NavLink> */}
-                {/* &nbsp;or&nbsp; */}
-            {/* <NavLink className='btn' to='/signup'>SIGN UP</NavLink> */}
             </span>
         )
 

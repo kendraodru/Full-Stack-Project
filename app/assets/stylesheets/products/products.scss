@@ -2,19 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.products-wrapper{
+    height: 100%;
+    border: 1px solid purple;
+}
+
+.inner-products-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
 .product-root {
+    height: 100%;
     border: 1px solid red;
 }
 .products-wrapper{
     border: 1px solid blue;
 }
 
-.products-wrapper{
-    border: 1px solid purple;
+.product-content{
+
 }
-.inner-products-wrapper{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+// pic and info inside^
+.product-pic{
+
+}
+
+.product-info{
+
+}
+
+// ^inside
+.product-name{
+
+}
+
+.product-nums{
+
+}
+.product-show-btn{
+
 }

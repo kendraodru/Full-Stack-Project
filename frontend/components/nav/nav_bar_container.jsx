@@ -11,9 +11,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     logout: () => (dispatch(logout())),
     otherForm: (
-        <button onClick={() => dispatch(openModal('login'))}>
-            Login
-      </button>
+        <span className='btn' onClick={() => dispatch(openModal('login'))}>
+            ACCOUNT
+      </span>
     ),
     closeModal: () => dispatch(closeModal())
 });
