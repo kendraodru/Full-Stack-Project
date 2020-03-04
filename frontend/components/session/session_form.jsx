@@ -70,7 +70,7 @@ export default class sessionForm extends React.Component {
                 <div className="hamburger"></div>
                 <div className='form-wrapper'>
                     <div className="background-form">
-                        <div onClick={this.props.closeModal} className="close-x">X</div>
+                        <div><span onClick={this.props.closeModal} className="close-x">×</span></div>
                         <div className="session-form-div">
                             <h1 className="form-title">{this.props.formType}</h1> 
                             <br/>
@@ -89,8 +89,6 @@ export default class sessionForm extends React.Component {
                                 <br/>
                                 {(this.props.formType === 'Create Account') ? nameInput : ''}
                                     <div className="bottom-form">
-                                        {/* <span>HELLO</span> */}
-                                    {/* <span className='submit-session' >LOGOUT</span> */}
                                         <span className="submit-session" onClick={this.handleSubmit}><p className="submit-session">{this.props.formType === 'Create Account' ? 'Sign up' : 'Login'}</p></span>
                                         {this.props.otherForm}
                                     </div>

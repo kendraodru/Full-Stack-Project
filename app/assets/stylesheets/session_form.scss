@@ -1,5 +1,9 @@
 .close-x{
+    font-size: 20px;
     color:black;
+}
+.close-x:hover{
+    cursor: pointer;
 }
 
 .background-form{
@@ -53,7 +57,7 @@ input{
     font-size:55px;
     // margin-bottom: 80px;
     text-align: center;
-    font-family: "Unica77 LL",sans-serif;
+    font-family: Dancing Script;
 }
 
 .session-link{
@@ -66,7 +70,7 @@ input{
     text-decoration: underline;
 }
 
-.submitsession{
+.submit-session{
     text-decoration: none;
     font-size: 13px;
     color: black;
@@ -88,5 +92,6 @@ input{
 .bottom-form{
     display:flex;
     justify-content: space-between;
+    padding-top: 5px;
 }
 
