@@ -17,7 +17,6 @@ export default class sessionForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps){
-        // debugger
         this.setState({errors: nextProps.errors})
     }
 
@@ -58,7 +57,7 @@ export default class sessionForm extends React.Component {
                 <div className="hamburger"></div>
                 <div className='form-wrapper'>
                     <div className="background-form">
-                        <div><span onClick={this.props.closeModal} className="close-x">×</span></div>
+                        <div className='close-x-div'><span onClick={this.props.closeModal} className="close-x">×</span></div>
                         <div className="session-form-div">
                             <h1 className="form-title">{this.props.formType}</h1> 
                             <br/>

@@ -858,7 +858,6 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   _createClass(sessionForm, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      // debugger
       this.setState({
         errors: nextProps.errors
       });
@@ -913,7 +912,9 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         className: "form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "background-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-x-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: this.props.closeModal,
         className: "close-x"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

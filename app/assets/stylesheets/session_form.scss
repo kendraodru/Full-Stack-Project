@@ -2,21 +2,57 @@
     display: none;
 }
 
+.close-x-div{
+    padding-left: 7px;
+    padding-top: 7px;
+
+}
+
 .close-x{
     font-size: 20px;
+    // padding-left: 8px;
+    // padding-right: 8px;
+    // padding-bottom: 8px;
+    // padding: 8px;
+    width: 100px;
+    height: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    // padding-right:3px;
+    // padding-right:3px;
+    border-radius: 50%;
     color:black;
 }
+
 .close-x:hover{
+    background-color: lightgrey;
     cursor: pointer;
+}
+.form-wrapper{
+    // border: 1px solid red;
+    border-radius: 3px;
+    // background-color:white;
+    box-shadow: grey;
+    // background-color: grey;
+    // background: url('oil.jpg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // -o-background-size: cover;
 }
 
 .background-form{
     display:flex;
-    border: 1px solid white;
-    border:1px solid black;
-    border-radius: 3px;
-    background-color:white;
+    // border: 1px solid white;
+    // border:1px solid black;
+    // border-radius: 3px;
+    // background-color:white;
     box-shadow: grey;
+    background: url('4.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -o-background-size: cover;
 }
 .session-form-box{
     display:flex;
@@ -26,9 +62,12 @@
 
 .session-form-div{
     padding: 30px;
+    // padding-left: 5px;
+    // width:100%;
     width: 505px;
     display: flex;
     flex-direction: column;
+    // align-items: center;
     box-sizing: border-box;
     border-radius: 3px;
 }
@@ -44,6 +83,7 @@
 .form-label{
     color:black;
     padding-top: 5px;
+    // width: 420px;
     // padding-bottom: 5px;
     font-size: 15px;
     font-family: "Unica77 LL",sans-serif;
@@ -52,14 +92,16 @@
 input{
     margin-top: 3px;
     margin-bottom: 3px;
-    margin-left: 0;
+    // margin-left: 3px;
     height: 32px;
-    padding-left: 10px;
+    // padding-left: 5px;
+    // padding-right: 5px;
     width: 100%;
     background-color:#F7F7F7;
     // background-color: hsla(0, 0%, 100%, 0.5);
     border: none;
     border-radius: 1px;
+    // box-sizing: content-box;
 }
 .form-title{
     color:black;
@@ -80,6 +122,7 @@ input{
 }
 
 .submit-session{
+    // width: 98%;
     padding: 1%;
 }
 
