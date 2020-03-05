@@ -64,3 +64,11 @@ description:"An ultra-fine mist that hydrates, calms visible redness, and evens 
 ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
 instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
 price: 42, size: "4.0oz")
+
+Cart.destroy_all
+
+cart1 = Cart.create(user_id: demo_user.id)
+cart2 = Cart.create(user_id: user4.id)
+
+cart_items1 = CartItem.create(cart_id: cart1.id, product_id: product3.id)
+cart_items2 = CartItem.create(cart_id: cart2.id, product_id: product2.id)
