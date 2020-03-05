@@ -42,13 +42,15 @@
 }
 
 .background-form{
+    width: 100%;
+    height: 100%;
     display:flex;
     box-shadow: grey;
     background: url('plant3.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -o-background-size: cover;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // -o-background-size: cover;
 }
 .session-form-box{
     display:flex;
