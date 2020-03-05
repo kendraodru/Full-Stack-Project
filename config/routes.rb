@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resources :products, only: [:index, :show]
+    resources :carts, only: [:create, :show]
+    resources :cart_items, only: [:create, :destroy]
+    # think about this^ do I need a update for my cart items?
     resource :session, only: [:create, :destroy]
   end
 end

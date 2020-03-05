@@ -70,5 +70,5 @@ Cart.destroy_all
 cart1 = Cart.create(user_id: demo_user.id)
 cart2 = Cart.create(user_id: user4.id)
 
-cart_items1 = CartItem.create(cart_id: cart1.id, product_id: product3.id)
-cart_items2 = CartItem.create(cart_id: cart2.id, product_id: product2.id)
+cart_items1 = CartItem.create(cart_id: cart1.id, product_id: product3.id,quantity:2)
+cart_items2 = CartItem.create(cart_id: cart2.id, product_id: product2.id, quantity:3)

@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class CartItem < ApplicationRecord
-    validates :cart_id, :product_id, presence:true
+    validates :cart_id, :quantity, :product_id, presence:true
 
     belongs_to :cart
     belongs_to :product
