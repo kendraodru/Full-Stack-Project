@@ -1,12 +1,10 @@
 .splash-tiles{
     height: 40vh;
-    // height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     padding-bottom: 3%;
-    // border: 1px solid green
 }
 .spalsh-tile{
     height: 35vh;
@@ -23,7 +21,6 @@
 .spalsh-tile:hover{
     border-bottom: 3px solid #EA4B37;
     border-radius: 3px;
-
 }
 
 .tile-title{
@@ -40,12 +37,8 @@
 
 .splash-img{
     height: 16vh;
-    // height: 50%;
-    // width: 50%;
 }
 
 .splash-img-last{
     height: 16vh;
-    // height: 45%;
-    // width: 45%;
 }
