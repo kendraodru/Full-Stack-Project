@@ -1,14 +1,16 @@
 import React from 'react';
-// import GreetingContainer from './greeting/greeting_container';
-import LoginFormContainer from './session/login_form_container';
-import SignupFormContainer from './session/signup_form_container';
+import { Route, Switch, Link, NavLink } from "react-router-dom";
 import Splash from './splash/splash';
 import ProductIndexContainer from './product/product_index_container';
-import { Route, Switch, Link, NavLink } from "react-router-dom";
-import { AuthRoute } from '../util/route_util';
+import ProductShowContainer from '../components/product/product_show_container';
 import NavBarContainer from './nav/nav_bar_container';
 import Modal from './modal/modal'
 import Footer from './footer/footer'
+// import { AuthRoute } from '../util/route_util';
+// import GreetingContainer from './greeting/greeting_container';
+// import LoginFormContainer from './session/login_form_container';
+// import SignupFormContainer from './session/signup_form_container';
+
 
 const App = () =>(
     <div>
@@ -17,8 +19,7 @@ const App = () =>(
             {<NavBarContainer/>}
         </header>
         <Switch>
-            {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+            <Route path='/products/:productName/:productId' component={ProductShowContainer}/>
             <Route path='/products' component={ProductIndexContainer}/>
             <Route path='/' component={Splash}/>
         </Switch>

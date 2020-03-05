@@ -22,7 +22,7 @@ export const fetchProducts = () => dispatch =>(
         .then(products => (dispatch(receive_products(products))))
 )
 
-export const fetchProduct = (productId) => dispatch =>(
-    productAPIUtil.fetchProduct(productId)
+export const fetchProduct = (productId) => dispatch =>{
+    return productAPIUtil.fetchProduct(productId)
         .then(product => (dispatch(receive_product(product))))
-)
+}
