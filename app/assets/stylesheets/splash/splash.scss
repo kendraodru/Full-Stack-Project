@@ -7,11 +7,12 @@
 }
 
 .root-pic{
-    background: url('oil.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -o-background-size: cover;
+    background: image-url("oil.jpg") no-repeat center center fixed;
+    // background: url({window.oil}) no-repeat center center fixed;
+    background-size: cover;
+    // &::-moz-background-size: cover;
+    // &::-o-background-size:cover;
+    // &::-o-background-siz:cover;
 }
 
 
