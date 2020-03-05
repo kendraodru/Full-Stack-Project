@@ -1058,6 +1058,11 @@ var PicSet = function PicSet() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://images.unsplash.com/photo-1506003094589-53954a26283f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
     alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1552046122-03184de85e08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pic-2nd-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1074,6 +1079,11 @@ var PicSet = function PicSet() {
     className: "bottom-pic-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://images.unsplash.com/photo-1573575155376-b5010099301b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-pic-7"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1555211652-5c6222f971bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
     alt: ""
   }))));
 };
@@ -1150,23 +1160,35 @@ var Tile = function Tile() {
     className: "splash-tiles"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spalsh-tile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "splash-img",
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP_SITE_ICONS-Vegan_300x300_8144ca39-7621-4e02-8b21-61fba84c9a19_300x300.png?v=1568164109",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-title"
   }, "100% Vegan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-text"
   }, "Cruelty-free = no animal products + no animal testing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spalsh-tile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "splash-img",
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP-SITE-ICONS-MadeinCA_300x300_2a761f7f-cce9-4b52-9be9-b2f7442c347f_300x300.png?v=1568164132",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-title"
   }, "Made in California"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-text"
   }, "Three generations of skincare expertise rooting in California")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "spalsh-tile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "splash-img-last",
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/YTTP-SITE-ICONS-Everyone_300x300_803246d6-79e0-44dd-bb32-9d89b546f446_300x300.png?v=1568164143",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-title"
   }, "Skincare for All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tile-text"
-  }, "We create for all genders, all skin types, all skin tones. all people")));
+  }, "We create for all\u2014all genders, all skin types, all skin tones. All people.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tile);

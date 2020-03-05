@@ -17,15 +17,19 @@
     width: 100%;
     display: flex;
     padding-bottom: 1%;
+    // justify-content: center;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 [class *= bottom-pic-] {
-
+    // display:block;
+    // padding: 2%;
 }
 
 [class *= bottom-pic-] img{
+    height: 55vh;
     border-radius: 2px;
 }
+
+
