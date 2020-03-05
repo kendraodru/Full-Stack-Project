@@ -93,7 +93,8 @@ input{
     text-align: center;
     border: 1px solid grey;
     font-family: "Unica77 LL",sans-serif;
-    transition-duration: 0.5s;
+    transition: all 0.3s ease-in-out;
+    // transition-duration: 0.5s;
 }
 
 .submit-session p:hover{

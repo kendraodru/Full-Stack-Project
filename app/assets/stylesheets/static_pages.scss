@@ -65,11 +65,13 @@
     text-decoration: none;
     font-family: "Unica77 LL bold",sans-serif;
     cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-btn:hover{
-    text-decoration: underline;
-    font-weight: bold;
+    // text-decoration: underline;
+    // font-weight: bold;
     color:#EA4B37
 }
 
