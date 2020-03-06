@@ -307,7 +307,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var Footer = function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "outter-footer"
+    className: "top-logo"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "yttp-footer-logo",
+    src: "https://cdn.shopify.com/s/files/1/0466/9701/files/yttp-logo_321x_2x_321x_2x_321x_2x_7ccc446e-d83f-454d-a826-0710f3c46b44_321x@2x.png?v=1562194452",
+    alt: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-logo"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inner-footer"
   })));
