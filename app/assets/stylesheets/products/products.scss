@@ -3,12 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// @media (max-width: 959px){
-//     .product-root{
-//         width: 50%;
-//     }
-// }
-
 .products-wrapper{
     padding-left: 12%;
     padding-right: 12%;
@@ -22,13 +16,6 @@
 .inner-products-wrapper{
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
-    // flex-direction: row;
-    // justify-content: flex-start;
-    // justify-content: space-evenly;
-    
-    // align-items: flex-start;
-    // added align-items center after mike
     height: 100%;
 }
 
@@ -58,31 +45,13 @@
     margin-top: auto;
 }
 
-
-// TESTING END
-// .inner-products-wrapper{
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
-// .product-root{
-//     max-width: 30%;
-//     padding: 1%;
-//     display: flex;
-//     flex-direction: column;
-// }
-
-// .product-pic img{
-//     max-width: 100%;
-// }
-
-
 .product-info{
     width: 100%;
     height: 40%;
     display: flex;
     flex-direction: row;
     align-content: stretch;
+    // justify-content: space-evenly;
     margin:auto;
     box-sizing: border-box;
 }
@@ -90,7 +59,7 @@
 .basic-info{
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
+    justify-content: space-between;
     width:100%
 }
 
@@ -98,17 +67,37 @@
     padding: 1%;
 }
 
-.product-name span{
-    font-size: 14px;
-    font-family: "Unica77 LL",sans-serif;
-}
 .product-nums{
     padding: 1%
 }
 
 .product-nums span{
-    font-size: 13px;
-    font-family: "Unica77 LL",sans-serif;
+    font-size: 14px;
+    font-family: "Unica77 LL" bold ,sans-serif;
+}
+
+.link span{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Unica77 LL" ,sans-serif;
+    color:black;
+}
+
+.link:after{
+  content: '';
+  width: 0%; height: 1px;
+  display: block;
+  margin-top: 2px;
+  right: 0;
+  background: black;
+  transition: width .1s ease;
+  -webkit-transition: width .5s ease;
+}
+ 
+.link:hover:after{
+  width: 100%;
+  left: 0;
+  background: black;
 }
 
 .product-btn-div{
@@ -119,17 +108,22 @@
     align-items: center;
     box-sizing: border-box;
 }
-
 .product-show-btn{
     font-size: 12px;
     height: 80%;
-    width: 90%;
+    width: 100%;
     color:white;
-    font-family: "Unica77 LL",sans-serif;
+    font-family: "Unica77 LL" bold,sans-serif;
     background-color: #EA4A37;
     padding-right: 10%;
     padding-left: 10%;
-    // padding: 10%;
     padding-bottom: 5%;
-    border-radius: 2px;
+    border-radius: 3px;
+}
+
+.product-index-show-link{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Unica77 LL" ,sans-serif;
+    color:black;
 }

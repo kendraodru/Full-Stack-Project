@@ -689,18 +689,26 @@ var ProductIndexItem = function ProductIndexItem(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-root",
     key: key
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "product-index-show-link",
+    href: "/#/products/".concat(product.name, "/").concat(product.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-pic"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://images.unsplash.com/photo-1551945326-df678a97c3af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
     alt: ""
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "basic-info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-name"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "product-index-show-link",
+    href: "/#/products/".concat(product.name, "/").concat(product.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-nums"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "product-btn-div"
