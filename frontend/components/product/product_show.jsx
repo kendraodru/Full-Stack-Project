@@ -18,10 +18,55 @@ class ProductShow extends React.Component {
         return(
             <div>
                 <div className="hamburger"></div>
-                <p>hello</p>
-                <p className="hereIAM">{product.description}</p>
-                {/* <p>bye</p> */}
-                {/* {this.props.product} */}
+                <div className="inner-show-wrapper">
+                    <div className='show-main-content'>
+                        <div className='show-main-content-wrapper'>
+                            <div className='show-pic-wrapper'>
+                                <div className="show-pic">
+                                    <img src="https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
+                                </div>
+                            </div>
+                            <div className='show-content-info-wrapper'>
+                                <div className='show-info'>
+                                    <div className='show-basic-info'>
+                                        <div className='show-product-title'>
+                                            {product.name}
+                                        </div>
+                                        <div className='show-product-price'>
+                                            {product.price}
+                                        </div>
+                                        <div>
+                                            ***
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className='show-product-description'>
+                                            {product.description}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button>Read more</button>
+                                    </div>
+                                    <div>
+                                        <button>Add to cart</button>
+                                    </div>
+                                </div>
+                                <div className='show-info-btn'>
+                                    {/* <div> */}
+                                        <div>
+                                            Share on:
+                                        </div>
+                                        <div>
+                                            <i class="fab fa-facebook-square"></i>
+                                            <i class="fab fa-twitter-square"></i>
+                                            <i class="fab fa-pinterest-square"></i>
+                                        </div>
+                                    {/* </div> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
