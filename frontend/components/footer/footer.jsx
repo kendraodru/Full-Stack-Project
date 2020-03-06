@@ -3,7 +3,13 @@ import React from 'react'
 const Footer = ()=>{
     return(
         <footer>
-            <div className='footer-links'>
+            <div className='outter-footer'></div>
+            <div>
+                <div className="inner-footer">
+                   
+                </div> 
+            </div>
+            {/* <div className='footer-links'>
                 <div className='footer-set'>
                     <div className='footer-title'>
                         <span>Shop</span>
@@ -34,7 +40,7 @@ const Footer = ()=>{
                         <span> <a id="a" href="/">Instagram</a></span>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </footer>
     )
 };

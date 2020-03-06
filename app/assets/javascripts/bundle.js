@@ -307,53 +307,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var Footer = function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-links"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-set"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Shop")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-title-items"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "All Skin Care"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Face Cleansers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Eye Cream"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-set"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-title-items"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Our Ethos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Our Mission"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Our Story"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-set"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Social")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-title-items"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    id: "a",
-    href: "/"
-  }, "Instagram"))))));
+    className: "outter-footer"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inner-footer"
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
