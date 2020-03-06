@@ -763,17 +763,30 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         className: "show-product-title"
       }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-product-price"
-      }, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "***")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$".concat(product.price, " / ").concat(product.size)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-product-rating"
+      }, "Rated 4.5 stars out of 5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-product-description"
-      }, product.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Read more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Add to cart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, product.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "show-read-more",
+        href: "/"
+      }, "Read more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-add-to-cart"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Add to cart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-info-btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Share on:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-facebook-square"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-show-info-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-share"
+      }, "Share on:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-icon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-facebook-square"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-twitter-square"
+        className: "fab fa-twitter-square"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-pinterest-square"
-      }))))))));
+        className: "fab fa-pinterest-square"
+      })))))))));
     }
   }]);
 

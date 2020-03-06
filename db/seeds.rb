@@ -23,12 +23,12 @@ email:"justry@gmail.com", password: "password")
 Product.destroy_all
 
 product1 = Product.create(name:"Superfood Cleanser",
-description:"high natural moisture content and cooling properties.",
+description:"Our powerful, but gentle daily face wash is formulated with cold-pressed antioxidants - kale, spinach, and green tea - to give your skin the ultimate cleanse.",
 ingredients: "Proprietary Superfoods Blend: Kale, Spinach, Green Tea, Alfalfa, Vitamins C, E, K",
 instructions: "Wet face first. Put 1-2 pumps on wet hands, rub together into a light lather and massage into face and neck for 30 seconds to activate the cold-pressed antioxidants. Rinse thoroughly.",
 price: 35, size: "8.0oz")
 
-product2 = Product.create(name:"Kombucha + 11% AHA Exfoliation Power Toner",
+product2 = Product.create(name:"Kombucha + AHA Exfoliation Power Toner",
 description:"The newest addition to your nightly routine. This triple-action power toner blends 8% lactic acid and 3% glycolic acid to smooth skin texture and minimize the appearance of pores. The two ferments, kombucha black tea, and tree bark work as prebiotics to enhance the skin’s natural microbiome.",
 instructions: "Wet face first. Put 1-2 pumps on wet hands, rub together into a light lather and massage into face and neck for 30 seconds to activate the cold-pressed antioxidants. Rinse thoroughly.",
 ingredients: "Proprietary Super Tea Blend: Kombucha Black Tea Ferment, Tree Bark Ferment, Ginger, Lactic Acid + Glycolic Acid, Citrus Bioflavonoids, and Lemon Water Extract",

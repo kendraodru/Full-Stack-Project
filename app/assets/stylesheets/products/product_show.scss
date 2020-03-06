@@ -1,52 +1,132 @@
 .show-main-content{
     display: flex;
     justify-content: center;
-    // align-items: center;
-    border: 1px solid green
+    height: 100%;
 }
 
 .show-main-content-wrapper{
     margin-top: 3%;
+    padding-left: 3%;
     width: 80%;
     display:flex;
-    justify-content: space-around;
-    // align-items: center;
-    border: 1px solid purple;
 }
 .show-pic img{
-    height: 300px;
+    height: 518px;
     width: 100%;
-    border: 1px solid blue;
-    // background-color: blue;
 }
 
 .show-content-info-wrapper{
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: 1px solid black;
+    align-items: center;
+    width:50%;
+    height: 100%
 }
 
 .show-info{
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    border: 1px solid yellow;
+    justify-content: space-evenly;
 }
 
 .show-basic-info{
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 40%;
+    // justify-content: space-between;
+    // height: 40%;
+}
+
+.show-product-title{
+    font-family: "Unica77 LL",sans-serif;
+    font-size: 26px;
+    padding: 2%
+    // max-width: 30vw;
+    // width:51%
+}
+
+.show-product-price{
+    font-family: "Unica77 LL",sans-serif;
+    font-size: 25px;
+    padding: 2%
+}
+
+.show-product-description{
+    max-width: 24vw;
+    height: 100%;
+    // width:51%;
+    font-size: 15px;
+    font-family: "Unica77 LL",sans-serif;
+    line-height: 20px;
+}
+
+.show-product-rating{
+    padding: 2%;
+    font-family: "Unica77 LL",sans-serif;
 }
 
 .show-info-btn{
     display: flex;
-    // flex-direction: row;
-    justify-content: space-between;
-    width: 100%
+    justify-content: flex-start;
+    width: 75%;
+
 }
+
+.show-info-btn{
+   border-top: 1px solid;
+   border-bottom: 1px solid black;
+   width: 65% 
+}
+
+.inner-show-info-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    padding: 2%    
+}
+
+.show-read-more{
+    font-size:12px;
+    font-family: "Unica77 LL",sans-serif;
+    color:#A9A9A9;
+    text-decoration: none;
+     transition: all 0.3s ease-in-out;
+}
+
+.show-read-more:hover{
+    color:#EA4B37
+}
+
+.show-add-to-cart{
+
+}
+
+.show-add-to-cart{
+}
+
+.show-share{
+    padding-right: 10%;
+}
+
+.show-icon{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.fab ,.fa-facebook-square{
+    font-size: 20px;
+}
+.fab ,.fa-twitter-square{
+    font-size: 20px;
+}
+.fab ,.fa-pinterest-square{
+    font-size: 20px;
+}
+
+
+

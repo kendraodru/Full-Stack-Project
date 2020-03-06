@@ -33,10 +33,10 @@ class ProductShow extends React.Component {
                                             {product.name}
                                         </div>
                                         <div className='show-product-price'>
-                                            {product.price}
+                                            {`$${product.price} / ${product.size}`}
                                         </div>
-                                        <div>
-                                            ***
+                                        <div className='show-product-rating'>
+                                            Rated 4.5 stars out of 5
                                         </div>
                                     </div>
                                     <div>
@@ -45,23 +45,23 @@ class ProductShow extends React.Component {
                                         </div>
                                     </div>
                                     <div>
-                                        <button>Read more</button>
+                                        <a className='show-read-more' href="/">Read more</a>
                                     </div>
-                                    <div>
+                                    <div className='show-add-to-cart'>
                                         <button>Add to cart</button>
                                     </div>
                                 </div>
                                 <div className='show-info-btn'>
-                                    {/* <div> */}
-                                        <div>
+                                    <div className='inner-show-info-btn'>
+                                        <div className="show-share">
                                             Share on:
                                         </div>
-                                        <div>
-                                            <i class="fab fa-facebook-square"></i>
-                                            <i class="fab fa-twitter-square"></i>
-                                            <i class="fab fa-pinterest-square"></i>
+                                        <div className="show-icon">
+                                            <i className="fab fa-facebook-square"></i>
+                                            <i className="fab fa-twitter-square"></i>
+                                            <i className="fab fa-pinterest-square"></i>
                                         </div>
-                                    {/* </div> */}
+                                    </div>
                                 </div>
                             </div>
                         </div>
