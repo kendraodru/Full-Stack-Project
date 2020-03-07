@@ -40,7 +40,8 @@
     max-height: 80%;
     display:flex;
     box-shadow: grey;
-    background: url('plant3.jpg') no-repeat center center fixed;
+    // background-color: #EDEDED;
+    background: url('6.jpg') no-repeat center center fixed;
     animation: session-drop 1s ease forwards;
 }
 
@@ -123,6 +124,7 @@ input{
     border: 1px solid lightgray;
     font-family: "Unica77 LL",sans-serif;
     transition: all 0.3s ease-in-out;
+    padding-top:3%;
     // transition-duration: 0.5s;
 }
 
