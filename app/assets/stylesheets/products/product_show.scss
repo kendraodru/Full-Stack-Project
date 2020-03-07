@@ -59,6 +59,7 @@
     font-size: 15px;
     font-family: "Unica77 LL",sans-serif;
     line-height: 20px;
+    padding: 2%;
 }
 
 .show-product-rating{
@@ -69,29 +70,27 @@
 .show-info-btn{
     display: flex;
     justify-content: flex-start;
-    width: 75%;
+    // width: 75%;
+    width: 100%;
 
 }
 
 .show-info-btn{
    border-top: 1px solid;
    border-bottom: 1px solid black;
-   width: 65% 
+//    width: 100%;
+   border: 1px solid purple
+
 }
 
-.inner-show-info-btn{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 60%;
-    padding: 2%    
-}
+
 
 .show-read-more{
     font-size:12px;
     font-family: "Unica77 LL",sans-serif;
     color:#A9A9A9;
     text-decoration: none;
+    padding:2%;
      transition: all 0.3s ease-in-out;
 }
 
@@ -100,11 +99,15 @@
 }
 
 .show-add-to-cart{
-
+    padding: 2%
 }
 
-.show-add-to-cart{
+.inner-show-info-btn{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12%    
 }
+
 
 .show-share{
     padding-right: 10%;
@@ -113,8 +116,9 @@
 .show-icon{
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+
 }
 
 

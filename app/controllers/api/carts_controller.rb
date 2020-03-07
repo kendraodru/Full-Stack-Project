@@ -2,15 +2,19 @@ class Api::CartsController < ApplicationController
 
     def create
         @cart = Cart.new(cart_params)
-        render 'api/carts/show'
+        if @cart.save
+            render 'api/carts/show'
+        else
+            render json: @cart.errors.full_messages, status: 422
+        end
     end
 
     def show
-        @cart = Cart.find_by(id:params[:id])
+        @cart = current_user.cart
         render 'api/carts/show'
     end
 
     def cart_params
-        params.require(cart).permit(:user_id)
+        params.require(:cart).permit(:user_id)
     end
 end

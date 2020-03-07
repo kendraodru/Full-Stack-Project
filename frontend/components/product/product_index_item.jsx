@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ProductIndexItem = ({product, key }) =>{
+const ProductIndexItem = ({product}) =>{
     return (
-        <div className='product-root' key= {key}>
+        <div className='product-root' >
             {/* <div className='product-content'> */}
                 <a className="product-index-show-link" href={`/#/products/${product.name}/${product.id}`}>
                 <div className='product-pic'>

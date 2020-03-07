@@ -647,11 +647,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProductIndexItem = function ProductIndexItem(_ref) {
-  var product = _ref.product,
-      key = _ref.key;
+  var product = _ref.product;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-root",
-    key: key
+    className: "product-root"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "product-index-show-link",
     href: "/#/products/".concat(product.name, "/").concat(product.id)

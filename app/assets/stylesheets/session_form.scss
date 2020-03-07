@@ -33,12 +33,6 @@
     border-radius: 3px;
     // background-color:white;
     box-shadow: grey;
-    // background-color: grey;
-    // background: url('oil.jpg') no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // -o-background-size: cover;
 }
 
 .background-form{
@@ -46,7 +40,6 @@
     max-height: 80%;
     display:flex;
     box-shadow: grey;
-    // background-color: grey;
     background: url('plant3.jpg') no-repeat center center fixed;
     animation: session-drop 1s ease forwards;
 }
@@ -134,7 +127,6 @@ input{
 }
 
 .submit-session p:hover{
-    // background-color:#EA4B37 ;
     background-color:#B0384C ;
     color:white;
     font-weight: bold;

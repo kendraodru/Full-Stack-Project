@@ -1,15 +1,9 @@
-# json.extract! @cart,
-# :user_id
+json.set! @cart.id do
+    json.extract! @cart, :id, :user_id
+end
 
-# # json.cart
-# #     json.set! cart.id do 
-
-# # end
-
-
-# json.products do
-#     @cart.products.each |product|
-#     json.set! product.id 
-#         json.extract! product,  :id, :name, :price, :size, :description
-#     end
+# json.cart_item do
+    # @cart.cart_items.each do |cart_item|
+    #     json.partial! 'api/cart_items/cart_item', cart_item: cart_item
+    # end
 # end
