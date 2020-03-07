@@ -1614,13 +1614,14 @@ var configureStore = function configureStore() {
 /*!********************************************!*\
   !*** ./frontend/util/products_api_util.js ***!
   \********************************************/
-/*! exports provided: fetchProducts, fetchProduct */
+/*! exports provided: fetchProducts, fetchProduct, fetchCartProducts */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProducts", function() { return fetchProducts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchProduct", function() { return fetchProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCartProducts", function() { return fetchCartProducts; });
 var fetchProducts = function fetchProducts() {
   return $.ajax({
     url: "/api/products",
@@ -1630,6 +1631,13 @@ var fetchProducts = function fetchProducts() {
 var fetchProduct = function fetchProduct(productId) {
   return $.ajax({
     url: "/api/products/".concat(productId),
+    method: 'GET'
+  });
+}; // Cart products
+
+var fetchCartProducts = function fetchCartProducts(cartId) {
+  return $.ajax({
+    url: "api/carts/".concat(cartId, "/products"),
     method: 'GET'
   });
 };

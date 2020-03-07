@@ -11,3 +11,11 @@ export const fetchProduct = (productId)=>(
         method: 'GET'
     })
 ) 
+
+// Cart products
+export const fetchCartProducts = (cartId) =>(
+    $.ajax({
+        url:`api/carts/${cartId}/products`,
+        method: 'GET'
+    })
+)

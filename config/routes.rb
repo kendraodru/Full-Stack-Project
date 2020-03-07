@@ -4,12 +4,22 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resources :products, only: [:index, :show]
-    resources :carts, only: [:create, :show]
-    resources :cart_items, only: [:create, :index,:destroy]
-    resource :session, only: [:create, :destroy]    
+    # resources :carts, only: [:create, :show]
+    # resources :carts, only: [:show]
+    resources :cart_items, only: [:create, :index, :destroy, :update]
+    # user may want to increase or decrease the quantity
+    resource :session, only: [:create, :destroy] 
+    
+    
     resources :carts, only: [:show] do
       resources :products, only: [:index]
     end 
+
+    resources :users, only: [:create] do
+      resources :carts, only: [:create]
+    end
+
+
     
   end
 end
