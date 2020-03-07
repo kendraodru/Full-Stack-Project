@@ -11,7 +11,6 @@ class Api::CartItemsController < ApplicationController
 
     def index
         @items = current_user.cart.cart_items
-        # render json: @items
         render 'api/cart_items/index'
     end
 

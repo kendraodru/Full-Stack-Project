@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :show]
     resources :carts, only: [:create, :show]
     resources :cart_items, only: [:create, :index,:destroy]
-    # think about this^ do I need a update for my cart items?
-    resource :session, only: [:create, :destroy]      
+    resource :session, only: [:create, :destroy]    
+    resources :carts, only: [:show] do
+      resources :products, only: [:index]
+    end 
     
   end
 end
