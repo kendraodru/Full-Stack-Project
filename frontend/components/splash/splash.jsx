@@ -1,6 +1,7 @@
 import React from 'react'
 import Tile from './tile';
-import PicSet from './photoset'
+import PicSet from './photoset';
+import MidSplash from './mid_splash'
 
 const Splash = ()=>{
     return(
@@ -26,11 +27,12 @@ const Splash = ()=>{
                     </div>
                 </div>
             </div>
-            <div className="TESTER">
+            {/* <div className="TESTER">
 
-            </div>
+            </div> */}
             <div className="lower-splash-content-outter-div">
                 <div className='lower-splash-content'>
+                    < MidSplash />
                     <Tile />
                     <PicSet />
                 </div>
