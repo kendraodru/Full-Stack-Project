@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/cart_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_CART, CREATE_CART, receiveCart, createCart, fetchCart */
+/*! exports provided: RECEIVE_CART, CREATE_CART, receiveCart, fetchCart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,7 +98,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CART", function() { return RECEIVE_CART; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_CART", function() { return CREATE_CART; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCart", function() { return receiveCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCart", function() { return createCart; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
 /* harmony import */ var _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_api_util */ "./frontend/util/cart_api_util.js");
 
@@ -109,22 +108,19 @@ var receiveCart = function receiveCart(payload) {
     type: RECEIVE_CART,
     payload: payload
   };
-}; // do i need to create a cart? - my controller and ajax might do this for me
-
-var createCart = function createCart(cart) {
-  return {
-    type: CREATE_CART,
-    cart: cart
-  };
-}; // THUNK
-
+};
 var fetchCart = function fetchCart() {
   return function (dispatch) {
     return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (payload) {
       return dispatch(receiveCart(payload));
     });
   };
-}; // export const postCart = (userId) =>(
+}; // dont need a create cart action
+// export const createCart  = (cart) =>({
+//     type: CREATE_CART,
+//     cart
+// }) 
+// export const postCart = (userId) =>(
 //     cartAPIUtil.postCart(userId)
 //         .then(cart => (dispatch(createCart(cart))))
 // )
@@ -148,6 +144,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCartItem", function() { return updateCartItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCartItem", function() { return deleteCartItem; });
 /* harmony import */ var _util_cart_items_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_items_api_util */ "./frontend/util/cart_items_api_util.js");
+// might refactor this whole page
 
 var RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
 var REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
@@ -1483,6 +1480,8 @@ var Tile = function Tile() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+
 
 
 var cartItemReducer = function cartItemReducer() {
@@ -1492,6 +1491,9 @@ var cartItemReducer = function cartItemReducer() {
   var nextState = Object.assign({}, state);
 
   switch (action.type) {
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
+      return action.payload.cart_items;
+
     case _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEM"]:
       nextState[action.cartItem.id] = action.cartItem;
       return nextState;
@@ -1530,6 +1532,7 @@ var cartReducer = function cartReducer() {
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
       return action.payload.cart;
+    // case:
 
     default:
       return state;

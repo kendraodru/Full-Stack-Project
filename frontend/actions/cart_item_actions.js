@@ -1,4 +1,7 @@
+// might refactor this whole page
 import * as cartItemsAPIUtil from '../util/cart_items_api_util';
+
+
 export const RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 
