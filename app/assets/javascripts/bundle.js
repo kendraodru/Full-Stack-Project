@@ -86,6 +86,111 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/cart_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/cart_actions.js ***!
+  \******************************************/
+/*! exports provided: RECEIVE_CART, CREATE_CART, receiveCart, createCart, fetchCart, postCart */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CART", function() { return RECEIVE_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_CART", function() { return CREATE_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCart", function() { return receiveCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCart", function() { return createCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postCart", function() { return postCart; });
+/* harmony import */ var _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_api_util */ "./frontend/util/cart_api_util.js");
+
+var RECEIVE_CART = 'RECEIVE_CART';
+var CREATE_CART = 'CREATE_CART';
+var receiveCart = function receiveCart(cart) {
+  return {
+    type: RECEIVE_CART,
+    cart: cart
+  };
+}; // do i need to create a cart? - my controller and ajax might do this for me
+
+var createCart = function createCart(cart) {
+  return {
+    type: CREATE_CART,
+    cart: cart
+  };
+}; // THUNK
+
+var fetchCart = function fetchCart() {
+  return function (dispatch) {
+    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (cart) {
+      return dispatch(receiveCart(cart));
+    });
+  };
+};
+var postCart = function postCart(userId) {
+  return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["postCart"](userId).then(function (cart) {
+    return dispatch(createCart(cart));
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/actions/cart_item_actions.js":
+/*!***********************************************!*\
+  !*** ./frontend/actions/cart_item_actions.js ***!
+  \***********************************************/
+/*! exports provided: RECEIVE_CART_ITEM, REMOVE_CART_ITEM, receiveCartItem, removeCartItem, postCartItem, updateCartItem, deleteCartItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CART_ITEM", function() { return RECEIVE_CART_ITEM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_CART_ITEM", function() { return REMOVE_CART_ITEM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCartItem", function() { return receiveCartItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeCartItem", function() { return removeCartItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postCartItem", function() { return postCartItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCartItem", function() { return updateCartItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCartItem", function() { return deleteCartItem; });
+/* harmony import */ var _util_cart_items_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_items_api_util */ "./frontend/util/cart_items_api_util.js");
+
+var RECEIVE_CART_ITEM = "RECEIVE_CART_ITEM";
+var REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
+var receiveCartItem = function receiveCartItem(cartItem) {
+  return {
+    type: RECEIVE_CART_ITEM,
+    cartItem: cartItem
+  };
+};
+var removeCartItem = function removeCartItem(cartItemId) {
+  return {
+    type: REMOVE_CART_ITEM,
+    cartItemId: cartItemId
+  };
+}; // THUNK
+
+var postCartItem = function postCartItem(cartItem) {
+  return function (dispatch) {
+    return _util_cart_items_api_util__WEBPACK_IMPORTED_MODULE_0__["postCartItem"](cartItem).then(function (cartItem) {
+      return dispatch(receiveCartItem(cartItem));
+    });
+  };
+};
+var updateCartItem = function updateCartItem(cartItem) {
+  return function (dispatch) {
+    return _util_cart_items_api_util__WEBPACK_IMPORTED_MODULE_0__["updateCartItem"](cartItem).then(function (cartItem) {
+      return dispatch(receiveCartItem(cartItem));
+    });
+  };
+};
+var deleteCartItem = function deleteCartItem(cartItemId) {
+  return function (dispatch) {
+    return _util_cart_items_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteCartItem"](cartItemId).then(function () {
+      return dispatch(removeCartItem(cartItemId));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -1316,6 +1421,76 @@ var Tile = function Tile() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/cart_items_reducer.js":
+/*!*************************************************!*\
+  !*** ./frontend/reducers/cart_items_reducer.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
+
+
+var cartItemReducer = function cartItemReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEM"]:
+      nextState[action.cartItem.id] = action.cartItem;
+      return nextState;
+
+    case _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CART_ITEM"]:
+      delete nextState[action.cartItemId];
+      return nextState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cartItemReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/cart_reducer.js":
+/*!*******************************************!*\
+  !*** ./frontend/reducers/cart_reducer.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+
+
+var cartReducer = function cartReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
+      return action.cart;
+
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["CREATE_CART"]:
+      return action.cart;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cartReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1328,12 +1503,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _products_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products_reducer */ "./frontend/reducers/products_reducer.js");
+/* harmony import */ var _cart_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cart_reducer */ "./frontend/reducers/cart_reducer.js");
+/* harmony import */ var _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart_items_reducer */ "./frontend/reducers/cart_items_reducer.js");
+
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  carts: _cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  cartItems: _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1607,6 +1788,78 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/cart_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/cart_api_util.js ***!
+  \****************************************/
+/*! exports provided: fetchCart, postCart */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postCart", function() { return postCart; });
+var fetchCart = function fetchCart() {
+  return $.ajax({
+    url: "api/carts/show",
+    method: 'GET'
+  });
+}; // ^i use current user to find the cart so dont need to feed it in anything
+// so in my sign up from I need to also have a function that will create my cart
+
+var postCart = function postCart(userId) {
+  return $.ajax({
+    url: "/api/users/".concat(userId, "/carts"),
+    method: 'POST',
+    data: {
+      cart: {
+        user_id: userId
+      }
+    }
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/cart_items_api_util.js":
+/*!**********************************************!*\
+  !*** ./frontend/util/cart_items_api_util.js ***!
+  \**********************************************/
+/*! exports provided: postCartItem, updateCartItem, deleteCartItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postCartItem", function() { return postCartItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCartItem", function() { return updateCartItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCartItem", function() { return deleteCartItem; });
+var postCartItem = function postCartItem(cartItem) {
+  return $.ajax({
+    url: "/api/cart_items",
+    method: "POST",
+    data: {
+      cartItem: cartItem
+    }
+  });
+};
+var updateCartItem = function updateCartItem(cartItem) {
+  return $.ajax({
+    url: "api/cart_items/".concat(cartItem.id),
+    method: 'PATCH',
+    data: {
+      cartItem: cartItem
+    }
+  });
+};
+var deleteCartItem = function deleteCartItem(cartItemId) {
+  return $.ajax({
+    url: "api/cart_items/".concat(cartItemId),
+    method: "DELETE"
+  });
+};
 
 /***/ }),
 

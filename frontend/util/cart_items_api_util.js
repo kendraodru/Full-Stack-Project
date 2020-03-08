@@ -1,4 +1,4 @@
-export const postCartItem = (cartItem) =>(
+export const postCartItem = cartItem =>(
     $.ajax({
         url:`/api/cart_items`,
         method: `POST`,
@@ -6,7 +6,7 @@ export const postCartItem = (cartItem) =>(
     })
 )
 
-export const updateCartItem = (cartItem) =>(
+export const updateCartItem = cartItem =>(
     $.ajax({
         url:`api/cart_items/${cartItem.id}`,
         method: 'PATCH',
@@ -14,7 +14,7 @@ export const updateCartItem = (cartItem) =>(
     })
 )
 
-export const deleteCartItem = (cartItemId) =>(
+export const deleteCartItem = cartItemId =>(
     $.ajax({
         url:`api/cart_items/${cartItemId}`,
         method: `DELETE`
