@@ -19,7 +19,8 @@ const MidSplash = () =>{
                 </div>
                 <div className="best-item-wrapper">
                     <div className='best-item-img'>
-                        <img src="https://images.unsplash.com/photo-1530733895788-f39cc96b6ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" />
+                        <img src="<%=kale=>" alt=""/>
+                        {/* <img src="https://images.unsplash.com/photo-1530733895788-f39cc96b6ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" /> */}
                             {/* <img src="https://media.allure.com/photos/5cd0800c0c6dfb3ab780f299/1:1/w_1600%2Cc_limit/seal-youth-to-the-people-superfood-antioxidant-cleanser.jpg" alt=""/> */}
                     </div>
                     <div className='best-item-title'>

@@ -1,13 +1,13 @@
 class Api::CartItemsController < ApplicationController
 
-    def create
-        @cart_item = CartItem.new(cart_item_params)
-        if @cart_item.save
-            render 'api/cart_items/show'
-        else
-            render json: @cart_item.errors.full_messages, status: 404
-        end
-    end
+    # def create
+    #     @cart_item = CartItem.new(cart_item_params)
+    #     if @cart_item.save
+    #         render 'api/cart_items/show'
+    #     else
+    #         render json: @cart_item.errors.full_messages, status: 404
+    #     end
+    # end
 
     def index
         @cart_items = current_user.cart.cart_items

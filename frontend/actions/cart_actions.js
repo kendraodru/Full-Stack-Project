@@ -4,9 +4,9 @@ export const RECEIVE_CART = 'RECEIVE_CART';
 export const CREATE_CART = 'CREATE_CART';
 
 
-export const receiveCart = (cart) => ({
+export const receiveCart = (payload) => ({
     type: RECEIVE_CART,
-    cart 
+    payload 
 })
 
 // do i need to create a cart? - my controller and ajax might do this for me
@@ -19,11 +19,11 @@ export const createCart  = (cart) =>({
 
 export const fetchCart = () => dispatch =>(
     cartAPIUtil.fetchCart()
-        .then(cart => (dispatch(receiveCart(cart))))
+        .then(payload => (dispatch(receiveCart(payload))))
 )
 
-export const postCart = (userId) =>(
-    cartAPIUtil.postCart(userId)
-        .then(cart => (dispatch(createCart(cart))))
-)
+// export const postCart = (userId) =>(
+//     cartAPIUtil.postCart(userId)
+//         .then(cart => (dispatch(createCart(cart))))
+// )
 

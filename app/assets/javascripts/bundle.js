@@ -90,7 +90,7 @@
 /*!******************************************!*\
   !*** ./frontend/actions/cart_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_CART, CREATE_CART, receiveCart, createCart, fetchCart, postCart */
+/*! exports provided: RECEIVE_CART, CREATE_CART, receiveCart, createCart, fetchCart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,15 +100,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCart", function() { return receiveCart; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCart", function() { return createCart; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postCart", function() { return postCart; });
 /* harmony import */ var _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_api_util */ "./frontend/util/cart_api_util.js");
 
 var RECEIVE_CART = 'RECEIVE_CART';
 var CREATE_CART = 'CREATE_CART';
-var receiveCart = function receiveCart(cart) {
+var receiveCart = function receiveCart(payload) {
   return {
     type: RECEIVE_CART,
-    cart: cart
+    payload: payload
   };
 }; // do i need to create a cart? - my controller and ajax might do this for me
 
@@ -121,16 +120,14 @@ var createCart = function createCart(cart) {
 
 var fetchCart = function fetchCart() {
   return function (dispatch) {
-    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (cart) {
-      return dispatch(receiveCart(cart));
+    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (payload) {
+      return dispatch(receiveCart(payload));
     });
   };
-};
-var postCart = function postCart(userId) {
-  return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["postCart"](userId).then(function (cart) {
-    return dispatch(createCart(cart));
-  });
-};
+}; // export const postCart = (userId) =>(
+//     cartAPIUtil.postCart(userId)
+//         .then(cart => (dispatch(createCart(cart))))
+// )
 
 /***/ }),
 
@@ -329,7 +326,8 @@ var signup = function signup(formUser) {
 };
 var login = function login(formUser) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["postSession"](formUser).then(function (user) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["postSession"](formUser) // .then(res => (console.log(res)))
+    .then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
       return dispatch(receiveSessionErrors(err.responseJSON));
@@ -1285,7 +1283,7 @@ var MidSplash = function MidSplash() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "best-item-img"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://images.unsplash.com/photo-1530733895788-f39cc96b6ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    src: "<%=kale=>",
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "best-item-title"
@@ -1531,10 +1529,7 @@ var cartReducer = function cartReducer() {
 
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
-      return action.cart;
-
-    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["CREATE_CART"]:
-      return action.cart;
+      return action.payload.cart;
 
     default:
       return state;
@@ -1634,6 +1629,8 @@ function modalReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+
 
 
 var productReducer = function productReducer() {
@@ -1649,6 +1646,9 @@ var productReducer = function productReducer() {
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCT"]:
       nextState[action.product.id] = action.product;
       return nextState;
+
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
+      return action.payload.products;
 
     default:
       return state;
@@ -1747,9 +1747,14 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return Object.assign({}, {
-        id: action.currentUser.id
-      });
+      // return Object.assign({}, {id: action.currentUser.id});
+      // return action.currentUser.id;
+      // debugger
+      // return { id: action.currentUser.id}
+      // return action.currentUser
+      return {
+        id: Object.keys(action.currentUser)[0]
+      };
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullSession;
@@ -1794,8 +1799,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 var usersReducer = function usersReducer() {
@@ -1805,8 +1808,13 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      var nextState = Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
-      return nextState;
+      // const nextState = Object.assign(
+      //     {}, 
+      //     state, 
+      //     { [action.currentUser.id]: action.currentUser }
+      // );
+      // return nextState;
+      return action.currentUser;
 
     default:
       return state;
@@ -1849,13 +1857,12 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/cart_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchCart, postCart */
+/*! exports provided: fetchCart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postCart", function() { return postCart; });
 var fetchCart = function fetchCart() {
   return $.ajax({
     url: "api/carts/show",
@@ -1863,18 +1870,13 @@ var fetchCart = function fetchCart() {
   });
 }; // ^i use current user to find the cart so dont need to feed it in anything
 // so in my sign up from I need to also have a function that will create my cart
-
-var postCart = function postCart(userId) {
-  return $.ajax({
-    url: "/api/users/".concat(userId, "/carts"),
-    method: 'POST',
-    data: {
-      cart: {
-        user_id: userId
-      }
-    }
-  });
-};
+// export const postCart = (userId) =>(
+//     $.ajax({
+//         url:`/api/users/${userId}/carts`,
+//         method: 'POST',
+//         data: {cart: {user_id: userId}}
+//     })
+// )
 
 /***/ }),
 

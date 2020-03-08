@@ -11,6 +11,8 @@ class Api::CartsController < ApplicationController
 
     def show
         @cart = current_user.cart
+        @products = @cart.products
+        @cart_items = @cart.cart_items
         render 'api/carts/show'
     end
 

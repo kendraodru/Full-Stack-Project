@@ -1,4 +1,5 @@
 import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS} from '../actions/product_actions';
+import { RECEIVE_CART } from '../actions/cart_actions';
 
 const productReducer = (state={}, action) =>{
     Object.freeze(state);
@@ -9,6 +10,8 @@ const productReducer = (state={}, action) =>{
         case RECEIVE_PRODUCT:
             nextState[action.product.id] = action.product
             return nextState;
+        case RECEIVE_CART:
+            return action.payload.products
         default:
             return state;
     }

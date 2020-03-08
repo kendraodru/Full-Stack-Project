@@ -32,6 +32,7 @@ export const signup = (formUser) =>(dispatch) =>(
 
 export const login = (formUser) =>(dispatch) =>(
     sessionAPIUtil.postSession(formUser)
+    // .then(res => (console.log(res)))
         .then((user) => dispatch(receiveCurrentUser(user)),
         err=>(
             dispatch(receiveSessionErrors(err.responseJSON))
