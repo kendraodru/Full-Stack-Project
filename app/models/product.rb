@@ -16,6 +16,10 @@ class Product < ApplicationRecord
     validates :name, presence:true, uniqueness:true
     validates :description, :instructions, :ingredients, :price, :size, presence:true
 
+    # active storage
+    has_one_attached :photo
+    #active storage
+
     has_many :cart_items,
     foreign_key: :product_id,
     class_name: :CartItem
