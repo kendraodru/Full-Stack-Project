@@ -234,31 +234,35 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 var RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'; // actions
 
-var receive_products = function receive_products(products) {
+var receive_products = function receive_products(payload) {
   return {
     type: RECEIVE_PRODUCTS,
-    products: products
+    payload: payload
   };
 };
-var receive_product = function receive_product(product) {
+var receive_product = function receive_product(payload) {
   return {
     type: RECEIVE_PRODUCT,
-    product: product
+    payload: payload
   };
 }; // these below are action creators
+// export const fetchProducts = () => dispatch =>(
+//     productAPIUtil.fetchProducts()
+//         .then(products => (dispatch(receive_products(products))))
+// )
 
 var fetchProducts = function fetchProducts() {
   return function (dispatch) {
-    return _util_products_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProducts"]().then(function (products) {
-      return dispatch(receive_products(products));
+    return _util_products_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProducts"]().then(function (payload) {
+      return dispatch(receive_products(payload));
     });
   };
 };
 var fetchProduct = function fetchProduct(productId) {
   return function (dispatch) {
-    return _util_products_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProduct"](productId).then(function (product) {
-      return dispatch(receive_product(product));
-    });
+    return _util_products_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchProduct"](productId).then(function (payload) {
+      return dispatch(receive_product(payload));
+    }); // .then((payload) =>console.log(payload))
   };
 };
 
@@ -389,6 +393,145 @@ var App = function App() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/carousel/carousel.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/carousel/carousel.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+// nts: MAKE ARROWS WHEN YOU HAVE TIME
+
+
+var Carousel = /*#__PURE__*/function (_React$Component) {
+  _inherits(Carousel, _React$Component);
+
+  function Carousel(props) {
+    var _this;
+
+    _classCallCheck(this, Carousel);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Carousel).call(this, props));
+    _this.state = {
+      photoUrls: _this.props.product.photoUrls,
+      currentImage: 0
+    }; // changes the photo
+    // handle hover
+    // next photo prev photo
+
+    _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
+    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
+    _this.nextPhoto = _this.nextPhoto.bind(_assertThisInitialized(_this));
+    _this.prevPhoto = _this.prevPhoto.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Carousel, [{
+    key: "changePhoto",
+    value: function changePhoto(idx) {
+      this.setState({
+        currentImage: idx
+      });
+    }
+  }, {
+    key: "nextPhoto",
+    value: function nextPhoto() {
+      var nextIdx = (this.state.currentImage + 1) % this.state.photoUrls.length;
+      this.setState({
+        currentImage: nextIdx
+      });
+    }
+  }, {
+    key: "prevPhoto",
+    value: function prevPhoto() {
+      // e.preventDefault();
+      var prevIdx = (this.state.currentImage + this.state.photoUrls.length - 1) % this.state.photoUrls.length; // this.setState({currentImage:prevIdx})
+
+      this.changePhoto(prevIdx); // this.changePhoto(prevIdx)
+    }
+  }, {
+    key: "handleHover",
+    value: function handleHover(e) {
+      e.preventDefault();
+      this.changePhoto(e.currentTarget.id);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      // const { product } = this.props
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "carousel-holder"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photos-url-holder"
+      }, this.state.photoUrls.map(function (url, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "url-div",
+          id: idx,
+          key: idx,
+          onMouseOver: function onMouseOver(e) {
+            return _this2.handleHover(e);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: url,
+          className: "individual-image"
+        }));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "arrow-holder",
+        onClick: function onClick(e) {
+          return _this2.prevPhoto(e);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "left-arrow"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/arrows/leftarrow.png",
+        alt: ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "large-photo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.photoUrls[this.state.currentImage]
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "arrow-holder",
+        onClick: this.nextPhoto
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "right-arrow"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/arrows/rightarrow.png",
+        alt: ""
+      }))));
+    }
+  }]);
+
+  return Carousel;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Carousel);
 
 /***/ }),
 
@@ -744,39 +887,102 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-var ProductIndexItem = function ProductIndexItem(_ref) {
-  var product = _ref.product;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-root"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "product-index-show-link",
-    href: "/#/products/".concat(product.name, "/").concat(product.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-pic"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://images.unsplash.com/photo-1551945326-df678a97c3af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-    alt: ""
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "basic-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-name"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "product-index-show-link",
-    href: "/#/products/".concat(product.name, "/").concat(product.id)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-nums"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "product-btn-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "product-show-btn"
-  }, "Add to cart"))));
-};
+
+var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(ProductIndexItem, _React$Component);
+
+  function ProductIndexItem(props) {
+    var _this;
+
+    _classCallCheck(this, ProductIndexItem);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProductIndexItem).call(this, props));
+    _this.state = {
+      currentIdx: 0
+    };
+    _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
+    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ProductIndexItem, [{
+    key: "changePhoto",
+    value: function changePhoto() {
+      this.setState({
+        currentIdx: (this.state.currentIdx + 1) % 2
+      });
+    }
+  }, {
+    key: "handleHover",
+    value: function handleHover(e) {
+      e.preventDefault();
+      this.changePhoto();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var product = this.props.product; // onMouseOver = { e => this.handleHover(e) } onMouseLeave = { e => this.handleHover(e) }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-root"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "product-index-show-link",
+        href: "/#/products/".concat(product.name, "/").concat(product.id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: product.photoUrls[this.state.currentIdx],
+        alt: "",
+        onMouseOver: function onMouseOver(e) {
+          return _this2.handleHover(e);
+        },
+        onMouseOut: function onMouseOut(e) {
+          return _this2.handleHover(e);
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "basic-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-name"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "product-index-show-link",
+        href: "/#/products/".concat(product.name, "/").concat(product.id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, product.name)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-nums"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "product-btn-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "product-show-btn"
+      }, "Add to cart"))));
+    }
+  }]);
+
+  return ProductIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductIndexItem);
 
@@ -793,6 +999,7 @@ var ProductIndexItem = function ProductIndexItem(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _carousel_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../carousel/carousel */ "./frontend/components/carousel/carousel.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -810,6 +1017,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -848,9 +1056,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         className: "show-pic-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-        alt: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_carousel_carousel__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        product: product
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-content-info-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1644,11 +1851,12 @@ var productReducer = function productReducer() {
 
   switch (action.type) {
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCTS"]:
-      return action.products;
+      return action.payload.products;
 
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PRODUCT"]:
-      nextState[action.product.id] = action.product;
-      return nextState;
+      // nextState[action.payload.products] = action.payload.product
+      // return nextState;
+      return Object.assign(nextState, action.payload.products);
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
       return action.payload.products;

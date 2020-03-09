@@ -6,10 +6,11 @@ const productReducer = (state={}, action) =>{
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_PRODUCTS:
-            return action.products;
+            return action.payload.products;
         case RECEIVE_PRODUCT:
-            nextState[action.product.id] = action.product
-            return nextState;
+            // nextState[action.payload.products] = action.payload.product
+            // return nextState;
+            return Object.assign(nextState, action.payload.products)
         case RECEIVE_CART:
             return action.payload.products
         default:

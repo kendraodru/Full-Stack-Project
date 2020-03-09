@@ -1,10 +1,13 @@
+// nts: MAKE ARROWS WHEN YOU HAVE TIME
+
 import React from 'react';
 
 class Carousel extends React.Component {
+    
     constructor(props){
         super(props);
         this.state = {
-            urls: this.props.urls,
+            photoUrls: this.props.product.photoUrls,
             currentImage: 0
         }
 
@@ -23,44 +26,52 @@ class Carousel extends React.Component {
     }
 
     nextPhoto(){
-        let nextIdx = ((this.state.currentImage + 1) % this.state.urls.length)
-        this.setState({currentImage:nextIdx})
+        let nextIdx = ((this.state.currentImage + 1) % (this.state.photoUrls.length))
+        this.setState({currentImage: nextIdx})
     }
 
     prevPhoto(){
-        let prevIdx = ((this.state.currentImage - 1) % this.state.urls.length)
-        this.setState({currentImage:prevIdx})
+        // e.preventDefault();
+        let prevIdx = ((this.state.currentImage + this.state.photoUrls.length - 1) % (this.state.photoUrls.length))
+        // this.setState({currentImage:prevIdx})
+        this.changePhoto(prevIdx)
+        // this.changePhoto(prevIdx)
+
     }
 
     handleHover(e){
         e.preventDefault();
-        this.changePhoto({currentImage: e.currentTarget.id})
+        this.changePhoto(e.currentTarget.id)
     }
-
     render(){
-        <div className='carousel-holder'>
-            <div  className='photos-url-holder'>
-                {this.props.urls.map((url, idx) =>{
-                    <div className='url-div' id={idx} key={idx} onMouseOver={e => this.handleHover(e)}>
-                        <img src={url} className='individual-image'/>
-                    </div>
-                }) }
-            </div>
-            <div className="photo-arrows">
-                <div className='left-arrow' onClick={this.prevPhoto}>
-                        { leftArrowImage}
-                        {/* create this component^ */}
-                </div>
-                <div className='right-arrow' onClick={this.nextPhoto}>
-                        { rightArrowImage}
-                        {/* create this component^ */}
-                </div>
-            </div>
-            <div className='large-photo'>
-                <img src={this.state.urls[this.state.currentImage]} />
-            </div>
 
-        </div>
+        // const { product } = this.props
+            return(
+                <div className='carousel-holder'>
+                    <div  className='photos-url-holder'>
+                        {this.state.photoUrls.map((url, idx) =>{
+                            return(
+                            <div className='url-div' id={idx} key={idx} onMouseOver={e => this.handleHover(e)}>
+                                <img src={url} className='individual-image'/>
+                            </div>
+                            )
+                        })}
+                    </div>
+                    <div className='arrow-holder' onClick={(e)=>this.prevPhoto(e)}>
+                        <div className='left-arrow'>
+                            <img src={"https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/arrows/leftarrow.png"} alt="" />
+                        </div>
+                    </div>
+                    <div className='large-photo'>
+                        <img src={this.state.photoUrls[this.state.currentImage]} />
+                    </div>
+                    <div className='arrow-holder' onClick={this.nextPhoto}>
+                        <div className='right-arrow'>
+                            <img src={"https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/arrows/rightarrow.png"} alt=""/>
+                        </div>
+                    </div>
+            </div>
+        )
     }
 }
 

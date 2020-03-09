@@ -17,7 +17,7 @@ class Product < ApplicationRecord
     validates :description, :instructions, :ingredients, :price, :size, presence:true
 
     # active storage
-    has_one_attached :photo
+    has_many_attached :photos
     #active storage
 
     has_many :cart_items,

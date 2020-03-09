@@ -1,5 +1,4 @@
 
-
     json.set! product.id do
         json.id product.id
         json.name product.name
@@ -8,6 +7,10 @@
         json.ingredients product.ingredients
         json.price product.price
         json.size product.size
+
+         if product.photos.attached?
+            json.photoUrls product.photos.map { |file| url_for(file) }  
+        end
     end
 
 

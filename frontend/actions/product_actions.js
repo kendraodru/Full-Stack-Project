@@ -5,24 +5,29 @@ export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 
 // actions
-export const receive_products = (products) =>({
+export const receive_products = (payload) =>({
     type: RECEIVE_PRODUCTS,
-    products
+    payload
 })
 
-export const receive_product = (product) =>({
+export const receive_product = (payload) =>({
     type: RECEIVE_PRODUCT,
-    product
+    payload
 })
 
 // these below are action creators
 
+// export const fetchProducts = () => dispatch =>(
+//     productAPIUtil.fetchProducts()
+//         .then(products => (dispatch(receive_products(products))))
+// )
 export const fetchProducts = () => dispatch =>(
     productAPIUtil.fetchProducts()
-        .then(products => (dispatch(receive_products(products))))
+        .then(payload => (dispatch(receive_products(payload))))
 )
 
 export const fetchProduct = (productId) => dispatch =>{
     return productAPIUtil.fetchProduct(productId)
-        .then(product => (dispatch(receive_product(product))))
+        .then(payload => (dispatch(receive_product(payload))))
+        // .then((payload) =>console.log(payload))
 }

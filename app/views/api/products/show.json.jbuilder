@@ -1,1 +1,11 @@
-json.partial! 'api/products/product', product: @product
+json.products do
+    json.partial! 'api/products/product', product: @product
+end
+
+
+# added this
+
+# for the photourls
+# if @product.photos.attached?
+#     json.photoUrls @product.photos.map { |file| url_for(file) }  
+# end

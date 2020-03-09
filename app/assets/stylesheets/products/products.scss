@@ -1,6 +1,41 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .product-pic {
+  
+// }
+// .product-pic-trans {
+    
+ 
+//   width:240px;
+//   height:344px;
+// //   padding: 3px;
+
+
+// }
+// .product-pic-trans img {
+  
+//   -webkit-transition: opacity 1s ease-in-out;
+//   -moz-transition: opacity 1s ease-in-out;
+//   -o-transition: opacity 1s ease-in-out;
+//   transition: opacity 1s ease-in-out;
+// }
+// .first-pic{
+   
+//     position: absolute;
+//     z-index: 10;
+// }
+// .second-pic{
+//     position: absolute;
+
+//     z-index: 0;
+    
+// }
+
+.product-pic-trans img.second-pic:hover {
+  opacity:0;
+}
+
 
 
 .products-wrapper{
@@ -127,5 +162,9 @@
     font-family: "Unica77 LL" ,sans-serif;
     color:black;
 }
+
+
+
+
 
 
