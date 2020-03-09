@@ -46,17 +46,17 @@ ingredients: "Proprietary Superfoods Blend: Kale, spinach, green tea, alfalfa, v
 instructions: "Smooth a dime-sized amount of cream into the skin until it is fully absorbed. Use morning and night.",
 price: 48, size: "2.0oz")
 
-# product5 = Product.create(name:"Adaptogen Deep Moisture Cream",
-# description:"A deeply hydrating moisturizer with superior plant extracts and a pro-grade peptide complex formulated for dry, reactive, and sensitive skin. ",
-# ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
-# instructions: "Apply to cleansed skin morning and evening after Superberry Hydrate Oil and Superfood Serum.",
-# price: 58, size: "2.0oz")
+product5 = Product.create(name:"Adaptogen Deep Moisture Cream",
+description:"A deeply hydrating moisturizer with superior plant extracts and a pro-grade peptide complex formulated for dry, reactive, and sensitive skin. ",
+ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
+instructions: "Apply to cleansed skin morning and evening after Superberry Hydrate Oil and Superfood Serum.",
+price: 58, size: "2.0oz")
 
-# product6 = Product.create(name:"Adaptogen Soothe + Hydrate Activated Mist",
-# description:"An ultra-fine mist that hydrates, calms visible redness, and evens the look of skin tone with antioxidant-rich adaptogens, hyaluronic acid, and soothing peptides—like a serum in a mist.",
-# ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
-# instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
-# price: 42, size: "4.0oz")
+product6 = Product.create(name:"Adaptogen Soothe + Hydrate Activated Mist",
+description:"An ultra-fine mist that hydrates, calms visible redness, and evens the look of skin tone with antioxidant-rich adaptogens, hyaluronic acid, and soothing peptides—like a serum in a mist.",
+ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. The use of adaptogens as medicine, taken internally and applied topically, has been championed by Eastern medicine and Ayurveda for 5,000 years.",
+instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
+price: 42, size: "4.0oz")
 
 
 # product6 = Product.create(name:"Adaptogen Soothe Mist",
@@ -99,8 +99,18 @@ product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/3.jpg'), filename: '3.jpg')
 
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/0.jpg'), filename: '0.jpg')
-product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/1.jpg'), filename: '1.jpg')
+# product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/mode.jpg'), filename: 'mode.jpg')
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/2.jpg'), filename: '2.jpg')
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/3.jpg'), filename: '3.jpg')
+
+product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/0.jpg'), filename: '0.jpg')
+product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/1.jpg'), filename: '1.jpg')
+product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/2.jpg'), filename: '2.jpg')
+product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/3.jpg'), filename: '3.jpg')
+
+product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/0.jpg'), filename: '0.jpg')
+product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/1.jpg'), filename: '1.jpg')
+product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
+product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
 
 
