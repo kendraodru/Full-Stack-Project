@@ -10,7 +10,8 @@
 #
 class CartItem < ApplicationRecord
     validates :cart_id, :quantity, :product_id, presence:true
-
+    before_validation :default_quantity 
+    
     belongs_to :cart,
     foreign_key: :cart_id,
     class_name: :Cart
@@ -19,5 +20,10 @@ class CartItem < ApplicationRecord
     belongs_to :product,
     foreign_key: :product_id,
     class_name: :Product
+
+
+    def default_quantity 
+        self.quantity ||= 1
+    end
 
 end

@@ -3,6 +3,7 @@ import { Route, Switch, Link, NavLink } from "react-router-dom";
 import Splash from './splash/splash';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from '../components/product/product_show_container';
+import CartShowContainer from '../components/cart/cart_container';
 import NavBarContainer from './nav/nav_bar_container';
 import Modal from './modal/modal'
 import Footer from './footer/footer'
@@ -21,6 +22,7 @@ const App = () =>(
         <Switch>
             <Route path='/products/:productName/:productId' component={ProductShowContainer}/>
             <Route path='/products' component={ProductIndexContainer}/>
+            <Route path='/cart/:cartId' component={CartShowContainer}/>
             <Route path='/' component={Splash}/>
         </Switch>
         < Footer />

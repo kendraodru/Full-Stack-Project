@@ -32,7 +32,7 @@ const Splash = ()=>{
             </div>
             <div className="lower-splash-content-outter-div">
                 <div className='lower-splash-content'>
-                    {/* < MidSplash /> */}
+                    < MidSplash />
                     <Tile />
                     <PicSet />
                 </div>

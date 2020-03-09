@@ -8,10 +8,6 @@ export const receiveCurrentUser = (payload) =>({
     type: RECEIVE_CURRENT_USER,
     payload
 })
-// export const receiveCurrentUser = (currentUser) =>({
-//     type: RECEIVE_CURRENT_USER,
-//     currentUser
-// })
 
 export const logoutCurrentUser = () =>({
     type: LOGOUT_CURRENT_USER
@@ -33,13 +29,7 @@ export const signup = (formUser) =>(dispatch) =>(
         dispatch(receiveSessionErrors(err.responseJSON))
         ))
 )
-// export const signup = (formUser) =>(dispatch) =>(
-//     sessionAPIUtil.postUser(formUser)
-//         .then((user) => dispatch(receiveCurrentUser(user)),
-//         err => (
-//         dispatch(receiveSessionErrors(err.responseJSON))
-//         ))
-// )
+
 
 export const login = (formUser) =>(dispatch) =>(
     sessionAPIUtil.postSession(formUser)
@@ -49,14 +39,7 @@ export const login = (formUser) =>(dispatch) =>(
             dispatch(receiveSessionErrors(err.responseJSON))
         ))
 )
-// export const login = (formUser) =>(dispatch) =>(
-//     sessionAPIUtil.postSession(formUser)
-//     // .then(payload => (console.log(payload)))
-//         .then((user) => dispatch(receiveCurrentUser(user)),
-//         err=>(
-//             dispatch(receiveSessionErrors(err.responseJSON))
-//         ))
-// )
+
 
 export const logout = () => (dispatch) =>(
     sessionAPIUtil.deleteSession()

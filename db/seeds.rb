@@ -72,9 +72,11 @@ cart2 = Cart.create(user_id: user1.id)
 cart3 = Cart.create(user_id: user2.id)
 # cart2 = Cart.create(user_id: user1.id)
 
-# cart_items1 = CartItem.create(cart_id: cart1.id, product_id: product3.id,quantity:2)
+CartItem.destroy_all
+
+cart_items1 = CartItem.create(cart_id: cart1.id, product_id: product3.id,quantity:2)
 cart_items2 = CartItem.create(cart_id: cart2.id, product_id: product2.id, quantity:3)
-cart_items3 = CartItem.create(cart_id: cart1.id, product_id: product1.id,quantity:2)
+cart_items3 = CartItem.create(cart_id: cart1.id, product_id: product1.id)
 
 
 # SEEDING IMAGES --------------------

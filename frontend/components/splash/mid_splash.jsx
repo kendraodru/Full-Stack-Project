@@ -1,6 +1,8 @@
 import React from 'react';
+// import ProductShow from '../product/product_show';
 
 const MidSplash = () =>{
+
     return(
         <div className='outter-mid-wrapper'>
            <div className='splash-mid-title'>
@@ -9,34 +11,37 @@ const MidSplash = () =>{
             <div className='outter-best-items'>
                 <div className="best-item-wrapper">
                     <div className='best-item-img'>
-                        <img src="https://images.unsplash.com/photo-1530733895788-f39cc96b6ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt=""/>
-                        {/* <img src="https://s1.r29static.com/bin/shop/746/x,85/1921613/image.webp" alt=""/> */}
-                        {/* <img src="https://media.allure.com/photos/5c3fb097b44f422c9f00c6db/1:1/w_400%2Cc_limit/youth-to-the-people-super-mask.jpg" alt=""/> */}
+                        <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/0.jpg" alt=""/>
+                        {/* <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/1.jpg" alt=""/> */}
+                       
                     </div>
-                    <div className='best-item-title'>
-                        Superfood Cleanser
-                    </div>
-                </div>
-                <div className="best-item-wrapper">
-                    <div className='best-item-img'>
-                        <img src="<%=kale=>" alt=""/>
-                        {/* <img src="https://images.unsplash.com/photo-1530733895788-f39cc96b6ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" /> */}
-                            {/* <img src="https://media.allure.com/photos/5cd0800c0c6dfb3ab780f299/1:1/w_1600%2Cc_limit/seal-youth-to-the-people-superfood-antioxidant-cleanser.jpg" alt=""/> */}
-                    </div>
-                    <div className='best-item-title'>
-                        Kombucha + 11 AHA Exfoliation Power Toner
+                    <div className="best-item-title-wrap">
+                        <div className='best-item-title'>
+                            Superfood Cleanser
+                        </div>
                     </div>
                 </div>
                 <div className="best-item-wrapper">
                     <div className='best-item-img'>
-                        <img src="https://images.unsplash.com/photo-1530733895788-f39cc96b6ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" />
-                            {/* <img src="https://cdn.shopify.com/s/files/1/0082/8299/6826/products/youth-to-the-people-superfood-skin-reset-mask-skincare-masks-youth-to-the-people-954402_250x.png?v=1566946377" alt=""/>
-                             */}
-                            {/* <img src="https://s1.r29static.com/bin/shop/746/x,85/1921613/image.webp" alt=""/> */}
+                        <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/0.jpg" alt="" />
+                        {/* <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/1.jpg" alt=""/> */}
 
                     </div>
-                    <div className='best-item-title'>
-                        Superberry Hydrate + Glow Dream Mask
+                    <div className='best-item-title-wrap'>
+                        <div className='best-item-title'>
+                            Kombucha + 11 AHA Exfoliation Power Toner
+                        </div>
+                    </div>
+                </div>
+                <div className="best-item-wrapper">
+                    <div className='best-item-img'>
+                        <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/0.jpg" alt="" />
+                        {/* <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/1.jpg" alt=""/> */}
+                    </div>
+                    <div className="best-item-title-wrap">
+                        <div className='best-item-title'>
+                            Superberry Hydrate + Glow Dream Mask
+                        </div>
                     </div>
                 </div>
             </div>
