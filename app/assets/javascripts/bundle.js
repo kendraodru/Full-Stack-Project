@@ -294,12 +294,16 @@ var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 var CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
-var receiveCurrentUser = function receiveCurrentUser(currentUser) {
+var receiveCurrentUser = function receiveCurrentUser(payload) {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    payload: payload
   };
-};
+}; // export const receiveCurrentUser = (currentUser) =>({
+//     type: RECEIVE_CURRENT_USER,
+//     currentUser
+// })
+
 var logoutCurrentUser = function logoutCurrentUser() {
   return {
     type: LOGOUT_CURRENT_USER
@@ -318,23 +322,38 @@ var clearSessionErrors = function clearSessionErrors() {
 };
 var signup = function signup(formUser) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["postUser"](formUser).then(function (user) {
-      return dispatch(receiveCurrentUser(user));
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["postUser"](formUser).then(function (payload) {
+      return dispatch(receiveCurrentUser(payload));
     }, function (err) {
       return dispatch(receiveSessionErrors(err.responseJSON));
     });
   };
-};
+}; // export const signup = (formUser) =>(dispatch) =>(
+//     sessionAPIUtil.postUser(formUser)
+//         .then((user) => dispatch(receiveCurrentUser(user)),
+//         err => (
+//         dispatch(receiveSessionErrors(err.responseJSON))
+//         ))
+// )
+
 var login = function login(formUser) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["postSession"](formUser) // .then(res => (console.log(res)))
-    .then(function (user) {
-      return dispatch(receiveCurrentUser(user));
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["postSession"](formUser) // .then(payload => (console.log(payload)))
+    .then(function (payload) {
+      return dispatch(receiveCurrentUser(payload));
     }, function (err) {
       return dispatch(receiveSessionErrors(err.responseJSON));
     });
   };
-};
+}; // export const login = (formUser) =>(dispatch) =>(
+//     sessionAPIUtil.postSession(formUser)
+//     // .then(payload => (console.log(payload)))
+//         .then((user) => dispatch(receiveCurrentUser(user)),
+//         err=>(
+//             dispatch(receiveSessionErrors(err.responseJSON))
+//         ))
+// )
+
 var logout = function logout() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteSession"]().then(function (user) {
@@ -1741,7 +1760,6 @@ var cartReducer = function cartReducer() {
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
       return action.payload.cart;
-    // case:
 
     default:
       return state;
@@ -1957,17 +1975,19 @@ var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullSession;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  debugger;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       // return Object.assign({}, {id: action.currentUser.id});
       // return action.currentUser.id;
       // debugger
-      // return { id: action.currentUser.id}
-      // return action.currentUser
       return {
-        id: Object.keys(action.currentUser)[0]
+        id: action.payload.users.id
       };
+    // return action.currentUser
+    // return { id: Object.keys(action.currentUser)[0] }
+    // return Object.assign({},action.payload.users)
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullSession;
@@ -2012,22 +2032,30 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  debugger;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      // const nextState = Object.assign(
-      //     {}, 
-      //     state, 
-      //     { [action.currentUser.id]: action.currentUser }
-      // );
+      //     const nextState = Object.assign(
+      //         {}, 
+      //         state, 
+      //          {[action.currentUser.id]: action.currentUser}
+      //     );
       // return nextState;
-      return action.currentUser;
+      // const nextState = Object.assign({}, state)
+      // nextState[action.currentUser.id] = action.currentUser
+      // console.log(action.payload)
+      // return Object.assign( {}, action.payload);
+      // return nextState
+      return _defineProperty({}, action.payload.users.id, action.payload.users);
 
     default:
       return state;
@@ -2220,14 +2248,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/cart_actions */ "./frontend/actions/cart_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
- // import {login, logout } from './actions/session_actions'
 
+ // import {login, logout } from './actions/session_actions'
+// import { fetchProduct, fetchProducts} from './actions/product_actions'
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
@@ -2251,9 +2280,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchProducts = _actions_product_actions__WEBPACK_IMPORTED_MODULE_4__["fetchProducts"];
-  window.fetchProduct = _actions_product_actions__WEBPACK_IMPORTED_MODULE_4__["fetchProduct"]; // window.login = login
-  // window.logout = logout
+  window.fetchCart = _actions_cart_actions__WEBPACK_IMPORTED_MODULE_4__["fetchCart"]; // window.fetchProducts = fetchProducts
+  // window.fetchProduct = fetchProduct
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store

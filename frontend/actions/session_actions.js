@@ -4,10 +4,14 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
-export const receiveCurrentUser = (currentUser) =>({
+export const receiveCurrentUser = (payload) =>({
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    payload
 })
+// export const receiveCurrentUser = (currentUser) =>({
+//     type: RECEIVE_CURRENT_USER,
+//     currentUser
+// })
 
 export const logoutCurrentUser = () =>({
     type: LOGOUT_CURRENT_USER
@@ -24,20 +28,35 @@ export const clearSessionErrors = ()=>({
 
 export const signup = (formUser) =>(dispatch) =>(
     sessionAPIUtil.postUser(formUser)
-        .then((user) => dispatch(receiveCurrentUser(user)),
+        .then((payload) => dispatch(receiveCurrentUser(payload)),
         err => (
         dispatch(receiveSessionErrors(err.responseJSON))
         ))
 )
+// export const signup = (formUser) =>(dispatch) =>(
+//     sessionAPIUtil.postUser(formUser)
+//         .then((user) => dispatch(receiveCurrentUser(user)),
+//         err => (
+//         dispatch(receiveSessionErrors(err.responseJSON))
+//         ))
+// )
 
 export const login = (formUser) =>(dispatch) =>(
     sessionAPIUtil.postSession(formUser)
-    // .then(res => (console.log(res)))
-        .then((user) => dispatch(receiveCurrentUser(user)),
+    // .then(payload => (console.log(payload)))
+        .then((payload) => dispatch(receiveCurrentUser(payload)),
         err=>(
             dispatch(receiveSessionErrors(err.responseJSON))
         ))
 )
+// export const login = (formUser) =>(dispatch) =>(
+//     sessionAPIUtil.postSession(formUser)
+//     // .then(payload => (console.log(payload)))
+//         .then((user) => dispatch(receiveCurrentUser(user)),
+//         err=>(
+//             dispatch(receiveSessionErrors(err.responseJSON))
+//         ))
+// )
 
 export const logout = () => (dispatch) =>(
     sessionAPIUtil.deleteSession()
