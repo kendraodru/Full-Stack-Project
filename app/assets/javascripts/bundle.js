@@ -1614,6 +1614,8 @@ var Splash = function Splash() {
     className: "shop-now-href ",
     href: "/"
   }, "SHOP NOW"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "TESTER"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lower-splash-content-outter-div"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lower-splash-content"

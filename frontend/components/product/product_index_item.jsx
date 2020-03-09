@@ -29,13 +29,17 @@ class ProductIndexItem extends React.Component{
             <div className='product-root' >
                 {/* <div className='product-content'> */}
                     <a className="product-index-show-link" href={`/#/products/${product.name}/${product.id}`}>
+                        
                         {/* <div className='product-pic'>
-                        <div className='product-pic-trans' style='background-image: url({product.photoUrls[1]})'>
+                            <div className='product-pic-trans'>
                                 <img className="first-pic" src={product.photoUrls[0]} alt=""/>
                                 <img className="second-pic" src={product.photoUrls[1]} alt=""/>
                             </div>
-                            {/* <img src="https://images.unsplash.com/photo-1551945326-df678a97c3af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/> */}
-                        {/* </div> */} 
+                        </div>   */}
+
+
+
+                        {/* what i have now below */}
                         <div className='product-pic'>
                         <img 
                         src={product.photoUrls[this.state.currentIdx]} alt="" 

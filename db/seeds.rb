@@ -99,8 +99,7 @@ product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/3.jpg'), filename: '3.jpg')
 
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/0.jpg'), filename: '0.jpg')
-# product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/mode.jpg'), filename: 'mode.jpg')
-product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/2.jpg'), filename: '2.jpg')
+product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/mode.jpg'), filename: 'mode.jpg')
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/3.jpg'), filename: '3.jpg')
 
 product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/0.jpg'), filename: '0.jpg')

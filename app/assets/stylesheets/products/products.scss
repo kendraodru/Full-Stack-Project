@@ -5,16 +5,11 @@
   
 // }
 // .product-pic-trans {
-    
- 
-//   width:240px;
-//   height:344px;
-// //   padding: 3px;
-
-
+//     position:relative
 // }
+
 // .product-pic-trans img {
-  
+//     position: absolute;
 //   -webkit-transition: opacity 1s ease-in-out;
 //   -moz-transition: opacity 1s ease-in-out;
 //   -o-transition: opacity 1s ease-in-out;
@@ -52,6 +47,9 @@
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    // position: absolute;
+    // top: 80px;
+    // added pos absolute
 }
 
 .product-root{

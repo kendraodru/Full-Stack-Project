@@ -8,8 +8,12 @@
 
 .root-pic{
     // background: image-url("oil.jpg") no-repeat center center fixed;
-    background: url('oil.jpg') no-repeat center center fixed;
+    background: url('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/oil.jpg') no-repeat center center fixed;
     background-size: cover;
+    // background: url('oil.jpg') no-repeat center center fixed;
+    // background-size: cover;
+    // background: image-url("oil.jpg") no-repeat center center fixed;
+    // background-size: cover;
     // background: url({window.oil}) no-repeat center center fixed;
     // &::-moz-background-size: cover;
     // &::-o-background-size:cover;
