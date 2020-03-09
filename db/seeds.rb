@@ -34,17 +34,17 @@ instructions: "Wet face first. Put 1-2 pumps on wet hands, rub together into a l
 ingredients: "Proprietary Super Tea Blend: Kombucha Black Tea Ferment, Tree Bark Ferment, Ginger, Lactic Acid + Glycolic Acid, Citrus Bioflavonoids, and Lemon Water Extract",
 price: 35, size: "4.0oz")
 
-# product3 = Product.create(name:"Superberry Hydrate + Glow Dream Mask",
-# description:"The ultimate hydrating radiance boost. This overnight mask deeply hydrates, plumps and brightens with powerful, antioxidant-rich superberries and THD ascorbate, the latest clinically-proven form of stable Vitamin C. This formula helps to target dullness and uneven skin tone for brighter, more radiant skin.",
-# ingredients: "Proprietary Superberry Blend: Maqui, acai, prickly pear, goji berry, sunflower, moringa, squalane.",
-# instructions: "At night, apply an even layer to freshly cleansed skin before heading to bed. Follow your regular cleansing routine in the morning. Use nightly for best results.",
-# price: 48, size: "2.0oz")
+product3 = Product.create(name:"Superberry Hydrate + Glow Dream Mask",
+description:"The ultimate hydrating radiance boost. This overnight mask deeply hydrates, plumps and brightens with powerful, antioxidant-rich superberries and THD ascorbate, the latest clinically-proven form of stable Vitamin C. This formula helps to target dullness and uneven skin tone for brighter, more radiant skin.",
+ingredients: "Proprietary Superberry Blend: Maqui, acai, prickly pear, goji berry, sunflower, moringa, squalane.",
+instructions: "At night, apply an even layer to freshly cleansed skin before heading to bed. Follow your regular cleansing routine in the morning. Use nightly for best results.",
+price: 48, size: "2.0oz")
 
-# product4 = Product.create(name:"Superfood Air-Whip Moisture Cream",
-# description:"Get ready for some leafy green moisture with this lightweight, air-whipped moisture cream. All the antioxidant-packed superfoods you love combine forces with Hyaluronic Acid, creating a moisturizer that instantly restores, balances and conditions. Friendly for all skin types, best for combo/oily.",
-# ingredients: "Proprietary Superfoods Blend: Kale, spinach, green tea, alfalfa, vitamins C, E, K.",
-# instructions: "Smooth a dime-sized amount of cream into the skin until it is fully absorbed. Use morning and night.",
-# price: 48, size: "2.0oz")
+product4 = Product.create(name:"Superfood Air-Whip Moisture Cream",
+description:"Get ready for some leafy green moisture with this lightweight, air-whipped moisture cream. All the antioxidant-packed superfoods you love combine forces with Hyaluronic Acid, creating a moisturizer that instantly restores, balances and conditions. Friendly for all skin types, best for combo/oily.",
+ingredients: "Proprietary Superfoods Blend: Kale, spinach, green tea, alfalfa, vitamins C, E, K.",
+instructions: "Smooth a dime-sized amount of cream into the skin until it is fully absorbed. Use morning and night.",
+price: 48, size: "2.0oz")
 
 # product5 = Product.create(name:"Adaptogen Deep Moisture Cream",
 # description:"A deeply hydrating moisturizer with superior plant extracts and a pro-grade peptide complex formulated for dry, reactive, and sensitive skin. ",
@@ -92,3 +92,15 @@ product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/1.jpg'), filename: '1.jpg')
 product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/2.jpg'), filename: '2.jpg')
 product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/3.jpg'), filename: '3.jpg')
+
+product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/0.jpg'), filename: '0.jpg')
+product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/1.jpg'), filename: '1.jpg')
+product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/2.jpg'), filename: '2.jpg')
+product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/3.jpg'), filename: '3.jpg')
+
+product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/0.jpg'), filename: '0.jpg')
+product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/1.jpg'), filename: '1.jpg')
+product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/2.jpg'), filename: '2.jpg')
+product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/3.jpg'), filename: '3.jpg')
+
+

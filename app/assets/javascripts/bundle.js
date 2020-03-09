@@ -1617,7 +1617,7 @@ var Splash = function Splash() {
     className: "lower-splash-content-outter-div"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lower-splash-content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mid_splash__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);

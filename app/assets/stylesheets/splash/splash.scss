@@ -7,7 +7,8 @@
 }
 
 .root-pic{
-    background: image-url("oil.jpg") no-repeat center center fixed;
+    // background: image-url("oil.jpg") no-repeat center center fixed;
+    background: url('oil.jpg') no-repeat center center fixed;
     background-size: cover;
     // background: url({window.oil}) no-repeat center center fixed;
     // &::-moz-background-size: cover;
