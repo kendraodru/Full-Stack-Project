@@ -634,18 +634,31 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
     _this.handleCartItemDB = _this.handleCartItemDB.bind(_assertThisInitialized(_this));
     _this.handleDeleteCartItem = _this.handleDeleteCartItem.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidUpdate(prevProps){
+  //     // use preProps when youre not usng a local state, can use local here
+  //     // if (this.state.quantity !== preProps.item.quantity)
+  //     debugger
+  //     if (this.state.quantity !== this.props.item.quantity){
+  //         this.props.fetchCart()
+  //     }
+  // }
+
 
   _createClass(CartItem, [{
     key: "handleProductQuantity",
     value: function handleProductQuantity(type) {
+      var _this2 = this;
+
       var oldQuantity = this.state.quantity;
 
       switch (type) {
         case 'add':
-          var addedQuantity = oldQuantity + 1;
-          this.setState({
-            quantity: addedQuantity
+          var addedQuantity = oldQuantity + 1; // this.setState({quantity: addedQuantity})
+
+          this.handleCartItemDB(addedQuantity).then(function () {
+            return _this2.setState({
+              quantity: addedQuantity
+            });
           });
           break;
 
@@ -653,7 +666,8 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
           var subbedQuantity = oldQuantity - 1;
           this.setState({
             quantity: subbedQuantity
-          });
+          }); // .then(() => (this.handleCartItemDB())
+
           break;
       }
 
@@ -661,14 +675,14 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "handleCartItemDB",
-    value: function handleCartItemDB() {
+    value: function handleCartItemDB(quantity) {
       var updatedItem = {
         id: this.props.item.id,
         cart_id: this.props.item.cart_id,
         product_id: this.props.item.product_id,
-        quantity: this.state.quantity
+        quantity: quantity
       };
-      this.updateCartItem(updatedItem);
+      return this.props.updateCartItem(updatedItem);
     }
   }, {
     key: "handleDeleteCartItem",
@@ -678,10 +692,18 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
+      // debugger
       var products = this.props.products;
       var item = this.props.item;
-      var product = products[item.product_id]; // console.log(product)
+      var product = products[item.product_id];
+
+      if (product === undefined) {
+        return null;
+      } // console.log(product)
       // console.log(this.props.products)
+
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-pic"
@@ -693,9 +715,13 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-updating"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.handleProductQuantity('subtract')
-      }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, item.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.handleProductQuantity('add')
+        onClick: function onClick() {
+          return _this3.handleProductQuantity('subtract');
+        }
+      }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this3.handleProductQuantity('add');
+        }
       }, "+")))));
     }
   }]);
@@ -753,7 +779,13 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchCart();
-    }
+    } // componentDidUpdate(prevProps) {
+    //    debugger
+    //     if (this.props.cartItems.length !== prevProps.cartItems.length) {
+    //         this.props.fetchCart()
+    //     }
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -770,7 +802,8 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           item: item,
           products: _this.props.products,
           updateCartItem: _this.props.updateCartItem,
-          deleteCartItem: _this.props.deleteCartItem
+          deleteCartItem: _this.props.deleteCartItem,
+          fetchCart: _this.props.fetchCart
         });
       });
       console.log(items);
@@ -2355,7 +2388,7 @@ var postCartItem = function postCartItem(cartItem) {
 };
 var updateCartItem = function updateCartItem(cartItem) {
   return $.ajax({
-    url: "api/cart_items/".concat(cartItem.id),
+    url: "/api/cart_items/".concat(cartItem.id),
     method: 'PATCH',
     data: {
       cartItem: cartItem
@@ -2364,7 +2397,7 @@ var updateCartItem = function updateCartItem(cartItem) {
 };
 var deleteCartItem = function deleteCartItem(cartItemId) {
   return $.ajax({
-    url: "api/cart_items/".concat(cartItemId),
+    url: "/api/cart_items/".concat(cartItemId),
     method: "DELETE"
   });
 };

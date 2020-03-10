@@ -21,6 +21,7 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.find_by(id:params[:id])
         # cart = Cart.find_by(id: @cart_item.cart_id)
         if @cart_item.update(cart_item_params) 
+            # debugger
             render 'api/cart_items/show'
         else
             render json: @cart_item.errors.full_messages, status: 404
@@ -41,6 +42,7 @@ class Api::CartItemsController < ApplicationController
 
     private
     def cart_item_params
-        params.require(:cart_item).permit(:cart_id,:product_id, :quantity)
+        params.require(:cartItem).permit(:cart_id,:product_id, :quantity)
+        # this should be snakecased
     end
 end

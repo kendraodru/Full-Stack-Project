@@ -12,32 +12,45 @@ class CartItem extends React.Component{
         this.handleDeleteCartItem = this.handleDeleteCartItem.bind(this);
     }
 
+    // componentDidUpdate(prevProps){
+    //     // use preProps when youre not usng a local state, can use local here
+    //     // if (this.state.quantity !== preProps.item.quantity)
+    //     debugger
+    //     if (this.state.quantity !== this.props.item.quantity){
+    //         this.props.fetchCart()
+    //     }
+    // }
+
 
 
     handleProductQuantity(type){
         
         let oldQuantity = this.state.quantity;
-
         switch(type){
             case 'add':
                 let addedQuantity = oldQuantity + 1;
-                this.setState({quantity: addedQuantity})
+                // this.setState({quantity: addedQuantity})
+                this.handleCartItemDB(addedQuantity)
+                    .then(() => this.setState({ quantity: addedQuantity }))
                 break;
             case 'subtract':
                 let subbedQuantity = oldQuantity - 1;
                 this.setState({ quantity: subbedQuantity })
+                    // .then(() => (this.handleCartItemDB())
                 break;
         };  
     }
 
-    handleCartItemDB(){
+
+    handleCartItemDB(quantity){
         const updatedItem = {
             id: this.props.item.id,
             cart_id: this.props.item.cart_id,
             product_id: this.props.item.product_id,
-            quantity: this.state.quantity
+            quantity: quantity
         } 
-        this.updateCartItem(updatedItem);
+
+        return this.props.updateCartItem(updatedItem);
     }
 
     handleDeleteCartItem(){
@@ -47,13 +60,18 @@ class CartItem extends React.Component{
 
 
     render (){
-
+        // debugger
+        
         const { products } = this.props;
-        const {item} = this.props;
+        const { item } = this.props;
         const product = products[item.product_id];
+
+        if (product === undefined) {
+            return null;
+        }
         // console.log(product)
         // console.log(this.props.products)
-
+        
         return(
             <div>
                 <div>
@@ -65,13 +83,13 @@ class CartItem extends React.Component{
                             {product.name}
                         </div>
                         <div className="cart-product-updating">
-                            <div onClick={this.handleProductQuantity('subtract')}>
+                            <div onClick={()=> this.handleProductQuantity('subtract')}>
                                 -
                             </div>
                             <div>
-                                {item.quantity}
+                                {this.state.quantity}
                             </div>
-                            <div onClick={this.handleProductQuantity('add')}>
+                            <div onClick={()=> this.handleProductQuantity('add')}>
                                 +
                             </div>
                         </div>
