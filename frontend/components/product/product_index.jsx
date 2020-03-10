@@ -8,7 +8,7 @@ class ProductIndex extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchProducts()
+        this.props.fetchProducts();
     }
 
     render(){
@@ -17,7 +17,10 @@ class ProductIndex extends React.Component {
                 <ProductIndexItem 
                 product={product} 
                 key={product.id} 
-                postCartItem={this.props.postCartItem}/>
+                postCartItem={this.props.postCartItem}
+                cart={this.props.cart}
+                currentUser ={this.props.currentUser}
+                />
             )
         });
         

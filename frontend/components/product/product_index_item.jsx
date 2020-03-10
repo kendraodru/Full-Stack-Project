@@ -10,7 +10,10 @@ class ProductIndexItem extends React.Component{
 
         this.changePhoto = this.changePhoto.bind(this)
         this.handleHover = this.handleHover.bind(this)
+        // this.handleAddCartItem = this.handleAddCartItem.bind(this)
     }
+
+   
 
     changePhoto() {
         this.setState({ currentIdx: (this.state.currentIdx + 1) % 2 })
@@ -20,6 +23,14 @@ class ProductIndexItem extends React.Component{
         e.preventDefault();
         this.changePhoto()
     }
+
+    // handleAddCartItem(){
+    //     debugger
+    //     const cart = this.props.cart[this.props.currentUser.id];
+    //     const newCartItem = {cart_id: cart.id, product_id: this.props.product.id};
+    //     this.props.postCartItem(newCartItem)
+    //     debugger
+    // }
 
     render(){
 
@@ -61,7 +72,9 @@ class ProductIndexItem extends React.Component{
                             </div>
                         </div>
                         <div className="product-btn-div">
-                            <button className='product-show-btn'>Add to cart</button>
+                        <button
+                        // onClick={() => this.handleAddCartItem()} 
+                        className='product-show-btn'>Add to cart</button>
                         </div>
                     </div>
                 {/* </div> */}

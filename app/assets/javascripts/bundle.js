@@ -1114,7 +1114,9 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           key: product.id,
-          postCartItem: _this.props.postCartItem
+          postCartItem: _this.props.postCartItem,
+          cart: _this.props.cart,
+          currentUser: _this.props.currentUser
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1153,9 +1155,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    products: Object.values(state.entities.products),
-    cart: state.entities.carts,
-    currentUser: state.entities.users[state.session.id]
+    products: Object.values(state.entities.products) // cart: state.entities.carts,
+    // currentUser: state.entities.users[state.session.id]
+
   };
 }; // cart : {95:{}}
 
@@ -1164,20 +1166,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
-    },
-    postCartItem: function (_postCartItem) {
-      function postCartItem(_x) {
-        return _postCartItem.apply(this, arguments);
-      }
+    } // ,
+    // postCartItem: (cartItem) => (dispatch(postCartItem(cartItem))),
+    // fetchCart: () => (dispatch(fetchCart()))
 
-      postCartItem.toString = function () {
-        return _postCartItem.toString();
-      };
-
-      return postCartItem;
-    }(function (cartItem) {
-      return dispatch(postCartItem(cartItem));
-    })
   };
 };
 
@@ -1229,7 +1221,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       currentIdx: 0
     };
     _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
-    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
+    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this)); // this.handleAddCartItem = this.handleAddCartItem.bind(this)
+
     return _this;
   }
 
@@ -1245,7 +1238,14 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function handleHover(e) {
       e.preventDefault();
       this.changePhoto();
-    }
+    } // handleAddCartItem(){
+    //     debugger
+    //     const cart = this.props.cart[this.props.currentUser.id];
+    //     const newCartItem = {cart_id: cart.id, product_id: this.props.product.id};
+    //     this.props.postCartItem(newCartItem)
+    //     debugger
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1285,6 +1285,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-btn-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        // onClick={() => this.handleAddCartItem()} 
         className: "product-show-btn"
       }, "Add to cart"))));
     }
@@ -1514,6 +1515,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(formUser) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"])(formUser));
     },
+    // fetchCart: () => (dispatch(fetchCart())),
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["clearSessionErrors"])());
     },
@@ -1604,7 +1606,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user).then(this.props.closeModal);
+      this.props.processForm(user).then(this.props.closeModal); // .then(() => (dispatch(fetchCart())))
     }
   }, {
     key: "handleDemoUser",
@@ -1613,7 +1615,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         email: 'demo_user@gmail.com',
         password: 'password'
       };
-      this.props.processForm(demoUser).then(this.props.closeModal);
+      this.props.processForm(demoUser).then(this.props.closeModal); // this.props.processForm(demoUser).then((this.props.closeModal),(this.props.fetchCart()))
     }
   }, {
     key: "handleInput",

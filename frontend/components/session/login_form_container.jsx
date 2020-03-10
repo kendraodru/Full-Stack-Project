@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) =>({
 
 const mapDispatchToProps = (dispatch) =>({
     processForm: (formUser)=> dispatch((login(formUser))),
+    // fetchCart: () => (dispatch(fetchCart())),
     clearErrors: () => dispatch(clearSessionErrors()),
     otherForm: (
         <span className="submit-session" onClick={() => dispatch(openModal('signup'))}>
