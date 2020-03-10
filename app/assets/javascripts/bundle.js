@@ -942,12 +942,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
-
+ // need to fix my link
 
 var NavBar = function NavBar(_ref) {
   var currentUser = _ref.currentUser,
       logout = _ref.logout,
-      otherForm = _ref.otherForm;
+      otherForm = _ref.otherForm,
+      cart = _ref.cart;
+  var cartId = cart ? cart.id : "/";
   var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1001,9 +1003,11 @@ var NavBar = function NavBar(_ref) {
     className: "root-nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "root-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/#/cart/".concat(cartId)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "nav-btn"
-  }, "CART")))));
+  }, "CART"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -1032,9 +1036,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  // debugger. Hacky....fix this
   return {
-    currentUser: state.entities.users[state.session.id]
-  };
+    currentUser: state.entities.users[state.session.id],
+    cart: Object.values(state.entities.carts)[0]
+  }; // debugger
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -1245,8 +1251,6 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleAddCartItem",
     value: function handleAddCartItem() {
-      debugger; // const { cart } = this.props
-
       var cart = this.props.cart;
       var product = this.props.product;
       var newCartItem = {
@@ -1254,7 +1258,6 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         product_id: product.id
       };
       this.props.postCartItem(newCartItem);
-      debugger;
     }
   }, {
     key: "render",
@@ -2105,8 +2108,9 @@ var cartReducer = function cartReducer() {
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
       return action.payload.cart;
-    // case RECEIVE_CURRENT_USER:
-    //     return action.payload.cart;
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
+      return action.payload.cart;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["LOGOUT_CURRENT_USER"]:
       return {};
@@ -2229,7 +2233,6 @@ var productReducer = function productReducer() {
       return Object.assign(nextState, action.payload.products);
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
-      debugger;
       return action.payload.products;
 
     default:

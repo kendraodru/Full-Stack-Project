@@ -7,8 +7,8 @@ const cartReducer = (state={}, action) =>{
     switch (action.type) {
         case RECEIVE_CART:
             return action.payload.cart;
-        // case RECEIVE_CURRENT_USER:
-        //     return action.payload.cart;
+        case RECEIVE_CURRENT_USER:
+            return action.payload.cart;
         case LOGOUT_CURRENT_USER:
             return {};
         default:

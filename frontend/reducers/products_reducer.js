@@ -12,8 +12,6 @@ const productReducer = (state={}, action) =>{
             // return nextState;
             return Object.assign(nextState, action.payload.products)
         case RECEIVE_CART:
-
-            debugger
             return action.payload.products
         default:
             return state;

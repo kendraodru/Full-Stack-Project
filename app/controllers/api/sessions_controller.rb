@@ -6,7 +6,6 @@ class Api::SessionsController < ApplicationController
             params[:user][:email],
             params[:user][:password]
         )
-        # debugger
         if @user
             login(@user)
             @cart = Cart.find_by(user_id: @user.id)

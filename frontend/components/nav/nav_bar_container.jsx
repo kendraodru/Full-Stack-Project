@@ -4,9 +4,13 @@ import { logout } from '../../actions/session_actions';
 import NavBar from './nav_bar';
 import { openModal, closeModal } from '../../actions/modal_actions'
 
-const mapStateToProps = (state) => ({
-    currentUser: state.entities.users[state.session.id]
-});
+const mapStateToProps = (state) => {
+    // debugger. Hacky....fix this
+    return({currentUser: state.entities.users[state.session.id],
+    cart: Object.values(state.entities.carts)[0]
+    })
+    // debugger
+};
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => (dispatch(logout())),

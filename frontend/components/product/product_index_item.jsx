@@ -25,14 +25,10 @@ class ProductIndexItem extends React.Component{
     }
 
     handleAddCartItem(){
-        debugger
-        // const { cart } = this.props
         const cart = this.props.cart
         const { product } = this.props
         const newCartItem = {cart_id: cart.id, product_id: product.id};
         this.props.postCartItem(newCartItem);
-        
-        debugger
     }
 
     render(){

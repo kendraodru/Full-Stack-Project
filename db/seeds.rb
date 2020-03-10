@@ -17,8 +17,7 @@ email:"justry@gmail.com", password: "password")
 # email:"jonjon@yahoo.com", password: "password")
 user3 = User.create(first_name:"Ryan", last_name:"Leung", 
 email:"ryry@gmail.com", password: "password")
-# user4 = User.create(first_name:"Vincent", last_name:"Tsui", 
-# email:"vince@gmail.com", password: "password")
+# user4 = User.create(first_name:"Vincent", last_name:"Tsui", email:"vince@gmail.com", password: "password")
 
 Product.destroy_all
 
@@ -58,6 +57,14 @@ ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. Th
 instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
 price: 42, size: "4.0oz")
 
+temp_product = Product.create({name: "Complementary Travel Sized Kale Super Cleanser",
+description: "Perfect for Traveling",
+instructions: "Apply after washing with warm water",
+ingredients: "See more",
+price: 0,
+size: "1 oz"
+})
+
 
 # product6 = Product.create(name:"Adaptogen Soothe Mist",
 # description:"An ultra-fine mist that hydrates, calms visible redness, and evens the look of skin tone with antioxidant-rich adaptogens, hyaluronic acid, and soothing peptides—like a serum in a mist.",
@@ -69,7 +76,7 @@ Cart.destroy_all
 cart1 = Cart.create(user_id: demo_user.id)
 cart2 = Cart.create(user_id: user1.id)
 cart3 = Cart.create(user_id: user2.id)
-cart4 = Cart.create(user_id: user.id)
+cart4 = Cart.create(user_id: user3.id)
 # cart2 = Cart.create(user_id: user1.id)
 
 CartItem.destroy_all
@@ -113,5 +120,10 @@ product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/1.jpg'), filename: '1.jpg')
 product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
 product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
+
+
+
+temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
+temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
 
 

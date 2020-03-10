@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+// need to fix my link
+const NavBar = ({ currentUser, logout, otherForm, cart})=>{
 
-const NavBar = ({ currentUser, logout, otherForm})=>{
+    const cartId = (cart) ? cart.id : "/"
 
     const display = (currentUser) ? (
         <span className='root-title'>
@@ -48,7 +50,9 @@ const NavBar = ({ currentUser, logout, otherForm})=>{
                 </div>
                 <div className='root-nav-item'>
                     <span className='root-title'>
-                        <span className='nav-btn'>CART</span>
+                        <a href={`/#/cart/${cartId}`}>
+                            <span className='nav-btn'>CART</span>
+                        </a>
                     </span>
                 </div>
             </div>
