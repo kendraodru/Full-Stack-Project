@@ -7,7 +7,8 @@ import { fetchProducts } from '../../actions/product_actions';
 import CartShow from './cart_show';
 
 const MapStateToProps = (state, ownProps) =>({
-    cart: state.entities.carts[ownProps.match.params.cartId],
+    cart: state.entities.cart,
+    // cart: state.entities.cart[ownProps.match.params.cartId],
     products: state.entities.products,
     cartItems: Object.values(state.entities.cartItems)
 })

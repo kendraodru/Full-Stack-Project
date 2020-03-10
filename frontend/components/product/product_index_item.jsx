@@ -25,9 +25,13 @@ class ProductIndexItem extends React.Component{
     }
 
     handleAddCartItem(){
+        // debugger
         const cart = this.props.cart
         const { product } = this.props
         const newCartItem = {cart_id: cart.id, product_id: product.id};
+        // PROBLEM, only want to add if the product isnt in a cart items,
+        //  else update the cart item
+        // if (this.props.cartItem[this.props.product])
         this.props.postCartItem(newCartItem);
     }
 

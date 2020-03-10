@@ -559,7 +559,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var MapStateToProps = function MapStateToProps(state, ownProps) {
   return {
-    cart: state.entities.carts[ownProps.match.params.cartId],
+    cart: state.entities.cart,
+    // cart: state.entities.cart[ownProps.match.params.cartId],
     products: state.entities.products,
     cartItems: Object.values(state.entities.cartItems)
   };
@@ -941,75 +942,126 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
  // need to fix my link
 
-var NavBar = function NavBar(_ref) {
-  var currentUser = _ref.currentUser,
-      logout = _ref.logout,
-      otherForm = _ref.otherForm,
-      cart = _ref.cart;
-  var cartId = cart ? cart.id : "/";
-  var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "nav-btn",
-    onClick: logout
-  }, "LOGOUT")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, otherForm);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "nav-btn",
-    to: "/products"
-  }, "SKIN CARE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "nav-btn"
-  }, "TO THE PEOPLE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "nav-btn"
-  }, "ABOUT")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-middle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/assets/yttplogo.png",
-    className: "nav-image",
-    alt: "Youth to the People"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-right"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav-item"
-  }, display), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "nav-btn"
-  }, "SEARCH"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "root-nav-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "root-title"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/#/cart/".concat(cartId)
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "nav-btn"
-  }, "CART"))))));
-};
+var NavBar = /*#__PURE__*/function (_React$Component) {
+  _inherits(NavBar, _React$Component);
 
+  function NavBar(props) {
+    var _this;
+
+    _classCallCheck(this, NavBar);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NavBar).call(this, props));
+    _this.state = {
+      quantity: _this.props.cartItems.length
+    };
+    return _this;
+  }
+
+  _createClass(NavBar, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.cartItems !== this.props.cartItems) {
+        var numProducts = this.props.cartItems.length;
+        this.setState({
+          quantity: numProducts
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          currentUser = _this$props.currentUser,
+          logout = _this$props.logout,
+          otherForm = _this$props.otherForm,
+          cart = _this$props.cart;
+      var cartId = cart ? cart.id : "/";
+      var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "nav-btn",
+        onClick: logout
+      }, "LOGOUT")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, otherForm);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "nav-btn",
+        to: "/products"
+      }, "SKIN CARE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "nav-btn"
+      }, "TO THE PEOPLE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "nav-btn"
+      }, "ABOUT")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-middle"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/assets/yttplogo.png",
+        className: "nav-image",
+        alt: "Youth to the People"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav-item"
+      }, display), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "nav-btn"
+      }, "SEARCH"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "root-nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "root-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/#/cart/".concat(cartId)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "nav-btn"
+      }, "CART(", this.state.quantity, ")"))))));
+    }
+  }]);
+
+  return NavBar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
 
 /***/ }),
@@ -1036,10 +1088,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // debugger. Hacky....fix this
+  // debugger
+  // . Hacky....fix this
   return {
     currentUser: state.entities.users[state.session.id],
-    cart: Object.values(state.entities.carts)[0]
+    cart: state.entities.cart,
+    // cart: Object.values(state.entities.carts)[0],
+    cartItems: Object.values(state.entities.cartItems)
   }; // debugger
 };
 
@@ -1162,11 +1217,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  // debugger
   return {
     products: Object.values(state.entities.products),
-    // cart: state.entities.carts,
+    cart: state.entities.cart,
     // cart: Object.values(state.entities.carts),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    cartItems: state.entities.cartItems
   };
 }; // my cart infomation doesn't persist when i navigate away
 
@@ -1178,6 +1235,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     postCartItem: function postCartItem(cartItem) {
       return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["postCartItem"])(cartItem));
+    },
+    updateCartItem: function updateCartItem(cartItem) {
+      return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["updateCartItem"])(cartItem));
     }
   };
 };
@@ -1251,12 +1311,16 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleAddCartItem",
     value: function handleAddCartItem() {
+      // debugger
       var cart = this.props.cart;
       var product = this.props.product;
       var newCartItem = {
         cart_id: cart.id,
         product_id: product.id
-      };
+      }; // PROBLEM, only want to add if the product isnt in a cart items,
+      //  else update the cart item
+      // if (this.props.cartItem[this.props.product])
+
       this.props.postCartItem(newCartItem);
     }
   }, {
@@ -2067,7 +2131,20 @@ var cartItemReducer = function cartItemReducer() {
 
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
-      return action.payload.cart_items;
+      // CHANGE TO CAMEL CASE. !!!!!!
+      // return action.payload.cart_items
+      // nextState[action.payload.cartItem.id] = action.cartItem
+      // action.payload.cart_items.map((item)=>{
+      //     nextState[item.id] = item;
+      // })
+      // return Object.assign(nextState, action.payload.cart_items)
+      if (action.payload.cart_items === undefined) {
+        return {};
+      } else {
+        return action.payload.cart_items;
+      }
+
+      ;
 
     case _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEM"]:
       nextState[action.cartItem.id] = action.cartItem;
@@ -2146,7 +2223,7 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  carts: _cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  cart: _cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
   cartItems: _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
@@ -2233,7 +2310,12 @@ var productReducer = function productReducer() {
       return Object.assign(nextState, action.payload.products);
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
-      return action.payload.products;
+      // debugger
+      if (action.payload.products === undefined) {
+        return {};
+      } else {
+        return action.payload.products;
+      }
 
     default:
       return state;
@@ -2593,7 +2675,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var preloadedState = {
       entities: {
         users: _defineProperty({}, window.currentUser.id, window.currentUser),
-        carts: _defineProperty({}, window.cart.id, window.cart)
+        cart: window.cart
       },
       session: {
         id: window.currentUser.id

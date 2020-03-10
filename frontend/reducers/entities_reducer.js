@@ -8,7 +8,7 @@ import cartItemReducer from './cart_items_reducer';
 const entitiesReducer = combineReducers({
     users: usersReducer,
     products: productReducer,
-    carts: cartReducer,
+    cart: cartReducer,
     cartItems: cartItemReducer
 });
 

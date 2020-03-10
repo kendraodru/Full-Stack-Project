@@ -6,8 +6,21 @@ const cartItemReducer = (state ={}, action)=>{
     let nextState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_CART:
-            return action.payload.cart_items
+            // CHANGE TO CAMEL CASE. !!!!!!
+            // return action.payload.cart_items
+            // nextState[action.payload.cartItem.id] = action.cartItem
+            // action.payload.cart_items.map((item)=>{
+            //     nextState[item.id] = item;
+            // })
+            // return Object.assign(nextState, action.payload.cart_items)
+            
+            if (action.payload.cart_items === undefined) {
+                return {}
+            } else {
+                return action.payload.cart_items
+            };
         case RECEIVE_CART_ITEM:
+            
             nextState[action.cartItem.id] = action.cartItem
             return nextState;
         case REMOVE_CART_ITEM:

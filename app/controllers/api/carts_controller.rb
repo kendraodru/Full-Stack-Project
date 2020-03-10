@@ -12,21 +12,21 @@ class Api::CartsController < ApplicationController
     def show
         # debugger
         @cart = current_user.cart
-        @products = @cart.products
-        @cart_items = @cart.cart_items
+        @products = @cart.products || []
+        @cart_items = @cart.cart_items || []
 
-        tempProduct = Product.find_by(
-            name: "Complementary Travel Sized Kale Super Cleanser"
-            )
+        # tempProduct = Product.find_by(
+        #     name: "Complementary Travel Sized Kale Super Cleanser"
+        #     )
 
-        if (@products.empty?)
-            @cart_items = CartItem.create({
-                cart_id: @cart.id,
-                product_id: tempProduct.id
-            })
+        # if (@products.empty?)
+        #     @cart_items = CartItem.create({
+        #         cart_id: @cart.id,
+        #         product_id: tempProduct.id
+        #     })
 
-            @products = @cart.products
-        end
+        #     @products = @cart.products
+        # end
         render 'api/carts/show'
         # debugger
     end

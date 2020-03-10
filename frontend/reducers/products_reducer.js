@@ -12,7 +12,12 @@ const productReducer = (state={}, action) =>{
             // return nextState;
             return Object.assign(nextState, action.payload.products)
         case RECEIVE_CART:
-            return action.payload.products
+            // debugger
+            if (action.payload.products === undefined){
+                return {}
+            }else{
+                return action.payload.products
+            }
         default:
             return state;
     }
