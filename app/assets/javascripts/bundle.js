@@ -1921,16 +1921,7 @@ var Splash = function Splash() {
     className: "main-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-pic-text"
-  }, "Good Skin", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Starts Here"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "main-pic-para"
-  }, "Intelligent multitasking hydration powered by antioxidant-rich adaptogens, hyaluronic acid, and activated neuropeptides. It's ultra-fine and ready for your top shelf."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "shop-now"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "shop-now-btn"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "shop-now-href ",
-    href: "/"
-  }, "SHOP NOW"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Good Skin", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Starts Here"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "TESTER"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lower-splash-content-outter-div"
