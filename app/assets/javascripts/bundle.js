@@ -1611,7 +1611,12 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       this.setState({
         errors: nextProps.errors
       });
-    }
+    } // static getDerivedStateFromProps(nextProps, prevState){
+    //     if (nextProps.errors !== prevState.errors){
+    //         this.setState({errors: nextProps.errors})
+    //     }
+    // }
+
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -2100,9 +2105,8 @@ var cartReducer = function cartReducer() {
   switch (action.type) {
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
       return action.payload.cart;
-
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
-      return action.payload.cart;
+    // case RECEIVE_CURRENT_USER:
+    //     return action.payload.cart;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["LOGOUT_CURRENT_USER"]:
       return {};
@@ -2225,6 +2229,7 @@ var productReducer = function productReducer() {
       return Object.assign(nextState, action.payload.products);
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
+      debugger;
       return action.payload.products;
 
     default:
@@ -2579,12 +2584,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
-  var store;
+  var store; // debugger
 
   if (window.currentUser) {
     var preloadedState = {
       entities: {
-        users: _defineProperty({}, window.currentUser.id, window.currentUser)
+        users: _defineProperty({}, window.currentUser.id, window.currentUser),
+        carts: _defineProperty({}, window.cart.id, window.cart)
       },
       session: {
         id: window.currentUser.id

@@ -19,6 +19,12 @@ export default class sessionForm extends React.Component {
     componentWillReceiveProps(nextProps){
         this.setState({errors: nextProps.errors})
     }
+    // static getDerivedStateFromProps(nextProps, prevState){
+    //     if (nextProps.errors !== prevState.errors){
+    //         this.setState({errors: nextProps.errors})
+    //     }
+    // }
+ 
 
     handleSubmit(e){
         e.preventDefault();

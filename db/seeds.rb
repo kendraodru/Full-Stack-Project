@@ -15,8 +15,8 @@ user2 = User.create(first_name:"Try", last_name:"Knov",
 email:"justry@gmail.com", password: "password")
 # user2 = User.create(first_name:"Jonothan", last_name:"Smith", 
 # email:"jonjon@yahoo.com", password: "password")
-# user3 = User.create(first_name:"Ryan", last_name:"Leung", 
-# email:"ryry@gmail.com", password: "password")
+user3 = User.create(first_name:"Ryan", last_name:"Leung", 
+email:"ryry@gmail.com", password: "password")
 # user4 = User.create(first_name:"Vincent", last_name:"Tsui", 
 # email:"vince@gmail.com", password: "password")
 
@@ -66,10 +66,10 @@ price: 42, size: "4.0oz")
 # price: 42, size: "4.0oz")
 
 Cart.destroy_all
-
 cart1 = Cart.create(user_id: demo_user.id)
 cart2 = Cart.create(user_id: user1.id)
 cart3 = Cart.create(user_id: user2.id)
+cart4 = Cart.create(user_id: user.id)
 # cart2 = Cart.create(user_id: user1.id)
 
 CartItem.destroy_all

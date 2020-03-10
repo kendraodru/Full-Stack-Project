@@ -10,6 +10,7 @@ class Api::CartsController < ApplicationController
     # end
 
     def show
+        debugger
         @cart = current_user.cart
         @products = @cart.products
         @cart_items = @cart.cart_items
