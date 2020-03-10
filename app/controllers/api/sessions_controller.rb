@@ -1,13 +1,15 @@
 class Api::SessionsController < ApplicationController
 
     def create
+
         @user = User.find_by_credentials(
             params[:user][:email],
             params[:user][:password]
         )
+        # debugger
         if @user
             login(@user)
-            @cart = Cart.find_by[user_id: @user.id]
+            @cart = Cart.find_by(user_id: @user.id)
             render 'api/users/show'
         else
             render json: ["Invalid email/password combination"], status: 401
