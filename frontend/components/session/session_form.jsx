@@ -24,13 +24,11 @@ export default class sessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal)
-            // .then(() => (dispatch(fetchCart())))
     }
 
     handleDemoUser(e){
         const demoUser = {email:'demo_user@gmail.com', password:'password'};
         this.props.processForm(demoUser).then((this.props.closeModal))
-        // this.props.processForm(demoUser).then((this.props.closeModal),(this.props.fetchCart()))
     }
     
     handleInput(type){

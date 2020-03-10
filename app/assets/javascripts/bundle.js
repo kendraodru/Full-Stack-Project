@@ -626,8 +626,8 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, CartItem);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CartItem).call(this, props));
-    debugger;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CartItem).call(this, props)); // debugger
+
     _this.state = {
       quantity: _this.props.item.quantity // price: (this.props.products[this.props.item.product_id].price * this.props.item.quantity)
 
@@ -1047,7 +1047,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
       }
-    }, "ACCOUNT"),
+    }, "LOGIN"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     }
@@ -1149,27 +1149,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _product_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_index */ "./frontend/components/product/product_index.jsx");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    products: Object.values(state.entities.products) // cart: state.entities.carts,
-    // currentUser: state.entities.users[state.session.id]
-
+    products: Object.values(state.entities.products),
+    // cart: state.entities.carts,
+    // cart: Object.values(state.entities.carts),
+    currentUser: state.entities.users[state.session.id]
   };
-}; // cart : {95:{}}
+}; // my cart infomation doesn't persist when i navigate away
 
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
-    } // ,
-    // postCartItem: (cartItem) => (dispatch(postCartItem(cartItem))),
-    // fetchCart: () => (dispatch(fetchCart()))
-
+    },
+    postCartItem: function postCartItem(cartItem) {
+      return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["postCartItem"])(cartItem));
+    }
   };
 };
 
@@ -1221,8 +1224,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       currentIdx: 0
     };
     _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
-    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this)); // this.handleAddCartItem = this.handleAddCartItem.bind(this)
-
+    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
+    _this.handleAddCartItem = _this.handleAddCartItem.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1238,14 +1241,21 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function handleHover(e) {
       e.preventDefault();
       this.changePhoto();
-    } // handleAddCartItem(){
-    //     debugger
-    //     const cart = this.props.cart[this.props.currentUser.id];
-    //     const newCartItem = {cart_id: cart.id, product_id: this.props.product.id};
-    //     this.props.postCartItem(newCartItem)
-    //     debugger
-    // }
+    }
+  }, {
+    key: "handleAddCartItem",
+    value: function handleAddCartItem() {
+      debugger; // const { cart } = this.props
 
+      var cart = this.props.cart;
+      var product = this.props.product;
+      var newCartItem = {
+        cart_id: cart.id,
+        product_id: product.id
+      };
+      this.props.postCartItem(newCartItem);
+      debugger;
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1285,7 +1295,9 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$".concat(product.price, " / ").concat(product.size)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-btn-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        // onClick={() => this.handleAddCartItem()} 
+        onClick: function onClick() {
+          return _this2.handleAddCartItem();
+        },
         className: "product-show-btn"
       }, "Add to cart"))));
     }
@@ -1515,7 +1527,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     processForm: function processForm(formUser) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"])(formUser));
     },
-    // fetchCart: () => (dispatch(fetchCart())),
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["clearSessionErrors"])());
     },
@@ -1606,7 +1617,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user).then(this.props.closeModal); // .then(() => (dispatch(fetchCart())))
+      this.props.processForm(user).then(this.props.closeModal);
     }
   }, {
     key: "handleDemoUser",
@@ -1615,7 +1626,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         email: 'demo_user@gmail.com',
         password: 'password'
       };
-      this.props.processForm(demoUser).then(this.props.closeModal); // this.props.processForm(demoUser).then((this.props.closeModal),(this.props.fetchCart()))
+      this.props.processForm(demoUser).then(this.props.closeModal);
     }
   }, {
     key: "handleInput",

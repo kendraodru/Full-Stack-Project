@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
     logout: () => (dispatch(logout())),
     otherForm: (
         <span className='nav-btn' onClick={() => dispatch(openModal('login'))}>
-            ACCOUNT
+            LOGIN
       </span>
     ),
     closeModal: () => dispatch(closeModal())
