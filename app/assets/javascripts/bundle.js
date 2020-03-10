@@ -627,8 +627,10 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CartItem);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CartItem).call(this, props));
+    debugger;
     _this.state = {
-      quantity: _this.props.item.quantity
+      quantity: _this.props.item.quantity // price: (this.props.products[this.props.item.product_id].price * this.props.item.quantity)
+
     };
     _this.handleProductQuantity = _this.handleProductQuantity.bind(_assertThisInitialized(_this));
     _this.handleCartItemDB = _this.handleCartItemDB.bind(_assertThisInitialized(_this));
@@ -637,7 +639,6 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
   } // componentDidUpdate(prevProps){
   //     // use preProps when youre not usng a local state, can use local here
   //     // if (this.state.quantity !== preProps.item.quantity)
-  //     debugger
   //     if (this.state.quantity !== this.props.item.quantity){
   //         this.props.fetchCart()
   //     }
@@ -653,8 +654,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
 
       switch (type) {
         case 'add':
-          var addedQuantity = oldQuantity + 1; // this.setState({quantity: addedQuantity})
-
+          var addedQuantity = oldQuantity + 1;
           this.handleCartItemDB(addedQuantity).then(function () {
             return _this2.setState({
               quantity: addedQuantity
@@ -664,10 +664,11 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
 
         case 'subtract':
           var subbedQuantity = oldQuantity - 1;
-          this.setState({
-            quantity: subbedQuantity
-          }); // .then(() => (this.handleCartItemDB())
-
+          this.handleCartItemDB(subbedQuantity).then(function () {
+            return _this2.setState({
+              quantity: subbedQuantity
+            });
+          });
           break;
       }
 
@@ -694,16 +695,13 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      // debugger
       var products = this.props.products;
       var item = this.props.item;
       var product = products[item.product_id];
 
       if (product === undefined) {
         return null;
-      } // console.log(product)
-      // console.log(this.props.products)
-
+      }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-pic"
@@ -722,14 +720,22 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.handleProductQuantity('add');
         }
-      }, "+")))));
+      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "space"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-item-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this3.handleDeleteCartItem();
+        }
+      }, "Remove")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))))));
     }
   }]);
 
   return CartItem;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (CartItem); // i need to create two more components that handle deleting and updating
+/* harmony default export */ __webpack_exports__["default"] = (CartItem);
 
 /***/ }),
 
@@ -791,7 +797,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      if (this.props.cart === undefined || this.props.cartItems === undefined) {
+      if (this.props.cart === undefined) {
         return null;
       }
 
@@ -802,11 +808,10 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           item: item,
           products: _this.props.products,
           updateCartItem: _this.props.updateCartItem,
-          deleteCartItem: _this.props.deleteCartItem,
-          fetchCart: _this.props.fetchCart
+          deleteCartItem: _this.props.deleteCartItem // fetchCart = {this.props.fetchCart}
+
         });
       });
-      console.log(items);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, items));
@@ -1103,10 +1108,13 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var products = this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
-          key: product.id
+          key: product.id,
+          postCartItem: _this.props.postCartItem
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1145,15 +1153,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    products: Object.values(state.entities.products)
+    products: Object.values(state.entities.products),
+    cart: state.entities.carts,
+    currentUser: state.entities.users[state.session.id]
   };
-};
+}; // cart : {95:{}}
+
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
-    }
+    },
+    postCartItem: function (_postCartItem) {
+      function postCartItem(_x) {
+        return _postCartItem.apply(this, arguments);
+      }
+
+      postCartItem.toString = function () {
+        return _postCartItem.toString();
+      };
+
+      return postCartItem;
+    }(function (cartItem) {
+      return dispatch(postCartItem(cartItem));
+    })
   };
 };
 

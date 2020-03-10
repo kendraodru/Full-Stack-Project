@@ -19,7 +19,7 @@ class CartShow extends React.Component{
     // }
 
     render(){
-        if (this.props.cart === undefined || this.props.cartItems === undefined) {
+        if (this.props.cart === undefined) {
             return null;
         };
 
@@ -31,11 +31,10 @@ class CartShow extends React.Component{
                 products={this.props.products}
                 updateCartItem = {this.props.updateCartItem}
                 deleteCartItem = {this.props.deleteCartItem} 
-                fetchCart = {this.props.fetchCart}
+                // fetchCart = {this.props.fetchCart}
                 />
             )
         })
-        console.log(items)
 
         return(
             <div>

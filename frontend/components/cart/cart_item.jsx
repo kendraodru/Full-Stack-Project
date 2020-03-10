@@ -3,8 +3,12 @@ import React from 'react';
 class CartItem extends React.Component{
     constructor(props){
         super(props);
+        debugger
+        
+
         this.state = {
-            quantity: this.props.item.quantity
+            quantity: this.props.item.quantity,
+            // price: (this.props.products[this.props.item.product_id].price * this.props.item.quantity)
         }
 
         this.handleProductQuantity = this.handleProductQuantity.bind(this);
@@ -15,7 +19,6 @@ class CartItem extends React.Component{
     // componentDidUpdate(prevProps){
     //     // use preProps when youre not usng a local state, can use local here
     //     // if (this.state.quantity !== preProps.item.quantity)
-    //     debugger
     //     if (this.state.quantity !== this.props.item.quantity){
     //         this.props.fetchCart()
     //     }
@@ -29,14 +32,13 @@ class CartItem extends React.Component{
         switch(type){
             case 'add':
                 let addedQuantity = oldQuantity + 1;
-                // this.setState({quantity: addedQuantity})
                 this.handleCartItemDB(addedQuantity)
                     .then(() => this.setState({ quantity: addedQuantity }))
                 break;
             case 'subtract':
                 let subbedQuantity = oldQuantity - 1;
-                this.setState({ quantity: subbedQuantity })
-                    // .then(() => (this.handleCartItemDB())
+                this.handleCartItemDB(subbedQuantity)
+                    .then(() => this.setState({ quantity: subbedQuantity }))
                 break;
         };  
     }
@@ -49,7 +51,6 @@ class CartItem extends React.Component{
             product_id: this.props.item.product_id,
             quantity: quantity
         } 
-
         return this.props.updateCartItem(updatedItem);
     }
 
@@ -57,11 +58,7 @@ class CartItem extends React.Component{
         this.props.deleteCartItem(this.props.item.id)
     }
 
-
-
-    render (){
-        // debugger
-        
+    render (){    
         const { products } = this.props;
         const { item } = this.props;
         const product = products[item.product_id];
@@ -69,9 +66,7 @@ class CartItem extends React.Component{
         if (product === undefined) {
             return null;
         }
-        // console.log(product)
-        // console.log(this.props.products)
-        
+
         return(
             <div>
                 <div>
@@ -93,6 +88,23 @@ class CartItem extends React.Component{
                                 +
                             </div>
                         </div>
+                        <div>
+                            space
+                        </div>
+                        <div className='delete-item-wrap'>
+                            <div onClick={()=> this.handleDeleteCartItem()}>
+                                Remove
+                            </div>
+                        </div>
+                        <div className="price-wrapper">
+                            <div>
+
+                            </div>
+                            <div>
+                                {/* <span>${this.state.price}</span> */}
+                                <span>${ product.price * this.state.quantity}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,4 +114,3 @@ class CartItem extends React.Component{
 }
 
 export default CartItem;
-// i need to create two more components that handle deleting and updating
