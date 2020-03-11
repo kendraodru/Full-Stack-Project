@@ -10,8 +10,6 @@
 #
 class CartItem < ApplicationRecord
     validates :cart_id, :quantity, :product_id, presence:true
-    # validates 
-    # validates :product_id, uniqueness: true
     before_validation :default_quantity 
     
     belongs_to :cart,

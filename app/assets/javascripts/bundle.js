@@ -1299,8 +1299,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     };
     _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
     _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
-    _this.handleChangingCartItem = _this.handleChangingCartItem.bind(_assertThisInitialized(_this)); // this.handleAddCartItem = this.handleAddCartItem.bind(this)
-
+    _this.handleChangingCartItem = _this.handleChangingCartItem.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1316,20 +1315,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function handleHover(e) {
       e.preventDefault();
       this.changePhoto();
-    } // handleChangingCartItem(){
-    //     // debugger
-    //     // if (this.cartItems)
-    //     // debugger
-    //     const cart = this.props.cart
-    //     const { product } = this.props
-    //     const newCartItem = {cart_id: cart.id, product_id: product.id};
-    //     // PROBLEM, only want to add if the product isnt in a cart items,
-    //     //  else update the cart item
-    //     // if (this.props.cartItem[this.props.product])
-    //     this.props.postCartItem(newCartItem);
-    //     // debugger
-    // }
-
+    }
   }, {
     key: "handleChangingCartItem",
     value: function handleChangingCartItem() {
@@ -1362,17 +1348,13 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "addCartItem",
     value: function addCartItem(newCartItem) {
       this.props.postCartItem(newCartItem);
-    } // updateItem(updatedCartItem){
-    //     this.props.updateCartItem(updatedCartItem);
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var product = this.props.product; // onMouseOver = { e => this.handleHover(e) } onMouseLeave = { e => this.handleHover(e) }
-
+      var product = this.props.product;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-root"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1407,8 +1389,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.handleChangingCartItem();
-        } // onClick={() => this.handleAddCartItem()} 
-        ,
+        },
         className: "product-show-btn"
       }, "Add to cart"))));
     }
@@ -2233,7 +2214,7 @@ var cartItemReducer = function cartItemReducer() {
         return action.payload.cartItems;
       }
 
-    // changed to camel case
+    // changed to camel case, will have to revise a lot. keep for now
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["LOGOUT_CURRENT_USER"]:
       return {};

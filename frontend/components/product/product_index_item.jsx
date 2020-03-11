@@ -11,7 +11,6 @@ class ProductIndexItem extends React.Component{
         this.changePhoto = this.changePhoto.bind(this)
         this.handleHover = this.handleHover.bind(this)
         this.handleChangingCartItem = this.handleChangingCartItem.bind(this)
-        // this.handleAddCartItem = this.handleAddCartItem.bind(this)
     }
 
    
@@ -24,21 +23,6 @@ class ProductIndexItem extends React.Component{
         e.preventDefault();
         this.changePhoto()
     }
-
-    // handleChangingCartItem(){
-    //     // debugger
-    //     // if (this.cartItems)
-    //     // debugger
-    //     const cart = this.props.cart
-    //     const { product } = this.props
-    //     const newCartItem = {cart_id: cart.id, product_id: product.id};
-    //     // PROBLEM, only want to add if the product isnt in a cart items,
-    //     //  else update the cart item
-    //     // if (this.props.cartItem[this.props.product])
-    //     this.props.postCartItem(newCartItem);
-    //     // debugger
-    // }
-
     handleChangingCartItem(){
         let existingCartItem;
         const cart = this.props.cart
@@ -72,14 +56,10 @@ class ProductIndexItem extends React.Component{
         this.props.postCartItem(newCartItem);
     }
 
-    // updateItem(updatedCartItem){
-    //     this.props.updateCartItem(updatedCartItem);
-    // }
-
     render(){
 
         const { product } = this.props
-        // onMouseOver = { e => this.handleHover(e) } onMouseLeave = { e => this.handleHover(e) }
+    
         return (
             <div className='product-root' >
                 {/* <div className='product-content'> */}
@@ -92,10 +72,6 @@ class ProductIndexItem extends React.Component{
                              </div>
                         </div>     */}
             
-
-
-
-                        {/* what i have now below */}
                         <div className='product-pic'>
                         <img 
                         src={product.photoUrls[this.state.currentIdx]} alt="" 
@@ -117,9 +93,7 @@ class ProductIndexItem extends React.Component{
                             </div>
                         </div>
                         <div className="product-btn-div">
-                        <button
-                            onClick={() => this.handleChangingCartItem()} 
-                        // onClick={() => this.handleAddCartItem()} 
+                        <button onClick={() => this.handleChangingCartItem()} 
                         className='product-show-btn'>Add to cart</button>
                         </div>
                     </div>

@@ -58,7 +58,6 @@ class ProductShow extends React.Component {
                             <div className='show-pic-wrapper'>
                                 <div className="show-pic">
                                     < Carousel product={ product } />
-                                    {/* <img src="https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/> */}
                                 </div>
                             </div>
                             <div className='show-content-info-wrapper'>

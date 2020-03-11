@@ -12,7 +12,7 @@ const cartItemReducer = (state ={}, action)=>{
             }else{
                 return action.payload.cartItems;
             }
-// changed to camel case
+// changed to camel case, will have to revise a lot. keep for now
         case LOGOUT_CURRENT_USER:
             return {};
         case RECEIVE_CART:            
