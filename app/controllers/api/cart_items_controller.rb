@@ -17,7 +17,7 @@ class Api::CartItemsController < ApplicationController
     end
 #why do i not have access to current user for my update and destroy???
     def update
-        # debugger
+        
         # @user = current_user
         @cart_item = CartItem.find_by(id:params[:id])
         # cart = Cart.find_by(id: @cart_item.cart_id)

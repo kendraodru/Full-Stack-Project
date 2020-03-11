@@ -10,7 +10,7 @@ const mapStateToProps = state =>{
     cart: state.entities.cart,
     // cart: Object.values(state.entities.carts),
     currentUser: state.entities.users[state.session.id],
-    cartItems: state.entities.cartItems
+    cartItems: Object.values(state.entities.cartItems)
     })
 }
 // my cart infomation doesn't persist when i navigate away

@@ -1184,7 +1184,8 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
           postCartItem: _this.props.postCartItem,
           updateCartItem: _this.props.updateCartItem,
           cart: _this.props.cart,
-          currentUser: _this.props.currentUser
+          currentUser: _this.props.currentUser,
+          cartItems: _this.props.cartItems
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1230,7 +1231,7 @@ var mapStateToProps = function mapStateToProps(state) {
     cart: state.entities.cart,
     // cart: Object.values(state.entities.carts),
     currentUser: state.entities.users[state.session.id],
-    cartItems: state.entities.cartItems
+    cartItems: Object.values(state.entities.cartItems)
   };
 }; // my cart infomation doesn't persist when i navigate away
 
@@ -1298,7 +1299,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     };
     _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
     _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
-    _this.handleAddCartItem = _this.handleAddCartItem.bind(_assertThisInitialized(_this));
+    _this.handleChangingCartItem = _this.handleChangingCartItem.bind(_assertThisInitialized(_this)); // this.handleAddCartItem = this.handleAddCartItem.bind(this)
+
     return _this;
   }
 
@@ -1314,24 +1316,56 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function handleHover(e) {
       e.preventDefault();
       this.changePhoto();
-    }
+    } // handleChangingCartItem(){
+    //     // debugger
+    //     // if (this.cartItems)
+    //     // debugger
+    //     const cart = this.props.cart
+    //     const { product } = this.props
+    //     const newCartItem = {cart_id: cart.id, product_id: product.id};
+    //     // PROBLEM, only want to add if the product isnt in a cart items,
+    //     //  else update the cart item
+    //     // if (this.props.cartItem[this.props.product])
+    //     this.props.postCartItem(newCartItem);
+    //     // debugger
+    // }
+
   }, {
-    key: "handleAddCartItem",
-    value: function handleAddCartItem() {
-      // debugger
-      // if (this.cartItems)
-      // debugger
+    key: "handleChangingCartItem",
+    value: function handleChangingCartItem() {
+      var existingCartItem;
       var cart = this.props.cart;
       var product = this.props.product;
-      var newCartItem = {
-        cart_id: cart.id,
-        product_id: product.id
-      }; // PROBLEM, only want to add if the product isnt in a cart items,
-      //  else update the cart item
-      // if (this.props.cartItem[this.props.product])
+      this.props.cartItems.forEach(function (cartItem) {
+        if (cartItem.product_id === product.id) {
+          existingCartItem = cartItem;
+        }
+      });
 
-      this.props.postCartItem(newCartItem); // debugger
+      if (existingCartItem) {
+        var updatedItem = {
+          id: existingCartItem.id,
+          cart_id: existingCartItem.cart_id,
+          product_id: existingCartItem.product_id,
+          quantity: existingCartItem.quantity + 1
+        };
+        this.props.updateCartItem(updatedItem);
+      } else {
+        var newCartItem = {
+          cart_id: cart.id,
+          product_id: product.id
+        };
+        this.addCartItem(newCartItem);
+      }
     }
+  }, {
+    key: "addCartItem",
+    value: function addCartItem(newCartItem) {
+      this.props.postCartItem(newCartItem);
+    } // updateItem(updatedCartItem){
+    //     this.props.updateCartItem(updatedCartItem);
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1372,8 +1406,9 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "product-btn-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this2.handleAddCartItem();
-        },
+          return _this2.handleChangingCartItem();
+        } // onClick={() => this.handleAddCartItem()} 
+        ,
         className: "product-show-btn"
       }, "Add to cart"))));
     }

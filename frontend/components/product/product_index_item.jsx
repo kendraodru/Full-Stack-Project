@@ -10,7 +10,8 @@ class ProductIndexItem extends React.Component{
 
         this.changePhoto = this.changePhoto.bind(this)
         this.handleHover = this.handleHover.bind(this)
-        this.handleAddCartItem = this.handleAddCartItem.bind(this)
+        this.handleChangingCartItem = this.handleChangingCartItem.bind(this)
+        // this.handleAddCartItem = this.handleAddCartItem.bind(this)
     }
 
    
@@ -24,19 +25,56 @@ class ProductIndexItem extends React.Component{
         this.changePhoto()
     }
 
-    handleAddCartItem(){
-        // debugger
-        // if (this.cartItems)
-        // debugger
+    // handleChangingCartItem(){
+    //     // debugger
+    //     // if (this.cartItems)
+    //     // debugger
+    //     const cart = this.props.cart
+    //     const { product } = this.props
+    //     const newCartItem = {cart_id: cart.id, product_id: product.id};
+    //     // PROBLEM, only want to add if the product isnt in a cart items,
+    //     //  else update the cart item
+    //     // if (this.props.cartItem[this.props.product])
+    //     this.props.postCartItem(newCartItem);
+    //     // debugger
+    // }
+
+    handleChangingCartItem(){
+        let existingCartItem;
         const cart = this.props.cart
         const { product } = this.props
-        const newCartItem = {cart_id: cart.id, product_id: product.id};
-        // PROBLEM, only want to add if the product isnt in a cart items,
-        //  else update the cart item
-        // if (this.props.cartItem[this.props.product])
-        this.props.postCartItem(newCartItem);
-        // debugger
+
+        this.props.cartItems.forEach(cartItem =>{
+            if(cartItem.product_id === product.id){
+                existingCartItem = cartItem
+            }
+        });
+
+        if(existingCartItem){
+            
+            let updatedItem = {
+                id: existingCartItem.id,
+                cart_id: existingCartItem.cart_id,
+                product_id: existingCartItem.product_id,
+                quantity: existingCartItem.quantity+1
+            }
+            
+            this.props.updateCartItem(updatedItem);
+        }
+        else{
+            const newCartItem = {cart_id: cart.id, product_id: product.id};
+            this.addCartItem(newCartItem);
+        }
+        
     }
+
+    addCartItem(newCartItem){
+        this.props.postCartItem(newCartItem);
+    }
+
+    // updateItem(updatedCartItem){
+    //     this.props.updateCartItem(updatedCartItem);
+    // }
 
     render(){
 
@@ -80,7 +118,8 @@ class ProductIndexItem extends React.Component{
                         </div>
                         <div className="product-btn-div">
                         <button
-                        onClick={() => this.handleAddCartItem()} 
+                            onClick={() => this.handleChangingCartItem()} 
+                        // onClick={() => this.handleAddCartItem()} 
                         className='product-show-btn'>Add to cart</button>
                         </div>
                     </div>

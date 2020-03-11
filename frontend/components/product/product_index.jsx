@@ -21,6 +21,7 @@ class ProductIndex extends React.Component {
                 updateCartItem={this.props.updateCartItem}
                 cart={this.props.cart}
                 currentUser ={this.props.currentUser}
+                cartItems = {this.props.cartItems}
                 />
             )
         });
