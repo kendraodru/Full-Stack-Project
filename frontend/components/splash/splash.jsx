@@ -1,7 +1,8 @@
 import React from 'react'
 import Tile from './tile';
 import PicSet from './photoset';
-import MidSplash from './mid_splash'
+import MidSplash from './mid_splash';
+import UpperMid from './upper_mid';
 
 class Splash extends React.Component{
 
@@ -45,7 +46,8 @@ class Splash extends React.Component{
                     </div>
                     <div className="lower-splash-content-outter-div">
                         <div className='lower-splash-content'>
-                            < MidSplash />
+                            <UpperMid />
+                            <MidSplash />
                             <Tile />
                             <PicSet />
                         </div>

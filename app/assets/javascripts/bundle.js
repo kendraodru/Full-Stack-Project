@@ -2063,6 +2063,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tile */ "./frontend/components/splash/tile.jsx");
 /* harmony import */ var _photoset__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photoset */ "./frontend/components/splash/photoset.jsx");
 /* harmony import */ var _mid_splash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mid_splash */ "./frontend/components/splash/mid_splash.jsx");
+/* harmony import */ var _upper_mid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./upper_mid */ "./frontend/components/splash/upper_mid.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2080,6 +2081,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2120,7 +2122,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "lower-splash-content-outter-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lower-splash-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mid_splash__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_upper_mid__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mid_splash__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
   }]);
 
@@ -2181,6 +2183,30 @@ var Tile = function Tile() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tile);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/upper_mid.jsx":
+/*!**************************************************!*\
+  !*** ./frontend/components/splash/upper_mid.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var UpperMid = function UpperMid() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/splash/allskin.jpg",
+    alt: ""
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UpperMid);
 
 /***/ }),
 
