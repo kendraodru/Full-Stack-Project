@@ -6,6 +6,8 @@ export const postCartItem = cartItem =>(
     })
 )
 
+// think about changing this to snake case in the future because it effected my params.require() in controller and chaning the state in my form
+
 export const updateCartItem = cartItem =>(
     $.ajax({
         url:`/api/cart_items/${cartItem.id}`,

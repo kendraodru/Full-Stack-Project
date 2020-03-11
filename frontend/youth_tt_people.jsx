@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const preloadedState = {
             entities: {
                 users: { [window.currentUser.id]: window.currentUser },
-                cart: window.cart
+                cart: window.cart.cart,
+                cartItems: window.cart.cartItems
             },
             session: { id: window.currentUser.id }
         };

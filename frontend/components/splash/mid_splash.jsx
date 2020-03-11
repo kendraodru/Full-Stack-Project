@@ -23,8 +23,8 @@ const MidSplash = () =>{
                 </div>
                 <div className="best-item-wrapper">
                     <div className='best-item-img'>
-                        <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/0.jpg" alt="" />
-                        {/* <img src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/1.jpg" alt=""/> */}
+                        <img id="elem" src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/0.jpg" alt="" />
+                        {/* <img id="elem" className="testing-hover" src="https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/1.jpg" alt=""/> */}
 
                     </div>
                     <div className='best-item-title-wrap'>

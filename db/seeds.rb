@@ -57,13 +57,13 @@ ingredients: "Proprietary Adaptogen Blend: Ashwagandha, Rhodiola, and Reishi. Th
 instructions: "Use morning, night, and throughout the day to keep skin calm and hydrated with a healthy glow. Use pre and post-makeup to refresh skin. Shake well. Avoid eye contact.",
 price: 42, size: "4.0oz")
 
-temp_product = Product.create({name: "Complementary Travel Sized Kale Super Cleanser",
-description: "Perfect for Traveling",
-instructions: "Apply after washing with warm water",
-ingredients: "See more",
-price: 0,
-size: "1 oz"
-})
+# temp_product = Product.create({name: "Complementary Travel Sized Kale Super Cleanser",
+# description: "Perfect for Traveling",
+# instructions: "Apply after washing with warm water",
+# ingredients: "See more",
+# price: 0,
+# size: "1 oz"
+# })
 
 
 # product6 = Product.create(name:"Adaptogen Soothe Mist",
@@ -123,7 +123,7 @@ product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 
 
 
-temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
-temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
+# temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
+# temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
 
 

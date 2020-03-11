@@ -1224,7 +1224,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
+  // debugger
   return {
     products: Object.values(state.entities.products),
     cart: state.entities.cart,
@@ -1318,8 +1318,9 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleAddCartItem",
     value: function handleAddCartItem() {
-      debugger; // if (this.cartItems)
-
+      // debugger
+      // if (this.cartItems)
+      // debugger
       var cart = this.props.cart;
       var product = this.props.product;
       var newCartItem = {
@@ -1329,7 +1330,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       //  else update the cart item
       // if (this.props.cartItem[this.props.product])
 
-      this.props.postCartItem(newCartItem);
+      this.props.postCartItem(newCartItem); // debugger
     }
   }, {
     key: "render",
@@ -1891,6 +1892,7 @@ var MidSplash = function MidSplash() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "best-item-img"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    id: "elem",
     src: "https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/0.jpg",
     alt: ""
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2128,6 +2130,8 @@ var Tile = function Tile() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
 /* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
@@ -2138,14 +2142,19 @@ var cartItemReducer = function cartItemReducer() {
   var nextState = Object.assign({}, state);
 
   switch (action.type) {
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_CURRENT_USER"]:
+      if (action.payload.cartItems === undefined) {
+        return {};
+      } else {
+        return action.payload.cartItems;
+      }
+
+    // changed to camel case
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["LOGOUT_CURRENT_USER"]:
+      return {};
+
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
-      // CHANGE TO CAMEL CASE. !!!!!!
-      // return action.payload.cart_items
-      // nextState[action.payload.cartItem.id] = action.cartItem
-      // action.payload.cart_items.map((item)=>{
-      //     nextState[item.id] = item;
-      // })
-      // return Object.assign(nextState, action.payload.cart_items)
       if (action.payload.cart_items === undefined) {
         return {};
       } else {
@@ -2558,7 +2567,8 @@ var postCartItem = function postCartItem(cartItem) {
       cartItem: cartItem
     }
   });
-};
+}; // think about changing this to snake case in the future because it effected my params.require() in controller and chaning the state in my form
+
 var updateCartItem = function updateCartItem(cartItem) {
   return $.ajax({
     url: "/api/cart_items/".concat(cartItem.id),
@@ -2683,7 +2693,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var preloadedState = {
       entities: {
         users: _defineProperty({}, window.currentUser.id, window.currentUser),
-        cart: window.cart
+        cart: window.cart.cart,
+        cartItems: window.cart.cartItems
       },
       session: {
         id: window.currentUser.id

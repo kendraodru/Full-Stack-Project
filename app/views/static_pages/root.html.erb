@@ -6,7 +6,7 @@
         ).html_safe %>
 
         window.cart = <%= render(
-            "api/carts/cart.json.jbuilder",
+            "api/carts/current_user_cart.json.jbuilder",
             cart: current_user.cart
         ).html_safe %>
         
