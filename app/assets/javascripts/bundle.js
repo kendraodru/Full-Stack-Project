@@ -2200,10 +2200,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var UpperMid = function UpperMid() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "upper-splash-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pic-and-title"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "upper-splash-title"
+  }, "All Skin", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Is Normal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "upper-splash-pic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/splash/allskin.jpg",
     alt: ""
-  }));
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "upper-splash-para-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "normal-skin-info"
+  }, "Having \u201Cnormal\u201D skin is an important topic of conversation in skincare, and there hasn\u2019t really been a standard for what that means in the industry."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "normal-skin-btn"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "READ MORE")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (UpperMid);

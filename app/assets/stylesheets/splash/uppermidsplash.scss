@@ -1,0 +1,56 @@
+
+.upper-splash-wrap{
+    display: flex;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.upper-splash-title{
+    font-family: "Unica77 LL", sans-serif;
+    font-size: 80px;
+    line-height: 80px;
+    text-align: left;
+    letter-spacing: 0.64px;
+}
+
+.upper-splash-pic img{
+    width: 51vw;
+    height: 70%;
+    padding-right: 10%;
+}
+
+.upper-splash-para-info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40%;
+}
+
+.normal-skin-info{
+   font-family: "Unica77 LL", sans-serif;
+   font-size: 15px; 
+   text-align: start;
+   line-height: 22px;
+   letter-spacing: 0.64px;
+   padding-bottom: 5%;
+}
+
+.normal-skin-btn span{
+    font-size: 12px;
+    font-family: "Unica77 LL", sans-serif;
+    line-height: 13.8px;
+    text-align: center;
+    letter-spacing: 0.64;
+    color: #ffffff;
+}
+.normal-skin-btn{
+    background-color:#ef4b24;
+    padding: 20px 30px;
+    border-radius: 3px;
+
+    transition: 0.4s ease-in-out;
+}
+
+.normal-skin-btn:hover{
+    background-color:#000000;
+}
+
