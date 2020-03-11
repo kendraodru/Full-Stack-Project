@@ -1182,6 +1182,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
           product: product,
           key: product.id,
           postCartItem: _this.props.postCartItem,
+          updateCartItem: _this.props.updateCartItem,
           cart: _this.props.cart,
           currentUser: _this.props.currentUser
         });
@@ -1223,7 +1224,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // debugger
+  debugger;
   return {
     products: Object.values(state.entities.products),
     cart: state.entities.cart,
@@ -1317,7 +1318,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleAddCartItem",
     value: function handleAddCartItem() {
-      // debugger
+      debugger; // if (this.cartItems)
+
       var cart = this.props.cart;
       var product = this.props.product;
       var newCartItem = {

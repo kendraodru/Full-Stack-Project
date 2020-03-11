@@ -18,6 +18,7 @@ class ProductIndex extends React.Component {
                 product={product} 
                 key={product.id} 
                 postCartItem={this.props.postCartItem}
+                updateCartItem={this.props.updateCartItem}
                 cart={this.props.cart}
                 currentUser ={this.props.currentUser}
                 />
