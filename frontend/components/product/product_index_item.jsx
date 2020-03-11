@@ -46,10 +46,11 @@ class ProductIndexItem extends React.Component{
                         
                         {/* <div className='product-pic'>
                             <div className='product-pic-trans'>
-                                <img className="first-pic" src={product.photoUrls[0]} alt=""/>
+                                 <img className="first-pic" src={product.photoUrls[0]} alt=""/>
                                 <img className="second-pic" src={product.photoUrls[1]} alt=""/>
-                            </div>
-                        </div>   */}
+                             </div>
+                        </div>     */}
+            
 
 
 

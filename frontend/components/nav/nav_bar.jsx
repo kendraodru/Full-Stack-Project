@@ -15,6 +15,8 @@ class NavBar extends React.Component{
             this.setState({quantity: numProducts})
         }
     }
+ 
+ 
 
     render(){
         const  { currentUser, logout, otherForm, cart } = this.props
@@ -66,6 +68,7 @@ class NavBar extends React.Component{
                     <div className='root-nav-item'>
                         <span className='root-title'>
                             <a href={`/#/cart/${cartId}`}>
+                                 {/* <span className='nav-btn'>CART({this.state.quantity})</span> */}
                                  <span className='nav-btn'>CART({this.state.quantity})</span>
                             </a>
                         </span>

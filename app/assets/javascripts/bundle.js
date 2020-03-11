@@ -665,12 +665,18 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
 
         case 'subtract':
           var subbedQuantity = oldQuantity - 1;
-          this.handleCartItemDB(subbedQuantity).then(function () {
-            return _this2.setState({
-              quantity: subbedQuantity
+
+          if (subbedQuantity < 1) {
+            this.props.deleteCartItem(this.props.item.id);
+          } else {
+            this.handleCartItemDB(subbedQuantity).then(function () {
+              return _this2.setState({
+                quantity: subbedQuantity
+              });
             });
-          });
-          break;
+            break;
+          }
+
       }
 
       ;
@@ -1094,7 +1100,7 @@ var mapStateToProps = function mapStateToProps(state) {
     currentUser: state.entities.users[state.session.id],
     cart: state.entities.cart,
     // cart: Object.values(state.entities.carts)[0],
-    cartItems: Object.values(state.entities.cartItems)
+    cartItems: Object.keys(state.entities.cartItems)
   }; // debugger
 };
 

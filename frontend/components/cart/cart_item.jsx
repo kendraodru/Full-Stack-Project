@@ -37,9 +37,15 @@ class CartItem extends React.Component{
                 break;
             case 'subtract':
                 let subbedQuantity = oldQuantity - 1;
-                this.handleCartItemDB(subbedQuantity)
+
+                if (subbedQuantity < 1){
+                    this.props.deleteCartItem(this.props.item.id)
+                }else{this.handleCartItemDB(subbedQuantity)
                     .then(() => this.setState({ quantity: subbedQuantity }))
                 break;
+                }
+
+                
         };  
     }
 
