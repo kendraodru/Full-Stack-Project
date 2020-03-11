@@ -1304,6 +1304,15 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(ProductIndexItem, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var container = document.querySelector("#image-container-".concat(this.props.product.id));
+      var url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2]; // console.log(url);
+
+      container.style.backgroundImage = "url(".concat(url, ")");
+      console.log(container.style.backgroundImage);
+    }
+  }, {
     key: "changePhoto",
     value: function changePhoto() {
       this.setState({
@@ -1361,16 +1370,14 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "product-index-show-link",
         href: "/#/products/".concat(product.name, "/").concat(product.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "image-container-".concat(product.id),
         className: "product-pic"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "hide-on-hover",
         src: product.photoUrls[this.state.currentIdx],
-        alt: "",
-        onMouseOver: function onMouseOver(e) {
-          return _this2.handleHover(e);
-        },
-        onMouseOut: function onMouseOut(e) {
-          return _this2.handleHover(e);
-        }
+        alt: "" // onMouseOver={(e)=>this.handleHover(e)}
+        // onMouseOut={(e) => this.handleHover(e)}/>
+
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2117,8 +2124,6 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-pic-text"
       }, "Good Skin", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Starts Here"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "TESTER"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lower-splash-content-outter-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lower-splash-content"

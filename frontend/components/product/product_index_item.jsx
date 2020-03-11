@@ -13,6 +13,13 @@ class ProductIndexItem extends React.Component{
         this.handleChangingCartItem = this.handleChangingCartItem.bind(this)
     }
 
+    componentDidMount() {
+        let container = document.querySelector(`#image-container-${this.props.product.id}`);
+        let url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2];
+        // console.log(url);
+        container.style.backgroundImage = `url(${url})`;
+        console.log(container.style.backgroundImage);
+    }
    
 
     changePhoto() {
@@ -67,16 +74,17 @@ class ProductIndexItem extends React.Component{
                         
                         {/* <div className='product-pic'>
                             <div className='product-pic-trans'>
-                                 <img className="first-pic" src={product.photoUrls[0]} alt=""/>
+                                <img className="first-pic" src={product.photoUrls[0]} alt=""/>
                                 <img className="second-pic" src={product.photoUrls[1]} alt=""/>
                              </div>
                         </div>     */}
             
-                        <div className='product-pic'>
-                        <img 
-                        src={product.photoUrls[this.state.currentIdx]} alt="" 
-                        onMouseOver={(e)=>this.handleHover(e)}
-                        onMouseOut={(e) => this.handleHover(e)}/>
+                        <div id={`image-container-${product.id}`} className='product-pic'>
+                            <img className="hide-on-hover"
+                            src={product.photoUrls[this.state.currentIdx]} alt="" 
+                            // onMouseOver={(e)=>this.handleHover(e)}
+                            // onMouseOut={(e) => this.handleHover(e)}/>
+                            />
                         </div>
                     </a>
                     <div className='product-info'>

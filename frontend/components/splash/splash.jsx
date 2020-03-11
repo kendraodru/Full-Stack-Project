@@ -41,9 +41,9 @@ class Splash extends React.Component{
                             </div> */}
                         </div>
                     </div>
-                    <div className="TESTER">
+                    {/* <div className="TESTER">
 
-                    </div>
+                    </div> */}
                     <div className="lower-splash-content-outter-div">
                         <div className='lower-splash-content'>
                             <UpperMid />
