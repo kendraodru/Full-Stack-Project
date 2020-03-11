@@ -1443,9 +1443,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1458,9 +1458,14 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   _inherits(ProductShow, _React$Component);
 
   function ProductShow(props) {
+    var _this;
+
     _classCallCheck(this, ProductShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ProductShow).call(this, props));
+    debugger;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProductShow).call(this, props));
+    _this.handleChangingCartItem = _this.handleChangingCartItem.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(ProductShow, [{
@@ -1469,8 +1474,38 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       this.props.fetchProduct(this.props.match.params.productId);
     }
   }, {
+    key: "handleChangingCartItem",
+    value: function handleChangingCartItem() {
+      var existingCartItem;
+      var cart = this.props.cart;
+      var product = this.props.product;
+      this.props.cartItems.forEach(function (cartItem) {
+        if (cartItem.product_id === product.id) {
+          existingCartItem = cartItem;
+        }
+      });
+
+      if (existingCartItem) {
+        var updatedItem = {
+          id: existingCartItem.id,
+          cart_id: existingCartItem.cart_id,
+          product_id: existingCartItem.product_id,
+          quantity: existingCartItem.quantity + 1
+        };
+        this.props.updateCartItem(updatedItem);
+      } else {
+        var newCartItem = {
+          cart_id: cart.id,
+          product_id: product.id
+        };
+        this.props.postCartItem(newCartItem);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       if (this.props.product === undefined) {
         return null;
       }
@@ -1510,7 +1545,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         href: "/"
       }, "Read more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-add-to-cart"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Add to cart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this2.handleChangingCartItem();
+        }
+      }, "Add to cart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-info-btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-show-info-btn"
@@ -1548,13 +1587,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_show */ "./frontend/components/product/product_show.jsx");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    product: state.entities.products[ownProps.match.params.productId]
+    product: state.entities.products[ownProps.match.params.productId],
+    cart: state.entities.cart,
+    cartItems: Object.values(state.entities.cartItems)
   };
 };
 
@@ -1565,6 +1608,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchProducts: function fetchProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProducts"])());
+    },
+    postCartItem: function postCartItem(cartItem) {
+      return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["postCartItem"])(cartItem));
+    },
+    updateCartItem: function updateCartItem(cartItem) {
+      return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["updateCartItem"])(cartItem));
     }
   };
 };

@@ -3,12 +3,45 @@ import Carousel from '../carousel/carousel';
 
 class ProductShow extends React.Component {
     constructor(props){
+        debugger
         super(props);
+        this.handleChangingCartItem = this.handleChangingCartItem.bind(this)
     }
 
     componentDidMount(){
         this.props.fetchProduct(this.props.match.params.productId);
     }
+
+
+    handleChangingCartItem() {
+        let existingCartItem;
+        const cart = this.props.cart
+        const { product } = this.props
+
+        this.props.cartItems.forEach(cartItem => {
+            if (cartItem.product_id === product.id) {
+                existingCartItem = cartItem
+            }
+        });
+
+        if (existingCartItem) {
+
+            let updatedItem = {
+                id: existingCartItem.id,
+                cart_id: existingCartItem.cart_id,
+                product_id: existingCartItem.product_id,
+                quantity: existingCartItem.quantity + 1
+            }
+
+            this.props.updateCartItem(updatedItem);
+        }
+        else {
+            const newCartItem = { cart_id: cart.id, product_id: product.id };
+            this.props.postCartItem(newCartItem);
+        }
+
+    }
+
 
     render(){
         if (this.props.product === undefined) {
@@ -50,7 +83,9 @@ class ProductShow extends React.Component {
                                         <a className='show-read-more' href="/">Read more</a>
                                     </div>
                                     <div className='show-add-to-cart'>
-                                        <button>Add to cart</button>
+                                        <button onClick={() => this.handleChangingCartItem()}>
+                                            Add to cart
+                                        </button>
                                     </div>
                                 </div>
                                 <div className='show-info-btn'>
