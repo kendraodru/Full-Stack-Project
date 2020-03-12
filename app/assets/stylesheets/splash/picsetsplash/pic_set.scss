@@ -1,8 +1,40 @@
+
 .pic-holder{
     // padding: 10% 10%
     // padding-left: 10%;
     // padding-right: 10%;
 }
+
+.hashed-link{
+    padding-left: 10%;
+    padding-bottom: 2%;
+}
+
+.hashed-link p {
+    font-family: "Unica77 LL", sans-serif;
+    font-size: 55px;
+    line-height: 63.25px;
+    text-align: start;
+    letter-spacing: 0.64px;
+
+    transition: 200ms ease-in-out;
+}
+
+.hashed-link p:hover{
+    color: #a9a9a9;
+}
+
+.hashed-link-info{
+    font-family: 14px;
+    line-height: 22px;
+    text-align: start;
+    letter-spacing: 0.56px;
+    color: #a9a9a9;
+    padding-left: 10%;
+    padding-bottom: 5%;
+
+}
+
 .pic-set-wrap{
     display: flex;
     flex-direction: column;

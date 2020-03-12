@@ -4,10 +4,10 @@ const PicSet = () =>{
     return(
         <div className='pic-holder'>
             <div>
-                <div>
-                    #youthtothepeople
+                <div className='hashed-link'>
+                    <p>#youthtothepeople</p>
                 </div>
-                <div>
+                <div className='hashed-link-info'>
                     you are our people, share your story with us
                 </div>
             </div>

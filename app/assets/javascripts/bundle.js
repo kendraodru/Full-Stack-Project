@@ -2070,7 +2070,11 @@ __webpack_require__.r(__webpack_exports__);
 var PicSet = function PicSet() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pic-holder"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "#youthtothepeople"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "you are our people, share your story with us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hashed-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "#youthtothepeople")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hashed-link-info"
+  }, "you are our people, share your story with us")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pic-set-wrap"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "one-pic-row"
