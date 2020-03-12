@@ -1,0 +1,68 @@
+.bottom-mid-splash-root{
+    display: flex;
+    padding: 5% 10%
+
+}
+.nat-skin-pic img{
+    width: 35vw;
+    height: 71vh;
+    padding-right: 18%;
+}
+
+.bottom-mid-splash-title{
+    font-family: "Unica77 LL bold", sans-serif;
+    font-size: 55px;
+    line-height: 63.25px;
+    text-align: start;
+    letter-spacing: 0.64px;
+}
+
+.bottom-mid-splash-para{
+    font-family: "Unica77 LL", sans-serif;
+    font-size: 16px;
+    text-align: start;
+    line-height: 22px;
+    letter-spacing: 0.64px;
+    padding-top: 4.5%;
+    padding-right: 5%;
+}
+
+.bottom-mid-splash-info-wrap{
+    display: flex;
+    flex-direction: column;
+    padding-top: 13%;
+}
+.bottom-mid-splash-btn-div{
+    padding-top: 5%;
+}
+
+.bottom-mid-splash-btn-div button{
+    background-color: transparent;
+    border: 1px solid #ef4b24;
+    padding: 20px 30px;
+
+    font-family: "Unica77 LL", sans-serif;
+    font-size: 12px;
+    line-height: 13.8px;
+    letter-spacing: 0.64px;
+    text-align: center;
+    color:#ef4b24;
+    
+    transition: 250ms ease-in-out;
+}
+
+.bottom-mid-splash-btn-div button:hover{
+    background-color: #ef4b24;
+    color: #ffffff;
+}
+
+
+
+// .bottom-mid-splash-name{
+//     font-family: "Unica77 LL", sans-serif;
+//     font-size: 12px;
+//     line-height: 13.8px;
+//     letter-spacing: 0.64px;
+//     text-align: center;
+//     color:#ef4b24
+// }

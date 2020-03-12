@@ -16,9 +16,8 @@ class ProductIndexItem extends React.Component{
     componentDidMount() {
         let container = document.querySelector(`#image-container-${this.props.product.id}`);
         let url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2];
-        // console.log(url);
         container.style.backgroundImage = `url(${url})`;
-        console.log(container.style.backgroundImage);
+        // console.log(container.style.backgroundImage);
     }
    
 
@@ -69,22 +68,11 @@ class ProductIndexItem extends React.Component{
     
         return (
             <div className='product-root' >
-                {/* <div className='product-content'> */}
                     <a className="product-index-show-link" href={`/#/products/${product.name}/${product.id}`}>
                         
-                        {/* <div className='product-pic'>
-                            <div className='product-pic-trans'>
-                                <img className="first-pic" src={product.photoUrls[0]} alt=""/>
-                                <img className="second-pic" src={product.photoUrls[1]} alt=""/>
-                             </div>
-                        </div>     */}
-            
                         <div id={`image-container-${product.id}`} className='product-pic'>
                             <img className="hide-on-hover"
-                            src={product.photoUrls[this.state.currentIdx]} alt="" 
-                            // onMouseOver={(e)=>this.handleHover(e)}
-                            // onMouseOut={(e) => this.handleHover(e)}/>
-                            />
+                            src={product.photoUrls[this.state.currentIdx]} alt="" />
                         </div>
                     </a>
                     <div className='product-info'>
@@ -105,7 +93,6 @@ class ProductIndexItem extends React.Component{
                         className='product-show-btn'>Add to cart</button>
                         </div>
                     </div>
-                {/* </div> */}
             </div>
         )
     }

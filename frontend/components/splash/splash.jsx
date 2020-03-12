@@ -3,6 +3,8 @@ import Tile from './tile';
 import PicSet from './photoset';
 import MidSplash from './mid_splash';
 import UpperMid from './upper_mid';
+import BottomMidSplash from './bottom_mid_splash';
+import Banner from './banner';
 
 class Splash extends React.Component{
 
@@ -49,6 +51,8 @@ class Splash extends React.Component{
                             <UpperMid />
                             <MidSplash />
                             <Tile />
+                            <BottomMidSplash />
+                            <Banner />
                             <PicSet />
                         </div>
                     </div>

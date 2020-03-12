@@ -1307,10 +1307,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var container = document.querySelector("#image-container-".concat(this.props.product.id));
-      var url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2]; // console.log(url);
-
-      container.style.backgroundImage = "url(".concat(url, ")");
-      console.log(container.style.backgroundImage);
+      var url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2];
+      container.style.backgroundImage = "url(".concat(url, ")"); // console.log(container.style.backgroundImage);
     }
   }, {
     key: "changePhoto",
@@ -1375,9 +1373,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "hide-on-hover",
         src: product.photoUrls[this.state.currentIdx],
-        alt: "" // onMouseOver={(e)=>this.handleHover(e)}
-        // onMouseOut={(e) => this.handleHover(e)}/>
-
+        alt: ""
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1928,6 +1924,75 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/splash/banner.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/splash/banner.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Banner = function Banner() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-root"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "free-ship"
+  }, "Free Shipping $50+", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "and Free Returns"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-how"
+  }, "HERE'S", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "HOW:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-how-info"
+  }, "Spend $50 or more to receive free standard shipping + free, easy returns. Offered at Checkout."))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Banner);
+
+/***/ }),
+
+/***/ "./frontend/components/splash/bottom_mid_splash.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/splash/bottom_mid_splash.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var BottomMidSplash = function BottomMidSplash() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-mid-splash-root"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nat-skin-pic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/splash/naturalskin.jpg",
+    alt: ""
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-mid-splash-info-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-mid-splash-title"
+  }, "Reach for a Higher Standard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-mid-splash-para"
+  }, "We create consciously-sourced, nutrient-dense superfood blends and pair them with clinical PRO-GRADE VEGAN\u2122 actives for powerful results. Founded in 2015, Youth To The People continues its legacy as a California-based, family-owned brand built on three generations of professional skincare expertise, research, and mindful activism. We are skincare for all."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bottom-mid-splash-btn-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "READ MORE"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (BottomMidSplash);
+
+/***/ }),
+
 /***/ "./frontend/components/splash/mid_splash.jsx":
 /*!***************************************************!*\
   !*** ./frontend/components/splash/mid_splash.jsx ***!
@@ -2071,6 +2136,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _photoset__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photoset */ "./frontend/components/splash/photoset.jsx");
 /* harmony import */ var _mid_splash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mid_splash */ "./frontend/components/splash/mid_splash.jsx");
 /* harmony import */ var _upper_mid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./upper_mid */ "./frontend/components/splash/upper_mid.jsx");
+/* harmony import */ var _bottom_mid_splash__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./bottom_mid_splash */ "./frontend/components/splash/bottom_mid_splash.jsx");
+/* harmony import */ var _banner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./banner */ "./frontend/components/splash/banner.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2088,6 +2155,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -2127,7 +2196,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "lower-splash-content-outter-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lower-splash-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_upper_mid__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mid_splash__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_upper_mid__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mid_splash__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bottom_mid_splash__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_banner__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photoset__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
   }]);
 

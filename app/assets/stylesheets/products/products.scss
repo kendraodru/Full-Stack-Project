@@ -1,45 +1,9 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// .product-pic {
-  
-// }
-// .product-pic-trans {
-
-// }
-
-// .product-pic-trans:hover{
-
-// }
-// .first-pic{
-   
-//     position: absolute;
-//     z-index: 10;
-// }
-// .second-pic{
-//     position: absolute;
-
-//     z-index: 0;
-    
-// }
-
-// .product-pic{
-//     position: relative;
-// }
-
-// .product-pic-trans img{
-//     position: absolute;
-
-//     transition: 1s ease-in-out;
-// }
-
-// .product-pic-trans img.second-pic:hover {
-//   opacity:0;
-// }
 
 .hide-on-hover {
     transition: all 500ms ease-in-out;
-    // opacity: 0;
 }
 
 .hide-on-hover:hover {
