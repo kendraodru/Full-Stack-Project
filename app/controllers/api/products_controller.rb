@@ -1,19 +1,15 @@
 class Api::ProductsController < ApplicationController
 
     def index
-
         if params.has_key?(:cart_id)
             cart = Cart.find_by(id: params[:cart_id])
-            # i want to me making sure the cart is the current users cart
             if current_user.id == cart.user_id
-                # @products = cart.products
                 @products = cart.products.with_attached_photos
             else
                 @products = []
             end
 
         else
-            # @products = Product.all
             @products = Product.with_attached_photos.all
         end
         render :index
