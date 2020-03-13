@@ -2,3 +2,9 @@
     0% {transform: translateY(-3%); opacity:0}
     100% {transform: translateY(0%); opacity: 1;}
 }
+
+
+@keyframes cart-slide {
+    0% {transform: translateX(60%);}
+    100% {transform: translateX(0%);}
+}

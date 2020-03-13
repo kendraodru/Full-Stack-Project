@@ -1,8 +1,19 @@
+.outter-form-wrapper{
+    width: 505px;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin: auto;
+}
+
 #hide{
     display: none;
 }
 
 .close-x-div{
+    position: absolute;
     padding-left: 7px;
     padding-top: 7px;
 
@@ -10,16 +21,10 @@
 
 .close-x{
     font-size: 20px;
-    // padding-left: 8px;
-    // padding-right: 8px;
-    // padding-bottom: 8px;
-    // padding: 8px;
     width: 100px;
     height: 100px;
     padding-left: 5px;
     padding-right: 5px;
-    // padding-right:3px;
-    // padding-right:3px;
     border-radius: 50%;
     color:black;
 }
@@ -29,9 +34,7 @@
     cursor: pointer;
 }
 .form-wrapper{
-    // border: 1px solid red;
     border-radius: 3px;
-    // background-color:white;
     box-shadow: grey;
     z-index: 9000
 }
@@ -41,7 +44,6 @@
     max-height: 80%;
     display:flex;
     box-shadow: grey;
-    // background-color: #EDEDED;
     background: url('6.jpg') no-repeat center center fixed;
     animation: session-drop 1s ease forwards;
 }
@@ -80,13 +82,10 @@
 input{
     margin-top: 3px;
     margin-bottom: 3px;
-    // margin-left: 3px;
     height: 32px;
     padding-left: 2%;
-    // padding-right: 5px;
     width: 100%;
     background-color:#F7F7F7;
-    // background-color: hsla(0, 0%, 100%, 0.5);
     border: none;
     border-radius: 1px;
     border: 1px solid lightgrey;
@@ -111,7 +110,6 @@ input{
 }
 
 .submit-session{
-    // width: 98%;
     padding: 1%;
 }
 
@@ -153,6 +151,5 @@ input{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    // padding-bottom: 5px;
 }
 

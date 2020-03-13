@@ -70,7 +70,7 @@ export default class sessionForm extends React.Component {
 
     render(){
         return(
-            <div className='outter-form-wrapper'>
+            <div className='outter-form-wrapper' onClick={e => e.stopPropagation()}>
                 <div className="hamburger"></div>
                 <div className='form-wrapper'>
                     <div className="background-form">

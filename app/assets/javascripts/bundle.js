@@ -807,14 +807,22 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           deleteCartItem: _this.props.deleteCartItem
         });
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "out-most-cart-wrap"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "close-x-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        onClick: this.props.closeModal,
-        className: "close-x"
-      }, "\xD7")), items));
+      return (// <div>
+
+        /* <div className='hamburger'></div> */
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "out-most-cart-wrap",
+          onClick: function onClick(e) {
+            return e.stopPropagation();
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "close-x-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          onClick: this.props.closeModal,
+          className: "close-x"
+        }, "\xD7")), items) // </div>
+
+      );
     }
   }]);
 
@@ -909,12 +917,7 @@ function Modal(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal-background",
     onClick: closeModal
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modal-child",
-    onClick: function onClick(e) {
-      return e.stopPropagation();
-    }
-  }, component));
+  }, component);
 }
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -1056,12 +1059,9 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "root-nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "root-title"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "nav-btn",
-        href: "/#/cart/".concat(cartId)
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, cartForm, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "nav-btn"
-      }, "CART(", this.state.quantity, ")"))))));
+      }, "(", this.state.quantity, ")")))));
     }
   }]);
 
@@ -1816,7 +1816,10 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "outter-form-wrapper"
+        className: "outter-form-wrapper",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
