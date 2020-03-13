@@ -99,6 +99,26 @@
     padding: 2%
 }
 
+.show-add-to-cart-btn{
+    background-color: #ef4b24;
+    color: #ffffff;
+    width: 50%;
+    height: 35px;
+    font-family: "Unica77 LL", sans-serif;
+    font-size: 12px;
+    line-height: 18.4px;
+    letter-spacing: 0.64px;
+    text-align: start;
+    padding-left: 17px;
+
+    transition: 250ms ease-in-out;
+}
+
+.show-add-to-cart-btn:hover{
+    background-color: rgb(226, 70, 53)
+}
+
+
 .inner-show-info-btn{
     display: flex; 
     // padding: 2%; 

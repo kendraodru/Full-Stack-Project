@@ -11,7 +11,13 @@
     // justify-content: flex-start;
     // align-items: center;
     padding-left: 19.5%;
-    padding-top: 8%
+    padding-top: 8%;
+
+    transition: 250ms ease-in-out
+}
+
+.banner-wrap:hover{
+    background-color: rgb(226, 70, 53)
 }
 
 .free-ship{

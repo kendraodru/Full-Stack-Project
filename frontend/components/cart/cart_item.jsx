@@ -3,27 +3,15 @@ import React from 'react';
 class CartItem extends React.Component{
     constructor(props){
         super(props);
-        // debugger
-        
 
         this.state = {
-            quantity: this.props.item.quantity,
-            // price: (this.props.products[this.props.item.product_id].price * this.props.item.quantity)
+            quantity: this.props.item.quantity
         }
 
         this.handleProductQuantity = this.handleProductQuantity.bind(this);
         this.handleCartItemDB = this.handleCartItemDB.bind(this);
         this.handleDeleteCartItem = this.handleDeleteCartItem.bind(this);
     }
-
-    // componentDidUpdate(prevProps){
-    //     // use preProps when youre not usng a local state, can use local here
-    //     // if (this.state.quantity !== preProps.item.quantity)
-    //     if (this.state.quantity !== this.props.item.quantity){
-    //         this.props.fetchCart()
-    //     }
-    // }
-
 
 
     handleProductQuantity(type){
@@ -74,8 +62,8 @@ class CartItem extends React.Component{
         }
 
         return(
-            <div>
-                <div>
+            <div className='indivi-cart-product-wrap'>
+                {/* <div> */}
                     <div className='cart-product-pic'>
                         <img src={product.photoUrls[0]} alt=""/>
                     </div>
@@ -107,12 +95,11 @@ class CartItem extends React.Component{
 
                             </div>
                             <div>
-                                {/* <span>${this.state.price}</span> */}
                                 <span>${ product.price * this.state.quantity}</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         )
     }

@@ -19,7 +19,7 @@ class NavBar extends React.Component{
  
 
     render(){
-        const  { currentUser, logout, otherForm, cart } = this.props
+        const  { currentUser, logout, otherForm, cart, cartForm} = this.props
         const cartId = (cart) ? cart.id : "/"
 
         const display = (currentUser) ? (
@@ -67,8 +67,9 @@ class NavBar extends React.Component{
                     </div>
                     <div className='root-nav-item'>
                         <span className='root-title'>
+                            {/* {cartForm} */}
+                            {/* <span className='nav-btn'>({this.state.quantity})</span> */}
                             <a href={`/#/cart/${cartId}`}>
-                                 {/* <span className='nav-btn'>CART({this.state.quantity})</span> */}
                                  <span className='nav-btn'>CART({this.state.quantity})</span>
                             </a>
                         </span>

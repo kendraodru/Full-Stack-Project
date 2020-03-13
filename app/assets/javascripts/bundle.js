@@ -550,7 +550,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _cart_show__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart_show */ "./frontend/components/cart/cart_show.jsx");
-// need info on cart_items, products, cart
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -560,12 +561,10 @@ __webpack_require__.r(__webpack_exports__);
 var MapStateToProps = function MapStateToProps(state, ownProps) {
   return {
     cart: state.entities.cart,
-    // cart: state.entities.cart[ownProps.match.params.cartId],
     products: state.entities.products,
     cartItems: Object.values(state.entities.cartItems)
   };
-}; // ^ [{},{},{}]
-
+};
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -577,6 +576,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deleteCartItem: function deleteCartItem(cartItemId) {
       return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_2__["deleteCartItem"])(cartItemId));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     }
   };
 };
@@ -627,24 +629,15 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, CartItem);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CartItem).call(this, props)); // debugger
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CartItem).call(this, props));
     _this.state = {
-      quantity: _this.props.item.quantity // price: (this.props.products[this.props.item.product_id].price * this.props.item.quantity)
-
+      quantity: _this.props.item.quantity
     };
     _this.handleProductQuantity = _this.handleProductQuantity.bind(_assertThisInitialized(_this));
     _this.handleCartItemDB = _this.handleCartItemDB.bind(_assertThisInitialized(_this));
     _this.handleDeleteCartItem = _this.handleDeleteCartItem.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidUpdate(prevProps){
-  //     // use preProps when youre not usng a local state, can use local here
-  //     // if (this.state.quantity !== preProps.item.quantity)
-  //     if (this.state.quantity !== this.props.item.quantity){
-  //         this.props.fetchCart()
-  //     }
-  // }
-
+  }
 
   _createClass(CartItem, [{
     key: "handleProductQuantity",
@@ -710,7 +703,9 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "indivi-cart-product-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-pic"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: product.photoUrls[0],
@@ -735,7 +730,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         }
       }, "Remove")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "price-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity)))));
     }
   }]);
 
@@ -792,13 +787,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchCart();
-    } // componentDidUpdate(prevProps) {
-    //    debugger
-    //     if (this.props.cartItems.length !== prevProps.cartItems.length) {
-    //         this.props.fetchCart()
-    //     }
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -815,13 +804,17 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           item: item,
           products: _this.props.products,
           updateCartItem: _this.props.updateCartItem,
-          deleteCartItem: _this.props.deleteCartItem // fetchCart = {this.props.fetchCart}
-
+          deleteCartItem: _this.props.deleteCartItem
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hamburger"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, items));
+        className: "out-most-cart-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-x-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        onClick: this.props.closeModal,
+        className: "close-x"
+      }, "\xD7")), items));
     }
   }]);
 
@@ -878,6 +871,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _session_login_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session/login_form_container */ "./frontend/components/session/login_form_container.jsx");
 /* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../session/signup_form_container */ "./frontend/components/session/signup_form_container.jsx");
+/* harmony import */ var _cart_cart_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cart/cart_container */ "./frontend/components/cart/cart_container.jsx");
+
 
 
 
@@ -901,6 +896,10 @@ function Modal(_ref) {
 
     case 'signup':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      break;
+
+    case 'cart':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       break;
 
     default:
@@ -1001,7 +1000,8 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
           currentUser = _this$props.currentUser,
           logout = _this$props.logout,
           otherForm = _this$props.otherForm,
-          cart = _this$props.cart;
+          cart = _this$props.cart,
+          cartForm = _this$props.cartForm;
       var cartId = cart ? cart.id : "/";
       var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "root-title"
@@ -1117,7 +1117,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     }, "LOGIN"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
-    }
+    },
+    cartForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "nav-btn",
+      onClick: function onClick() {
+        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('cart'));
+      }
+    }, "CART")
   };
 };
 
@@ -1530,6 +1536,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       }, "Read more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-add-to-cart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "show-add-to-cart-btn",
         onClick: function onClick() {
           return _this2.handleChangingCartItem();
         }
@@ -1747,20 +1754,16 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
     _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentWillReceiveProps(nextProps){
+  //     this.setState({errors: nextProps.errors})
+  // }
+
 
   _createClass(sessionForm, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {
-      this.setState({
-        errors: nextProps.errors
-      });
-    } // static getDerivedStateFromProps(nextProps, prevState){
-    //     if (nextProps.errors !== prevState.errors){
-    //         this.setState({errors: nextProps.errors})
-    //     }
-    // }
-
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.clearErrors();
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -1785,20 +1788,28 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       return function (e) {
         _this2.setState(_defineProperty({}, type, e.target.value));
       };
-    }
+    } // renderErrors(){
+    //     return (
+    //         <div className='errors-div'>
+    //             <ul>
+    //                 {Object.keys(this.state.errors).map((error, i) => (
+    //                     <li key={`error-${i}`} className="error-text">
+    //                         {this.state.errors[error]}
+    //                     </li>
+    //                 ))}
+    //             </ul>
+    //         </div>
+    //     );
+    // }
+
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      var _this3 = this;
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "errors-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, Object.keys(this.state.errors).map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i),
-          className: "error-text"
-        }, _this3.state.errors[error]);
-      })));
+          key: "error-".concat(i)
+        }, error);
+      }));
     }
   }, {
     key: "render",
@@ -1892,6 +1903,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     errors: state.errors.session,
@@ -1907,6 +1919,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(formUser) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(formUser));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["clearSessionErrors"])());
     },
     otherForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "submit-session",
@@ -2113,46 +2128,7 @@ var PicSet = function PicSet() {
   })))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (PicSet); // const PicSet = () =>{
-//     return(
-//         <div className="pic-set-wrap">
-//             <div className='pic-1nd-row'>
-//                 <div className="bottom-pic-1">
-//                     <img src="https://images.unsplash.com/photo-1568762297330-66bfa0586400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                 </div>
-//                 <div className="bottom-pic-2">
-//                     <img src="https://images.unsplash.com/photo-1505976311692-e64b8bbd6cfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                 </div>
-//                 <div className="bottom-pic-3">
-//                     {/* <img src="https://images.unsplash.com/photo-1503278501277-e50457741130?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt=""/> */}
-//                     {/* <img src="https://images.unsplash.com/photo-1531299244174-d247dd4e5a66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=370&q=80" alt=""/> */}
-//                     <img src="https://images.unsplash.com/photo-1506003094589-53954a26283f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                 </div>
-//                 <div className="bottom-pic-3">
-//                     {/* <img src="https://images.unsplash.com/photo-1503278501277-e50457741130?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt=""/> */}
-//                     {/* <img src="https://images.unsplash.com/photo-1531299244174-d247dd4e5a66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=370&q=80" alt=""/> */}
-//                     <img src="https://images.unsplash.com/photo-1552046122-03184de85e08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                 </div>
-//             </div>
-//             <div className='pic-2nd-row'>
-//                 <div className="bottom-pic-4">
-//                     <img src="https://images.unsplash.com/photo-1533093818119-ac1fa47a6d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                     {/* <img src="https://images.unsplash.com/photo-1512437136892-3d200c4645b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt=""/> */}
-//                 </div>
-//                 <div className="bottom-pic-5">
-//                     <img src="https://images.unsplash.com/photo-1514163061636-02db31852e84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                 </div>
-//                 <div className="bottom-pic-6">
-//                     <img src="https://images.unsplash.com/photo-1573575155376-b5010099301b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt=""/>
-//                 </div>
-//                 <div className="bottom-pic-7">
-//                     <img src="https://images.unsplash.com/photo-1555211652-5c6222f971bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-//                     {/* <img src="https://images.unsplash.com/photo-1560179304-6fc1d8749b23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt=""/> */}
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
+/* harmony default export */ __webpack_exports__["default"] = (PicSet);
 
 /***/ }),
 
@@ -2774,6 +2750,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCartItem", function() { return updateCartItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCartItem", function() { return deleteCartItem; });
 var postCartItem = function postCartItem(cartItem) {
+  debugger;
   return $.ajax({
     url: "/api/cart_items",
     method: "POST",
@@ -2781,7 +2758,7 @@ var postCartItem = function postCartItem(cartItem) {
       cartItem: cartItem
     }
   });
-}; // think about changing this to snake case in the future because it effected my params.require() in controller and chaning the state in my form
+}; // my controller cart items is being callled in my params
 
 var updateCartItem = function updateCartItem(cartItem) {
   return $.ajax({

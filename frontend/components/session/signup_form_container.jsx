@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions'
 import sessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions'
-
+import { clearSessionErrors } from '../../actions/session_actions'
+ 
 const mapStateToProps = (state, ownProps) => ({
     errors: state.errors.session,
     formType: 'Create Account',
@@ -13,6 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     processForm: (formUser) => dispatch((signup(formUser))),
+    clearErrors: () => dispatch(clearSessionErrors()),
     otherForm: (
         <span className="submit-session" onClick={() => dispatch(openModal('login'))}>
             <p>Existing Account? Login</p>

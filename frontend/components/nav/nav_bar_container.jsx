@@ -22,7 +22,14 @@ const mapDispatchToProps = (dispatch) => ({
             LOGIN
       </span>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    cartForm: (
+        <span
+            className='nav-btn'
+            onClick={() => dispatch(openModal('cart'))}>
+            CART
+        </span>
+    )
 });
 
 export default connect(

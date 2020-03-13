@@ -16,15 +16,14 @@ export default class sessionForm extends React.Component {
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({errors: nextProps.errors})
-    }
-    // static getDerivedStateFromProps(nextProps, prevState){
-    //     if (nextProps.errors !== prevState.errors){
-    //         this.setState({errors: nextProps.errors})
-    //     }
+    // componentWillReceiveProps(nextProps){
+    //     this.setState({errors: nextProps.errors})
     // }
- 
+
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
+
 
     handleSubmit(e){
         e.preventDefault();
@@ -43,17 +42,29 @@ export default class sessionForm extends React.Component {
         };
     }
 
-    renderErrors(){
+    // renderErrors(){
+    //     return (
+    //         <div className='errors-div'>
+    //             <ul>
+    //                 {Object.keys(this.state.errors).map((error, i) => (
+    //                     <li key={`error-${i}`} className="error-text">
+    //                         {this.state.errors[error]}
+    //                     </li>
+    //                 ))}
+    //             </ul>
+    //         </div>
+    //     );
+    // }
+
+    renderErrors() {
         return (
-            <div className='errors-div'>
-                <ul>
-                    {Object.keys(this.state.errors).map((error, i) => (
-                        <li key={`error-${i}`} className="error-text">
-                            {this.state.errors[error]}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
         );
     }
 

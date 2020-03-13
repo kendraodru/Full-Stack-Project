@@ -1,12 +1,15 @@
-export const postCartItem = cartItem =>(
-    $.ajax({
+export const postCartItem = cartItem =>{
+
+    debugger
+
+    return $.ajax({
         url:`/api/cart_items`,
         method: `POST`,
         data: {cartItem}
     })
-)
+}
+// my controller cart items is being callled in my params
 
-// think about changing this to snake case in the future because it effected my params.require() in controller and chaning the state in my form
 
 export const updateCartItem = cartItem =>{
     return $.ajax({

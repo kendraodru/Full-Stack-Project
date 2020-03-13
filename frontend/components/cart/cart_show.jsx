@@ -11,13 +11,6 @@ class CartShow extends React.Component{
         this.props.fetchCart();
     }
 
-    // componentDidUpdate(prevProps) {
-    //    debugger
-    //     if (this.props.cartItems.length !== prevProps.cartItems.length) {
-    //         this.props.fetchCart()
-    //     }
-    // }
-
     render(){
         if (this.props.cart === undefined) {
             return null;
@@ -31,16 +24,21 @@ class CartShow extends React.Component{
                 products={this.props.products}
                 updateCartItem = {this.props.updateCartItem}
                 deleteCartItem = {this.props.deleteCartItem} 
-                // fetchCart = {this.props.fetchCart}
                 />
             )
         })
 
         return(
             <div>
-                <div className='hamburger'></div>
-                <div>
-                    {items}
+                {/* <div className='hamburger'></div> */}
+                <div className='out-most-cart-wrap'>
+                    <div className='close-x-div'>
+                        <span 
+                        onClick={this.props.closeModal} 
+                        className="close-x">×
+                        </span>
+                    </div>
+                        {items}
                 </div>
             </div>
         )
