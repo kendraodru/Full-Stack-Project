@@ -1057,6 +1057,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "root-title"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-btn",
         href: "/#/cart/".concat(cartId)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "nav-btn"
