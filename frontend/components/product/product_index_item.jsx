@@ -17,7 +17,6 @@ class ProductIndexItem extends React.Component{
         let container = document.querySelector(`#image-container-${this.props.product.id}`);
         let url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2];
         container.style.backgroundImage = `url(${url})`;
-        // console.log(container.style.backgroundImage);
     }
    
 

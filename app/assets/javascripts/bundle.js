@@ -1314,7 +1314,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var container = document.querySelector("#image-container-".concat(this.props.product.id));
       var url = this.props.product.photoUrls[this.state.currentIdx + 1 % 2];
-      container.style.backgroundImage = "url(".concat(url, ")"); // console.log(container.style.backgroundImage);
+      container.style.backgroundImage = "url(".concat(url, ")");
     }
   }, {
     key: "changePhoto",
@@ -2750,7 +2750,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCartItem", function() { return updateCartItem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCartItem", function() { return deleteCartItem; });
 var postCartItem = function postCartItem(cartItem) {
-  debugger;
   return $.ajax({
     url: "/api/cart_items",
     method: "POST",

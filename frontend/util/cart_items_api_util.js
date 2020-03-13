@@ -1,7 +1,4 @@
 export const postCartItem = cartItem =>{
-
-    debugger
-
     return $.ajax({
         url:`/api/cart_items`,
         method: `POST`,
