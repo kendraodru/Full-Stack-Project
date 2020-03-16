@@ -60,7 +60,7 @@ export default class sessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className='sess-errors'>
                         {error}
                     </li>
                 ))}
@@ -112,7 +112,7 @@ export default class sessionForm extends React.Component {
                                         <span id={this.props.formType === 'Create Account' ? "hide" : "show"}
                                         className="submit-session" onClick={this.handleDemoUser}><p>Demo User</p></span>
                                         {this.props.otherForm}
-                                
+                                    
                                     {this.renderErrors()}
                                 </div>
                             </form>
