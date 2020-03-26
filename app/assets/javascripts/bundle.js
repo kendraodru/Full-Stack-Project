@@ -1789,20 +1789,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       return function (e) {
         _this2.setState(_defineProperty({}, type, e.target.value));
       };
-    } // renderErrors(){
-    //     return (
-    //         <div className='errors-div'>
-    //             <ul>
-    //                 {Object.keys(this.state.errors).map((error, i) => (
-    //                     <li key={`error-${i}`} className="error-text">
-    //                         {this.state.errors[error]}
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         </div>
-    //     );
-    // }
-
+    }
   }, {
     key: "renderErrors",
     value: function renderErrors() {

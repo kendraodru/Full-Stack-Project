@@ -44,6 +44,7 @@
     max-height: 80%;
     display:flex;
     box-shadow: grey;
+    // border: 50px solid green;
     background: url('6.jpg') no-repeat center center fixed;
     animation: session-drop 1s ease forwards;
 }
@@ -156,5 +157,6 @@ input{
 .sess-errors{
     color:red;
     font-family: "Unica77 LL",sans-serif;
+    font-weight: 600;
 }
 

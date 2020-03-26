@@ -42,20 +42,6 @@ export default class sessionForm extends React.Component {
         };
     }
 
-    // renderErrors(){
-    //     return (
-    //         <div className='errors-div'>
-    //             <ul>
-    //                 {Object.keys(this.state.errors).map((error, i) => (
-    //                     <li key={`error-${i}`} className="error-text">
-    //                         {this.state.errors[error]}
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         </div>
-    //     );
-    // }
-
     renderErrors() {
         return (
             <ul>
