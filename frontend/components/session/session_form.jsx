@@ -57,7 +57,7 @@ export default class sessionForm extends React.Component {
     render(){
         return(
             <div className='outter-form-wrapper' onClick={e => e.stopPropagation()}>
-                <div className="hamburger"></div>
+                {/* <div className="hamburger"></div> */}
                 <div className='form-wrapper'>
                     <div className="background-form">
                         <div className='close-x-div'><span onClick={this.props.closeModal} className="close-x">×</span></div>
