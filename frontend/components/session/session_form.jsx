@@ -67,7 +67,7 @@ export default class sessionForm extends React.Component {
                             <form className="session-form-box">
                                 <label className='form-label'>Email:
                                     <br/>
-                                    <input type="text" 
+                                    <input type="text"
                                     onChange={this.handleInput("email")} 
                                     value={this.props.email}/>
                                 </label>
@@ -81,14 +81,14 @@ export default class sessionForm extends React.Component {
                                 <br/>
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='form-label'>First Name:
                                 <br />
-                                    <input type="text"
+                                    <input type="text" 
                                         onChange={this.handleInput("first_name")}
                                         value={this.props.first_name} />
                                 </label>
                                 <br />
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='form-label'>Last Name:
                                 <br />
-                                    <input type="text"
+                                    <input type="text" 
                                         onChange={this.handleInput("last_name")}
                                         value={this.props.first_name} />
                                 </label>
