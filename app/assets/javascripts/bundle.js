@@ -759,7 +759,9 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.handleDeleteCartItem();
         }
-      }, "Remove Item")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))))));
+      }, "Remove Item")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "prod-price"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))))));
     }
   }]);
 

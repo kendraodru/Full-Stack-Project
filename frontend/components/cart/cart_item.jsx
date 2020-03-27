@@ -95,7 +95,7 @@ class CartItem extends React.Component{
                                     Remove Item
                                 </div>
                             </div>
-                            <div>
+                            <div id='prod-price'>
                                 <span>${ product.price * this.state.quantity}</span>
                             </div>
                         </div>
