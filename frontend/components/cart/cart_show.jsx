@@ -29,19 +29,15 @@ class CartShow extends React.Component{
         })
 
         return(
-            // <div>
-                /* <div className='hamburger'></div> */
             <div className='out-most-cart-wrap' onClick={e => e.stopPropagation()}>
-                    <div className='close-x-div'>
-                        <span 
-                        onClick={this.props.closeModal} 
-                        className="close-x">×
-                        </span>
-                    </div>
-                    {items}
-                    
+                <div className='close-x-div'>
+                    <span 
+                    onClick={this.props.closeModal} 
+                    className="close-x">×
+                    </span>
                 </div>
-            // </div>
+                {items}
+            </div>
         )
     }
 }

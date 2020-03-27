@@ -804,22 +804,17 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           deleteCartItem: _this.props.deleteCartItem
         });
       });
-      return (// <div>
-
-        /* <div className='hamburger'></div> */
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "out-most-cart-wrap",
-          onClick: function onClick(e) {
-            return e.stopPropagation();
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "close-x-div"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          onClick: this.props.closeModal,
-          className: "close-x"
-        }, "\xD7")), items) // </div>
-
-      );
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "out-most-cart-wrap",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-x-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        onClick: this.props.closeModal,
+        className: "close-x"
+      }, "\xD7")), items);
     }
   }]);
 
