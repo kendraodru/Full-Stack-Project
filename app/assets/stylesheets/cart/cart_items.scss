@@ -2,17 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cart-product-outer-wrap{
-    border:1px solid pink;
+    border-top: 1px solid lightgray;
+    // border-bottom: 1px solid lightgray;
+    width: 86%;
     padding: 15px
 }
 
 .indivi-cart-product-wrap{
     display: flex;
+    // width: 100%;
+}
+
+.cart-product-basic-info{
+    padding-left: 10px;
 }
 
 .cart-product-pic img{
     width: 90px;
     height: 120px;
+}
+
+.delete-item-wrap{
+    color:red;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.price-update-wrap{
+    display: flex;  
+    justify-content: space-between;
+    padding-top:63px
 }
 
 

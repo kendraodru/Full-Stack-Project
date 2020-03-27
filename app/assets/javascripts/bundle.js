@@ -751,13 +751,13 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.handleProductQuantity('add');
         }
-      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-item-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
           return _this3.handleDeleteCartItem();
         }
-      }, "Remove")))));
+      }, "Remove Item")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))))));
     }
   }]);
 

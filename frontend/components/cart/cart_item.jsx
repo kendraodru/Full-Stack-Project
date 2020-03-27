@@ -71,6 +71,13 @@ class CartItem extends React.Component{
                         <div> 
                             {product.name}
                         </div>
+
+                        {/* <div className='delete-item-wrap'>
+                            <div onClick={() => this.handleDeleteCartItem()}>
+                                Remove Item
+                            </div>
+                        </div> */}
+
                         <div className="price-update-wrap">
                             <div className="cart-product-updating">
                                 <button onClick={()=> this.handleProductQuantity('subtract')}>
@@ -83,13 +90,13 @@ class CartItem extends React.Component{
                                     +
                                 </button>
                             </div>
+                            <div className='delete-item-wrap'>
+                                <div onClick={() => this.handleDeleteCartItem()}>
+                                    Remove Item
+                                </div>
+                            </div>
                             <div>
                                 <span>${ product.price * this.state.quantity}</span>
-                            </div>
-                        </div>
-                        <div className='delete-item-wrap'>
-                            <div onClick={() => this.handleDeleteCartItem()}>
-                                Remove
                             </div>
                         </div>
                     </div>
