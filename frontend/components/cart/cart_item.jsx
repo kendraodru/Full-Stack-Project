@@ -71,33 +71,25 @@ class CartItem extends React.Component{
                         <div> 
                             {product.name}
                         </div>
-                        <div className="cart-product-updating">
-                            {/* <button className="cart-product-updating"> */}
-                            <button onClick={()=> this.handleProductQuantity('subtract')}>
-                                -
-                            </button>
-                            <button id='curr-quantity'>
-                                {this.state.quantity}
-                            </button>
-                            <button onClick={()=> this.handleProductQuantity('add')}>
-                                +
-                            </button>
-                        {/* </button> */}
-                        </div>
-                        <div>
-                            space
-                        </div>
-                        <div className='delete-item-wrap'>
-                            <div onClick={()=> this.handleDeleteCartItem()}>
-                                Remove
-                            </div>
-                        </div>
-                        <div className="price-wrapper">
-                            <div>
-
+                        <div className="price-update-wrap">
+                            <div className="cart-product-updating">
+                                <button onClick={()=> this.handleProductQuantity('subtract')}>
+                                    -
+                                </button>
+                                <button id='curr-quantity'>
+                                    {this.state.quantity}
+                                </button>
+                                <button onClick={()=> this.handleProductQuantity('add')}>
+                                    +
+                                </button>
                             </div>
                             <div>
                                 <span>${ product.price * this.state.quantity}</span>
+                            </div>
+                        </div>
+                        <div className='delete-item-wrap'>
+                            <div onClick={() => this.handleDeleteCartItem()}>
+                                Remove
                             </div>
                         </div>
                     </div>

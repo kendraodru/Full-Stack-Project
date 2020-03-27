@@ -738,6 +738,8 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-basic-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-update-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-updating"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
@@ -749,15 +751,13 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.handleProductQuantity('add');
         }
-      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "space"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-item-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
           return _this3.handleDeleteCartItem();
         }
-      }, "Remove")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "price-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "$", product.price * this.state.quantity))))));
+      }, "Remove")))));
     }
   }]);
 
