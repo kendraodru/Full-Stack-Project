@@ -46,12 +46,34 @@
   padding-left: 15px;
 }
 
-.cart-btm{
-  height: 100px;
-}
+// .cart-btm{
+//   height: 100px;
+// }
 
 
 .out-most-cart-wrap{
   overflow: scroll;
+}
+
+.cart-btm{
+  padding:15px;
+}
+
+.ckout-link{
+  text-decoration: none;
+}
+.ckout-btn{
+  color:white;
+  border-radius: 3px;
+  background-color: #EA4A37;
+  font-size: 17px;
+  height: 45px;
+  width:100%;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.ckout-btn:hover{
+  background-color: #D24331;
 }
 // ^we shall see how this part turns out

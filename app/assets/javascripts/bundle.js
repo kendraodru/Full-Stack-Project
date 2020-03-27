@@ -357,7 +357,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var About = function About() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "about section");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hamburger"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "items checked out"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
@@ -411,7 +413,7 @@ var App = function App() {
     path: "/cart/:cartId",
     component: _components_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/about",
+    path: "/purchased",
     component: _about_about__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
@@ -784,6 +786,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _cart_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cart_item */ "./frontend/components/cart/cart_item.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -801,6 +804,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -837,7 +841,13 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           updateCartItem: _this.props.updateCartItem,
           deleteCartItem: _this.props.deleteCartItem
         });
-      });
+      }); // let total = 0;
+      // let allProducts = this.props.products;
+      // this.props.cartItems.map((item,idx)=>{
+      //     debugger
+      //     total += allProducts[item.product_id].price
+      // })
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "out-most-cart-wrap",
         onClick: function onClick(e) {
@@ -852,7 +862,13 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "cart-header"
       }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-btm"
-      }, "hello"));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "ckout-link",
+        onClick: this.props.closeModal,
+        to: "/purchased"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "ckout-btn"
+      }, "Checkout"))));
     }
   }]);
 

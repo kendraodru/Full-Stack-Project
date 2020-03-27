@@ -24,7 +24,7 @@ const App = () =>(
             <Route path='/products/:productName/:productId' component={ProductShowContainer}/>
             <Route path='/products' component={ProductIndexContainer}/>
             <Route path='/cart/:cartId' component={CartShowContainer}/>
-            <Route path='/about' component={About}/>
+            <Route path='/purchased' component={About}/>
             <Route path='/' component={Splash}/>
         </Switch>
         < Footer />
