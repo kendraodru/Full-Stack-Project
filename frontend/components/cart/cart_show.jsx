@@ -30,11 +30,15 @@ class CartShow extends React.Component{
 
         return(
             <div className='out-most-cart-wrap' onClick={e => e.stopPropagation()}>
-                <div className='close-x-div'>
-                    <span 
-                    onClick={this.props.closeModal} 
-                    className="close-x">×
-                    </span>
+                
+                <div className='cart-header'>
+                    <span>Cart</span>
+                    <div className='close-x-div-cart'>
+                        <span 
+                        onClick={this.props.closeModal} 
+                        className="close-x-cart">×
+                        </span>
+                    </div>
                 </div>
                 {items}
             </div>

@@ -62,8 +62,8 @@ class CartItem extends React.Component{
         }
 
         return(
-            <div className='indivi-cart-product-wrap'>
-                {/* <div> */}
+            <div className='cart-product-outer-wrap'>
+                <div className='indivi-cart-product-wrap'>
                     <div className='cart-product-pic'>
                         <img src={product.photoUrls[0]} alt=""/>
                     </div>
@@ -99,7 +99,7 @@ class CartItem extends React.Component{
                             </div>
                         </div>
                     </div>
-                {/* </div> */}
+                </div>
             </div>
         )
     }

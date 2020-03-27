@@ -1,7 +1,22 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.close-x-div-cart{
+    position: absolute;
+    padding-left: 7px;
+    padding-top: 7px;
+    right:0;
+}
 
+.close-x-cart{
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 50%;
+    color:black
+}
 
 .out-most-cart-wrap{
     overflow: scroll;
@@ -23,6 +38,12 @@
   z-index: 900;
 
   animation: cart-slide 0.5s ease-in-out
+}
+
+.cart-header{
+    display: flex;
+    justify-content: space-between;
+
 }
 
 // ^we shall see how this part turns out
