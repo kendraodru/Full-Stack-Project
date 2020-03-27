@@ -5,17 +5,24 @@
     position: absolute;
     padding-left: 7px;
     padding-top: 7px;
-    right:0;
+    // right:0;
+    right: 20px
 }
 
 .close-x-cart{
-    font-size: 20px;
+    font-size: 25px;
     width: 100px;
     height: 100px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 1px;
     border-radius: 50%;
     color:black
+}
+
+.close-x-cart:hover{
+    background-color: lightgrey;
+    cursor: pointer;
 }
 
 .out-most-cart-wrap{
