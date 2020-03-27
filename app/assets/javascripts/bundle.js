@@ -2565,14 +2565,13 @@ var productReducer = function productReducer() {
       // nextState[action.payload.products] = action.payload.product
       // return nextState;
       return Object.assign(nextState, action.payload.products);
-
-    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CART"]:
-      // debugger
-      if (action.payload.products === undefined) {
-        return {};
-      } else {
-        return action.payload.products;
-      }
+    // case RECEIVE_CART:
+    //     // debugger
+    //     if (action.payload.products === undefined){
+    //         return {}
+    //     }else{
+    //         return action.payload.products
+    //     }
 
     default:
       return state;
