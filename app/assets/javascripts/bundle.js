@@ -561,7 +561,8 @@ __webpack_require__.r(__webpack_exports__);
 var MapStateToProps = function MapStateToProps(state, ownProps) {
   return {
     cart: state.entities.cart,
-    products: state.entities.products,
+    // products: state.entities.products,
+    products: state.entities.cartProducts,
     cartItems: Object.values(state.entities.cartItems)
   };
 };
@@ -2377,6 +2378,45 @@ var cartItemReducer = function cartItemReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/cart_products.js":
+/*!********************************************!*\
+  !*** ./frontend/reducers/cart_products.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+var cartProductsReducer = function cartProductsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
+      if (action.payload.products === undefined) {
+        return {};
+      } else {
+        return action.payload.products;
+      }
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["LOGOUT_CURRENT_USER"]:
+      return {};
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cartProductsReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/cart_reducer.js":
 /*!*******************************************!*\
   !*** ./frontend/reducers/cart_reducer.js ***!
@@ -2429,6 +2469,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _products_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./products_reducer */ "./frontend/reducers/products_reducer.js");
 /* harmony import */ var _cart_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cart_reducer */ "./frontend/reducers/cart_reducer.js");
 /* harmony import */ var _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart_items_reducer */ "./frontend/reducers/cart_items_reducer.js");
+/* harmony import */ var _cart_products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cart_products */ "./frontend/reducers/cart_products.js");
+
 
 
 
@@ -2438,7 +2480,8 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   cart: _cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  cartItems: _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  cartItems: _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  cartProducts: _cart_products__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
