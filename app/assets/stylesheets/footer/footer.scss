@@ -1,15 +1,4 @@
 
-footer{
-    // background-color: green;
-    // border: 1px solid green;
-}
-
-footer div{
-
-    // padding-top: 10px;
-    // border: 1px solid black;
-}
-
 .top-logo{
     height: 10vh;
 }
@@ -24,53 +13,61 @@ footer div{
 .inner-footer{
     height: 20vh;
     background-color: #F6F6F6;
-    border-top: 1px solid black
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
 
+}
+
+.contact-icon-holder{
+    width: 50%;
+    padding-top: 5%;
+}
+
+#icon{
+    font-size: 50px;
+    color:black;
+    padding: 2%
 }
 // commented out below
 
-.footer-links{
-    display: flex;
-    // justify-content: space-between;
-    // border-top: 1px solid black;
-    // padding-top: 10px;
-    // padding-left: 10px;
-    // padding-right: 10px
-    padding: 10px;
-    height: 20vh;
-}
+// .footer-links{
+//     display: flex;
+//     padding: 10px;
+//     height: 20vh;
+// }
 
-.footer-set{
-    display:flex;
-    justify-content: space-around;
-    height: 50%;
-    // border: 1px solid green;
+// .footer-set{
+//     display:flex;
+//     justify-content: space-around;
+//     height: 50%;
+//     // border: 1px solid green;
 
-}
+// }
 
-.footer-title{
-    min-width: 5vw;
-    // padding-right: 50px;
-    // padding-left:50px;
-    // height: 100%;
-}
+// .footer-title{
+//     min-width: 5vw;
+//     // padding-right: 50px;
+//     // padding-left:50px;
+//     // height: 100%;
+// }
 
-.footer-title-items{
-    display:none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    // border: 1px solid red
-    // padding: 5px;
-}
+// .footer-title-items{
+//     display:none;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     height: 100%;
+//     // border: 1px solid red
+//     // padding: 5px;
+// }
 
 
-#a{
-    text-decoration: none;
-    color:black;
-}
+// #a{
+//     text-decoration: none;
+//     color:black;
+// }
 
-#a:hover{
-    text-decoration: underline;
-}
+// #a:hover{
+//     text-decoration: underline;
+// }

@@ -8,41 +8,13 @@ const Footer = ()=>{
             <div className='bottom-logo'></div>
                 <div>
                     <div className="inner-footer">
-                    
+                        <div className='contact-icon-holder'>
+                            <a href="https://github.com/kendraodru"><i id='icon' class="fab fa-github"></i></a>
+                            <a href="https://angel.co/kendra-odrunia"><i id='icon' class="fab fa-angellist"></i></a>
+                            <a href="https://www.linkedin.com/in/kendra-odrunia-9272441a4/"><i id='icon' class="fab fa-linkedin"></i></a>
+                        </div>
                     </div> 
                 </div>
-            {/* <div className='footer-links'>
-                <div className='footer-set'>
-                    <div className='footer-title'>
-                        <span>Shop</span>
-                    </div>
-                    <div className='footer-title-items'>
-                        <a id="a" href="/">All Skin Care</a>
-                        <a id="a" href="/">Face Cleansers</a>
-                        <a id="a" href="/">Eye Cream</a>
-                    </div>
-                </div>
-                <div className='footer-set'>
-                    <div className='footer-title'>
-                        <span>About</span>
-                    </div>
-                    <div className='footer-title-items'>
-                        <a id="a" href="/">Our Ethos</a>
-                        <a id="a" href="/">Our Mission</a>
-                        <a id="a" href="/">Our Story</a>
-                    </div>
-                </div>
-                <div className='footer-set'>
-                    <div className='footer-title'>
-                        <span>Social</span>
-                    </div>
-                    <div className='footer-title-items'>
-                        <span><a id="a" href="/">Facebook</a></span>
-                        <span><a id="a" href="/">Pinterest</a></span>
-                        <span> <a id="a" href="/">Instagram</a></span>
-                    </div>
-                </div>
-            </div> */}
         </footer>
     )
 };
