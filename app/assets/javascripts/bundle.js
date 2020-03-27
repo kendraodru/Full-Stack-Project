@@ -343,6 +343,27 @@ var logout = function logout() {
 
 /***/ }),
 
+/***/ "./frontend/components/about/about.js":
+/*!********************************************!*\
+  !*** ./frontend/components/about/about.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var About = function About() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "about section");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (About);
+
+/***/ }),
+
 /***/ "./frontend/components/app.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
@@ -362,6 +383,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_nav_bar_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nav/nav_bar_container */ "./frontend/components/nav/nav_bar_container.jsx");
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
+/* harmony import */ var _about_about__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./about/about */ "./frontend/components/about/about.js");
+
 
 
 
@@ -387,6 +410,9 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cart/:cartId",
     component: _components_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/about",
+    component: _about_about__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     component: _splash_splash__WEBPACK_IMPORTED_MODULE_2__["default"]
