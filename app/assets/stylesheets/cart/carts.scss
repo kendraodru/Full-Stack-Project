@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .close-x-div-cart{
+    margin-top: 14px;
     position: absolute;
     padding-left: 7px;
     padding-top: 7px;
@@ -31,16 +32,11 @@
 
 .out-most-cart-wrap{
   position: absolute;
-//   top: 0;
-//   bottom:0;
-//   left: 0;
   right: 0;
   overflow: hidden;
-//   margin:auto;
   background: white;
   box-sizing: border-box;
   height: 100%;
-//   width: 100vw;
   width: 400px;
   z-index: 900;
 
@@ -48,9 +44,8 @@
 }
 
 .cart-header{
-    display: flex;
-    justify-content: space-between;
-
+  font-size: 28px;
+  padding-top: 23px;
 }
 
 // ^we shall see how this part turns out

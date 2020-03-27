@@ -739,11 +739,13 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         className: "cart-product-basic-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-updating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this3.handleProductQuantity('subtract');
         }
-      }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "curr-quantity"
+      }, this.state.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this3.handleProductQuantity('add');
         }
@@ -838,13 +840,13 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           return e.stopPropagation();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cart-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Cart"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "close-x-div-cart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: this.props.closeModal,
         className: "close-x-cart"
-      }, "\xD7"))), items);
+      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-header"
+      }, "Cart"), items);
     }
   }]);
 

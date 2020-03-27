@@ -1,11 +1,24 @@
 // Place all the styles related to the CartItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.indivi-cart-product-wrap{
+.cart-product-outer-wrap{
     border:1px solid pink;
+    padding: 15px
+}
+
+.indivi-cart-product-wrap{
+    display: flex;
 }
 
 .cart-product-pic img{
     width: 90px;
     height: 120px;
 }
+
+
+.cart-product-updating{
+    display: flex;
+}
+// .curr-quantity{
+//     border: 1px solid grey;
+// }
