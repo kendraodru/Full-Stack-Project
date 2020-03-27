@@ -9,9 +9,9 @@ const Footer = ()=>{
                 <div>
                     <div className="inner-footer">
                         <div className='contact-icon-holder'>
-                            <a href="https://github.com/kendraodru"><i id='icon' class="fab fa-github"></i></a>
-                            <a href="https://angel.co/kendra-odrunia"><i id='icon' class="fab fa-angellist"></i></a>
-                            <a href="https://www.linkedin.com/in/kendra-odrunia-9272441a4/"><i id='icon' class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/kendraodru"><i id='icon' className="fab fa-github"></i></a>
+                            <a href="https://angel.co/kendra-odrunia"><i id='icon' className="fab fa-angellist"></i></a>
+                            <a href="https://www.linkedin.com/in/kendra-odrunia-9272441a4/"><i id='icon' className="fab fa-linkedin"></i></a>
                         </div>
                     </div> 
                 </div>

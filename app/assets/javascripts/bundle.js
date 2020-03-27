@@ -863,17 +863,17 @@ var Footer = function Footer() {
     href: "https://github.com/kendraodru"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     id: "icon",
-    class: "fab fa-github"
+    className: "fab fa-github"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://angel.co/kendra-odrunia"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     id: "icon",
-    class: "fab fa-angellist"
+    className: "fab fa-angellist"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.linkedin.com/in/kendra-odrunia-9272441a4/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     id: "icon",
-    class: "fab fa-linkedin"
+    className: "fab fa-linkedin"
   }))))));
 };
 
