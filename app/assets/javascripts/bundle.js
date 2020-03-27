@@ -561,7 +561,6 @@ __webpack_require__.r(__webpack_exports__);
 var MapStateToProps = function MapStateToProps(state, ownProps) {
   return {
     cart: state.entities.cart,
-    // products: state.entities.products,
     products: state.entities.cartProducts,
     cartItems: Object.values(state.entities.cartItems)
   };
@@ -584,10 +583,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(MapStateToProps, mapDispatchToProps)(_cart_show__WEBPACK_IMPORTED_MODULE_4__["default"])); // ASK ANGELA, how do we know to invoke the 
-// function that is in dispatch, does dispatch invoke 
-// it for us
-// ^ looks like [{id: 1, user_id:1}]
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(MapStateToProps, mapDispatchToProps)(_cart_show__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -2565,13 +2561,6 @@ var productReducer = function productReducer() {
       // nextState[action.payload.products] = action.payload.product
       // return nextState;
       return Object.assign(nextState, action.payload.products);
-    // case RECEIVE_CART:
-    //     // debugger
-    //     if (action.payload.products === undefined){
-    //         return {}
-    //     }else{
-    //         return action.payload.products
-    //     }
 
     default:
       return state;
