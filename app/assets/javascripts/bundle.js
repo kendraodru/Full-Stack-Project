@@ -737,7 +737,9 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         alt: ""
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-basic-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "prod-name"
+      }, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "price-update-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-updating"
@@ -846,7 +848,9 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "close-x-cart"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-header"
-      }, "Cart"), items);
+      }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-btm"
+      }, "hello"));
     }
   }]);
 

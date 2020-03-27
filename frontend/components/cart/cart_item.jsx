@@ -68,7 +68,7 @@ class CartItem extends React.Component{
                         <img src={product.photoUrls[0]} alt=""/>
                     </div>
                     <div className='cart-product-basic-info'>
-                        <div> 
+                        <div className='prod-name'> 
                             {product.name}
                         </div>
 

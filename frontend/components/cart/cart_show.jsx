@@ -41,6 +41,9 @@ class CartShow extends React.Component{
                 {/* </div> */}
                 <div className="cart-header">Cart</div>
                 {items}
+                <div className='cart-btm'>
+                    hello
+                </div>
             </div>
         )
     }

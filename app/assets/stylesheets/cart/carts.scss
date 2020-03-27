@@ -27,10 +27,6 @@
 }
 
 .out-most-cart-wrap{
-    overflow: scroll;
-}
-
-.out-most-cart-wrap{
   position: absolute;
   right: 0;
   overflow: hidden;
@@ -47,6 +43,15 @@
   font-size: 28px;
   padding-top: 23px;
   padding-bottom: 10px;
+  padding-left: 15px;
 }
 
+.cart-btm{
+  height: 100px;
+}
+
+
+.out-most-cart-wrap{
+  overflow: scroll;
+}
 // ^we shall see how this part turns out
