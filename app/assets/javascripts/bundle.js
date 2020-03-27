@@ -744,7 +744,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
           return _this3.handleProductQuantity('subtract');
         }
       }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "curr-quantity"
+        id: "curr-quantity"
       }, this.state.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this3.handleProductQuantity('add');

@@ -16,9 +16,23 @@
 }
 
 
-.cart-product-updating{
+.cart-product-updating {
+    border: 1px solid lightgrey;
+    border-radius: 2px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    font-size: 15px;
 }
-// .curr-quantity{
-//     border: 1px solid grey;
-// }
+
+.cart-product-updating button{
+    border: none;
+    font-size: 15px;
+    width:100%
+}
+
+#curr-quantity{
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}

@@ -72,16 +72,17 @@ class CartItem extends React.Component{
                             {product.name}
                         </div>
                         <div className="cart-product-updating">
-                            
+                            {/* <button className="cart-product-updating"> */}
                             <button onClick={()=> this.handleProductQuantity('subtract')}>
                                 -
                             </button>
-                            <button className='curr-quantity'>
+                            <button id='curr-quantity'>
                                 {this.state.quantity}
                             </button>
                             <button onClick={()=> this.handleProductQuantity('add')}>
                                 +
                             </button>
+                        {/* </button> */}
                         </div>
                         <div>
                             space
