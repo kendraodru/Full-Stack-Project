@@ -361,7 +361,13 @@ var About = function About() {
     className: "fadeMe"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hamburger"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "items checked out"));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "purchased-wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "purchased"
+  }, "Purchase Sucessful"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
