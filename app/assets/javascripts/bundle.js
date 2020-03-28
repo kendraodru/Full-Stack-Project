@@ -357,7 +357,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var About = function About() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "fadeMe"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hamburger"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "items checked out"));
 };
