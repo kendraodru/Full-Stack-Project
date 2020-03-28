@@ -1,5 +1,5 @@
 import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from '../actions/cart_item_actions'
-import { RECEIVE_CART } from '../actions/cart_actions';
+import { RECEIVE_CART, RECEIVE_PURCHASE } from '../actions/cart_actions';
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 const cartItemReducer = (state ={}, action)=>{
@@ -28,6 +28,8 @@ const cartItemReducer = (state ={}, action)=>{
         case REMOVE_CART_ITEM:
             delete nextState[action.cartItemId]
             return nextState;
+        case RECEIVE_PURCHASE:
+            return {};
         default:
             return state;
     }

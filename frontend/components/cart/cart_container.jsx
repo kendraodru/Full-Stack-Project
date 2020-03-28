@@ -1,6 +1,6 @@
 
 import  { connect } from 'react-redux';
-import { fetchCart } from '../../actions/cart_actions';
+import { fetchCart, completePurchase } from '../../actions/cart_actions';
 import { postCartItem, updateCartItem, deleteCartItem } from '../../actions/cart_item_actions';
 import { fetchProducts } from '../../actions/product_actions';
 import CartShow from './cart_show';
@@ -17,7 +17,8 @@ const mapDispatchToProps = dispatch =>({
     fetchCart: () => (dispatch(fetchCart())),
     updateCartItem:(cartItem)=>(dispatch(updateCartItem(cartItem))),
     deleteCartItem:(cartItemId)=> (dispatch(deleteCartItem(cartItemId))),
-    closeModal: ()=>(dispatch(closeModal()))
+    closeModal: ()=>(dispatch(closeModal())),
+    completePurchase: () => (dispatch(completePurchase()))
 });
 
 export default connect(

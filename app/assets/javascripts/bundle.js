@@ -90,17 +90,21 @@
 /*!******************************************!*\
   !*** ./frontend/actions/cart_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_CART, receiveCart, fetchCart */
+/*! exports provided: RECEIVE_CART, RECEIVE_PURCHASE, receiveCart, receivePurchase, fetchCart, completePurchase */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CART", function() { return RECEIVE_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PURCHASE", function() { return RECEIVE_PURCHASE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCart", function() { return receiveCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePurchase", function() { return receivePurchase; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "completePurchase", function() { return completePurchase; });
 /* harmony import */ var _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_api_util */ "./frontend/util/cart_api_util.js");
 
-var RECEIVE_CART = 'RECEIVE_CART'; // export const CREATE_CART = 'CREATE_CART';
+var RECEIVE_CART = 'RECEIVE_CART';
+var RECEIVE_PURCHASE = 'RECEIVE_PURCHASE'; // export const CREATE_CART = 'CREATE_CART';
 
 var receiveCart = function receiveCart(payload) {
   return {
@@ -108,11 +112,24 @@ var receiveCart = function receiveCart(payload) {
     payload: payload
   };
 };
+var receivePurchase = function receivePurchase() {
+  return {
+    type: RECEIVE_PURCHASE // payload
+
+  };
+};
 var fetchCart = function fetchCart() {
   return function (dispatch) {
     return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (payload) {
       return dispatch(receiveCart(payload));
     });
+  };
+};
+var completePurchase = function completePurchase() {
+  return function (dispatch) {
+    return dispatch(receivePurchase()) // cartAPIUtil.fetchCart()
+    //     .then(payload => dispatch(receivePurchase(payload)))
+    ;
   };
 };
 
@@ -620,6 +637,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
+    },
+    completePurchase: function completePurchase() {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["completePurchase"])());
     }
   };
 };
@@ -886,6 +906,9 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         onClick: this.props.closeModal,
         to: "/purchased"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.completePurchase();
+        },
         className: "ckout-btn"
       }, "Checkout"))));
     }
@@ -2466,6 +2489,9 @@ var cartItemReducer = function cartItemReducer() {
       delete nextState[action.cartItemId];
       return nextState;
 
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PURCHASE"]:
+      return {};
+
     default:
       return state;
   }
@@ -2503,6 +2529,9 @@ var cartProductsReducer = function cartProductsReducer() {
       }
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["LOGOUT_CURRENT_USER"]:
+      return {};
+
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PURCHASE"]:
       return {};
 
     default:

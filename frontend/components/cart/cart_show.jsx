@@ -57,7 +57,11 @@ class CartShow extends React.Component{
                         <span>{total}</span>
                     </div> */}
                     <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'>
-                        <button className='ckout-btn'>Checkout</button>
+                        <button 
+                        onClick={() => this.props.completePurchase()}
+                        className='ckout-btn'>
+                            Checkout
+                        </button>
                     </Link>
                 </div>
             </div>
