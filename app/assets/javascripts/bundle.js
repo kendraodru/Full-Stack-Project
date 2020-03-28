@@ -1471,7 +1471,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
 
       var product = this.props.product;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "product-root"
+        className: "product-root",
+        id: "fadeMeProd"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "product-index-show-link",
         href: "/#/products/".concat(product.name, "/").concat(product.id)
@@ -1606,7 +1607,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
       ;
       var product = this.props.product;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fadeMe"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-show-wrapper"
@@ -2287,7 +2290,8 @@ var Splash = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-wrapper"
+        className: "splash-wrapper",
+        id: "fadeMe-splash"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

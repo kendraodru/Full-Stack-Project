@@ -66,7 +66,7 @@ class ProductIndexItem extends React.Component{
         const { product } = this.props
     
         return (
-            <div className='product-root' >
+            <div className='product-root' id='fadeMeProd'>
                     <a className="product-index-show-link" href={`/#/products/${product.name}/${product.id}`}>
                         
                         <div id={`image-container-${product.id}`} className='product-pic'>
