@@ -1,6 +1,7 @@
 import React from 'react';
 import CartItem from './cart_item';
 import { Link } from 'react-router-dom';
+import Loading from '../loading/spinner'
 
 class CartShow extends React.Component{
     constructor(props){
@@ -14,7 +15,7 @@ class CartShow extends React.Component{
 
     render(){
         if (this.props.cart === undefined) {
-            return null;
+            return <Loading />;
         };
 
         const items = this.props.cartItems.map((item, idx)=>{

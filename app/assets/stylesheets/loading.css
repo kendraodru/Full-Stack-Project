@@ -1,0 +1,194 @@
+.loading-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: black; */
+}
+
+
+.loading-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: hsla(0, 80%, 50%, 1);
+}
+
+/* 36, 72, 108, 144, 180, 216, 252, 288, 324, 360 */
+
+@keyframes color-cycle-shadow {
+  0% { 
+    box-shadow:
+      0 0 10rem 15px hsl(36, 100%, 50%),
+      -50px 0 5rem 25px hsl(0, 100%, 50%),
+      50px 0 5rem 25px hsl(90, 100%, 50%),
+      0 -75px 5rem 25px hsl(180, 100%, 50%),
+      0 75px 5rem 25px hsl(270, 100%, 50%); }
+  5% { 
+    box-shadow:
+      0 0 5rem 25px hsl(72, 100%, 50%),
+      -50px 0 5rem 25px hsl(18, 100%, 50%),
+      50px 0 5rem 25px hsl(108, 100%, 50%),
+      0 -75px 5rem 25px hsl(198, 100%, 50%),
+      0 75px 5rem 25px hsl(288, 100%, 50%); }
+  10% { 
+    box-shadow:
+      0 0 5rem 25px hsl(108, 100%, 50%),
+      -50px 0 5rem 25px hsl(36, 100%, 50%),
+      50px 0 5rem 25px hsl(126, 100%, 50%),
+      0 -75px 5rem 25px hsl(216, 100%, 50%),
+      0 75px 5rem 25px hsl(306, 100%, 50%); }
+  15% { 
+    box-shadow:
+      0 0 5rem 25px hsl(144, 100%, 50%),
+      -50px 0 5rem 25px hsl(54, 100%, 50%),
+      50px 0 5rem 25px hsl(144, 100%, 50%),
+      0 -75px 5rem 25px hsl(234, 100%, 50%),
+      0 75px 5rem 25px hsl(324, 100%, 50%); }
+  20% { 
+    box-shadow:
+      0 0 5rem 25px hsl(180, 100%, 50%),
+      -50px 0 5rem 25px hsl(72, 100%, 50%),
+      50px 0 5rem 25px hsl(162, 100%, 50%),
+      0 -75px 5rem 25px hsl(252, 100%, 50%),
+      0 75px 5rem 25px hsl(342, 100%, 50%); }
+  25% { 
+    box-shadow:
+      0 0 5rem 25px hsl(216, 100%, 50%),
+      -50px 0 5rem 25px hsl(90, 100%, 50%),
+      50px 0 5rem 25px hsl(180, 100%, 50%),
+      0 -75px 5rem 25px hsl(270, 100%, 50%),
+      0 75px 5rem 25px hsl(360, 100%, 50%); }
+  30% { 
+    box-shadow:
+      0 0 5rem 25px hsl(252, 100%, 50%),
+      -50px 0 5rem 25px hsl(108, 100%, 50%),
+      50px 0 5rem 25px hsl(198, 100%, 50%),
+      0 -75px 5rem 25px hsl(288, 100%, 50%),
+      0 75px 5rem 25px hsl(18, 100%, 50%); }
+  35% { 
+    box-shadow:
+      0 0 5rem 25px hsl(288, 100%, 50%),
+      -50px 0 5rem 25px hsl(126, 100%, 50%),
+      50px 0 5rem 25px hsl(216, 100%, 50%),
+      0 -75px 5rem 25px hsl(306, 100%, 50%),
+      0 75px 5rem 25px hsl(36, 100%, 50%); }
+  40% { 
+    box-shadow:
+      0 0 5rem 25px hsl(324, 100%, 50%),
+      -50px 0 5rem 25px hsl(144, 100%, 50%),
+      50px 0 5rem 25px hsl(234, 100%, 50%),
+      0 -75px 5rem 25px hsl(324, 100%, 50%),
+      0 75px 5rem 25px hsl(54, 100%, 50%); }
+  45% { 
+    box-shadow:
+      0 0 5rem 25px hsl(360, 100%, 50%),
+      -50px 0 5rem 25px hsl(162, 100%, 50%),
+      50px 0 5rem 25px hsl(252, 100%, 50%),
+      0 -75px 5rem 25px hsl(342, 100%, 50%),
+      0 75px 5rem 25px hsl(72, 100%, 50%); }
+  50% { 
+    box-shadow:
+      0 0 5rem 25px hsl(36, 100%, 50%),
+      -50px 0 5rem 25px hsl(180, 100%, 50%),
+      50px 0 5rem 25px hsl(270, 100%, 50%),
+      0 -75px 5rem 25px hsl(360, 100%, 50%),
+      0 75px 5rem 25px hsl(90, 100%, 50%); }
+  55% { 
+    box-shadow:
+      0 0 5rem 25px hsl(72, 100%, 50%),
+      -50px 0 5rem 25px hsl(198, 100%, 50%),
+      50px 0 5rem 25px hsl(288, 100%, 50%),
+      0 -75px 5rem 25px hsl(18, 100%, 50%),
+      0 75px 5rem 25px hsl(108, 100%, 50%); }
+  60% { 
+    box-shadow:
+      0 0 5rem 25px hsl(108, 100%, 50%),
+      -50px 0 5rem 25px hsl(216, 100%, 50%),
+      50px 0 5rem 25px hsl(306, 100%, 50%),
+      0 -75px 5rem 25px hsl(36, 100%, 50%),
+      0 75px 5rem 25px hsl(198, 100%, 50%); }
+  65% { 
+    box-shadow:
+      0 0 5rem 25px hsl(144, 100%, 50%),
+      -50px 0 5rem 25px hsl(234, 100%, 50%),
+      50px 0 5rem 25px hsl(324, 100%, 50%),
+      0 -75px 5rem 25px hsl(54, 100%, 50%),
+      0 75px 5rem 25px hsl(216, 100%, 50%); }
+  70% { 
+    box-shadow:
+      0 0 5rem 25px hsl(180, 100%, 50%),
+      -50px 0 5rem 25px hsl(252, 100%, 50%),
+      50px 0 5rem 25px hsl(342, 100%, 50%),
+      0 -75px 5rem 25px hsl(72, 100%, 50%),
+      0 75px 5rem 25px hsl(234, 100%, 50%); }
+  75% { 
+    box-shadow:
+      0 0 5rem 25px hsl(216, 100%, 50%),
+      -50px 0 5rem 25px hsl(270, 100%, 50%),
+      50px 0 5rem 25px hsl(360, 100%, 50%),
+      0 -75px 5rem 25px hsl(90, 100%, 50%),
+      0 75px 5rem 25px hsl(252, 100%, 50%); }
+  80% { 
+    box-shadow:
+      0 0 5rem 25px hsl(252, 100%, 50%),
+      -50px 0 5rem 25px hsl(288, 100%, 50%),
+      50px 0 5rem 25px hsl(18, 100%, 50%),
+      0 -75px 5rem 25px hsl(108, 100%, 50%),
+      0 75px 5rem 25px hsl(270, 100%, 50%); }
+  85% { 
+    box-shadow:
+      0 0 5rem 25px hsl(288, 100%, 50%),
+      -50px 0 5rem 25px hsl(306, 100%, 50%),
+      50px 0 5rem 25px hsl(36, 100%, 50%),
+      0 -75px 5rem 25px hsl(126, 100%, 50%),
+      0 75px 5rem 25px hsl(288, 100%, 50%); }
+  90% { 
+    box-shadow:
+      0 0 5rem 25px hsl(324, 100%, 50%),
+      -50px 0 5rem 25px hsl(324, 100%, 50%),
+      50px 0 5rem 25px hsl(54, 100%, 50%),
+      0 -75px 5rem 25px hsl(144, 100%, 50%),
+      0 75px 5rem 25px hsl(306, 100%, 50%); }
+  95% { 
+    box-shadow:
+      0 0 5rem 25px hsl(360, 100%, 50%),
+      -50px 0 5rem 25px hsl(342, 100%, 50%),
+      50px 0 5rem 25px hsl(72, 100%, 50%),
+      0 -75px 5rem 25px hsl(162, 100%, 50%),
+      0 75px 5rem 25px hsl(324, 100%, 50%); }
+  100% { 
+    box-shadow:
+      0 0 5rem 25px hsl(36, 100%, 50%),
+      -50px 0 5rem 25px hsl(360, 50%, 50%),
+      50px 0 5rem 25px hsl(90, 100%, 50%),
+      0 -75px 5rem 25px hsl(180, 100%, 50%),
+      0 75px 5rem 25px hsl(342, 100%, 50%); }
+}
+
+
+@keyframes color-cycle-background {
+  0% { background: hsl(0, 100%, 25%); }
+  5% { background: hsl(18, 100%, 25%); }
+  10% { background: hsl(36, 100%, 25%); }
+  15% { background: hsl(54, 100%, 25%); }
+  20% { background: hsl(72, 100%, 25%); }
+  25% { background: hsl(90, 100%, 25%); }
+  30% { background: hsl(108, 100%, 25%); }
+  35% { background: hsl(126, 100%, 25%); }
+  40% { background: hsl(144, 100%, 25%); }
+  45% { background: hsl(162, 100%, 25%); }
+  50% { background: hsl(180, 100%, 25%); }
+  55% { background: hsl(198, 100%, 25%); }
+  60% { background: hsl(216, 100%, 25%); }
+  65% { background: hsl(234, 100%, 25%); }
+  70% { background: hsl(252, 100%, 25%); }
+  75% { background: hsl(270, 100%, 25%); }
+  80% { background: hsl(288, 100%, 25%); }
+  85% { background: hsl(306, 100%, 25%); }
+  90% { background: hsl(324, 100%, 25%); }
+  95% { background: hsl(342, 100%, 25%); }
+  100% { background: hsl(360, 50%, 25%); }
+}

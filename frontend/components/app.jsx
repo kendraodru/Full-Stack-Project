@@ -8,6 +8,7 @@ import NavBarContainer from './nav/nav_bar_container';
 import Modal from './modal/modal'
 import Footer from './footer/footer'
 import About from './about/about';
+import Loading from './loading/spinner';
 // import { AuthRoute } from '../util/route_util';
 // import GreetingContainer from './greeting/greeting_container';
 // import LoginFormContainer from './session/login_form_container';
@@ -21,6 +22,7 @@ const App = () =>(
             {<NavBarContainer/>}
         </header>
         <Switch>
+            <Route path='/loading' component={ Loading } />
             <Route path='/products/:productName/:productId' component={ProductShowContainer}/>
             <Route path='/products' component={ProductIndexContainer}/>
             <Route path='/cart/:cartId' component={CartShowContainer}/>

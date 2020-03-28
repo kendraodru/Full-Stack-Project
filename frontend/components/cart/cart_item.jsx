@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../loading/spinner';
 
 class CartItem extends React.Component{
     constructor(props){

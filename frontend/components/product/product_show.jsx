@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from '../carousel/carousel';
+import Loading from '../loading/spinner';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -45,7 +46,7 @@ class ProductShow extends React.Component {
 
     render(){
         if (this.props.product === undefined) {
-            return null;
+            return <Loading />;
         };
         
         const { product } = this.props
