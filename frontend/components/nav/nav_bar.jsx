@@ -67,11 +67,13 @@ class NavBar extends React.Component{
                     </div>
                     <div className='root-nav-item'>
                         <span className='root-title'>
+                            {/* <div id='root-title'> */}
                             {cartForm}
                             <span className='nav-btn'>({this.state.quantity})</span>
                             {/* <a className='nav-btn' href={`/#/cart/${cartId}`}>
                                 <span className='nav-btn'>CART({this.state.quantity})</span>
                             </a> */}
+                            {/* </div> */}
                         </span>
                     </div>
                 </div>
