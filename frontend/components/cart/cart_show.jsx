@@ -33,7 +33,6 @@ class CartShow extends React.Component{
         // let total = 0;
         // let allProducts = this.props.products;
         // this.props.cartItems.map((item,idx)=>{
-        //     debugger
         //     total += allProducts[item.product_id].price
         // })
 

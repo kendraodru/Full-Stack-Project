@@ -5,7 +5,6 @@ import { postCartItem, updateCartItem } from '../../actions/cart_item_actions'
 
 
 const mapStateToProps = state =>{
-    // debugger
     return ({products: Object.values(state.entities.products),
     cart: state.entities.cart,
     // cart: Object.values(state.entities.carts),

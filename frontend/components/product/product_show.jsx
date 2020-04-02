@@ -4,7 +4,6 @@ import Loading from '../loading/spinner';
 
 class ProductShow extends React.Component {
     constructor(props){
-        debugger
         super(props);
         this.handleChangingCartItem = this.handleChangingCartItem.bind(this)
     }

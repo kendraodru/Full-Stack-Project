@@ -4,17 +4,14 @@ import Loading from '../loading/spinner'
 
 class ProductIndex extends React.Component {
     constructor(props){
-        // debugger
         super(props)
     }
 
     componentDidMount(){
-        // debugger
         this.props.fetchProducts();
     }
 
     render(){
-        // debugger
         const products = this.props.products.map((product) =>{
             return(
                 <ProductIndexItem 

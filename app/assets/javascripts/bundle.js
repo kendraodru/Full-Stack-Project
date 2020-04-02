@@ -883,7 +883,6 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       }); // let total = 0;
       // let allProducts = this.props.products;
       // this.props.cartItems.map((item,idx)=>{
-      //     debugger
       //     total += allProducts[item.product_id].price
       // })
 
@@ -1225,14 +1224,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // debugger
   // . Hacky....fix this
   return {
     currentUser: state.entities.users[state.session.id],
     cart: state.entities.cart,
     // cart: Object.values(state.entities.carts)[0],
     cartItems: Object.keys(state.entities.cartItems)
-  }; // debugger
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -1303,14 +1301,12 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   function ProductIndex(props) {
     _classCallCheck(this, ProductIndex);
 
-    // debugger
     return _possibleConstructorReturn(this, _getPrototypeOf(ProductIndex).call(this, props));
   }
 
   _createClass(ProductIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
       this.props.fetchProducts();
     }
   }, {
@@ -1318,7 +1314,6 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
       var products = this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
@@ -1373,7 +1368,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // debugger
   return {
     products: Object.values(state.entities.products),
     cart: state.entities.cart,
@@ -1597,7 +1591,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, ProductShow);
 
-    debugger;
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProductShow).call(this, props));
     _this.handleChangingCartItem = _this.handleChangingCartItem.bind(_assertThisInitialized(_this));
     return _this;
@@ -2320,7 +2313,6 @@ var Splash = /*#__PURE__*/function (_React$Component) {
 
     return _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
   } // componentDidMount(){
-  //     debugger
   //     if (this.props.currentUser !== null){
   //         // this.props.fetchCart()
   //     }
@@ -2795,7 +2787,7 @@ var _nullSession = Object.freeze({
 var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullSession;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); // debugger
+  Object.freeze(state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -2853,7 +2845,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state); // debugger
+  Object.freeze(state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -3055,7 +3047,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
-  var store; // debugger
+  var store;
 
   if (window.currentUser) {
     var preloadedState = {

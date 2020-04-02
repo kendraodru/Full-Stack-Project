@@ -13,7 +13,6 @@ class Splash extends React.Component{
         }
 
         // componentDidMount(){
-        //     debugger
         //     if (this.props.currentUser !== null){
         //         // this.props.fetchCart()
         //     }

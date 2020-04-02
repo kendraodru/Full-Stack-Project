@@ -10,7 +10,6 @@ class Api::CartsController < ApplicationController
     # end
 
     def show
-        # debugger
         @cart = current_user.cart
         @products = @cart.products || []
         @cart_items = @cart.cart_items || []
@@ -28,7 +27,6 @@ class Api::CartsController < ApplicationController
         #     @products = @cart.products
         # end
         render 'api/carts/show'
-        # debugger
     end
 
     def cart_params

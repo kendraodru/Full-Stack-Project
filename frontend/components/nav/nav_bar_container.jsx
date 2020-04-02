@@ -5,14 +5,14 @@ import NavBar from './nav_bar';
 import { openModal, closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state) => {
-    // debugger
+
     // . Hacky....fix this
     return({currentUser: state.entities.users[state.session.id],
     cart: state.entities.cart,
     // cart: Object.values(state.entities.carts)[0],
     cartItems: Object.keys(state.entities.cartItems)
     })
-    // debugger
+
 };
 
 const mapDispatchToProps = (dispatch) => ({
