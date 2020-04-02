@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductIndexItem from '../product/product_index_item';
 // import ProductShow from '../product/product_show';
 
 const MidSplash = () =>{
