@@ -984,7 +984,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Loading = function Loading() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "hamburger"
+    className: "loading-hamburger"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "loading-screen"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1276,6 +1276,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _product_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_index_item */ "./frontend/components/product/product_index_item.jsx");
+/* harmony import */ var _loading_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../loading/spinner */ "./frontend/components/loading/spinner.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1297,18 +1298,21 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var ProductIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(ProductIndex, _React$Component);
 
   function ProductIndex(props) {
     _classCallCheck(this, ProductIndex);
 
+    // debugger
     return _possibleConstructorReturn(this, _getPrototypeOf(ProductIndex).call(this, props));
   }
 
   _createClass(ProductIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      // debugger
       this.props.fetchProducts();
     }
   }, {
@@ -1316,6 +1320,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      // debugger
       var products = this.props.products.map(function (product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
@@ -1327,6 +1332,12 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
           cartItems: _this.props.cartItems
         });
       });
+
+      if (this.props.products.length === 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading_spinner__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+      }
+
+      ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "products-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
