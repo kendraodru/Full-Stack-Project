@@ -1920,12 +1920,20 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
     _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentWillReceiveProps(nextProps){
-  //     this.setState({errors: nextProps.errors})
-  // }
-
+  }
 
   _createClass(sessionForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var sessionOverlay = document.querySelector('.modal-background');
+      sessionOverlay.addEventListener('click', function () {
+        // console.log(sessionOverlay)
+        _this2.props.closeModal();
+      });
+    }
+  }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.props.clearErrors();
@@ -1949,10 +1957,10 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleInput",
     value: function handleInput(type) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, type, e.target.value));
+        _this3.setState(_defineProperty({}, type, e.target.value));
       };
     }
   }, {
