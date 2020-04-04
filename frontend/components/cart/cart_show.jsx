@@ -23,6 +23,15 @@ class CartShow extends React.Component{
             cartBody.style.right = "-1000px";
             console.log(overlay)
         });
+
+
+        xBtn.addEventListener('click', e => {
+            e.preventDefault();
+
+            window.setTimeout(() => this.props.closeModal(), 300);
+            cartBody.style.transition = "all 0.3s ease-in-out";
+            cartBody.style.right = "-1000px";
+        });
     }
 
     render(){
@@ -52,7 +61,7 @@ class CartShow extends React.Component{
             <div className='out-most-cart-wrap' onClick={e => e.stopPropagation()}>
                     <div className='close-x-div-cart'>
                         <span 
-                        onClick={this.props.closeModal} 
+                        // onClick={this.props.closeModal} 
                         className="close-x-cart">×
                         </span>
                     </div>

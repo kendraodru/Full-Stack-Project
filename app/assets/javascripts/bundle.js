@@ -874,6 +874,14 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         cartBody.style.right = "-1000px";
         console.log(overlay);
       });
+      xBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.setTimeout(function () {
+          return _this.props.closeModal();
+        }, 300);
+        cartBody.style.transition = "all 0.3s ease-in-out";
+        cartBody.style.right = "-1000px";
+      });
     }
   }, {
     key: "render",
@@ -907,7 +915,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "close-x-div-cart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        onClick: this.props.closeModal,
+        // onClick={this.props.closeModal} 
         className: "close-x-cart"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-header"
