@@ -11,6 +11,18 @@ class CartShow extends React.Component{
 
     componentDidMount(){
         this.props.fetchCart();
+
+        const overlay = document.querySelector('.modal-background'); 
+        const cartBody = document.querySelector('.out-most-cart-wrap'); 
+        const xBtn = document.querySelector('.close-x-cart'); 
+
+
+        overlay.addEventListener('click', () => {
+            window.setTimeout(() => this.props.closeModal(), 300);
+            cartBody.style.transition = "all 0.3s ease-in-out";
+            cartBody.style.right = "-1000px";
+            console.log(overlay)
+        });
     }
 
     render(){

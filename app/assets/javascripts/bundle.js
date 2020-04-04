@@ -860,12 +860,25 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
   _createClass(CartShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this = this;
+
       this.props.fetchCart();
+      var overlay = document.querySelector('.modal-background');
+      var cartBody = document.querySelector('.out-most-cart-wrap');
+      var xBtn = document.querySelector('.close-x-cart');
+      overlay.addEventListener('click', function () {
+        window.setTimeout(function () {
+          return _this.props.closeModal();
+        }, 300);
+        cartBody.style.transition = "all 0.3s ease-in-out";
+        cartBody.style.right = "-1000px";
+        console.log(overlay);
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.props.cart === undefined) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading_spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
@@ -876,9 +889,9 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: idx,
           item: item,
-          products: _this.props.products,
-          updateCartItem: _this.props.updateCartItem,
-          deleteCartItem: _this.props.deleteCartItem
+          products: _this2.props.products,
+          updateCartItem: _this2.props.updateCartItem,
+          deleteCartItem: _this2.props.deleteCartItem
         });
       }); // let total = 0;
       // let allProducts = this.props.products;
@@ -906,7 +919,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         to: "/purchased"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this.props.completePurchase();
+          return _this2.props.completePurchase();
         },
         className: "ckout-btn"
       }, "Checkout"))));
@@ -1044,9 +1057,14 @@ function Modal(_ref) {
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modal-background",
-    onClick: closeModal
-  }, component);
+    className: "modal-background"
+  }, component); // return (
+  //     <div className="modal-background" onClick={closeModal}>
+  //         {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
+  //             {component}
+  //         {/* </div> */}
+  //     </div>
+  // );
 }
 
 var mapStateToProps = function mapStateToProps(state) {

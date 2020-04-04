@@ -9,6 +9,10 @@
     100% {transform: translateX(0%);}
 }
 
+@keyframes cart-slide-back{
+    100% {transform: translateX(0%);}
+    0% {transform: translateX(60%);}
+}
 
 @keyframes fadeIn { 
   0% { 
