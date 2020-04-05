@@ -46,6 +46,10 @@ class SearchProducts extends React.Component{
         // }
     }
 
+    // handleRedirect(){
+    //     this.props.closeModal()
+    // }
+
     handleInput() {
         return (e) => {
             this.setState({ search: e.target.value })
@@ -71,7 +75,9 @@ class SearchProducts extends React.Component{
             filtered = (
                 filteredProducts.map((product)=>{
                     return(
-                        <SearchProductItem key={product.id} product={product}/>
+                        <div onClick={() => this.props.closeModal()}>
+                            <SearchProductItem key={product.id} product={product}/>
+                        </div>
                     )
                 })
             )
@@ -87,9 +93,7 @@ class SearchProducts extends React.Component{
                             className="close-x-cart">×
                             </span>
                     </div>
-                    {/* <div className='hamburger'></div> */}
                     <input 
-                        // onClick={e => e.stopPropagation()}
                         type="text"
                         onChange={this.handleInput()} 
                     />

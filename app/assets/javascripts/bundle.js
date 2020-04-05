@@ -1674,9 +1674,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
       ;
       var product = this.props.product;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "fadeMe"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-show-wrapper"
@@ -1943,7 +1941,10 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
       }, 300);
       searchBody.style.transition = "all 0.3s ease-in-out";
       searchBody.style.right = "-1000px"; // }
-    }
+    } // handleRedirect(){
+    //     this.props.closeModal()
+    // }
+
   }, {
     key: "handleInput",
     value: function handleInput() {
@@ -1977,10 +1978,14 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
         return null;
       } else {
         filtered = filteredProducts.map(function (product) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_product_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            onClick: function onClick() {
+              return _this4.props.closeModal();
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_product_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: product.id,
             product: product
-          });
+          }));
         });
       }
 
@@ -1999,7 +2004,6 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
         },
         className: "close-x-cart"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        // onClick={e => e.stopPropagation()}
         type: "text",
         onChange: this.handleInput()
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered)));

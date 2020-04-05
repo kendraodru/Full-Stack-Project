@@ -50,7 +50,7 @@ class ProductShow extends React.Component {
         
         const { product } = this.props
         return(
-            <div className='fadeMe'>
+            <div>
                 <div className="hamburger"></div>
                 <div className="inner-show-wrapper">
                     <div className='show-main-content'>
