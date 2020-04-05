@@ -412,6 +412,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _about_about__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./about/about */ "./frontend/components/about/about.js");
 /* harmony import */ var _loading_spinner__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./loading/spinner */ "./frontend/components/loading/spinner.js");
+/* harmony import */ var _search_searchContainer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./search/searchContainer */ "./frontend/components/search/searchContainer.js");
+
+
 
 
 
@@ -445,6 +448,9 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/purchased",
     component: _about_about__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/search",
+    component: _search_searchContainer__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     component: _splash_splash__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -1809,6 +1815,156 @@ var Root = function Root(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/search/searchContainer.js":
+/*!*******************************************************!*\
+  !*** ./frontend/components/search/searchContainer.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _search_product_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search_product_index */ "./frontend/components/search/search_product_index.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    products: Object.values(state.entities.products)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchProducts: function fetchProducts() {
+      return dispatch(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["fetchProducts"]);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search_product_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_product_index.js":
+/*!************************************************************!*\
+  !*** ./frontend/components/search/search_product_index.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+ // import Loading from '../loading/spinner';
+
+var SearchProducts = /*#__PURE__*/function (_React$Component) {
+  _inherits(SearchProducts, _React$Component);
+
+  function SearchProducts(props) {
+    var _this;
+
+    _classCallCheck(this, SearchProducts);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchProducts).call(this, props));
+    _this.state = {
+      search: ""
+    };
+    return _this;
+  }
+
+  _createClass(SearchProducts, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchProducts();
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput() {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState({
+          search: e.target.value
+        });
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var products = this.props.products;
+      var filteredProducts = products.filter(function (product) {
+        if (_this3.state.search.length === 0) {
+          return false;
+        }
+
+        if (product.category.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+          return true;
+        }
+
+        if (product.name.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+          return true;
+        }
+
+        if (product.sub_category.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+          return true;
+        }
+
+        if (product.texture.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+          return true;
+        }
+
+        if (product.aroma.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+          return true;
+        }
+      }); // returning true, will give us the products that are true
+
+      var filtered;
+
+      if (products.length === 0) {
+        return null;
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hamburger"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        onChange: this.handleInput()
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"));
+    }
+  }]);
+
+  return SearchProducts;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchProducts);
+
+/***/ }),
+
 /***/ "./frontend/components/session/login_form_container.jsx":
 /*!**************************************************************!*\
   !*** ./frontend/components/session/login_form_container.jsx ***!
@@ -1929,7 +2085,6 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
 
       var sessionOverlay = document.querySelector('.modal-background');
       sessionOverlay.addEventListener('click', function () {
-        // console.log(sessionOverlay)
         _this2.props.closeModal();
       });
     }
@@ -1944,7 +2099,45 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(this.props.closeModal);
-    }
+    } // handleDemoUser(e){
+    //     const demoUser = {email:'demo_user@gmail.com', password:'password'};
+    //     this.props.processForm(demoUser).then((this.props.closeModal))
+    // }
+    // animateLogin(speed = 75) {
+    //     const demoUsers = [
+    //         { email: "FoodKingGood", password: "joemama" },
+    //         { email: "GimmeDaMunny", password: "iloveyou<3" },
+    //         { email: "FlyGuy420", password: "smokeweederrday" },
+    //         { email: "HackerMan", password: "kC!4M@[s`9?SuA'f'm" },
+    //     ];
+    //     const user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
+    //     let { email, password } = user;
+    //     if (this.state.email !== email) {
+    //         const inputUser = setInterval(() => {
+    //             if (this.state.email !== email) {
+    //                 const temp = username.slice(0, this.state.username.length + 1);
+    //                 this.setState({ username: temp });
+    //             } else { clearInterval(inputUser); animatePassword(); }
+    //         }, speed);
+    //     }
+    //     const animatePassword = () => {
+    //         const inputPassword = setInterval(() => {
+    //             if (this.state.password !== password)
+    //                 this.setState({ password: password.slice(0, this.state.password.length + 1) })
+    //             else { clearInterval(inputPassword); login(); }
+    //         }, speed);
+    //     }
+    //     const login = () => {
+    //         this.props.login(this.state)
+    //             .then(() => this.props.history.push('/preferences'))
+    //         this.setState({ username: "", password: "" });
+    //     }
+    // }
+    // handleDemoUser(e) {
+    //     e.preventDefault();
+    //     this.animateLogin(50);
+    // }
+
   }, {
     key: "handleDemoUser",
     value: function handleDemoUser(e) {

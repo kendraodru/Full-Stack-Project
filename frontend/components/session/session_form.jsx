@@ -20,9 +20,7 @@ export default class sessionForm extends React.Component {
         const sessionOverlay = document.querySelector('.modal-background');
   
         sessionOverlay.addEventListener('click', () => {
-            // console.log(sessionOverlay)
             this.props.closeModal()
-
         });
     }
 
@@ -36,6 +34,45 @@ export default class sessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal)
     }
+      // handleDemoUser(e){
+    //     const demoUser = {email:'demo_user@gmail.com', password:'password'};
+    //     this.props.processForm(demoUser).then((this.props.closeModal))
+    // }
+
+    // animateLogin(speed = 75) {
+    //     const demoUsers = [
+    //         { email: "FoodKingGood", password: "joemama" },
+    //         { email: "GimmeDaMunny", password: "iloveyou<3" },
+    //         { email: "FlyGuy420", password: "smokeweederrday" },
+    //         { email: "HackerMan", password: "kC!4M@[s`9?SuA'f'm" },
+    //     ];
+    //     const user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
+    //     let { email, password } = user;
+    //     if (this.state.email !== email) {
+    //         const inputUser = setInterval(() => {
+    //             if (this.state.email !== email) {
+    //                 const temp = username.slice(0, this.state.username.length + 1);
+    //                 this.setState({ username: temp });
+    //             } else { clearInterval(inputUser); animatePassword(); }
+    //         }, speed);
+    //     }
+    //     const animatePassword = () => {
+    //         const inputPassword = setInterval(() => {
+    //             if (this.state.password !== password)
+    //                 this.setState({ password: password.slice(0, this.state.password.length + 1) })
+    //             else { clearInterval(inputPassword); login(); }
+    //         }, speed);
+    //     }
+    //     const login = () => {
+    //         this.props.login(this.state)
+    //             .then(() => this.props.history.push('/preferences'))
+    //         this.setState({ username: "", password: "" });
+    //     }
+    // }
+    // handleDemoUser(e) {
+    //     e.preventDefault();
+    //     this.animateLogin(50);
+    // }
 
     handleDemoUser(e){
         const demoUser = {email:'demo_user@gmail.com', password:'password'};
@@ -63,7 +100,6 @@ export default class sessionForm extends React.Component {
     render(){
         return(
             <div className='outter-form-wrapper' onClick={e => e.stopPropagation()}>
-                {/* <div className="hamburger"></div> */}
                 <div className='form-wrapper'>
                     <div className="background-form">
                         <div className='close-x-div'><span onClick={this.props.closeModal} className="close-x">×</span></div>
