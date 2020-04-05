@@ -2616,8 +2616,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-wrapper",
-        id: "fadeMe-splash"
+        className: "splash-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

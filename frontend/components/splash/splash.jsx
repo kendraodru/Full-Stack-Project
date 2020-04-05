@@ -21,7 +21,7 @@ class Splash extends React.Component{
 
         render(){
             return(
-                <div className='splash-wrapper' id='fadeMe-splash'>
+                <div className='splash-wrapper'>
                     <div className="hamburger"></div>
                     <div className="root-pic">
                         <div className="main-content">
