@@ -19,7 +19,7 @@ class NavBar extends React.Component{
  
 
     render(){
-        const  { currentUser, logout, otherForm, cart, cartForm} = this.props
+        const  { searchForm, currentUser, logout, otherForm, cart, cartForm} = this.props
         const cartId = (cart) ? cart.id : "/"
 
         const display = (currentUser) ? (
@@ -62,7 +62,8 @@ class NavBar extends React.Component{
                     </div>
                     <div className='root-nav-item'>
                         <span className='root-title'>
-                            <span className='nav-btn'>SEARCH</span>
+                            {searchForm}
+                            {/* <span className='nav-btn'>SEARCH</span> */}
                         </span>
                     </div>
                     <div className='root-nav-item'>

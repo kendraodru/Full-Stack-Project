@@ -29,7 +29,14 @@ const mapDispatchToProps = (dispatch) => ({
             onClick={() => dispatch(openModal('cart'))}>
             CART
         </span>
-    )
+    ),
+    searchForm: (
+        <span
+            className='nav-btn'
+            onClick={() => dispatch(openModal('search'))}>
+            SEARCH
+        </span>
+    ),
 });
 
 export default connect(

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../actions/product_actions'
 import SearchProducts from './search_product_index';
+import {closeModal} from '../../actions/modal_actions'
 
 
 const mapStateToProps = (state) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch =>({
-    fetchProducts: ()=>(dispatch(fetchProducts))
+    fetchProducts: ()=>(dispatch(fetchProducts())),
+    closeModal: () => (dispatch(closeModal()))
 })
 
 

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from  '../session/signup_form_container';
 import CartContainer from '../cart/cart_container';
+import SearchContainer from '../search/searchContainer'
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -20,14 +21,15 @@ function Modal({ modal, closeModal }) {
         case 'cart':
             component = <CartContainer />;
             break;
+        case 'search':
+            component = <SearchContainer />
+            break;
         default:
             return null;
     }
     return (
         <div className="modal-background">
-            {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
-                {component}
-            {/* </div> */}
+            {component}
         </div>
     );
     // return (

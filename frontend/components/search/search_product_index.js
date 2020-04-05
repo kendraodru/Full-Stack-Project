@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchProductItem from './search_product_item'
 // import Loading from '../loading/spinner';
 
 class SearchProducts extends React.Component{
@@ -27,19 +28,7 @@ class SearchProducts extends React.Component{
             if (this.state.search.length === 0) {
                 return false;
             }
-            if (product.category.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
-                return true;
-            }
             if (product.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
-                return true;
-            }
-            if (product.sub_category.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
-                return true;
-            }
-            if (product.texture.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
-                return true;
-            }
-            if (product.aroma.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
                 return true;
             }
         })
@@ -47,6 +36,14 @@ class SearchProducts extends React.Component{
         let filtered;
         if(products.length === 0){
             return null;
+        }else{
+            filtered = (
+                filteredProducts.map((product)=>{
+                    return(
+                        <SearchProductItem key={product.id} product={product}/>
+                    )
+                })
+            )
         }
 
         return(
@@ -57,6 +54,9 @@ class SearchProducts extends React.Component{
                     onChange={this.handleInput()} 
                 />
                 <div> hello</div>
+                <ul>
+                    {filtered}
+                </ul>
             </div>
         )
     }
