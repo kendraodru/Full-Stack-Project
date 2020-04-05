@@ -873,6 +873,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       var cartBody = document.querySelector('.out-most-cart-wrap');
       var xBtn = document.querySelector('.close-x-cart');
       overlay.addEventListener('click', function () {
+        e.preventDefault();
         window.setTimeout(function () {
           return _this.props.closeModal();
         }, 300);
@@ -1280,9 +1281,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
       }
     }, "LOGIN"),
-    closeModal: function closeModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
-    },
+    // closeModal: () => dispatch(closeModal()),
     cartForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "nav-btn",
       onClick: function onClick() {
@@ -1918,15 +1917,19 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       this.props.fetchProducts();
-      var searchOverlay = document.querySelector('.modal-background');
-      var searchBody = document.querySelector('.search-wrap'); // const xBtn = document.querySelector('.close-x-cart');
+      var searchOverlay = document.querySelector('.modal-background'); // const xBtn = document.querySelector('.close-x-cart');
+      // debugger
+      // console.log(searchBody)
 
       searchOverlay.addEventListener('click', function () {
+        e.preventDefault();
+        var searchBody = document.getElementById('search-wrap');
+        console.log(searchBody);
         window.setTimeout(function () {
           return _this2.props.closeModal();
         }, 300);
         searchBody.style.transition = "all 0.3s ease-in-out";
-        searchBody.style.right = "-1000px"; // console.log(overlay)
+        searchBody.style.right = "-1000px";
       }); // xBtn.addEventListener('click', e => {
       //     e.preventDefault();
       //     window.setTimeout(() => this.props.closeModal(), 300);
@@ -1975,11 +1978,12 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "search-wrap",
+        id: "search-wrap",
         onClick: function onClick(e) {
           return e.stopPropagation();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        // onClick={e => e.stopPropagation()}
         type: "text",
         onChange: this.handleInput()
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered));
@@ -2137,6 +2141,8 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
 
       var sessionOverlay = document.querySelector('.modal-background');
       sessionOverlay.addEventListener('click', function () {
+        e.preventDefault();
+
         _this2.props.closeModal();
       });
     }

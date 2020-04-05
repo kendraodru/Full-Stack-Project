@@ -15,15 +15,17 @@ class SearchProducts extends React.Component{
 
 
         const searchOverlay = document.querySelector('.modal-background');
-        const searchBody = document.querySelector('.search-wrap');
         // const xBtn = document.querySelector('.close-x-cart');
-
-
+        // debugger
+        // console.log(searchBody)
         searchOverlay.addEventListener('click', () => {
+            e.preventDefault();
+
+            let searchBody = document.getElementById('search-wrap');
+            console.log(searchBody)
             window.setTimeout(() => this.props.closeModal(), 300);
             searchBody.style.transition = "all 0.3s ease-in-out";
             searchBody.style.right = "-1000px";
-            // console.log(overlay)
         });
 
         // xBtn.addEventListener('click', e => {
@@ -68,9 +70,10 @@ class SearchProducts extends React.Component{
         }
 
         return(
-            <div className="search-wrap" onClick={e => e.stopPropagation()}>
+            <div id="search-wrap" onClick={e => e.stopPropagation()}>
                 {/* <div className='hamburger'></div> */}
                 <input 
+                    // onClick={e => e.stopPropagation()}
                     type="text"
                     onChange={this.handleInput()} 
                 />
