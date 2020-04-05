@@ -1,0 +1,15 @@
+.search-wrap{
+    
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  background: white;
+  box-sizing: border-box;
+  height: 100%;
+  width: 400px;
+  z-index: 3;
+  opacity: 1;
+
+  animation: cart-slide 0.3s ease-in-out
+
+}

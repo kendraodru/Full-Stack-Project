@@ -877,8 +877,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           return _this.props.closeModal();
         }, 300);
         cartBody.style.transition = "all 0.3s ease-in-out";
-        cartBody.style.right = "-1000px";
-        console.log(overlay);
+        cartBody.style.right = "-1000px"; // console.log(overlay)
       });
       xBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -1916,15 +1915,32 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
   _createClass(SearchProducts, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       this.props.fetchProducts();
+      var searchOverlay = document.querySelector('.modal-background');
+      var searchBody = document.querySelector('.search-wrap'); // const xBtn = document.querySelector('.close-x-cart');
+
+      searchOverlay.addEventListener('click', function () {
+        window.setTimeout(function () {
+          return _this2.props.closeModal();
+        }, 300);
+        searchBody.style.transition = "all 0.3s ease-in-out";
+        searchBody.style.right = "-1000px"; // console.log(overlay)
+      }); // xBtn.addEventListener('click', e => {
+      //     e.preventDefault();
+      //     window.setTimeout(() => this.props.closeModal(), 300);
+      //     cartBody.style.transition = "all 0.3s ease-in-out";
+      //     cartBody.style.right = "-1000px";
+      // }); 
     }
   }, {
     key: "handleInput",
     value: function handleInput() {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        _this2.setState({
+        _this3.setState({
           search: e.target.value
         });
       };
@@ -1932,15 +1948,15 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var products = this.props.products;
       var filteredProducts = products.filter(function (product) {
-        if (_this3.state.search.length === 0) {
+        if (_this4.state.search.length === 0) {
           return false;
         }
 
-        if (product.name.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+        if (product.name.toLowerCase().indexOf(_this4.state.search.toLowerCase()) !== -1) {
           return true;
         }
       }); // returning true, will give us the products that are true
@@ -1958,9 +1974,12 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
         });
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hamburger"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-wrap",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput()
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered));

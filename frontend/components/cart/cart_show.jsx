@@ -21,7 +21,7 @@ class CartShow extends React.Component{
             window.setTimeout(() => this.props.closeModal(), 300);
             cartBody.style.transition = "all 0.3s ease-in-out";
             cartBody.style.right = "-1000px";
-            console.log(overlay)
+            // console.log(overlay)
         });
 
 

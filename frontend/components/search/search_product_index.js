@@ -12,6 +12,27 @@ class SearchProducts extends React.Component{
 
     componentDidMount(){
         this.props.fetchProducts();
+
+
+        const searchOverlay = document.querySelector('.modal-background');
+        const searchBody = document.querySelector('.search-wrap');
+        // const xBtn = document.querySelector('.close-x-cart');
+
+
+        searchOverlay.addEventListener('click', () => {
+            window.setTimeout(() => this.props.closeModal(), 300);
+            searchBody.style.transition = "all 0.3s ease-in-out";
+            searchBody.style.right = "-1000px";
+            // console.log(overlay)
+        });
+
+        // xBtn.addEventListener('click', e => {
+        //     e.preventDefault();
+
+        //     window.setTimeout(() => this.props.closeModal(), 300);
+        //     cartBody.style.transition = "all 0.3s ease-in-out";
+        //     cartBody.style.right = "-1000px";
+        // }); 
     }
 
     handleInput() {
@@ -47,8 +68,8 @@ class SearchProducts extends React.Component{
         }
 
         return(
-            <div>
-                <div className='hamburger'></div>
+            <div className="search-wrap" onClick={e => e.stopPropagation()}>
+                {/* <div className='hamburger'></div> */}
                 <input 
                     type="text"
                     onChange={this.handleInput()} 
