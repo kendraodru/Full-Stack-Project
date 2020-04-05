@@ -19,8 +19,9 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />;
             break;
         case 'cart':
-            component = <CartContainer />;
-            break;
+            return(
+                <CartContainer />
+            )
         case 'search':
             component = <SearchContainer />
             break;

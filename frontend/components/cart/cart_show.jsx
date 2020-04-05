@@ -15,16 +15,17 @@ class CartShow extends React.Component{
         const overlay = document.querySelector('.modal-background'); 
         const cartBody = document.querySelector('.out-most-cart-wrap'); 
         const xBtn = document.querySelector('.close-x-cart'); 
+        console.log(overlay)
+        console.log(cartBody)
 
-
-        overlay.addEventListener('click', () => {
-            e.preventDefault();
+        overlay.addEventListener('click', (e) => {
+            // e.preventDefault();
 
             
             window.setTimeout(() => this.props.closeModal(), 300);
             cartBody.style.transition = "all 0.3s ease-in-out";
             cartBody.style.right = "-1000px";
-            // console.log(overlay)
+            console.log("CLOSING")
         });
 
 
@@ -61,7 +62,10 @@ class CartShow extends React.Component{
         // })
 
         return(
-            <div className='out-most-cart-wrap' onClick={e => e.stopPropagation()}>
+            //onClick={e => e.stopPropagation()}
+            <div className='full-cart-wrap'>
+                <div className='modal-background'></div>
+            <div className='out-most-cart-wrap'>
                     <div className='close-x-div-cart'>
                         <span 
                         // onClick={this.props.closeModal} 
@@ -87,6 +91,7 @@ class CartShow extends React.Component{
                         </button>
                     </Link>
                 </div>
+            </div>
             </div>
         )
     }

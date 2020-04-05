@@ -872,13 +872,16 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       var overlay = document.querySelector('.modal-background');
       var cartBody = document.querySelector('.out-most-cart-wrap');
       var xBtn = document.querySelector('.close-x-cart');
-      overlay.addEventListener('click', function () {
-        e.preventDefault();
+      console.log(overlay);
+      console.log(cartBody);
+      overlay.addEventListener('click', function (e) {
+        // e.preventDefault();
         window.setTimeout(function () {
           return _this.props.closeModal();
         }, 300);
         cartBody.style.transition = "all 0.3s ease-in-out";
-        cartBody.style.right = "-1000px"; // console.log(overlay)
+        cartBody.style.right = "-1000px";
+        console.log("CLOSING");
       });
       xBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -913,30 +916,33 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       //     total += allProducts[item.product_id].price
       // })
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "out-most-cart-wrap",
-        onClick: function onClick(e) {
-          return e.stopPropagation();
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "close-x-div-cart"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        // onClick={this.props.closeModal} 
-        className: "close-x-cart"
-      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cart-header"
-      }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "cart-btm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        className: "ckout-link",
-        onClick: this.props.closeModal,
-        to: "/purchased"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this2.props.completePurchase();
-        },
-        className: "ckout-btn"
-      }, "Checkout"))));
+      return (//onClick={e => e.stopPropagation()}
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "full-cart-wrap"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "modal-background"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "out-most-cart-wrap"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "close-x-div-cart"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          // onClick={this.props.closeModal} 
+          className: "close-x-cart"
+        }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-header"
+        }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-btm"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          className: "ckout-link",
+          onClick: this.props.closeModal,
+          to: "/purchased"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this2.props.completePurchase();
+          },
+          className: "ckout-btn"
+        }, "Checkout")))))
+      );
     }
   }]);
 
@@ -1065,8 +1071,7 @@ function Modal(_ref) {
       break;
 
     case 'cart':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-      break;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
 
     case 'search':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_searchContainer__WEBPACK_IMPORTED_MODULE_6__["default"], null);
@@ -1914,23 +1919,19 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
   _createClass(SearchProducts, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
-
-      this.props.fetchProducts();
-      var searchOverlay = document.querySelector('.modal-background'); // const xBtn = document.querySelector('.close-x-cart');
-      // debugger
-      // console.log(searchBody)
-
-      searchOverlay.addEventListener('click', function () {
-        e.preventDefault();
-        var searchBody = document.getElementById('search-wrap');
-        console.log(searchBody);
-        window.setTimeout(function () {
-          return _this2.props.closeModal();
-        }, 300);
-        searchBody.style.transition = "all 0.3s ease-in-out";
-        searchBody.style.right = "-1000px";
-      }); // xBtn.addEventListener('click', e => {
+      this.props.fetchProducts(); // const searchOverlay = document.querySelector('.modal-background');
+      // // const xBtn = document.querySelector('.close-x-cart');
+      // // debugger
+      // console.log(searchOverlay)
+      // searchOverlay.addEventListener('click', (e) => {
+      //     e.preventDefault();
+      //     let searchBody = document.getElementById('search-wrap');
+      //     console.log(searchBody)
+      //     window.setTimeout(() => this.props.closeModal(), 300);
+      //     searchBody.style.transition = "all 0.3s ease-in-out";
+      //     searchBody.style.right = "-1000px";
+      // });
+      // xBtn.addEventListener('click', e => {
       //     e.preventDefault();
       //     window.setTimeout(() => this.props.closeModal(), 300);
       //     cartBody.style.transition = "all 0.3s ease-in-out";
@@ -1940,10 +1941,10 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleInput",
     value: function handleInput() {
-      var _this3 = this;
+      var _this2 = this;
 
       return function (e) {
-        _this3.setState({
+        _this2.setState({
           search: e.target.value
         });
       };
@@ -1951,15 +1952,15 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var products = this.props.products;
       var filteredProducts = products.filter(function (product) {
-        if (_this4.state.search.length === 0) {
+        if (_this3.state.search.length === 0) {
           return false;
         }
 
-        if (product.name.toLowerCase().indexOf(_this4.state.search.toLowerCase()) !== -1) {
+        if (product.name.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
           return true;
         }
       }); // returning true, will give us the products that are true
@@ -2141,8 +2142,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
 
       var sessionOverlay = document.querySelector('.modal-background');
       sessionOverlay.addEventListener('click', function () {
-        e.preventDefault();
-
+        // e.preventDefault();
         _this2.props.closeModal();
       });
     }

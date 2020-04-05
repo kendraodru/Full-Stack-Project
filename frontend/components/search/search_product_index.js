@@ -14,19 +14,19 @@ class SearchProducts extends React.Component{
         this.props.fetchProducts();
 
 
-        const searchOverlay = document.querySelector('.modal-background');
-        // const xBtn = document.querySelector('.close-x-cart');
-        // debugger
-        // console.log(searchBody)
-        searchOverlay.addEventListener('click', () => {
-            e.preventDefault();
+        // const searchOverlay = document.querySelector('.modal-background');
+        // // const xBtn = document.querySelector('.close-x-cart');
+        // // debugger
+        // console.log(searchOverlay)
+        // searchOverlay.addEventListener('click', (e) => {
+        //     e.preventDefault();
 
-            let searchBody = document.getElementById('search-wrap');
-            console.log(searchBody)
-            window.setTimeout(() => this.props.closeModal(), 300);
-            searchBody.style.transition = "all 0.3s ease-in-out";
-            searchBody.style.right = "-1000px";
-        });
+        //     let searchBody = document.getElementById('search-wrap');
+        //     console.log(searchBody)
+        //     window.setTimeout(() => this.props.closeModal(), 300);
+        //     searchBody.style.transition = "all 0.3s ease-in-out";
+        //     searchBody.style.right = "-1000px";
+        // });
 
         // xBtn.addEventListener('click', e => {
         //     e.preventDefault();

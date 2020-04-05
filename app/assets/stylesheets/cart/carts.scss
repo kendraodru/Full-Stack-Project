@@ -25,15 +25,16 @@
   cursor: pointer;
 }
 
+
 .out-most-cart-wrap{
-  position: absolute;
+  position: fixed;
   right: 0;
-  overflow: hidden;
+  overflow: scroll;
   background: white;
   box-sizing: border-box;
   height: 100%;
   width: 400px;
-  z-index: 3;
+  z-index: 6;
   opacity: 1;
 
   animation: cart-slide 0.3s ease-in-out
@@ -52,7 +53,7 @@
 
 
 .out-most-cart-wrap{
-  overflow: scroll;
+  // overflow: scroll;
 }
 
 .cart-btm{

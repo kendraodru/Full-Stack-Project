@@ -20,7 +20,7 @@ export default class sessionForm extends React.Component {
         const sessionOverlay = document.querySelector('.modal-background');
   
         sessionOverlay.addEventListener('click', () => {
-            e.preventDefault();
+            // e.preventDefault();
             
             this.props.closeModal()
         });
