@@ -14,37 +14,20 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'login':
             component = <LoginFormContainer />;
-            return (
-                <div className="modal-background" onClick={closeModal}>
-                    {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
-                        {component}
-                    {/* </div> */}
-                </div>
-            );
+            break;
         case 'signup':
-            component = <SignupFormContainer />;
-             return (
-        <div className="modal-background" onClick={closeModal}>
-            {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
-                {component}
-            {/* </div> */}
-        </div>
-    );
+            component = <SignupFormContainer />
         case 'cart':
             return(
                 <CartContainer />
             )
         case 'search':
-            component = <SearchContainer />
-            break;
+            return(
+                <SearchContainer />
+            )
         default:
             return null;
     }
-    // return (
-    //     <div className="modal-background">
-    //         {component}
-    //     </div>
-    // );
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>

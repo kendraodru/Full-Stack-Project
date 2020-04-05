@@ -17,15 +17,11 @@ class CartShow extends React.Component{
         const xBtn = document.querySelector('.close-x-cart'); 
         console.log(overlay)
         console.log(cartBody)
-
-        overlay.addEventListener('click', (e) => {
-            // e.preventDefault();
-
-            
+        debugger
+        overlay.addEventListener('click', () => {            
             window.setTimeout(() => this.props.closeModal(), 300);
             cartBody.style.transition = "all 0.3s ease-in-out";
             cartBody.style.right = "-1000px";
-            console.log("CLOSING")
         });
 
 
@@ -39,6 +35,7 @@ class CartShow extends React.Component{
     }
 
     render(){
+        debugger
         if (this.props.cart === undefined) {
             return <Loading />;
         };
@@ -55,43 +52,28 @@ class CartShow extends React.Component{
             )
         })
 
-        // let total = 0;
-        // let allProducts = this.props.products;
-        // this.props.cartItems.map((item,idx)=>{
-        //     total += allProducts[item.product_id].price
-        // })
 
         return(
-            //onClick={e => e.stopPropagation()}
-            <div className='full-cart-wrap'>
+            <div>
                 <div className='modal-background'></div>
-            <div className='out-most-cart-wrap'>
-                    <div className='close-x-div-cart'>
-                        <span 
-                        // onClick={this.props.closeModal} 
-                        className="close-x-cart">×
-                        </span>
+                <div className='out-most-cart-wrap'>
+                        <div className='close-x-div-cart'>
+                            <span 
+                            className="close-x-cart">×
+                            </span>
+                        </div>
+                    <div className="cart-header">Cart</div>
+                    {items}
+                    <div className='cart-btm'>
+                        <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'>
+                            <button 
+                            onClick={() => this.props.completePurchase()}
+                            className='ckout-btn'>
+                                Checkout
+                            </button>
+                        </Link>
                     </div>
-                <div className="cart-header">Cart</div>
-                {items}
-                <div className='cart-btm'>
-                    {/* <div>
-                        <span>Shipping</span>
-                        <span>CALCULATED AT CHECKOUT</span>
-                    </div>
-                    <div>
-                        <span>Subtotal</span>
-                        <span>{total}</span>
-                    </div> */}
-                    <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'>
-                        <button 
-                        onClick={() => this.props.completePurchase()}
-                        className='ckout-btn'>
-                            Checkout
-                        </button>
-                    </Link>
                 </div>
-            </div>
             </div>
         )
     }

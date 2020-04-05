@@ -874,14 +874,13 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       var xBtn = document.querySelector('.close-x-cart');
       console.log(overlay);
       console.log(cartBody);
-      overlay.addEventListener('click', function (e) {
-        // e.preventDefault();
+      debugger;
+      overlay.addEventListener('click', function () {
         window.setTimeout(function () {
           return _this.props.closeModal();
         }, 300);
         cartBody.style.transition = "all 0.3s ease-in-out";
         cartBody.style.right = "-1000px";
-        console.log("CLOSING");
       });
       xBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -897,6 +896,8 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      debugger;
+
       if (this.props.cart === undefined) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading_spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       }
@@ -910,39 +911,29 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
           updateCartItem: _this2.props.updateCartItem,
           deleteCartItem: _this2.props.deleteCartItem
         });
-      }); // let total = 0;
-      // let allProducts = this.props.products;
-      // this.props.cartItems.map((item,idx)=>{
-      //     total += allProducts[item.product_id].price
-      // })
-
-      return (//onClick={e => e.stopPropagation()}
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "full-cart-wrap"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "modal-background"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "out-most-cart-wrap"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "close-x-div-cart"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          // onClick={this.props.closeModal} 
-          className: "close-x-cart"
-        }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "cart-header"
-        }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "cart-btm"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          className: "ckout-link",
-          onClick: this.props.closeModal,
-          to: "/purchased"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this2.props.completePurchase();
-          },
-          className: "ckout-btn"
-        }, "Checkout")))))
-      );
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-background"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "out-most-cart-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-x-div-cart"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "close-x-cart"
+      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-header"
+      }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-btm"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "ckout-link",
+        onClick: this.props.closeModal,
+        to: "/purchased"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this2.props.completePurchase();
+        },
+        className: "ckout-btn"
+      }, "Checkout")))));
     }
   }]);
 
@@ -1064,33 +1055,20 @@ function Modal(_ref) {
   switch (modal) {
     case 'login':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-background",
-        onClick: closeModal
-      }, component);
+      break;
 
     case 'signup':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-background",
-        onClick: closeModal
-      }, component);
 
     case 'cart':
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
 
     case 'search':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_searchContainer__WEBPACK_IMPORTED_MODULE_6__["default"], null);
-      break;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_searchContainer__WEBPACK_IMPORTED_MODULE_6__["default"], null);
 
     default:
       return null;
-  } // return (
-  //     <div className="modal-background">
-  //         {component}
-  //     </div>
-  // );
-
+  }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal-background",
@@ -1297,7 +1275,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
       }
     }, "LOGIN"),
-    // closeModal: () => dispatch(closeModal()),
     cartForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "nav-btn",
       onClick: function onClick() {
@@ -1891,6 +1868,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _search_product_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_product_item */ "./frontend/components/search/search_product_item.js");
+/* harmony import */ var _loading_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../loading/spinner */ "./frontend/components/loading/spinner.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1901,16 +1879,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // import Loading from '../loading/spinner';
+
+
 
 var SearchProducts = /*#__PURE__*/function (_React$Component) {
   _inherits(SearchProducts, _React$Component);
@@ -1924,24 +1903,26 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       search: ""
     };
+    _this.handleSlide = _this.handleSlide.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SearchProducts, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchProducts(); // const searchOverlay = document.querySelector('.modal-background');
+      this.props.fetchProducts(); // const overlay = document.querySelector('.modal-background'); 
+      // let searchBody = document.getElementById('search-wrap');
       // // const xBtn = document.querySelector('.close-x-cart');
       // // debugger
       // console.log(searchOverlay)
-      // searchOverlay.addEventListener('click', (e) => {
-      //     e.preventDefault();
-      //     let searchBody = document.getElementById('search-wrap');
+      // // if (searchOverlay){
+      // overlay.addEventListener('click', () => {
       //     console.log(searchBody)
       //     window.setTimeout(() => this.props.closeModal(), 300);
       //     searchBody.style.transition = "all 0.3s ease-in-out";
       //     searchBody.style.right = "-1000px";
       // });
+      // }
       // xBtn.addEventListener('click', e => {
       //     e.preventDefault();
       //     window.setTimeout(() => this.props.closeModal(), 300);
@@ -1950,12 +1931,26 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
       // }); 
     }
   }, {
-    key: "handleInput",
-    value: function handleInput() {
+    key: "handleSlide",
+    value: function handleSlide() {
       var _this2 = this;
 
+      // debugger
+      var searchBody = document.getElementById('search-wrap'); // if (searchBody){
+
+      window.setTimeout(function () {
+        return _this2.props.closeModal();
+      }, 300);
+      searchBody.style.transition = "all 0.3s ease-in-out";
+      searchBody.style.right = "-1000px"; // }
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput() {
+      var _this3 = this;
+
       return function (e) {
-        _this2.setState({
+        _this3.setState({
           search: e.target.value
         });
       };
@@ -1963,15 +1958,15 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var products = this.props.products;
       var filteredProducts = products.filter(function (product) {
-        if (_this3.state.search.length === 0) {
+        if (_this4.state.search.length === 0) {
           return false;
         }
 
-        if (product.name.toLowerCase().indexOf(_this3.state.search.toLowerCase()) !== -1) {
+        if (product.name.toLowerCase().indexOf(_this4.state.search.toLowerCase()) !== -1) {
           return true;
         }
       }); // returning true, will give us the products that are true
@@ -1989,16 +1984,25 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
         });
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "search-wrap",
-        onClick: function onClick(e) {
-          return e.stopPropagation();
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-background",
+        onClick: function onClick() {
+          return _this4.handleSlide();
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "search-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-x-div-cart"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        onClick: function onClick() {
+          return _this4.handleSlide();
+        },
+        className: "close-x-cart"
+      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         // onClick={e => e.stopPropagation()}
         type: "text",
         onChange: this.handleInput()
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered)));
     }
   }]);
 
@@ -2147,14 +2151,6 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(sessionForm, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var sessionOverlay = document.querySelector('.modal-background');
-      sessionOverlay.addEventListener('click', function () {// e.preventDefault();
-        // this.props.closeModal()
-      });
-    }
-  }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.props.clearErrors();

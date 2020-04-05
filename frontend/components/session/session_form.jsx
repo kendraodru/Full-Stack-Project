@@ -16,16 +16,6 @@ export default class sessionForm extends React.Component {
         this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
-    componentDidMount(){
-        const sessionOverlay = document.querySelector('.modal-background');
-  
-        sessionOverlay.addEventListener('click', () => {
-            // e.preventDefault();
-            
-            // this.props.closeModal()
-        });
-    }
-
     componentWillUnmount(){
         this.props.clearErrors()
     }

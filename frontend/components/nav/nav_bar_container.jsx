@@ -22,7 +22,6 @@ const mapDispatchToProps = (dispatch) => ({
             LOGIN
       </span>
     ),
-    // closeModal: () => dispatch(closeModal()),
     cartForm: (
         <span
             className='nav-btn'
