@@ -22,7 +22,7 @@ export default class sessionForm extends React.Component {
         sessionOverlay.addEventListener('click', () => {
             // e.preventDefault();
             
-            this.props.closeModal()
+            // this.props.closeModal()
         });
     }
 

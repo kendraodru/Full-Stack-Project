@@ -14,10 +14,22 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'login':
             component = <LoginFormContainer />;
-            break;
+            return (
+                <div className="modal-background" onClick={closeModal}>
+                    {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
+                        {component}
+                    {/* </div> */}
+                </div>
+            );
         case 'signup':
             component = <SignupFormContainer />;
-            break;
+             return (
+        <div className="modal-background" onClick={closeModal}>
+            {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
+                {component}
+            {/* </div> */}
+        </div>
+    );
         case 'cart':
             return(
                 <CartContainer />
@@ -28,18 +40,18 @@ function Modal({ modal, closeModal }) {
         default:
             return null;
     }
-    return (
-        <div className="modal-background">
-            {component}
-        </div>
-    );
     // return (
-    //     <div className="modal-background" onClick={closeModal}>
-    //         {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
-    //             {component}
-    //         {/* </div> */}
+    //     <div className="modal-background">
+    //         {component}
     //     </div>
     // );
+    return (
+        <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+        </div>
+    );
 }
 
 const mapStateToProps = state => {

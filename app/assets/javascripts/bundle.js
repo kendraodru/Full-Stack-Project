@@ -1064,11 +1064,17 @@ function Modal(_ref) {
   switch (modal) {
     case 'login':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
-      break;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-background",
+        onClick: closeModal
+      }, component);
 
     case 'signup':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-      break;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-background",
+        onClick: closeModal
+      }, component);
 
     case 'cart':
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_cart_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
@@ -1079,17 +1085,22 @@ function Modal(_ref) {
 
     default:
       return null;
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modal-background"
-  }, component); // return (
-  //     <div className="modal-background" onClick={closeModal}>
-  //         {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
-  //             {component}
-  //         {/* </div> */}
+  } // return (
+  //     <div className="modal-background">
+  //         {component}
   //     </div>
   // );
+
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-background",
+    onClick: closeModal
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-child",
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    }
+  }, component));
 }
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -2138,12 +2149,9 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   _createClass(sessionForm, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
-
       var sessionOverlay = document.querySelector('.modal-background');
-      sessionOverlay.addEventListener('click', function () {
-        // e.preventDefault();
-        _this2.props.closeModal();
+      sessionOverlay.addEventListener('click', function () {// e.preventDefault();
+        // this.props.closeModal()
       });
     }
   }, {
@@ -2208,10 +2216,10 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleInput",
     value: function handleInput(type) {
-      var _this3 = this;
+      var _this2 = this;
 
       return function (e) {
-        _this3.setState(_defineProperty({}, type, e.target.value));
+        _this2.setState(_defineProperty({}, type, e.target.value));
       };
     }
   }, {
