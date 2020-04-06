@@ -5,12 +5,32 @@ import Loading from '../loading/spinner';
 class ProductShow extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            updated: false
+        }
         this.handleChangingCartItem = this.handleChangingCartItem.bind(this)
     }
 
     componentDidMount(){
+        // this.props.fetchProducts()
         this.props.fetchProduct(this.props.match.params.productId);
+        // debugger
     }
+
+    componentWillUnmount(){
+        debugger
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        // this.props.fetchProduct(this.props.match.params.productId);
+        // because this is making the prop update, its going into an infinite loop,
+        // updating causes it to "update"
+        // if (prev)
+        if (prevProps !== this.props){
+            this.setState({updated: !this.state.updated})
+        }
+    }
+    
 
 
     handleChangingCartItem() {
@@ -44,6 +64,7 @@ class ProductShow extends React.Component {
 
 
     render(){
+        debugger
         if (this.props.product === undefined) {
             return <Loading />;
         };
@@ -57,7 +78,7 @@ class ProductShow extends React.Component {
                         <div className='show-main-content-wrapper'>
                             <div className='show-pic-wrapper'>
                                 <div className="show-pic">
-                                    < Carousel product={ product } />
+                                    < Carousel product={ this.props.product } />
                                 </div>
                             </div>
                             <div className='show-content-info-wrapper'>

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SearchProductItem = (props)=>{
     
@@ -7,9 +7,9 @@ const SearchProductItem = (props)=>{
 
     return(
         <div>
-            <a href={`/#/products/${product.name}/${product.id}`}>
+            <Link to={`/products/${product.name}/${product.id}`}>
                 {product.name}
-            </a>
+            </Link>
         </div>
     )
 }

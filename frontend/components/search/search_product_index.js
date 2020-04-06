@@ -13,42 +13,14 @@ class SearchProducts extends React.Component{
 
     componentDidMount(){
         this.props.fetchProducts();
-
-        // const overlay = document.querySelector('.modal-background'); 
-        // let searchBody = document.getElementById('search-wrap');
-        // // const xBtn = document.querySelector('.close-x-cart');
-        // // debugger
-        // console.log(searchOverlay)
-        // // if (searchOverlay){
-            // overlay.addEventListener('click', () => {
-            //     console.log(searchBody)
-            //     window.setTimeout(() => this.props.closeModal(), 300);
-            //     searchBody.style.transition = "all 0.3s ease-in-out";
-            //     searchBody.style.right = "-1000px";
-            // });
-        // }
-        // xBtn.addEventListener('click', e => {
-        //     e.preventDefault();
-
-        //     window.setTimeout(() => this.props.closeModal(), 300);
-        //     cartBody.style.transition = "all 0.3s ease-in-out";
-        //     cartBody.style.right = "-1000px";
-        // }); 
     }
 
     handleSlide(){
-        // debugger
         let searchBody = document.getElementById('search-wrap');
-        // if (searchBody){
         window.setTimeout(() => this.props.closeModal(), 300);
         searchBody.style.transition = "all 0.3s ease-in-out";
         searchBody.style.right = "-1000px";
-        // }
     }
-
-    // handleRedirect(){
-    //     this.props.closeModal()
-    // }
 
     handleInput() {
         return (e) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = ()=>{
+const Purchased = ()=>{
     return(
         
         <div className='fadeMe'>
@@ -14,4 +14,4 @@ const About = ()=>{
     )
 };
 
-export default About;
+export default Purchased;
