@@ -47,7 +47,7 @@
 }
 
 .searched-item-container{
-  padding:1%;
+  padding-bottom:2%;
 }
 
 .search-link{
@@ -65,4 +65,21 @@
   -ms-animation: fadeText 2s; /* Internet Explorer */
   -o-animation: fadeText 2s; /* Opera < 12.1 */
       animation: fadeText 2s;
+}
+
+.searched-item:after{
+  content: '';
+  width: 0%; height: 1px;
+  display: block;
+  margin-top: 2px;
+  right: 0;
+  background: black;
+  transition: width .1s ease;
+  -webkit-transition: width .5s ease;
+}
+ 
+.searched-item:hover:after{
+  width: 100%;
+  left: 0;
+  background: black;
 }
