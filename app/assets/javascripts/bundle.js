@@ -956,7 +956,9 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "close-x-cart"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-header"
-      }, "Cart"), items, emptyCart(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Cart"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "all-items"
+      }, items, emptyCart()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-btm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "ckout-link",

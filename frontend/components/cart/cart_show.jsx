@@ -86,8 +86,10 @@ class CartShow extends React.Component{
                             </span>
                         </div>
                     <div className="cart-header">Cart</div>
-                    {items}
-                    {emptyCart()}
+                    <div className='all-items'>
+                        {items}
+                        {emptyCart()}
+                    </div>
                     <div className='cart-btm'>
                         <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'>
                             <button 

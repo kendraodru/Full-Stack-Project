@@ -29,7 +29,7 @@
 .out-most-cart-wrap{
   position: fixed;
   right: 0;
-  overflow: scroll;
+  // overflow: scroll;
   background: white;
   box-sizing: border-box;
   height: 100%;
@@ -47,6 +47,11 @@
   padding-left: 15px;
 }
 
+
+.all-items{
+  height: 70%;
+  overflow-y: scroll;
+}
 // .cart-btm{
 //   height: 100px;
 // }
@@ -58,6 +63,7 @@
 
 .cart-btm{
   padding:15px;
+  border: 1px solid blue;
 }
 
 .ckout-link{
