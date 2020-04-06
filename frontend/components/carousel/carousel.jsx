@@ -22,17 +22,27 @@ class Carousel extends React.Component {
         this.prevPhoto = this.prevPhoto.bind(this);
     }
 
-    componentDidMount(){
-        debugger
-    }
+    // componentDidMount(){
+    //     debugger
+    // }
 
 
-    componentWillUnmount(){
-        debugger
-    }
+    // componentWillUnmount(){
+    //     debugger
+    // }
 
-    componentWillReceiveProps(){
+    // componentWillReceiveProps(){
+    //     debugger
+    //     // this.setState({photoUrls: this.props.product.photoUrls})
+    // }
+
+    componentDidUpdate(prevProps) {
         debugger
+        if (prevProps.product.id !== this.props.product.id){
+            // debugger
+            this.setState({ photoUrls: this.props.product.photoUrls })
+            console.log('hello');
+        }
     }
 
     changePhoto(idx){

@@ -510,22 +510,30 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
     _this.nextPhoto = _this.nextPhoto.bind(_assertThisInitialized(_this));
     _this.prevPhoto = _this.prevPhoto.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount(){
+  //     debugger
+  // }
+  // componentWillUnmount(){
+  //     debugger
+  // }
+  // componentWillReceiveProps(){
+  //     debugger
+  //     // this.setState({photoUrls: this.props.product.photoUrls})
+  // }
+
 
   _createClass(Carousel, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
       debugger;
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      debugger;
-    }
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps() {
-      debugger;
+
+      if (prevProps.product.id !== this.props.product.id) {
+        // debugger
+        this.setState({
+          photoUrls: this.props.product.photoUrls
+        });
+        console.log('hello');
+      }
     }
   }, {
     key: "changePhoto",
