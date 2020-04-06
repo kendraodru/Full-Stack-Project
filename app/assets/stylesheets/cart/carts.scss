@@ -49,7 +49,7 @@
 
 
 .all-items{
-  height: 70%;
+  height: 80%;
   overflow-y: scroll;
 }
 // .cart-btm{
@@ -62,8 +62,11 @@
 }
 
 .cart-btm{
+  box-shadow: rgba(0,0,0,0.15) 12px 0px 12px 0px;
   padding:15px;
-  border: 1px solid blue;
+  height: 20%;
+  // border: 1px solid blue;
+  // margin-top: 3%;
 }
 
 .ckout-link{
@@ -88,7 +91,7 @@
 // ^we shall see how this part turns out
 
 .emptyCart{
-  height: 80%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
