@@ -22,3 +22,9 @@
       opacity: 1; 
    } 
 } 
+
+
+@keyframes fadeText {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}

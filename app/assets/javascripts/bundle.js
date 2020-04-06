@@ -2115,9 +2115,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var SearchProductItem = function SearchProductItem(props) {
   var product = props.product;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "searched-item-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "search-link",
     to: "/products/".concat(product.name, "/").concat(product.id)
-  }, product.name));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "searched-item"
+  }, product.name)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchProductItem);
