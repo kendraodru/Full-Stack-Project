@@ -6,7 +6,9 @@ import Loading from '../loading/spinner'
 class CartShow extends React.Component{
     constructor(props){
         super(props)
-
+        this.state = {
+            currentUser: this.props.currentUser
+        }
     }
 
     componentDidMount(){
@@ -34,8 +36,13 @@ class CartShow extends React.Component{
         });
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.currentUser !== this.props.currentUser) {
+            this.setState({currentUser: this.props.currentUser})
+        }
+    }
+
     render(){
-        debugger
         if (this.props.cart === undefined) {
             return <Loading />;
         };
@@ -52,6 +59,22 @@ class CartShow extends React.Component{
             )
         })
 
+        const emptyCart = () =>{
+            if (items.length === 0){
+                return(
+                    <div className='emptyCart'>
+                        <div>
+                            <i className="fas fa-shopping-bag"></i>
+                            {/* <i className="fas fa-cart-arrow-down"></i> */}
+                        </div>
+                        <div className='empty-cart-para'>
+                            Your cart is empty
+                        </div>
+                    </div>
+                )
+            }
+        }
+
 
         return(
             <div>
@@ -64,6 +87,7 @@ class CartShow extends React.Component{
                         </div>
                     <div className="cart-header">Cart</div>
                     {items}
+                    {emptyCart()}
                     <div className='cart-btm'>
                         <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'>
                             <button 

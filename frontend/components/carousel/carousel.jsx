@@ -22,26 +22,9 @@ class Carousel extends React.Component {
         this.prevPhoto = this.prevPhoto.bind(this);
     }
 
-    // componentDidMount(){
-    //     debugger
-    // }
-
-
-    // componentWillUnmount(){
-    //     debugger
-    // }
-
-    // componentWillReceiveProps(){
-    //     debugger
-    //     // this.setState({photoUrls: this.props.product.photoUrls})
-    // }
-
     componentDidUpdate(prevProps) {
-        debugger
         if (prevProps.product.id !== this.props.product.id){
-            // debugger
             this.setState({ photoUrls: this.props.product.photoUrls })
-            console.log('hello');
         }
     }
 
@@ -55,12 +38,8 @@ class Carousel extends React.Component {
     }
 
     prevPhoto(){
-        // e.preventDefault();
         let prevIdx = ((this.state.currentImage + this.state.photoUrls.length - 1) % (this.state.photoUrls.length))
-        // this.setState({currentImage:prevIdx})
         this.changePhoto(prevIdx)
-        // this.changePhoto(prevIdx)
-
     }
 
     handleHover(e){

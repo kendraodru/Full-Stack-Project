@@ -510,29 +510,15 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
     _this.nextPhoto = _this.nextPhoto.bind(_assertThisInitialized(_this));
     _this.prevPhoto = _this.prevPhoto.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount(){
-  //     debugger
-  // }
-  // componentWillUnmount(){
-  //     debugger
-  // }
-  // componentWillReceiveProps(){
-  //     debugger
-  //     // this.setState({photoUrls: this.props.product.photoUrls})
-  // }
-
+  }
 
   _createClass(Carousel, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      debugger;
-
       if (prevProps.product.id !== this.props.product.id) {
-        // debugger
         this.setState({
           photoUrls: this.props.product.photoUrls
         });
-        console.log('hello');
       }
     }
   }, {
@@ -553,10 +539,8 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "prevPhoto",
     value: function prevPhoto() {
-      // e.preventDefault();
-      var prevIdx = (this.state.currentImage + this.state.photoUrls.length - 1) % this.state.photoUrls.length; // this.setState({currentImage:prevIdx})
-
-      this.changePhoto(prevIdx); // this.changePhoto(prevIdx)
+      var prevIdx = (this.state.currentImage + this.state.photoUrls.length - 1) % this.state.photoUrls.length;
+      this.changePhoto(prevIdx);
     }
   }, {
     key: "handleHover",
@@ -645,6 +629,7 @@ __webpack_require__.r(__webpack_exports__);
 var MapStateToProps = function MapStateToProps(state, ownProps) {
   return {
     cart: state.entities.cart,
+    currentUser: Object.keys(state.entities.users),
     products: state.entities.cartProducts,
     cartItems: Object.values(state.entities.cartItems)
   };
@@ -878,15 +863,21 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
   _inherits(CartShow, _React$Component);
 
   function CartShow(props) {
+    var _this;
+
     _classCallCheck(this, CartShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CartShow).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CartShow).call(this, props));
+    _this.state = {
+      currentUser: _this.props.currentUser
+    };
+    return _this;
   }
 
   _createClass(CartShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this = this;
+      var _this2 = this;
 
       this.props.fetchCart();
       var overlay = document.querySelector('.modal-background');
@@ -897,7 +888,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       debugger;
       overlay.addEventListener('click', function () {
         window.setTimeout(function () {
-          return _this.props.closeModal();
+          return _this2.props.closeModal();
         }, 300);
         cartBody.style.transition = "all 0.3s ease-in-out";
         cartBody.style.right = "-1000px";
@@ -905,18 +896,25 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       xBtn.addEventListener('click', function (e) {
         e.preventDefault();
         window.setTimeout(function () {
-          return _this.props.closeModal();
+          return _this2.props.closeModal();
         }, 300);
         cartBody.style.transition = "all 0.3s ease-in-out";
         cartBody.style.right = "-1000px";
       });
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.currentUser !== this.props.currentUser) {
+        this.setState({
+          currentUser: this.props.currentUser
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      debugger;
+      var _this3 = this;
 
       if (this.props.cart === undefined) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading_spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
@@ -927,11 +925,24 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: idx,
           item: item,
-          products: _this2.props.products,
-          updateCartItem: _this2.props.updateCartItem,
-          deleteCartItem: _this2.props.deleteCartItem
+          products: _this3.props.products,
+          updateCartItem: _this3.props.updateCartItem,
+          deleteCartItem: _this3.props.deleteCartItem
         });
       });
+
+      var emptyCart = function emptyCart() {
+        if (items.length === 0) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "emptyCart"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-shopping-bag"
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "empty-cart-para"
+          }, "Your cart is empty"));
+        }
+      };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-background"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -942,7 +953,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "close-x-cart"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-header"
-      }, "Cart"), items, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Cart"), items, emptyCart(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-btm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "ckout-link",
@@ -950,7 +961,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         to: "/purchased"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this2.props.completePurchase();
+          return _this3.props.completePurchase();
         },
         className: "ckout-btn"
       }, "Checkout")))));
@@ -1180,6 +1191,8 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           searchForm = _this$props.searchForm,
           currentUser = _this$props.currentUser,
@@ -1239,9 +1252,12 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "root-nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "root-title"
-      }, cartForm, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "nav-btn"
-      }, "(", this.state.quantity, ")")))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "nav-btn",
+        onClick: function onClick() {
+          return _this2.props.openModal('cart');
+        }
+      }, "CART (", this.state.quantity, ")")))));
     }
   }]);
 
@@ -1295,12 +1311,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
       }
     }, "LOGIN"),
-    cartForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "nav-btn",
-      onClick: function onClick() {
-        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('cart'));
-      }
-    }, "CART"),
+    openModal: function openModal(type) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])(type));
+    },
     searchForm: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "nav-btn",
       onClick: function onClick() {

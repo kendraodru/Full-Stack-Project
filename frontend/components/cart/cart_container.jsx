@@ -8,6 +8,7 @@ import { closeModal } from '../../actions/modal_actions';
 
 const MapStateToProps = (state, ownProps) =>({
     cart: state.entities.cart,
+    currentUser: Object.keys(state.entities.users),
     products: state.entities.cartProducts,
     cartItems: Object.values(state.entities.cartItems)
 })

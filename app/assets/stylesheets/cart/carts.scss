@@ -80,3 +80,23 @@
   cursor: pointer;
 }
 // ^we shall see how this part turns out
+
+.emptyCart{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-cart-para{
+  color:gray;
+  font-size: 110%;
+  padding:3%;
+}
+
+.fa-shopping-bag{
+  color:lightgrey;
+  font-size: 350%;
+  padding:3%;
+}

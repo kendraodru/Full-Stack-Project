@@ -22,13 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
             LOGIN
       </span>
     ),
-    cartForm: (
-        <span
-            className='nav-btn'
-            onClick={() => dispatch(openModal('cart'))}>
-            CART
-        </span>
-    ),
+    openModal: (type)=>dispatch(openModal(type)),
     searchForm: (
         <span
             className='nav-btn'
