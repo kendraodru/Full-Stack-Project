@@ -793,13 +793,16 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         className: "cart-product-updating"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "cart-updating-btn",
+        className: "no-outline",
         onClick: function onClick() {
           return _this3.handleProductQuantity('subtract');
         }
       }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "curr-quantity"
+        id: "curr-quantity",
+        className: "no-outline"
       }, this.state.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "cart-updating-btn",
+        className: "no-outline",
         onClick: function onClick() {
           return _this3.handleProductQuantity('add');
         }

@@ -74,13 +74,17 @@ class CartItem extends React.Component{
                         </div>
                         <div className="price-update-wrap">
                             <div className="cart-product-updating">
-                                <button id='cart-updating-btn' onClick={()=> this.handleProductQuantity('subtract')}>
+                                <button id='cart-updating-btn' 
+                                className="no-outline" 
+                                onClick={()=> this.handleProductQuantity('subtract')}>
                                     -
                                 </button>
-                                <button id='curr-quantity'>
+                                <button id='curr-quantity' className="no-outline" >
                                     {this.state.quantity}
                                 </button>
-                                <button id='cart-updating-btn' onClick={()=> this.handleProductQuantity('add')}>
+                                <button id='cart-updating-btn' 
+                                className="no-outline"  
+                                onClick={()=> this.handleProductQuantity('add')}>
                                     +
                                 </button>
                             </div>
