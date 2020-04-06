@@ -99,7 +99,7 @@ class CartShow extends React.Component{
                         {/* <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'> */}
                             <button 
                             onClick={ ()=>{
-                                this.handleSlide();
+                                // this.handleSlide();
                                 this.props.completePurchase(); 
                                 this.props.openModal('purchased')
                             }}   

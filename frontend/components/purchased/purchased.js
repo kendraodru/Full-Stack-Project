@@ -4,11 +4,15 @@ class Purchased extends React.Component{
     constructor(props){
         super(props)
     }
+
+
+
+
     render(){
         return(
             
-            <div className='fadeMe'>
-                <div className='hamburger'></div>
+            <div className='full-purchase-wrap'>
+                {/* <div className='hamburger'></div> */}
                 <div className='purchased-wrap'>
                     {/* <div className='purchased-banner'></div> */}
                     <div className='purchased'>Purchase Sucessful</div>

@@ -974,8 +974,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "cart-btm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          _this4.handleSlide();
-
+          // this.handleSlide();
           _this4.props.completePurchase();
 
           _this4.props.openModal('purchased');
@@ -1912,10 +1911,8 @@ var Purchased = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "fadeMe"
+        className: "full-purchase-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hamburger"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "purchased-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "purchased"
