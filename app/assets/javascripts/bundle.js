@@ -2075,7 +2075,9 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput()
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, filtered)));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "search-results"
+      }, filtered)));
     }
   }]);
 

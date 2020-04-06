@@ -69,8 +69,7 @@ class SearchProducts extends React.Component{
                         type="text"
                         onChange={this.handleInput()} 
                     />
-                    <div> hello</div>
-                    <ul>
+                    <ul className='search-results'>
                         {filtered}
                     </ul>
                 </div>
