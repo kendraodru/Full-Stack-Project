@@ -15,11 +15,8 @@ class CartShow extends React.Component{
         this.props.fetchCart();
 
         const overlay = document.querySelector('.modal-background'); 
-        const cartBody = document.querySelector('.out-most-cart-wrap'); 
+        let cartBody = document.querySelector('.out-most-cart-wrap'); 
         const xBtn = document.querySelector('.close-x-cart'); 
-        console.log(overlay)
-        console.log(cartBody)
-        debugger
         overlay.addEventListener('click', () => {            
             window.setTimeout(() => this.props.closeModal(), 300);
             cartBody.style.transition = "all 0.3s ease-in-out";
@@ -34,6 +31,14 @@ class CartShow extends React.Component{
             cartBody.style.transition = "all 0.3s ease-in-out";
             cartBody.style.right = "-1000px";
         });
+    }
+
+
+    handleSlide() {
+        let cartBody = document.querySelector('.out-most-cart-wrap'); 
+        window.setTimeout(() => this.props.closeModal(), 300);
+        cartBody.style.transition = "all 0.3s ease-in-out";
+        cartBody.style.right = "-1000px";
     }
 
     componentDidUpdate(prevProps) {
@@ -91,13 +96,18 @@ class CartShow extends React.Component{
                         {emptyCart()}
                     </div>
                     <div className='cart-btm'>
-                        <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'>
+                        {/* <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'> */}
                             <button 
-                            onClick={() => this.props.completePurchase()}
+                            onClick={ ()=>{
+                                this.handleSlide();
+                                this.props.completePurchase(); 
+                                this.props.openModal('purchased')
+                            }}   
+                            // onClick={() => this.props.completePurchase()}
                             className='ckout-btn'>
                                 Checkout
                             </button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>

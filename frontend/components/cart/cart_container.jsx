@@ -4,7 +4,7 @@ import { fetchCart, completePurchase } from '../../actions/cart_actions';
 import { postCartItem, updateCartItem, deleteCartItem } from '../../actions/cart_item_actions';
 import { fetchProducts } from '../../actions/product_actions';
 import CartShow from './cart_show';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 
 const MapStateToProps = (state, ownProps) =>({
     cart: state.entities.cart,
@@ -19,6 +19,7 @@ const mapDispatchToProps = dispatch =>({
     updateCartItem:(cartItem)=>(dispatch(updateCartItem(cartItem))),
     deleteCartItem:(cartItemId)=> (dispatch(deleteCartItem(cartItemId))),
     closeModal: ()=>(dispatch(closeModal())),
+    openModal: (type)=>(dispatch(openModal(type))),
     completePurchase: () => (dispatch(completePurchase()))
 });
 

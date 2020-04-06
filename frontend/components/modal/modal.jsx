@@ -5,6 +5,7 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from  '../session/signup_form_container';
 import CartContainer from '../cart/cart_container';
 import SearchContainer from '../search/searchContainer'
+import Purchased from '../purchased/purchased';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -17,6 +18,10 @@ function Modal({ modal, closeModal }) {
             break;
         case 'signup':
             component = <SignupFormContainer />
+            break;
+        case 'purchased':
+            component = <Purchased />
+            break;
         case 'cart':
             return(
                 <CartContainer />
