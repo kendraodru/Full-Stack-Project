@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+
 class Carousel extends React.Component {
     
     constructor(props){
@@ -19,6 +20,19 @@ class Carousel extends React.Component {
         this.handleHover = this.handleHover.bind(this);
         this.nextPhoto = this.nextPhoto.bind(this);
         this.prevPhoto = this.prevPhoto.bind(this);
+    }
+
+    componentDidMount(){
+        debugger
+    }
+
+
+    componentWillUnmount(){
+        debugger
+    }
+
+    componentWillReceiveProps(){
+        debugger
     }
 
     changePhoto(idx){
@@ -44,7 +58,7 @@ class Carousel extends React.Component {
         this.changePhoto(e.currentTarget.id)
     }
     render(){
-
+        // debugger
         // const { product } = this.props
             return(
                 <div className='carousel-holder'>

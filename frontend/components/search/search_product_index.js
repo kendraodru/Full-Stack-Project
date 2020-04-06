@@ -47,8 +47,8 @@ class SearchProducts extends React.Component{
             filtered = (
                 filteredProducts.map((product)=>{
                     return(
-                        <div onClick={() => this.props.closeModal()}>
-                            <SearchProductItem key={product.id} product={product}/>
+                        <div key={product.id} onClick={() => this.props.closeModal()}>
+                            <SearchProductItem product={product}/>
                         </div>
                     )
                 })

@@ -26,7 +26,9 @@ class ProductShow extends React.Component {
         // because this is making the prop update, its going into an infinite loop,
         // updating causes it to "update"
         // if (prev)
-        if (prevProps !== this.props){
+        if (prevProps.product !== this.props.product){
+            // debugger
+            // this.props.fetchProduct(this.props.match.params.productId);
             this.setState({updated: !this.state.updated})
         }
     }
@@ -64,7 +66,7 @@ class ProductShow extends React.Component {
 
 
     render(){
-        debugger
+        // debugger
         if (this.props.product === undefined) {
             return <Loading />;
         };

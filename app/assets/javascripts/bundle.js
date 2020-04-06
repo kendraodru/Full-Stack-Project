@@ -513,6 +513,21 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Carousel, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      debugger;
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      debugger;
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps() {
+      debugger;
+    }
+  }, {
     key: "changePhoto",
     value: function changePhoto(idx) {
       this.setState({
@@ -546,6 +561,7 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      // debugger
       // const { product } = this.props
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "carousel-holder"
@@ -1647,7 +1663,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       // because this is making the prop update, its going into an infinite loop,
       // updating causes it to "update"
       // if (prev)
-      if (prevProps !== this.props) {
+      if (prevProps.product !== this.props.product) {
+        // debugger
+        // this.props.fetchProduct(this.props.match.params.productId);
         this.setState({
           updated: !this.state.updated
         });
@@ -1686,8 +1704,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      debugger;
-
+      // debugger
       if (this.props.product === undefined) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading_spinner__WEBPACK_IMPORTED_MODULE_2__["default"], null);
       }
@@ -2010,11 +2027,11 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
       } else {
         filtered = filteredProducts.map(function (product) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: product.id,
             onClick: function onClick() {
               return _this4.props.closeModal();
             }
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_product_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            key: product.id,
             product: product
           }));
         });
