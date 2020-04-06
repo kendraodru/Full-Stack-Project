@@ -63,15 +63,20 @@ class SearchProducts extends React.Component{
                         <span
                             onClick={() => this.handleSlide()}
                             className="close-x-cart">×
-                            </span>
+                        </span>
                     </div>
-                    <input 
-                        type="text"
-                        onChange={this.handleInput()} 
-                    />
-                    <ul className='search-results'>
-                        {filtered}
-                    </ul>
+                    <div className="cart-header">Search</div>
+                    <div className='search-form-wrap'>
+                        <div className='search-bar'>
+                            <input className='no-outline search-bar-input'
+                                type="text"
+                                onChange={this.handleInput()} 
+                            />
+                        </div>
+                        <ul className='search-results'>
+                            {filtered}
+                        </ul>
+                    </div>
                 </div>
             </div>
         )

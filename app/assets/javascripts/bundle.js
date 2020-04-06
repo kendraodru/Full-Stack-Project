@@ -2072,12 +2072,19 @@ var SearchProducts = /*#__PURE__*/function (_React$Component) {
           return _this4.handleSlide();
         },
         className: "close-x-cart"
-      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-header"
+      }, "Search"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-form-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "no-outline search-bar-input",
         type: "text",
         onChange: this.handleInput()
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "search-results"
-      }, filtered)));
+      }, filtered))));
     }
   }]);
 

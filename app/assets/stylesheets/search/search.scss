@@ -1,5 +1,4 @@
 #search-wrap{
-    
   position: fixed;
   right: 0;
   overflow: hidden;
@@ -13,7 +12,35 @@
   animation: cart-slide 0.3s ease-in-out
 
 }
+.search-form-wrap{
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  height:80%;
+  border:1px solid green;
+}
+
+.search-bar{
+  margin-top: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.search-bar-input{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color:white;
+}
+
+.no-outline:focus {
+  outline: none;
+}
 
 .search-results{
   border:1px solid red;
+  margin-left: 5%;
+  margin-right: 5%;
 }
