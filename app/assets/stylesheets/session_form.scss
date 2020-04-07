@@ -85,16 +85,16 @@
 
 .form-label{
     color:black;
-    font-weight: bold;
+    // font-weight: bold;
     padding-top: 5px;
-    font-size: 15px;
+    font-size: 18px;
     font-family: "Unica77 LL",sans-serif;
 }
 
 input{
     margin-top: 3px;
     margin-bottom: 3px;
-    height: 32px;
+    height: 40px;
     padding-left: 2%;
     width: 100%;
     background-color:#F7F7F7;
@@ -198,5 +198,13 @@ input{
     color:red;
     font-family: "Unica77 LL",sans-serif;
     font-weight: 600;
+}
+
+#email-icon{
+    position: absolute;
+    left: 40px;
+    top:194px;
+    font-size: 20px;
+    color: rgb(67, 66, 66);
 }
 

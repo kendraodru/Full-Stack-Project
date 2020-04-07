@@ -99,18 +99,22 @@ export default class sessionForm extends React.Component {
                             <h1 className="form-title">{this.props.formType}</h1> 
                             <br/>
                             <form className="session-form-box">
-                                <label className='form-label'>Email:
+                                <label>
                                     <br/>
                                     <input type="text"
                                     onChange={this.handleInput("email")} 
-                                    value={this.props.email}/>
+                                        value={this.props.email} placeholder="Email"/>
+                                    <i id='email-icon' className="fas fa-envelope"></i>
                                 </label>
                                 <br/>
-                                <label className='form-label'>Password:
+                                <label>
                                 <br/>
                                     <input type="password" 
                                         onChange={this.handleInput("password")} 
-                                        value={this.props.password}/>
+                                        value={this.props.password} placeholder="Password"/>
+                                    <i id='password-icon' className="fas fa-lock"></i>
+
+
                                 </label>
                                 <br/>
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='form-label'>First Name:
