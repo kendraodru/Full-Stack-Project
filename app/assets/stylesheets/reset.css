@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	font-family: "Unica77 LL",sans-serif;
 	vertical-align: baseline;
+	letter-spacing: 0.64px;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

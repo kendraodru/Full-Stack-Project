@@ -1969,19 +1969,19 @@ var Purchased = /*#__PURE__*/function (_React$Component) {
         id: "purchase-icon",
         href: "https://github.com/kendraodru"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        id: "icon",
+        id: "purchase-icon",
         className: "fab fa-github"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         id: "purchase-icon",
         href: "https://angel.co/kendra-odrunia"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        id: "icon",
+        id: "purchase-icon",
         className: "fab fa-angellist"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         id: "purchase-icon",
         href: "https://www.linkedin.com/in/kendra-odrunia-9272441a4/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        id: "icon",
+        id: "purchase-icon",
         className: "fab fa-linkedin"
       })))));
     }
