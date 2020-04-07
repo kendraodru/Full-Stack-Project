@@ -101,7 +101,7 @@ export default class sessionForm extends React.Component {
                             <form className="session-form-box">
                                 <label>
                                     <br/>
-                                    <input type="text"
+                                    <input className='session-input' type="text"
                                     onChange={this.handleInput("email")} 
                                         value={this.props.email} placeholder="Email"/>
                                     <i id='email-icon' className="fas fa-envelope"></i>
@@ -109,7 +109,7 @@ export default class sessionForm extends React.Component {
                                 <br/>
                                 <label>
                                 <br/>
-                                    <input type="password" 
+                                    <input className='session-input' type="password" 
                                         onChange={this.handleInput("password")} 
                                         value={this.props.password} placeholder="Password"/>
                                     <i id='password-icon' className="fas fa-lock"></i>
