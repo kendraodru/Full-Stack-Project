@@ -5,7 +5,7 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from  '../session/signup_form_container';
 import CartContainer from '../cart/cart_container';
 import SearchContainer from '../search/searchContainer'
-import Purchased from '../purchased/purchased';
+import PurchasedContainer from '../purchased/purchase_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -20,7 +20,7 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />
             break;
         case 'purchased':
-            component = <Purchased />
+            component = <PurchasedContainer />
             break;
         case 'cart':
             return(

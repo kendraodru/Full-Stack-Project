@@ -6,15 +6,12 @@ class Purchased extends React.Component{
     }
 
 
-
-
     render(){
         return(
-            
             <div className='full-purchase-wrap'>
-                {/* <div className='hamburger'></div> */}
                 <div className='close-x-div-purchased'>
                     <span
+                        onClick = {()=>this.props.closeModal()}
                         id="close-x-purchased"
                         className="close-x">×
                      </span>

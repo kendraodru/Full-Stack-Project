@@ -1082,7 +1082,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../session/signup_form_container */ "./frontend/components/session/signup_form_container.jsx");
 /* harmony import */ var _cart_cart_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../cart/cart_container */ "./frontend/components/cart/cart_container.jsx");
 /* harmony import */ var _search_searchContainer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../search/searchContainer */ "./frontend/components/search/searchContainer.js");
-/* harmony import */ var _purchased_purchased__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../purchased/purchased */ "./frontend/components/purchased/purchased.js");
+/* harmony import */ var _purchased_purchase_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../purchased/purchase_container */ "./frontend/components/purchased/purchase_container.js");
 
 
 
@@ -1112,7 +1112,7 @@ function Modal(_ref) {
       break;
 
     case 'purchased':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_purchased_purchased__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_purchased_purchase_container__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       break;
 
     case 'cart':
@@ -1867,6 +1867,40 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/purchased/purchase_container.js":
+/*!*************************************************************!*\
+  !*** ./frontend/components/purchased/purchase_container.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _purchased__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./purchased */ "./frontend/components/purchased/purchased.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentUser: state.entities.users
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["closeModal"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_purchased__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/purchased/purchased.js":
 /*!****************************************************!*\
   !*** ./frontend/components/purchased/purchased.js ***!
@@ -1910,11 +1944,16 @@ var Purchased = /*#__PURE__*/function (_React$Component) {
   _createClass(Purchased, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "full-purchase-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "close-x-div-purchased"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        onClick: function onClick() {
+          return _this.props.closeModal();
+        },
         id: "close-x-purchased",
         className: "close-x"
       }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
