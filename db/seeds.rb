@@ -10,13 +10,13 @@ User.destroy_all
 demo_user = User.create(first_name:"Demo", last_name:"User", 
 email:"demo_user@gmail.com", password: "password")
 user1 = User.create(first_name:"Kim", last_name:"Tsui", 
-email:"kim234@gmail.com", password: "password")
+email:"fabulous_employee@gmail.com", password: "password")
 user2 = User.create(first_name:"Try", last_name:"Knov", 
-email:"justry@gmail.com", password: "password")
+email:"greatest_hire@gmail.com", password: "password")
 # user2 = User.create(first_name:"Jonothan", last_name:"Smith", 
 # email:"jonjon@yahoo.com", password: "password")
 user3 = User.create(first_name:"Ryan", last_name:"Leung", 
-email:"ryry@gmail.com", password: "password")
+email:"corgi_lover96@gmail.com", password: "password")
 # user4 = User.create(first_name:"Vincent", last_name:"Tsui", email:"vince@gmail.com", password: "password")
 
 Product.destroy_all

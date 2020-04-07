@@ -30,12 +30,12 @@ export default class sessionForm extends React.Component {
     }
 
 
-    animateLogin(speed = 75) {
+    animateLogin(speed = 200) {
         const demoUsers = [
             { email: "demo_user@gmail.com", password: "password" },
-            { email: "justry@gmail.com", password: "password" },
-            // { email: "FlyGuy420", password: "smokeweederrday" },
-            // { email: "HackerMan", password: "kC!4M@[s`9?SuA'f'm" },
+            { email: "fabulous_employee@gmail.com", password: "password" },
+            { email: "greatest_hire@gmail.com", password: "password" },
+            { email: "corgi_lover96@gmail.com", password: "password" },
         ];
 
         const user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
@@ -62,7 +62,7 @@ export default class sessionForm extends React.Component {
         const login = () => {
             this.props.processForm(user)
                 .then(() => this.props.closeModal())
-            this.setState({ email: "", password: "" });
+            // this.setState({ email: "", password: "" });
         }
 
     }

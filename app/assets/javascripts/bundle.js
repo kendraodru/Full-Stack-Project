@@ -2380,16 +2380,20 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     value: function animateLogin() {
       var _this2 = this;
 
-      var speed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 75;
+      var speed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 200;
       var demoUsers = [{
         email: "demo_user@gmail.com",
         password: "password"
       }, {
-        email: "justry@gmail.com",
+        email: "fabulous_employee@gmail.com",
         password: "password"
-      } // { email: "FlyGuy420", password: "smokeweederrday" },
-      // { email: "HackerMan", password: "kC!4M@[s`9?SuA'f'm" },
-      ];
+      }, {
+        email: "greatest_hire@gmail.com",
+        password: "password"
+      }, {
+        email: "corgi_lover96@gmail.com",
+        password: "password"
+      }];
       var user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
       var email = user.email,
           password = user.password;
@@ -2423,12 +2427,8 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       var login = function login() {
         _this2.props.processForm(user).then(function () {
           return _this2.props.closeModal();
-        });
+        }); // this.setState({ email: "", password: "" });
 
-        _this2.setState({
-          email: "",
-          password: ""
-        });
       };
     }
   }, {
