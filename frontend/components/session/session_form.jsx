@@ -122,6 +122,7 @@ export default class sessionForm extends React.Component {
                                     <input type="text" 
                                         onChange={this.handleInput("first_name")}
                                         value={this.props.first_name} />
+                                    <i class="fas fa-user-alt"></i>
                                 </label>
                                 <br />
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='form-label'>Last Name:
@@ -129,6 +130,7 @@ export default class sessionForm extends React.Component {
                                     <input type="text" 
                                         onChange={this.handleInput("last_name")}
                                         value={this.props.first_name} />
+                                    <i class="fas fa-user-alt"></i>
                                 </label>
                                 <div className="bottom-form">
                                     

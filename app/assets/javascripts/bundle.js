@@ -2486,6 +2486,8 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         type: "text",
         onChange: this.handleInput("first_name"),
         value: this.props.first_name
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-user-alt"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         id: this.props.formType === 'Create Account' ? "show" : "hide",
         className: "form-label"
@@ -2493,6 +2495,8 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         type: "text",
         onChange: this.handleInput("last_name"),
         value: this.props.first_name
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-user-alt"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

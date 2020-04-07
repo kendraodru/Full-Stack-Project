@@ -95,7 +95,7 @@ input{
     margin-top: 3px;
     margin-bottom: 3px;
     height: 40px;
-    padding-left: 35px;
+    padding-left: 43px;
     width: 100%;
     background-color:#F7F7F7;
     border: none;
@@ -105,12 +105,14 @@ input{
 }
 
 .session-input::placeholder{
-    font-size:20px
+    color:  rgb(67, 66, 66);
+    font-size:18px;
+
 }
 .form-title{
     color:black;
     font-size:60px;
-    margin-bottom: 60px;
+    margin-bottom: 29px;
     text-align: center;
     font-family: Dancing Script;
 }
@@ -206,17 +208,17 @@ input{
 
 #email-icon{
     color: rgb(67, 66, 66);
-    font-size: 20px;
+    font-size: 18px;
     left: 40px;
     position: absolute;
-    top: 194px;
+    top: 164px;
 }
 
 #password-icon{
     color:  rgb(67, 66, 66);
-    font-size: 20px;
+    font-size: 18px;
     left: 40px;
     position: absolute;
-    top: 270px;
+    top: 240px;
 }
 
