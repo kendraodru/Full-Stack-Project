@@ -29,6 +29,18 @@ class Api::CartsController < ApplicationController
         render 'api/carts/show'
     end
 
+    # for when a customer completes a purchase, clear cart
+    def update
+        @cart = current_user.cart
+        @cart_items = @cart.cart_items
+        @products = []
+        @cart_items.each do |item|
+            item.destroy
+        end
+        @cart.save
+        render :show
+    end
+
     def cart_params
         params.require(:cart).permit(:user_id)
     end

@@ -1966,7 +1966,6 @@ var Purchased = /*#__PURE__*/function (_React$Component) {
         id: "contact-icon-holder",
         className: "contact-icon-holder"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        id: "purchase-icon",
         href: "https://github.com/kendraodru"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         id: "purchase-icon",
