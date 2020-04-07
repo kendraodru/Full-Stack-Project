@@ -14,8 +14,8 @@ export default class sessionForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
-        // this.demoLogin = this.demoLogin.bind(this);
         this.animateLogin = this.animateLogin.bind(this);
+        this.handleSlideUp = this.handleSlideUp.bind(this);
     }
 
     componentWillUnmount(){
@@ -74,6 +74,20 @@ export default class sessionForm extends React.Component {
         this.animateLogin(50);
     }
 
+    handleSlideUp(){
+        // debugger
+        console.log("hi")
+        let sessionBody = document.getElementsByClassName('background-form');
+        console.log(sessionBody)
+        if (sessionBody.length !== 0 && sessionBody !== undefined){
+            // window.setTimeout(() => this.props.closeModal(), 700);
+            // sessionBody[0].style.transition = "all 5s ease-in";
+            sessionBody[0].style.opacity = "0.5";
+            console.log(sessionBody)
+        }
+        console.log(sessionBody[0].style)
+    }
+
 
 
     handleInput(type){
@@ -109,13 +123,17 @@ export default class sessionForm extends React.Component {
             </ul>
         );
     }
-
+    //onClick={this.handleSlideUp()}
+//onClick={this.props.closeModal}
     render(){
+        // debugger
         return(
             <div className='outter-form-wrapper' onClick={e => e.stopPropagation()}>
                 <div className='form-wrapper'>
                     <div className="background-form">
-                        <div className='close-x-div'><span onClick={this.props.closeModal} className="close-x">×</span></div>
+                        <div className='close-x-div'><span 
+                            onClick={this.props.closeModal}
+                        className="close-x">×</span></div>
                         <div className="session-form-div">
                             <h1 className="form-title">{this.props.formType}</h1> 
                             <br/>

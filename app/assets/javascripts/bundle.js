@@ -2357,9 +2357,9 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this)); // this.demoLogin = this.demoLogin.bind(this);
-
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     _this.animateLogin = _this.animateLogin.bind(_assertThisInitialized(_this));
+    _this.handleSlideUp = _this.handleSlideUp.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2438,6 +2438,23 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       this.animateLogin(50);
     }
   }, {
+    key: "handleSlideUp",
+    value: function handleSlideUp() {
+      // debugger
+      console.log("hi");
+      var sessionBody = document.getElementsByClassName('background-form');
+      console.log(sessionBody);
+
+      if (sessionBody.length !== 0 && sessionBody !== undefined) {
+        // window.setTimeout(() => this.props.closeModal(), 700);
+        // sessionBody[0].style.transition = "all 5s ease-in";
+        sessionBody[0].style.opacity = "0.5";
+        console.log(sessionBody);
+      }
+
+      console.log(sessionBody[0].style);
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this3 = this;
@@ -2466,10 +2483,13 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
           className: "sess-errors"
         }, error);
       }));
-    }
+    } //onClick={this.handleSlideUp()}
+    //onClick={this.props.closeModal}
+
   }, {
     key: "render",
     value: function render() {
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "outter-form-wrapper",
         onClick: function onClick(e) {
