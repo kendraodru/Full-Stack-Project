@@ -117,7 +117,7 @@ export default class sessionForm extends React.Component {
                             <form className="session-form-box">
                                 <label>
                                     <br/>
-                                    <input className='session-input' type="text"
+                                    <input className='session-input no-outline' type="text"
                                     onChange={this.handleInput("email")} 
                                         value={this.props.email} placeholder="Email"/>
                                     <i id='email-icon' className="fas fa-envelope"></i>
@@ -125,7 +125,7 @@ export default class sessionForm extends React.Component {
                                 <br/>
                                 <label>
                                 <br/>
-                                    <input className='session-input' type="password" 
+                                    <input className='session-input no-outline' type="password" 
                                         onChange={this.handleInput("password")} 
                                         value={this.props.password} placeholder="Password"/>
                                     <i id='password-icon' className="fas fa-lock"></i>
@@ -136,7 +136,7 @@ export default class sessionForm extends React.Component {
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"}>
                                 <br />
                                     <input type="text" 
-                                        className='session-input'
+                                        className='session-input no-outline'
                                         placeholder="First Name"
                                         onChange={this.handleInput("first_name")}
                                         value={this.props.first_name} />
@@ -146,7 +146,7 @@ export default class sessionForm extends React.Component {
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='lastname-input'>
                                 <br />
                                     <input type="text" 
-                                        className='session-input'
+                                        className='session-input no-outline'
                                         placeholder="Last Name"
                                         onChange={this.handleInput("last_name")}
                                         value={this.props.first_name} />

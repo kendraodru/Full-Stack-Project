@@ -1,10 +1,10 @@
 .outter-form-wrapper{
     width: 505px;
     position: absolute;
-    top:0;
+    // top:0;
     left:0;
     right:0;
-    bottom: 0;
+    // bottom: 0;
     margin: auto;
 }
 
@@ -103,6 +103,10 @@ input{
     border-radius: 1px;
     border: 1px solid lightgrey;
     box-sizing: border-box;
+}
+
+.session-input{
+    font-size: 18px;
 }
 
 .session-input::placeholder{

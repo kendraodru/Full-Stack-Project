@@ -2473,7 +2473,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "session-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "session-input",
+        className: "session-input no-outline",
         type: "text",
         onChange: this.handleInput("email"),
         value: this.props.email,
@@ -2482,7 +2482,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         id: "email-icon",
         className: "fas fa-envelope"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "session-input",
+        className: "session-input no-outline",
         type: "password",
         onChange: this.handleInput("password"),
         value: this.props.password,
@@ -2494,7 +2494,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         id: this.props.formType === 'Create Account' ? "show" : "hide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        className: "session-input",
+        className: "session-input no-outline",
         placeholder: "First Name",
         onChange: this.handleInput("first_name"),
         value: this.props.first_name
@@ -2506,7 +2506,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         className: "lastname-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        className: "session-input",
+        className: "session-input no-outline",
         placeholder: "Last Name",
         onChange: this.handleInput("last_name"),
         value: this.props.first_name
