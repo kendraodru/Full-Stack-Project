@@ -2447,14 +2447,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
           key: "error-".concat(i),
           className: "sess-errors"
         }, error);
-      })) // <ul>
-      //     {this.props.errors.map((error, i) => (
-      //         <li key={`error-${i}`} className='sess-errors'>
-      //             {error}
-      //         </li>
-      //     ))}
-      // </ul>
-      ;
+      }));
     }
   }, {
     key: "render",
@@ -2509,7 +2502,8 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         id: "firstname-icon",
         className: "fas fa-user-alt"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        id: this.props.formType === 'Create Account' ? "show" : "hide"
+        id: this.props.formType === 'Create Account' ? "show" : "hide",
+        className: "lastname-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "session-input",

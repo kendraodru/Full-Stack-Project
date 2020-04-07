@@ -102,13 +102,6 @@ export default class sessionForm extends React.Component {
                     </li>
                 ))}
             </ul>
-            // <ul>
-            //     {this.props.errors.map((error, i) => (
-            //         <li key={`error-${i}`} className='sess-errors'>
-            //             {error}
-            //         </li>
-            //     ))}
-            // </ul>
         );
     }
 
@@ -150,7 +143,7 @@ export default class sessionForm extends React.Component {
                                     <i id='firstname-icon' className="fas fa-user-alt"></i>
                                 </label>
                                 <br />
-                                <label id={this.props.formType === 'Create Account' ? "show" : "hide"}>
+                                <label id={this.props.formType === 'Create Account' ? "show" : "hide"} className='lastname-input'>
                                 <br />
                                     <input type="text" 
                                         className='session-input'

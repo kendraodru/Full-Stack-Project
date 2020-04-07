@@ -75,7 +75,8 @@
 .ckout-btn{
   color:white;
   border-radius: 3px;
-  background-color: #B0384C;
+  background-color: #EA4B37;
+  // background-color: #B0384C;
   font-size: 17px;
   height: 45px;
   width:100%;
@@ -85,7 +86,8 @@
 }
 
 .ckout-btn:hover{
-  background-color: rgb(117, 31, 45);
+  background-color: rgba(0,0,0,0.8);;
+  // background-color: rgb(117, 31, 45);
   cursor: pointer;
 }
 // ^we shall see how this part turns out
