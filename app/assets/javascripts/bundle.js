@@ -2357,7 +2357,9 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
-    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this)); // this.demoLogin = this.demoLogin.bind(this);
+
+    _this.animateLogin = _this.animateLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2372,61 +2374,76 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(this.props.closeModal);
-    } // handleDemoUser(e){
-    //     const demoUser = {email:'demo_user@gmail.com', password:'password'};
-    //     this.props.processForm(demoUser).then((this.props.closeModal))
-    // }
-    // animateLogin(speed = 75) {
-    //     const demoUsers = [
-    //         { email: "FoodKingGood", password: "joemama" },
-    //         { email: "GimmeDaMunny", password: "iloveyou<3" },
-    //         { email: "FlyGuy420", password: "smokeweederrday" },
-    //         { email: "HackerMan", password: "kC!4M@[s`9?SuA'f'm" },
-    //     ];
-    //     const user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
-    //     let { email, password } = user;
-    //     if (this.state.email !== email) {
-    //         const inputUser = setInterval(() => {
-    //             if (this.state.email !== email) {
-    //                 const temp = username.slice(0, this.state.username.length + 1);
-    //                 this.setState({ username: temp });
-    //             } else { clearInterval(inputUser); animatePassword(); }
-    //         }, speed);
-    //     }
-    //     const animatePassword = () => {
-    //         const inputPassword = setInterval(() => {
-    //             if (this.state.password !== password)
-    //                 this.setState({ password: password.slice(0, this.state.password.length + 1) })
-    //             else { clearInterval(inputPassword); login(); }
-    //         }, speed);
-    //     }
-    //     const login = () => {
-    //         this.props.login(this.state)
-    //             .then(() => this.props.history.push('/preferences'))
-    //         this.setState({ username: "", password: "" });
-    //     }
-    // }
-    // handleDemoUser(e) {
-    //     e.preventDefault();
-    //     this.animateLogin(50);
-    // }
+    }
+  }, {
+    key: "animateLogin",
+    value: function animateLogin() {
+      var _this2 = this;
 
+      var speed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 75;
+      var demoUsers = [{
+        email: "demo_user@gmail.com",
+        password: "password"
+      }, {
+        email: "justry@gmail.com",
+        password: "password"
+      } // { email: "FlyGuy420", password: "smokeweederrday" },
+      // { email: "HackerMan", password: "kC!4M@[s`9?SuA'f'm" },
+      ];
+      var user = demoUsers[Math.floor(Math.random() * demoUsers.length)];
+      var email = user.email,
+          password = user.password;
+
+      if (this.state.email !== email) {
+        var inputUser = setInterval(function () {
+          if (_this2.state.email !== email) {
+            var temp = email.slice(0, _this2.state.email.length + 1);
+
+            _this2.setState({
+              email: temp
+            });
+          } else {
+            clearInterval(inputUser);
+            animatePassword();
+          }
+        }, speed);
+      }
+
+      var animatePassword = function animatePassword() {
+        var inputPassword = setInterval(function () {
+          if (_this2.state.password !== password) _this2.setState({
+            password: password.slice(0, _this2.state.password.length + 1)
+          });else {
+            clearInterval(inputPassword);
+            login();
+          }
+        }, speed);
+      };
+
+      var login = function login() {
+        _this2.props.processForm(user).then(function () {
+          return _this2.props.closeModal();
+        });
+
+        _this2.setState({
+          email: "",
+          password: ""
+        });
+      };
+    }
   }, {
     key: "handleDemoUser",
     value: function handleDemoUser(e) {
-      var demoUser = {
-        email: 'demo_user@gmail.com',
-        password: 'password'
-      };
-      this.props.processForm(demoUser).then(this.props.closeModal);
+      e.preventDefault();
+      this.animateLogin(50);
     }
   }, {
     key: "handleInput",
     value: function handleInput(type) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, type, e.target.value));
+        _this3.setState(_defineProperty({}, type, e.target.value));
       };
     }
   }, {
@@ -2477,7 +2494,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         className: "session-input no-outline",
         type: "text",
         onChange: this.handleInput("email"),
-        value: this.props.email,
+        value: this.state.email,
         placeholder: "Email"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         id: "email-icon",
@@ -2486,7 +2503,7 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         className: "session-input no-outline",
         type: "password",
         onChange: this.handleInput("password"),
-        value: this.props.password,
+        value: this.state.password,
         placeholder: "Password"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         id: "password-icon",
