@@ -78,14 +78,37 @@ export default class sessionForm extends React.Component {
     }
 
     renderErrors() {
+        let emptyInput = [
+            "First name can't be blank", 
+            "Last name can't be blank", 
+            "Email can't be blank"
+        ]
+        let errors = [];
+        this.props.errors.forEach(err =>{
+            if (err === "Password is too short (minimum is 6 characters)"){
+                errors.push(err)
+            } else if (emptyInput.includes(err) && !errors.includes("All entries must be filled")){
+                errors.push("All entries must be filled")
+            } else if (!emptyInput.includes(err)){
+                errors.push(err)
+            }
+        })
+
         return (
             <ul>
-                {this.props.errors.map((error, i) => (
+                {errors.map((error, i) => (
                     <li key={`error-${i}`} className='sess-errors'>
                         {error}
                     </li>
                 ))}
             </ul>
+            // <ul>
+            //     {this.props.errors.map((error, i) => (
+            //         <li key={`error-${i}`} className='sess-errors'>
+            //             {error}
+            //         </li>
+            //     ))}
+            // </ul>
         );
     }
 
@@ -120,17 +143,21 @@ export default class sessionForm extends React.Component {
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"}>
                                 <br />
                                     <input type="text" 
+                                        className='session-input'
+                                        placeholder="First Name"
                                         onChange={this.handleInput("first_name")}
                                         value={this.props.first_name} />
-                                    <i class="fas fa-user-alt"></i>
+                                    <i id='firstname-icon' className="fas fa-user-alt"></i>
                                 </label>
                                 <br />
                                 <label id={this.props.formType === 'Create Account' ? "show" : "hide"}>
                                 <br />
                                     <input type="text" 
+                                        className='session-input'
+                                        placeholder="Last Name"
                                         onChange={this.handleInput("last_name")}
                                         value={this.props.first_name} />
-                                    <i class="fas fa-user-alt"></i>
+                                    <i id='lastname-icon' className="fas fa-user-alt"></i>
                                 </label>
                                 <div className="bottom-form">
                                     

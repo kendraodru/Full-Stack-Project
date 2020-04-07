@@ -2431,12 +2431,30 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
+      var emptyInput = ["First name can't be blank", "Last name can't be blank", "Email can't be blank"];
+      var errors = [];
+      this.props.errors.forEach(function (err) {
+        if (err === "Password is too short (minimum is 6 characters)") {
+          errors.push(err);
+        } else if (emptyInput.includes(err) && !errors.includes("All entries must be filled")) {
+          errors.push("All entries must be filled");
+        } else if (!emptyInput.includes(err)) {
+          errors.push(err);
+        }
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: "error-".concat(i),
           className: "sess-errors"
         }, error);
-      }));
+      })) // <ul>
+      //     {this.props.errors.map((error, i) => (
+      //         <li key={`error-${i}`} className='sess-errors'>
+      //             {error}
+      //         </li>
+      //     ))}
+      // </ul>
+      ;
     }
   }, {
     key: "render",
@@ -2480,23 +2498,27 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
         id: "password-icon",
         className: "fas fa-lock"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        id: this.props.formType === 'Create Account' ? "show" : "hide",
-        className: "form-label"
-      }, "First Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: this.props.formType === 'Create Account' ? "show" : "hide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        className: "session-input",
+        placeholder: "First Name",
         onChange: this.handleInput("first_name"),
         value: this.props.first_name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-user-alt"
+        id: "firstname-icon",
+        className: "fas fa-user-alt"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        id: this.props.formType === 'Create Account' ? "show" : "hide",
-        className: "form-label"
-      }, "Last Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: this.props.formType === 'Create Account' ? "show" : "hide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        className: "session-input",
+        placeholder: "Last Name",
         onChange: this.handleInput("last_name"),
         value: this.props.first_name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-user-alt"
+        id: "lastname-icon",
+        className: "fas fa-user-alt"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
