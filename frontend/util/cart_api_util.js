@@ -5,3 +5,10 @@ export const fetchCart = ()=>(
     })
 );
 
+export const resetCart = (cartId) =>(
+    $.ajax({
+        url:`api/carts/${cartId}`,
+        method: 'PATCH'
+    })
+)
+

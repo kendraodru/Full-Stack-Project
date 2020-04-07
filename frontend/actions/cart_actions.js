@@ -22,8 +22,9 @@ export const fetchCart = () => dispatch =>(
         .then(payload => (dispatch(receiveCart(payload))))
 )
 
-export const completePurchase = () =>dispatch =>(
-    dispatch(receivePurchase())
+export const completePurchase = (cartId) =>dispatch =>(
+    cartAPIUtil.resetCart(cartId)
+        .then(() => dispatch(receivePurchase()))
     // cartAPIUtil.fetchCart()
     //     .then(payload => dispatch(receivePurchase(payload)))
 )

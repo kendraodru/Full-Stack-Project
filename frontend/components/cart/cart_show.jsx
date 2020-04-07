@@ -100,7 +100,7 @@ class CartShow extends React.Component{
                             <button 
                             onClick={ ()=>{
                                 // this.handleSlide();
-                                this.props.completePurchase(); 
+                                this.props.completePurchase(this.props.cart.id); 
                                 this.props.openModal('purchased')
                             }}   
                             // onClick={() => this.props.completePurchase()}

@@ -125,9 +125,11 @@ var fetchCart = function fetchCart() {
     });
   };
 };
-var completePurchase = function completePurchase() {
+var completePurchase = function completePurchase(cartId) {
   return function (dispatch) {
-    return dispatch(receivePurchase()) // cartAPIUtil.fetchCart()
+    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["resetCart"](cartId).then(function () {
+      return dispatch(receivePurchase());
+    }) // cartAPIUtil.fetchCart()
     //     .then(payload => dispatch(receivePurchase(payload)))
     ;
   };
@@ -652,8 +654,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     openModal: function openModal(type) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])(type));
     },
-    completePurchase: function completePurchase() {
-      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["completePurchase"])());
+    completePurchase: function completePurchase(cartId) {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_1__["completePurchase"])(cartId));
     }
   };
 };
@@ -975,7 +977,7 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           // this.handleSlide();
-          _this4.props.completePurchase();
+          _this4.props.completePurchase(_this4.props.cart.id);
 
           _this4.props.openModal('purchased');
         } // onClick={() => this.props.completePurchase()}
@@ -3460,16 +3462,23 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/cart_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchCart */
+/*! exports provided: fetchCart, resetCart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetCart", function() { return resetCart; });
 var fetchCart = function fetchCart() {
   return $.ajax({
     url: "api/carts/show",
     method: 'GET'
+  });
+};
+var resetCart = function resetCart(cartId) {
+  return $.ajax({
+    url: "api/carts/".concat(cartId),
+    method: 'PATCH'
   });
 };
 

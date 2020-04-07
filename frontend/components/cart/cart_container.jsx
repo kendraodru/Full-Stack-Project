@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch =>({
     deleteCartItem:(cartItemId)=> (dispatch(deleteCartItem(cartItemId))),
     closeModal: ()=>(dispatch(closeModal())),
     openModal: (type)=>(dispatch(openModal(type))),
-    completePurchase: () => (dispatch(completePurchase()))
+    completePurchase: (cartId) => (dispatch(completePurchase(cartId)))
 });
 
 export default connect(
