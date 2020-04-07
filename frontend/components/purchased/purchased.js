@@ -13,10 +13,20 @@ class Purchased extends React.Component{
             
             <div className='full-purchase-wrap'>
                 {/* <div className='hamburger'></div> */}
+                <div className='close-x-div-purchased'>
+                    <span
+                        id="close-x-purchased"
+                        className="close-x">×
+                     </span>
+                </div>
                 <div className='purchased-wrap'>
-                    {/* <div className='purchased-banner'></div> */}
                     <div className='purchased'>Purchase Sucessful</div>
-                    <img src='https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'></img>
+                    <div className='thank-you'>Thank you for visiting</div>
+                    <div id="contact-icon-holder" className='contact-icon-holder'>
+                        <a id='purchase-icon' href="https://github.com/kendraodru"><i id='icon' className="fab fa-github"></i></a>
+                        <a id='purchase-icon' href="https://angel.co/kendra-odrunia"><i id='icon' className="fab fa-angellist"></i></a>
+                        <a id='purchase-icon'href="https://www.linkedin.com/in/kendra-odrunia-9272441a4/"><i id='icon' className="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
         )

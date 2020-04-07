@@ -1913,12 +1913,38 @@ var Purchased = /*#__PURE__*/function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "full-purchase-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-x-div-purchased"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        id: "close-x-purchased",
+        className: "close-x"
+      }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "purchased-wrap"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "purchased"
-      }, "Purchase Sucessful"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-      })));
+      }, "Purchase Sucessful"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "thank-you"
+      }, "Thank you for visiting"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "contact-icon-holder",
+        className: "contact-icon-holder"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        id: "purchase-icon",
+        href: "https://github.com/kendraodru"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        id: "icon",
+        className: "fab fa-github"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        id: "purchase-icon",
+        href: "https://angel.co/kendra-odrunia"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        id: "icon",
+        className: "fab fa-angellist"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        id: "purchase-icon",
+        href: "https://www.linkedin.com/in/kendra-odrunia-9272441a4/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        id: "icon",
+        className: "fab fa-linkedin"
+      })))));
     }
   }]);
 
