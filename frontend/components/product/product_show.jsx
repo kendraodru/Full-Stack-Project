@@ -61,7 +61,7 @@ class ProductShow extends React.Component {
             const newCartItem = { cart_id: cart.id, product_id: product.id };
             this.props.postCartItem(newCartItem);
         }
-
+        this.props.openCart('cart')
     }
 
 

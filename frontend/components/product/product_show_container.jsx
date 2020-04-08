@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import ProductShow from './product_show';
 import { fetchProduct, fetchProducts } from '../../actions/product_actions';
-import {postCartItem, updateCartItem} from '../../actions/cart_item_actions'
+import {postCartItem, updateCartItem} from '../../actions/cart_item_actions';
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) =>({
@@ -14,7 +15,8 @@ const mapDispatchToProps = dispatch  =>({
     fetchProduct: productId =>(dispatch(fetchProduct(productId))),
     fetchProducts: () => (dispatch(fetchProducts())),
     postCartItem: (cartItem) => (dispatch(postCartItem(cartItem))),
-    updateCartItem: (cartItem) => (dispatch(updateCartItem(cartItem)))
+    updateCartItem: (cartItem) => (dispatch(updateCartItem(cartItem))),
+    openCart: (type)=>(dispatch(openModal(type)))
 });
 
 

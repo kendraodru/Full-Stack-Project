@@ -1753,6 +1753,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         };
         this.props.postCartItem(newCartItem);
       }
+
+      this.props.openCart('cart');
     }
   }, {
     key: "render",
@@ -1843,6 +1845,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_show */ "./frontend/components/product/product_show.jsx");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -1869,6 +1873,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateCartItem: function updateCartItem(cartItem) {
       return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_3__["updateCartItem"])(cartItem));
+    },
+    openCart: function openCart(type) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])(type));
     }
   };
 };
