@@ -22,6 +22,7 @@ class ProductIndex extends React.Component {
                 cart={this.props.cart}
                 currentUser ={this.props.currentUser}
                 cartItems = {this.props.cartItems}
+                openCart  = {this.props.openCart}
                 />
             )
         });

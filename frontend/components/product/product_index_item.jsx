@@ -54,7 +54,7 @@ class ProductIndexItem extends React.Component{
             const newCartItem = {cart_id: cart.id, product_id: product.id};
             this.addCartItem(newCartItem);
         }
-        
+        this.props.openCart('cart')
     }
 
     addCartItem(newCartItem){
