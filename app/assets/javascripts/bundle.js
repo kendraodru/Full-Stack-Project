@@ -2439,20 +2439,17 @@ var sessionForm = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "handleSlideUp",
-    value: function handleSlideUp() {
-      // debugger
-      console.log("hi");
-      var sessionBody = document.getElementsByClassName('background-form');
-      console.log(sessionBody);
-
-      if (sessionBody.length !== 0 && sessionBody !== undefined) {
-        // window.setTimeout(() => this.props.closeModal(), 700);
-        // sessionBody[0].style.transition = "all 5s ease-in";
-        sessionBody[0].style.opacity = "0.5";
-        console.log(sessionBody);
-      }
-
-      console.log(sessionBody[0].style);
+    value: function handleSlideUp() {// // debugger
+      // console.log("hi")
+      // let sessionBody = document.getElementsByClassName('background-form');
+      // console.log(sessionBody)
+      // if (sessionBody.length !== 0 && sessionBody !== undefined){
+      //     // window.setTimeout(() => this.props.closeModal(), 700);
+      //     // sessionBody[0].style.transition = "all 5s ease-in";
+      //     sessionBody[0].style.opacity = "0.5";
+      //     console.log(sessionBody)
+      // }
+      // console.log(sessionBody[0].style)
     }
   }, {
     key: "handleInput",

@@ -75,17 +75,17 @@ export default class sessionForm extends React.Component {
     }
 
     handleSlideUp(){
-        // debugger
-        console.log("hi")
-        let sessionBody = document.getElementsByClassName('background-form');
-        console.log(sessionBody)
-        if (sessionBody.length !== 0 && sessionBody !== undefined){
-            // window.setTimeout(() => this.props.closeModal(), 700);
-            // sessionBody[0].style.transition = "all 5s ease-in";
-            sessionBody[0].style.opacity = "0.5";
-            console.log(sessionBody)
-        }
-        console.log(sessionBody[0].style)
+        // // debugger
+        // console.log("hi")
+        // let sessionBody = document.getElementsByClassName('background-form');
+        // console.log(sessionBody)
+        // if (sessionBody.length !== 0 && sessionBody !== undefined){
+        //     // window.setTimeout(() => this.props.closeModal(), 700);
+        //     // sessionBody[0].style.transition = "all 5s ease-in";
+        //     sessionBody[0].style.opacity = "0.5";
+        //     console.log(sessionBody)
+        // }
+        // console.log(sessionBody[0].style)
     }
 
 
