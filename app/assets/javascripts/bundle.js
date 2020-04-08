@@ -1567,6 +1567,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChangingCartItem",
     value: function handleChangingCartItem() {
+      var _this2 = this;
+
       var existingCartItem;
       var cart = this.props.cart;
       var product = this.props.product;
@@ -1590,9 +1592,12 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
           product_id: product.id
         };
         this.addCartItem(newCartItem);
-      }
+      } // this.props.openCart('cart')
 
-      this.props.openCart('cart');
+
+      setTimeout(function () {
+        return _this2.props.openCart('cart');
+      }, 250);
     }
   }, {
     key: "addCartItem",
@@ -1602,7 +1607,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var product = this.props.product;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1635,7 +1640,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "product-btn-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this2.handleChangingCartItem();
+          return _this3.handleChangingCartItem();
         },
         className: "product-show-btn no-outline"
       }, "Add to cart"))));
@@ -1729,6 +1734,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChangingCartItem",
     value: function handleChangingCartItem() {
+      var _this2 = this;
+
       var existingCartItem;
       var cart = this.props.cart;
       var product = this.props.product;
@@ -1754,12 +1761,14 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         this.props.postCartItem(newCartItem);
       }
 
-      this.props.openCart('cart');
+      setTimeout(function () {
+        return _this2.props.openCart('cart');
+      }, 250);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       // debugger
       if (this.props.product === undefined) {
@@ -1804,7 +1813,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "show-add-to-cart-btn no-outline",
         onClick: function onClick() {
-          return _this2.handleChangingCartItem();
+          return _this3.handleChangingCartItem();
         }
       }, "Add to cart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-info-btn"
