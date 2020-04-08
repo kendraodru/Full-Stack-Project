@@ -105,7 +105,7 @@ class ProductShow extends React.Component {
                                         <a className='show-read-more' href="/">Read more</a>
                                     </div>
                                     <div className='show-add-to-cart'>
-                                        <button className='show-add-to-cart-btn' onClick={() => this.handleChangingCartItem()}>
+                                        <button className='show-add-to-cart-btn no-outline' onClick={() => this.handleChangingCartItem()}>
                                             Add to cart
                                         </button>
                                     </div>

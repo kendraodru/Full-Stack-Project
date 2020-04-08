@@ -1629,7 +1629,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.handleChangingCartItem();
         },
-        className: "product-show-btn"
+        className: "product-show-btn no-outline"
       }, "Add to cart"))));
     }
   }]);
@@ -1792,7 +1792,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       }, "Read more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-add-to-cart"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "show-add-to-cart-btn",
+        className: "show-add-to-cart-btn no-outline",
         onClick: function onClick() {
           return _this2.handleChangingCartItem();
         }
