@@ -20,7 +20,7 @@ const BottomMidSplash = () =>{
                     for all.
                 </div>
                 <div className='bottom-mid-splash-btn-div'>
-                    <button>
+                    <button className='no-outline'>
                         READ MORE
                         {/* <span className='bottom-mid-splash-name'>Read More</span> */}
                     </button>

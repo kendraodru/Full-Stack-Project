@@ -24,7 +24,7 @@ const UpperMid = () =>{
                     in the industry.
                 </div>
                 <div>
-                    <button className="normal-skin-btn">
+                    <button className="normal-skin-btn no-outline">
                         <span>READ MORE</span>
                     </button>
                 </div>

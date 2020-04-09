@@ -2714,7 +2714,9 @@ var BottomMidSplash = function BottomMidSplash() {
     className: "bottom-mid-splash-para"
   }, "We create consciously-sourced, nutrient-dense superfood blends and pair them with clinical PRO-GRADE VEGAN\u2122 actives for powerful results. Founded in 2015, Youth To The People continues its legacy as a California-based, family-owned brand built on three generations of professional skincare expertise, research, and mindful activism. We are skincare for all."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bottom-mid-splash-btn-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "READ MORE"))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "no-outline"
+  }, "READ MORE"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BottomMidSplash);
@@ -3014,7 +3016,7 @@ var UpperMid = function UpperMid() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "normal-skin-info"
   }, "Having \u201Cnormal\u201D skin is an important topic of conversation in skincare, and there hasn\u2019t really been a standard for what that means in the industry."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "normal-skin-btn"
+    className: "normal-skin-btn no-outline"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "READ MORE")))));
 };
 
