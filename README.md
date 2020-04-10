@@ -2,14 +2,15 @@
 # Youth To The People Clone
 ### [Live Demo](https://youth-to-the-people.herokuapp.com/#/ "Live Demo of Youth To The People clone")
 
-Summary: 
+## Summary: 
 
-    This project is a high quality duplication of youthtothepeople.com, a minimalistic and modern ecommerce website. The application is
-    writting using React/Redux in the frontend, and Ruby on Rails in the backend with Postgresql. It currently has user auth, products,and cart functionality. 
-Key Features:
+This project is a high quality duplication of youthtothepeople.com, a minimalistic and modern ecommerce website. The application is 
+writting using React/Redux in the frontend, and Ruby on Rails in the backend with Postgresql. It currently has user auth, products,and cart functionality. 
 
-User Auth:
-User can login, sign up, and use a demo account. 
+# Key Features:
+
+### User Auth:
+User can login, sign up, and use a demo account. User information is secured using strong parameters in the controller and salting and hashing user passwords. The login and sign up pages are protected via auth-routes created in the frontend. Once loggedin, the user's session is kept track of using session tokens. The session tokens are then cleared once the user logs out. 
 ``` ruby
 class Api::SessionsController < ApplicationController
 
@@ -39,8 +40,8 @@ class Api::SessionsController < ApplicationController
 end
 ```
 
-Products
-Users can see information on all products, all the products in their cart, or a single product.
+### Products
+The product tables were designed for scalability in the relational database. This allows for features such as adding, updating, or removing products possible without dropping the database. Through frontend AJAX calls, users can view the product index or a single product using params. 
 ``` ruby
 class Api::ProductsController < ApplicationController
     def index
@@ -64,8 +65,8 @@ class Api::ProductsController < ApplicationController
 end 
 ```
 
-Cart
-The cart has associations that connect a user's cart to the products. 
+### Cart
+A single cart belongs to a user and the cart is fetched once the user logs in. If it is a new account a new cart will be created. Products are associated with the user's cart through the cartItems. The cartItems joins table is designed to hold the productId and quanity of the associated product in the cart. Efficient querying allowed all the information to be fetched in one AJAX call. 
 ``` ruby
   def show
         @cart = current_user.cart
@@ -79,5 +80,5 @@ The cart has associations that connect a user's cart to the products.
     end
 ```
 
-# YouthToThePeople
-
+### Search
+The search feature is based on the product name and results are updated based on the user's input.
