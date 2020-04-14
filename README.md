@@ -41,7 +41,7 @@ end
 ```
 
 ### Products
-![](demo/productindex.gif)
+![](demo/productIndex.gif)
 
 The product tables were designed for scalability in the relational database. This allows for features such as adding, updating, or removing products possible without dropping the database. Through frontend AJAX calls, users can view the product index or a single product using params. 
 ``` ruby
