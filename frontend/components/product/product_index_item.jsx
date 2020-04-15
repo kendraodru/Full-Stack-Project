@@ -89,8 +89,11 @@ class ProductIndexItem extends React.Component{
                             </div>
                         </div>
                         <div className="product-btn-div">
-                        <button onClick={() => this.handleChangingCartItem()} 
-                            className='product-show-btn no-outline'>Add to cart</button>
+                            <button 
+                                onClick={() => this.handleChangingCartItem()} 
+                                className='product-show-btn no-outline'>Add to cart
+                                {/* <span className='arrow-cart'>➡️</span> */}
+                            </button>
                         </div>
                     </div>
             </div>
