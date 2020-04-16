@@ -2,7 +2,8 @@
 # Youth To The People Clone
 ### [Live Demo](https://youth-to-the-people.herokuapp.com/#/ "Live Demo of Youth To The People clone")
 
-## Summary: 
+## Summary:
+![](demo/summary.gif) 
 
 This project is a high quality duplication of youthtothepeople.com, a minimalistic and modern ecommerce website. The application is 
 writting using React/Redux in the frontend, and Ruby on Rails in the backend with Postgresql. It currently has user auth, products,and cart functionality. 
