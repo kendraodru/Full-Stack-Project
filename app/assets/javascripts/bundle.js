@@ -1026,6 +1026,11 @@ var Footer = function Footer() {
     id: "icon",
     className: "fab fa-github"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://kendraodru.tech"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    id: "icon",
+    "class": "fab fa-dev"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://angel.co/kendra-odrunia"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     id: "icon",
