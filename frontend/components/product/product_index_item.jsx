@@ -48,11 +48,13 @@ class ProductIndexItem extends React.Component{
                 quantity: existingCartItem.quantity+1
             }
             
-            this.props.updateCartItem(updatedItem);
+            this.props.updateCartItem(updatedItem)
+            // .then(this.props.openCart('cart'));
         }
         else{
             const newCartItem = {cart_id: cart.id, product_id: product.id};
-            this.addCartItem(newCartItem);
+            this.addCartItem(newCartItem)
+            // .then(this.props.openCart('cart'));
         }
         // this.props.openCart('cart')
         setTimeout(()=>this.props.openCart('cart'), 250)

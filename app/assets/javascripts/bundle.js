@@ -1590,13 +1590,13 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
           product_id: existingCartItem.product_id,
           quantity: existingCartItem.quantity + 1
         };
-        this.props.updateCartItem(updatedItem);
+        this.props.updateCartItem(updatedItem); // .then(this.props.openCart('cart'));
       } else {
         var newCartItem = {
           cart_id: cart.id,
           product_id: product.id
         };
-        this.addCartItem(newCartItem);
+        this.addCartItem(newCartItem); // .then(this.props.openCart('cart'));
       } // this.props.openCart('cart')
 
 
