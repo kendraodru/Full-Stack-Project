@@ -70,7 +70,6 @@ class CartShow extends React.Component{
                     <div className='emptyCart'>
                         <div>
                             <i className="fas fa-shopping-bag"></i>
-                            {/* <i className="fas fa-cart-arrow-down"></i> */}
                         </div>
                         <div className='empty-cart-para'>
                             Your cart is empty
@@ -96,18 +95,14 @@ class CartShow extends React.Component{
                         {emptyCart()}
                     </div>
                     <div className='cart-btm'>
-                        {/* <Link className='ckout-link' onClick={this.props.closeModal} to='/purchased'> */}
-                            <button 
+                        <button 
                             onClick={ ()=>{
-                                // this.handleSlide();
                                 this.props.completePurchase(this.props.cart.id); 
                                 this.props.openModal('purchased')
                             }}   
-                            // onClick={() => this.props.completePurchase()}
                             className='ckout-btn'>
                                 Checkout
-                            </button>
-                        {/* </Link> */}
+                        </button>
                     </div>
                 </div>
             </div>

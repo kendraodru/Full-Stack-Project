@@ -8,13 +8,10 @@ import { openModal } from '../../actions/modal_actions'
 const mapStateToProps = state =>{
     return ({products: Object.values(state.entities.products),
     cart: state.entities.cart,
-    // cart: Object.values(state.entities.carts),
     currentUser: state.entities.users[state.session.id],
     cartItems: Object.values(state.entities.cartItems)
     })
 }
-// my cart infomation doesn't persist when i navigate away
-
 
 const mapDispatchToProps = dispatch => ({
     fetchProducts: ()=> (dispatch(fetchProducts())),

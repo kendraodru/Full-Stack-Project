@@ -56,7 +56,6 @@ class ProductIndexItem extends React.Component{
             this.addCartItem(newCartItem)
             // .then(this.props.openCart('cart'));
         }
-        // this.props.openCart('cart')
         setTimeout(()=>this.props.openCart('cart'), 250)
     }
 
@@ -94,7 +93,6 @@ class ProductIndexItem extends React.Component{
                             <button 
                                 onClick={() => this.handleChangingCartItem()} 
                                 className='product-show-btn no-outline'>Add to cart
-                                {/* <span className='arrow-cart'>➡️</span> */}
                             </button>
                         </div>
                     </div>

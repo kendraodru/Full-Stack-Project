@@ -12,10 +12,6 @@ class Carousel extends React.Component {
             currentImage: 0
         }
 
-        // changes the photo
-        // handle hover
-        // next photo prev photo
-
         this.changePhoto = this.changePhoto.bind(this);
         this.handleHover = this.handleHover.bind(this);
         this.nextPhoto = this.nextPhoto.bind(this);
@@ -47,8 +43,6 @@ class Carousel extends React.Component {
         this.changePhoto(e.currentTarget.id)
     }
     render(){
-        // debugger
-        // const { product } = this.props
             return(
                 <div className='carousel-holder'>
                     <div  className='photos-url-holder'>

@@ -503,10 +503,7 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       photoUrls: _this.props.product.photoUrls,
       currentImage: 0
-    }; // changes the photo
-    // handle hover
-    // next photo prev photo
-
+    };
     _this.changePhoto = _this.changePhoto.bind(_assertThisInitialized(_this));
     _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_this));
     _this.nextPhoto = _this.nextPhoto.bind(_assertThisInitialized(_this));
@@ -555,8 +552,6 @@ var Carousel = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      // debugger
-      // const { product } = this.props
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "carousel-holder"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -976,12 +971,10 @@ var CartShow = /*#__PURE__*/function (_React$Component) {
         className: "cart-btm"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          // this.handleSlide();
           _this4.props.completePurchase(_this4.props.cart.id);
 
           _this4.props.openModal('purchased');
-        } // onClick={() => this.props.completePurchase()}
-        ,
+        },
         className: "ckout-btn"
       }, "Checkout"))));
     }
@@ -1472,12 +1465,10 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     products: Object.values(state.entities.products),
     cart: state.entities.cart,
-    // cart: Object.values(state.entities.carts),
     currentUser: state.entities.users[state.session.id],
     cartItems: Object.values(state.entities.cartItems)
   };
-}; // my cart infomation doesn't persist when i navigate away
-
+};
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -1597,8 +1588,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
           product_id: product.id
         };
         this.addCartItem(newCartItem); // .then(this.props.openCart('cart'));
-      } // this.props.openCart('cart')
-
+      }
 
       setTimeout(function () {
         return _this2.props.openCart('cart');
@@ -2109,7 +2099,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _search_product_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search_product_item */ "./frontend/components/search/search_product_item.js");
-/* harmony import */ var _loading_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../loading/spinner */ "./frontend/components/loading/spinner.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2127,7 +2116,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 

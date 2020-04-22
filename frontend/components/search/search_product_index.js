@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchProductItem from './search_product_item'
-import Loading from '../loading/spinner';
 
 class SearchProducts extends React.Component{
     constructor(props){
