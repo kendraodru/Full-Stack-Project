@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // testing
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.fetchCart = fetchCart;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.fetchCart = fetchCart;
     // window.fetchProducts = fetchProducts
     // window.fetchProduct = fetchProduct
   
