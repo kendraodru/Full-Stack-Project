@@ -1765,7 +1765,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      // debugger
       if (this.props.product === undefined) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading_spinner__WEBPACK_IMPORTED_MODULE_2__["default"], null);
       }
@@ -3695,12 +3694,12 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   } // testing
-
-
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchCart = _actions_cart_actions__WEBPACK_IMPORTED_MODULE_4__["fetchCart"]; // window.fetchProducts = fetchProducts
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.fetchCart = fetchCart;
+  // window.fetchProducts = fetchProducts
   // window.fetchProduct = fetchProduct
+
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store

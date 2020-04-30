@@ -66,7 +66,6 @@ class ProductShow extends React.Component {
 
 
     render(){
-        // debugger
         if (this.props.product === undefined) {
             return <Loading />;
         };
