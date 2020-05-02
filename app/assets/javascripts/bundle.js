@@ -1022,7 +1022,7 @@ var Footer = function Footer() {
     href: "https://kendraodru.tech"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     id: "icon",
-    "class": "fab fa-dev"
+    className: "fab fa-dev"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://angel.co/kendra-odrunia"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -2857,6 +2857,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _upper_mid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./upper_mid */ "./frontend/components/splash/upper_mid.jsx");
 /* harmony import */ var _bottom_mid_splash__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./bottom_mid_splash */ "./frontend/components/splash/bottom_mid_splash.jsx");
 /* harmony import */ var _banner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./banner */ "./frontend/components/splash/banner.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2883,6 +2885,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Splash = /*#__PURE__*/function (_React$Component) {
   _inherits(Splash, _React$Component);
 
@@ -2890,16 +2894,17 @@ var Splash = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Splash);
 
     return _possibleConstructorReturn(this, _getPrototypeOf(Splash).call(this, props));
-  } // componentDidMount(){
-  //     if (this.props.currentUser !== null){
-  //         // this.props.fetchCart()
-  //     }
-  // }
-
+  }
 
   _createClass(Splash, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchProducts();
+    }
+  }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2919,9 +2924,25 @@ var Splash = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return Splash;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // export default Splash;
 
-/* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+var MapStateToProps = function MapStateToProps(state) {
+  // debugger
+  return {
+    products: state.entities.cartProducts
+  };
+};
+
+var MapDispatchToProps = function MapDispatchToProps(dispatch) {
+  return {
+    fetchProducts: function fetchProducts() {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_8__["fetchProducts"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(MapStateToProps, MapDispatchToProps)(Splash));
 
 /***/ }),
 
@@ -3694,12 +3715,12 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   } // testing
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.fetchCart = fetchCart;
+
+
+  window.getState = store.getState;
+  window.dispatch = store.dispatch; // window.fetchCart = fetchCart;
   // window.fetchProducts = fetchProducts
   // window.fetchProduct = fetchProduct
-
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store

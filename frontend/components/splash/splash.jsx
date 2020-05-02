@@ -6,20 +6,22 @@ import UpperMid from './upper_mid';
 import BottomMidSplash from './bottom_mid_splash';
 import Banner from './banner';
 
+import { connect } from 'react-redux'
+import { fetchProducts } from '../../actions/product_actions';
+
 class Splash extends React.Component{
 
         constructor(props){
-            super(props)
+            super(props);
         }
 
-        // componentDidMount(){
-        //     if (this.props.currentUser !== null){
-        //         // this.props.fetchCart()
-        //     }
-        // }
+        componentDidMount(){
+            this.props.fetchProducts();
+        }
 
 
         render(){
+            debugger
             return(
                 <div className='splash-wrapper'>
                     <div className="hamburger"></div>
@@ -60,4 +62,23 @@ class Splash extends React.Component{
         }
 }
 
-export default Splash;
+// export default Splash;
+
+
+const MapStateToProps = (state) => {
+    // debugger
+    return {
+        products: state.entities.cartProducts,
+    }
+}
+
+
+const MapDispatchToProps = dispatch => ({
+    fetchProducts: () => (dispatch(fetchProducts()))
+});
+
+
+export default connect(
+    MapStateToProps,
+    MapDispatchToProps
+)(Splash)
