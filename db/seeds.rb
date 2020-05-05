@@ -95,17 +95,17 @@ require 'open-uri'
 product1.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/0.jpg'), filename: '0.jpg')
 product1.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/1.jpg'), filename: '1.jpg')
 product1.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/2.jpg'), filename: '2.jpg')
-product1.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/3.jpg'), filename: '3.jpg')
+# product1.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superfood_cleanser/3.jpg'), filename: '3.jpg')
 
 product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/0.jpg'), filename: '0.jpg')
 product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/1.jpg'), filename: '1.jpg')
 product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/2.jpg'), filename: '2.jpg')
-product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/3.jpg'), filename: '3.jpg')
+# product2.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kombucha/3.jpg'), filename: '3.jpg')
 
 product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/0.jpg'), filename: '0.jpg')
 product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/1.jpg'), filename: '1.jpg')
 product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/2.jpg'), filename: '2.jpg')
-product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/3.jpg'), filename: '3.jpg')
+# product3.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/superberry/3.jpg'), filename: '3.jpg')
 
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/0.jpg'), filename: '0.jpg')
 product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/kale_cream/mode.jpg'), filename: 'mode.jpg')
@@ -114,12 +114,12 @@ product4.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/0.jpg'), filename: '0.jpg')
 product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/1.jpg'), filename: '1.jpg')
 product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/2.jpg'), filename: '2.jpg')
-product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/3.jpg'), filename: '3.jpg')
+# product5.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen/3.jpg'), filename: '3.jpg')
 
 product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/0.jpg'), filename: '0.jpg')
 product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/1.jpg'), filename: '1.jpg')
 product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
-product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
+# product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/3.jpg'), filename: '3.jpg')
 
 
 
