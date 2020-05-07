@@ -43,8 +43,9 @@
     max-height: 80%;
     display:flex;
     box-shadow: grey;
-    background: rgb(191,246,244);
-    background: linear-gradient(0deg, rgba(191,246,244,1) 0%, rgba(64,175,246,1) 100%);
+    background:red;
+    // background: rgb(191,246,244);
+    // background: linear-gradient(0deg, rgba(191,246,244,1) 0%, rgba(64,175,246,1) 100%);
     border-radius: 3px;
     animation: session-drop 1s ease forwards;
 }
