@@ -1397,8 +1397,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
 
   _createClass(ProductIndex, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchProducts();
+    value: function componentDidMount() {// this.props.fetchProducts();
     }
   }, {
     key: "render",
@@ -1708,8 +1707,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      debugger;
+    value: function componentWillUnmount() {// debugger
     }
   }, {
     key: "componentDidUpdate",
@@ -2898,12 +2896,12 @@ var Splash = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Splash, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// this.props.fetchProducts();
+    value: function componentDidMount() {
+      this.props.fetchProducts();
     }
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

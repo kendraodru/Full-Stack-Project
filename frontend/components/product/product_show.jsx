@@ -18,7 +18,7 @@ class ProductShow extends React.Component {
     }
 
     componentWillUnmount(){
-        debugger
+        // debugger
     }
 
     componentDidUpdate(prevProps, prevState){

@@ -16,12 +16,11 @@ class Splash extends React.Component{
         }
 
         componentDidMount(){
-            // this.props.fetchProducts();
+            this.props.fetchProducts();
         }
 
 
         render(){
-            debugger
             return(
                 <div className='splash-wrapper'>
                     <div className="hamburger"></div>
