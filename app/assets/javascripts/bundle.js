@@ -2898,8 +2898,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Splash, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchProducts();
+    value: function componentDidMount() {// this.props.fetchProducts();
     }
   }, {
     key: "render",
@@ -3276,11 +3275,8 @@ function modalReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/product_actions */ "./frontend/actions/product_actions.js");
-/* harmony import */ var _actions_search_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/search_action */ "./frontend/actions/search_action.js");
-/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
-
-
-
+ // import {SEARCH_PRODUCTS} from '../actions/search_action';
+// import { RECEIVE_CART } from '../actions/cart_actions';
 
 var productReducer = function productReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};

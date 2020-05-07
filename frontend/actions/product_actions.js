@@ -5,10 +5,12 @@ export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 
 // actions
-export const receive_products = (payload) =>({
+export const receive_products = (payload) =>{
+    return {
     type: RECEIVE_PRODUCTS,
     payload
-})
+    }
+}
 
 export const receive_product = (payload) =>({
     type: RECEIVE_PRODUCT,

@@ -1,6 +1,6 @@
 import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS} from '../actions/product_actions';
-import {SEARCH_PRODUCTS} from '../actions/search_action';
-import { RECEIVE_CART } from '../actions/cart_actions';
+// import {SEARCH_PRODUCTS} from '../actions/search_action';
+// import { RECEIVE_CART } from '../actions/cart_actions';
 
 
 
