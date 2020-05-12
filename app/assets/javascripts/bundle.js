@@ -1397,7 +1397,10 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
 
   _createClass(ProductIndex, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// this.props.fetchProducts();
+    value: function componentDidMount() {
+      if (this.props.products.length === 0) {
+        this.props.fetchProducts();
+      }
     }
   }, {
     key: "render",
