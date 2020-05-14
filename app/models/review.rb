@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
     validates :user_id, :product_id, :title, :body, :rating, presence:true
-    validates_uniqueness_of :user_id, :scrope => [:product_id]
+    validates :rating, inclusion: { in: (1..5) }
+    # validates_uniqueness_of :user_id, :scrope => [:product_id]
 
 
     belongs_to :user,
