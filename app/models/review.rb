@@ -3,11 +3,11 @@ class Review < ApplicationRecord
     validates_uniqueness_of :user_id, :scrope => [:product_id]
 
 
-    belongs_To :user,
+    belongs_to :user,
     foreign_key: :user_id,
     class_name: :User
 
-    belongs_To :product,
+    belongs_to :product,
     foreign_key: :product_id,
     class_name: :Product
 end

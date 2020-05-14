@@ -6,12 +6,14 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: ["error"]
+            render json: @review.errors.full_messages, status: 404
         end
 
     end
 
     def index
+        @reviews = Review.all
+        render :index
 
     end
 
