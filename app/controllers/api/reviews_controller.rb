@@ -8,7 +8,11 @@ class Api::ReviewsController < ApplicationController
         else
             render json: ["error"]
         end
-        
+
+    end
+
+    def index
+
     end
 
 
