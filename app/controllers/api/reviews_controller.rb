@@ -13,7 +13,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
-        @reviews = Review.all
+        
         render :index
 
     end

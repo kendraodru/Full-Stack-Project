@@ -3,6 +3,9 @@ json.products do
 end
 
 
+json.reviews do
+    json.partial! 'api/reviews/reviews', reviews: @reviews
+end
 # added this
 
 # for the photourls
