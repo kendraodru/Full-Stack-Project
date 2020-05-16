@@ -11,23 +11,19 @@ class Api::ReviewsController < ApplicationController
         end
 
     end
+  
 
-    def index
+    def destroy
         
-        render :index
+        @review = Review.find_by(id: params[:id])
 
-    end
-
-
-    def update
-
-
-    end
-
-
-    def destory
-
-
+        if (current_user.reviews.includes(@review))
+            @review.delete
+            render json: @review
+        else
+            render json: ['Error, invalid credentials']
+        end
+        
     end
 
     def review_params
