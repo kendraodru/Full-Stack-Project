@@ -17,7 +17,7 @@ class Api::ProductsController < ApplicationController
 
     def show
         @product = Product.find_by(id: params[:id])
-        @reviews = @product.reviews
+        @reviews = @product.reviews || [];
         render :show
     end
 end
