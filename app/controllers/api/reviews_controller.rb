@@ -12,19 +12,19 @@ class Api::ReviewsController < ApplicationController
 
     end
   
-
-    def destroy
+    #doesnt allow deleting review
+    # def destroy
         
-        @review = Review.find_by(id: params[:id])
+    #     @review = Review.find_by(id: params[:id])
 
-        if (current_user.reviews.includes(@review))
-            @review.delete
-            render json: @review
-        else
-            render json: ['Error, invalid credentials']
-        end
+    #     if (current_user.reviews.includes(@review))
+    #         @review.delete
+    #         render json: @review
+    #     else
+    #         render json: ['Error, invalid credentials']
+    #     end
         
-    end
+    # end
 
     private
     def review_params
