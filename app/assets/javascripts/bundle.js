@@ -3367,13 +3367,16 @@ var reviewsReducer = function reviewsReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var nextState = Object.assign({}, state);
+  debugger;
 
   switch (action.type) {
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PRODUCT"]:
-      if (action.payload.products.reviews === undefined) {
+      if (action.payload.reviews === undefined) {
+        debugger;
         return {};
       } else {
-        return action.payloads.reviews;
+        debugger;
+        return action.payload.reviews;
       }
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
