@@ -283,6 +283,48 @@ var fetchProduct = function fetchProduct(productId) {
 
 /***/ }),
 
+/***/ "./frontend/actions/review_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/review_actions.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_REVIEW, RECEIVE_REVIEW_ERRORS, receiveReview, receiveReviewErrors, postReview */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW", function() { return RECEIVE_REVIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW_ERRORS", function() { return RECEIVE_REVIEW_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReview", function() { return receiveReview; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveReviewErrors", function() { return receiveReviewErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postReview", function() { return postReview; });
+/* harmony import */ var _util_reviews_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/reviews_api_util */ "./frontend/util/reviews_api_util.js");
+
+var RECEIVE_REVIEW = "RECEIVE_REVIEW";
+var RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
+var receiveReview = function receiveReview(review) {
+  return {
+    type: RECEIVE_REVIEW,
+    review: review
+  };
+};
+var receiveReviewErrors = function receiveReviewErrors(errors) {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors: errors
+  };
+};
+var postReview = function postReview(review) {
+  return function (dispatch) {
+    _util_reviews_api_util__WEBPACK_IMPORTED_MODULE_0__["postReview"](review).then(function (review) {
+      return dispatch(receiveReview(review));
+    }, function (errors) {
+      return dispatch(receiveReviewErrors(errors.responseJSON));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/search_action.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/search_action.js ***!
@@ -3197,6 +3239,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart_items_reducer */ "./frontend/reducers/cart_items_reducer.js");
 /* harmony import */ var _cart_products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cart_products */ "./frontend/reducers/cart_products.js");
 /* harmony import */ var _search_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./search_reducer */ "./frontend/reducers/search_reducer.js");
+/* harmony import */ var _reviews_reducer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reviews_reducer */ "./frontend/reducers/reviews_reducer.js");
+
 
 
 
@@ -3207,6 +3251,7 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   products: _products_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  reviews: _reviews_reducer__WEBPACK_IMPORTED_MODULE_7__["default"],
   cart: _cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
   cartItems: _cart_items_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
   cartProducts: _cart_products__WEBPACK_IMPORTED_MODULE_5__["default"],
@@ -3300,6 +3345,49 @@ var productReducer = function productReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (productReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/reviews_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/reviews_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/review_actions */ "./frontend/actions/review_actions.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/product_actions */ "./frontend/actions/product_actions.js");
+
+
+
+var reviewsReducer = function reviewsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PRODUCT"]:
+      if (action.payload.products.reviews === undefined) {
+        return {};
+      } else {
+        return action.payloads.reviews;
+      }
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
+      return Object.assign(nextState, action.review);
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW_ERRORS"]:
+      return action.errors;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reviewsReducer);
 
 /***/ }),
 
@@ -3623,6 +3711,28 @@ var fetchCartProducts = function fetchCartProducts(cartId) {
   return $.ajax({
     url: "api/carts/".concat(cartId, "/products"),
     method: 'GET'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/reviews_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/reviews_api_util.js ***!
+  \*******************************************/
+/*! exports provided: postReview */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postReview", function() { return postReview; });
+var postReview = function postReview(review) {
+  return $.ajax({
+    url: '/api/reviews',
+    method: 'POST',
+    data: {
+      review: review
+    }
   });
 };
 
