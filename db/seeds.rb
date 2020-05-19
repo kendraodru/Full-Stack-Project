@@ -127,3 +127,28 @@ product6.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.
 # temp_product.photos.attach(io: open('https://youth-to-the-people-seeds.s3-us-west-1.amazonaws.com/adaptogen_spray/2.jpg'), filename: '2.jpg')
 
 
+Review.destroy_all
+
+review1 = Review.create({
+    product_id: product1.id,
+    user_id: user1.id,
+    title: "this is a great product!",
+    body: "I use it on a daily basis, especially  at night",
+    rating: 5
+})
+
+review1 = Review.create({
+    product_id: product1.id,
+    user_id: user2.id,
+    title: "this is a great product!",
+    body: "I use it on a daily basis, especially in the morning",
+    rating: 5
+})
+
+review1 = Review.create({
+    product_id: product2.id,
+    user_id: user1.id,
+    title: "this is a great product!",
+    body: "I use it on a daily basis, especially  at night",
+    rating: 5
+})
