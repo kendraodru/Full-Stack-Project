@@ -70,7 +70,8 @@ class ProductShow extends React.Component {
             return <Loading />;
         };
         
-        const { product } = this.props
+        const { product, reviews } = this.props
+        
         return(
             <div>
                 <div className="hamburger"></div>
@@ -124,6 +125,10 @@ class ProductShow extends React.Component {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <div>Comments section</div>
+
                 </div>
             </div>
         )

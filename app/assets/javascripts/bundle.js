@@ -1813,7 +1813,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       }
 
       ;
-      var product = this.props.product;
+      var _this$props = this.props,
+          product = _this$props.product,
+          reviews = _this$props.reviews;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1866,7 +1868,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         className: "fab fa-twitter-square"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-pinterest-square"
-      })))))))));
+      })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Comments section")));
     }
   }]);
 
@@ -1902,7 +1904,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     product: state.entities.products[ownProps.match.params.productId],
     cart: state.entities.cart,
-    cartItems: Object.values(state.entities.cartItems)
+    cartItems: Object.values(state.entities.cartItems),
+    reviews: Object.values(state.entities.reviews)
   };
 };
 
@@ -3367,15 +3370,12 @@ var reviewsReducer = function reviewsReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var nextState = Object.assign({}, state);
-  debugger;
 
   switch (action.type) {
     case _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PRODUCT"]:
       if (action.payload.reviews === undefined) {
-        debugger;
         return {};
       } else {
-        debugger;
         return action.payload.reviews;
       }
 

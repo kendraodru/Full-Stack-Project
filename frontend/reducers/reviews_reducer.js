@@ -4,14 +4,11 @@ import { RECEIVE_PRODUCT } from '../actions/product_actions';
 const reviewsReducer = (state ={}, action) =>{
     Object.freeze(state);
     let nextState = Object.assign({}, state);
-    debugger
     switch (action.type) {
         case RECEIVE_PRODUCT:
             if (action.payload.reviews === undefined){
-                debugger
                 return {}
             }else{
-                debugger
                 return action.payload.reviews
             }
             

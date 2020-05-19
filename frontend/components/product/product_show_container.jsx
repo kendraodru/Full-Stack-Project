@@ -8,7 +8,8 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) =>({
     product: state.entities.products[ownProps.match.params.productId],
     cart: state.entities.cart,
-    cartItems: Object.values(state.entities.cartItems)
+    cartItems: Object.values(state.entities.cartItems),
+    reviews: Object.values(state.entities.reviews)
 });
 
 const mapDispatchToProps = dispatch  =>({
