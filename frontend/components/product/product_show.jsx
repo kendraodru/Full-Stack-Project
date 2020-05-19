@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from '../carousel/carousel';
 import Loading from '../loading/spinner';
+import ReviewIndexItem from './product_review_index_item';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -69,8 +70,18 @@ class ProductShow extends React.Component {
         if (this.props.product === undefined) {
             return <Loading />;
         };
-        
         const { product, reviews } = this.props
+
+        const allReviews = reviews.map((review)=>{
+            return(
+                <ReviewIndexItem 
+                key = {review.id}
+                review = {review}
+                currentUser = { this.props.currentUser }
+                />
+            )
+        })
+        
         
         return(
             <div>
@@ -128,7 +139,9 @@ class ProductShow extends React.Component {
                 </div>
                 <div>
                     <div>Comments section</div>
-
+                    <div>
+                        { allReviews }
+                    </div>
                 </div>
             </div>
         )

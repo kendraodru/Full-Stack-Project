@@ -1693,6 +1693,27 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/product/product_review_index_item.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/product/product_review_index_item.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var ReviewIndexItem = function ReviewIndexItem(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "testing");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewIndexItem);
+
+/***/ }),
+
 /***/ "./frontend/components/product/product_show.jsx":
 /*!******************************************************!*\
   !*** ./frontend/components/product/product_show.jsx ***!
@@ -1706,6 +1727,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _carousel_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../carousel/carousel */ "./frontend/components/carousel/carousel.jsx");
 /* harmony import */ var _loading_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../loading/spinner */ "./frontend/components/loading/spinner.js");
+/* harmony import */ var _product_review_index_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product_review_index_item */ "./frontend/components/product/product_review_index_item.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1723,6 +1745,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1816,6 +1839,13 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           product = _this$props.product,
           reviews = _this$props.reviews;
+      var allReviews = reviews.map(function (review) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_product_review_index_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          key: review.id,
+          review: review,
+          currentUser: _this3.props.currentUser
+        });
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hamburger"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1868,7 +1898,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         className: "fab fa-twitter-square"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-pinterest-square"
-      })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Comments section")));
+      })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Comments section"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, allReviews)));
     }
   }]);
 
